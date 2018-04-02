@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <main class="container">
     <div>
       <app-logo/>
       <h1 class="title">
@@ -12,8 +12,9 @@
         <nuxt-link to="/portfolio">Portfolio</nuxt-link>
       </div>
     </div>
-  </section>
+  </main>
 </template>
+
 
 <script>
 import AppLogo from '~/components/AppLogo.vue'
@@ -22,11 +23,13 @@ export default {
   components: {
     AppLogo
   },
-  layout: 'home'
+  layout: 'home',
+  transition: 'home'
 }
 </script>
 
-<style>
+
+<style scoped>
 .container {
   min-height: 100vh;
   display: flex;

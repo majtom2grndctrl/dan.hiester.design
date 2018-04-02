@@ -1,0 +1,16 @@
+.container {
+  transition: all 1s;
+}
+.home-enter-active, .home-leave-active {
+  transition: opacity 1s;
+}
+.home-enter, .home-leave-to {
+  opacity: 0;
+}
+
+.alt-enter-active, .alt-leave-active {
+  transition: opacity 1s;
+}
+.alt-enter, .alt-leave-to {
+  opacity: 0;
+}
