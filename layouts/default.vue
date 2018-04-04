@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <h1>Default template</h1>
-    <nuxt/>
-  </div>
+  <nuxt/>
 </template>
+
 
 <style>
 html {

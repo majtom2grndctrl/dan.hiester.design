@@ -1,16 +1,18 @@
-.container {
-  transition: all 1s;
-}
 .home-enter-active, .home-leave-active {
-  transition: opacity 1s;
+  transition: opacity 2s, transform 2s;
 }
-.home-enter, .home-leave-to {
+.home-enter {
   opacity: 0;
+  transform: translate3d(0, 5em, 0);
 }
 
-.alt-enter-active, .alt-leave-active {
-  transition: opacity 1s;
+.home-leave-to {
+  transform: translate3d(0, 0, 0);
 }
-.alt-enter, .alt-leave-to {
+
+.page-enter-active, .page-leave-active {
+  transition: opacity .33s, transform .33s;
+}
+.page-enter, .page-leave-to {
   opacity: 0;
 }

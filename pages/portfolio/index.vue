@@ -1,17 +1,5 @@
 <template>
-  <main class="container">
-    <nuxt-link to="/">Home</nuxt-link> | <nuxt-link to="/portfolio/ux">UX</nuxt-link>
-    <nuxt-child/>
-  </main>
+  <div>
+    Project 1 | Project 2 | Project 3
+  </div>
 </template>
-
-
-<script>
-export default {
-  transition: 'alt'
-}
-</script>
-
-
-<style lang="scss">
-</style>

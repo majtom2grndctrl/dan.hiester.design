@@ -4,3 +4,8 @@
     <nuxt-link to="/portfolio">Portfolio Home</nuxt-link>
   </section>
 </template>
+
+<script>
+export default {
+}
+</script>
