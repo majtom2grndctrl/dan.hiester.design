@@ -1,7 +1,8 @@
 <template>
   <main class="container">
+    <nuxt-link to="/">Home</nuxt-link>
     <h1>Portfolio</h1>
-    <nuxt-link to="/">Home</nuxt-link> | <nuxt-link to="/portfolio/ux">UX</nuxt-link>
+    <nuxt-link to="/portfolio">All Projects</nuxt-link> | <nuxt-link to="/portfolio/ux">UX</nuxt-link>
     <nuxt-child/>
   </main>
 </template>

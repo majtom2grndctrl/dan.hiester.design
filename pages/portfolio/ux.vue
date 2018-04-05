@@ -1,7 +1,7 @@
 <template>
   <section>
     <h2>UX</h2>
-    <nuxt-link to="/portfolio">Portfolio Home</nuxt-link>
+    UX Project 1 | UX Project 2
   </section>
 </template>
 
