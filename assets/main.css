@@ -5,11 +5,11 @@
 
 .home-enter {
   opacity: 0;
-  transform: perspective(100vw) translate3d(0, 10em, 1em);
+  transform: perspective(100vw) translate3d(0, 50%, 0);
 }
 .home-enter-active {
   background: #fff;
-  transition: opacity .666s, transform .666s;
+  transition: opacity .666s, transform .666s cubic-bezier(0.165, 0.84, 0.44, 1);
   position: fixed;
     top: 0;
     bottom: 0;

@@ -1,7 +1,7 @@
 <template>
   <main class="home-container">
     <div>
-      <app-logo/>
+      <dy-logo/>
       <h1 class="title">
         distantlyyours-v8
       </h1>
@@ -17,11 +17,11 @@
 
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+import DyLogo from '~/components/DyLogo.vue'
 
 export default {
   components: {
-    AppLogo
+    DyLogo
   }
 }
 </script>
@@ -29,6 +29,7 @@ export default {
 
 <style scoped>
 .home-container {
+  background-color: #6E8A93;
   min-height: 100vh;
   display: flex;
   justify-content: center;
