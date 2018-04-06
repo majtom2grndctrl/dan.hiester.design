@@ -12,9 +12,15 @@
 export default {
   transition(to, from) {
     console.log('to =', to, 'from = ', from)
-    if (from.path === '/') return {
-      name: 'home',
-      mode: 'in-out'
+    if (from.path === '/') {
+      return {
+        name: 'home',
+        mode: 'in-out'
+      }
+    } else {
+      return {
+        name: 'page'
+      }
     }
   }
 }

@@ -1,13 +1,34 @@
-.home-enter-active, .home-leave-active {
-  transition: opacity 2s, transform 2s;
-}
-.home-enter {
-  opacity: 0;
-  transform: translate3d(0, 5em, 0);
+.container {
+  position: relative;
+  z-index: 0;
 }
 
+.home-enter {
+  opacity: 0;
+  transform: perspective(100vw) translate3d(0, 10em, 1em);
+}
+.home-enter-active {
+  background: #fff;
+  transition: opacity .666s, transform .666s;
+  position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+}
+.home-enter-to {
+  transform: perspective(100vw) translate3d(0, 0, 0);
+}
+.home-leave {
+  opacity: 1
+}
+.home-leave-active {
+  display: none !important;
+  transition: opacity 10s 10s;
+}
 .home-leave-to {
-  transform: translate3d(0, 0, 0);
+  opacity: 1;
 }
 
 .page-enter-active, .page-leave-active {
