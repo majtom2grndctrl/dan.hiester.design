@@ -1,3 +1,13 @@
+// SCSS Variables
+
+$font-heading: 'Poppins', sans-serif;
+$font-body: 'Arimo', sans-serif;
+
+
+
+
+// Transitions
+
 .container {
   position: relative;
   z-index: 0;
@@ -5,7 +15,7 @@
 
 .home-enter {
   opacity: 0;
-  transform: perspective(100vw) translate3d(0, 50%, 0);
+  transform: perspective(100vw) translate3d(0, 65%, 0);
 }
 .home-enter-active {
   background: #fff;

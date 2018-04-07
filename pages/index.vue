@@ -1,16 +1,12 @@
 <template>
   <main class="home-container">
-    <div>
-      <dy-logo/>
-      <h1 class="title">
-        distantlyyours-v8
-      </h1>
-      <h2 class="subtitle">
-        Codebase for distantlyyours.com, version 8.
-      </h2>
-      <div class="links">
-        <nuxt-link to="/portfolio">Portfolio</nuxt-link>
-      </div>
+    <header>
+      <dy-logo class="home-logo" />
+      <h1 class="title">Distantly Yours</h1>
+      <div>Push Farther</div>
+    </header>
+    <div class="links">
+      <nuxt-link to="/portfolio">Portfolio</nuxt-link>
     </div>
   </main>
 </template>
@@ -26,23 +22,34 @@ export default {
 }
 </script>
 
-
-<style scoped>
+<style lang="scss" scoped>
 .home-container {
-  background-color: #6E8A93;
+  background: url('/img/home-header-background@1x.jpg') 50% 50% / contain no-repeat #6E8A93;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   text-align: center;
+  > header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.home-logo {
+  mix-blend-mode: color-burn;
 }
 
 .title {
+  color: #717171;
   display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  letter-spacing: .166ex;
+  margin: 0 4rem 0 (30rem/16);
+  text-transform: uppercase;
 }
 
 .subtitle {

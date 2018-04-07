@@ -17,7 +17,7 @@ module.exports = {
       }
     ],
   },
-  css: ['~/assets/main.css'],
+  css: ['~/assets/main.scss'],
   /*
   ** Customize the progress bar color
   */
