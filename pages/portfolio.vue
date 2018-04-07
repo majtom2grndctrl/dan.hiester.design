@@ -11,8 +11,12 @@
 <script>
 export default {
   transition(to, from) {
-    console.log('to =', to, 'from = ', from)
-    if (from.path === '/') {
+    console.log('to = ', to, 'from = ', from)
+    if (!from) {
+      return {
+        name: 'page'
+      }
+    } else if (from.path === '/') {
       return {
         name: 'home',
         mode: 'in-out'
