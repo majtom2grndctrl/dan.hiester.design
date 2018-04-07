@@ -3,10 +3,13 @@
     <header>
       <dy-logo class="home-logo" />
       <h1 class="title">Distantly Yours</h1>
-      <div>Push Farther</div>
+      <div class="subtitle">Push Farther</div>
     </header>
     <div class="links">
       <nuxt-link to="/portfolio">Portfolio</nuxt-link>
+      <nuxt-link to="/elements-of-my-process">Process</nuxt-link>
+      <nuxt-link to="/about">About</nuxt-link>
+      <nuxt-link to="/contact">Contact</nuxt-link>
     </div>
   </main>
 </template>
@@ -24,17 +27,21 @@ export default {
 
 <style lang="scss" scoped>
 .home-container {
-  background: url('/img/home-header-background@1x.jpg') 50% 50% / contain no-repeat #6E8A93;
+  background: url('~/assets/img/home-header-background@1x.jpg') 50% 50% / contain no-repeat #6E8A93;
   min-height: 100vh;
   display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   text-align: center;
+  @media (min-resolution: 150dpi) {
+    background-image: url('~/assets/img/home-header-background@2x.jpg');
+  }
   > header {
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding-top: (105rem/16);
   }
 }
 .home-logo {
@@ -42,7 +49,7 @@ export default {
 }
 
 .title {
-  color: #717171;
+  color: $gray-400;
   display: block;
   font-family: $font-heading;
   font-weight: 600;
@@ -53,14 +60,34 @@ export default {
 }
 
 .subtitle {
+  color: #797979;
   font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+  font-size: (21rem/16);
+  letter-spacing: .05ex;
+  padding: 0 0 0 (70rem/16);
+  position: relative;
+  text-transform: uppercase;
+  &:before {
+    color: #076381;
+    content: '//';
+    font-size: (38rem/16);
+    font-weight: bold;
+    font-style: italic;
+    mix-blend-mode: color-burn;
+    position: absolute;
+      left: 0;
+      top: 50%;
+    transform: translate(0, -50%);
+  }
 }
 
 .links {
-  padding-top: 15px;
+  padding-top: (65rem/16);
+  > a {
+    color: $gray-400;
+    font-size: (21rem/16);
+    margin: 0 (38rem/16);
+    text-decoration: none;
+  }
 }
 </style>

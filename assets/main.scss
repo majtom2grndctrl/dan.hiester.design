@@ -1,9 +1,19 @@
 // SCSS Variables
 
+// Fonts
 $font-heading: 'Poppins', sans-serif;
 $font-body: 'Arimo', sans-serif;
 
 
+// Colors
+$gray-400: #717171;
+
+
+// Global styles
+
+body {
+  font-family: $font-body;
+}
 
 
 // Transitions
