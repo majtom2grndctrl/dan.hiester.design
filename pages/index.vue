@@ -74,8 +74,9 @@ export default {
     font-weight: bold;
     font-style: italic;
     mix-blend-mode: color-burn;
+    padding: 0 .125em;
     position: absolute;
-      left: 0;
+      left: .125em;
       top: 50%;
     transform: translate(0, -50%);
   }
