@@ -11,7 +11,6 @@
 <script>
 export default {
   transition(to, from) {
-    console.log('to = ', to, 'from = ', from)
     if (!from) {
       return {
         name: 'page'
