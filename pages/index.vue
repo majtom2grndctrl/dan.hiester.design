@@ -44,7 +44,7 @@ export default {
 .title {
   color: #717171;
   display: block;
-  font-family: 'Poppins', sans-serif;
+  font-family: $font-heading;
   font-weight: 600;
   font-size: 30px;
   letter-spacing: .166ex;

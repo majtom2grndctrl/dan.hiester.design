@@ -17,7 +17,6 @@ module.exports = {
       }
     ],
   },
-  css: ['~/assets/main.scss'],
   /*
   ** Customize the progress bar color
   */
@@ -39,5 +38,8 @@ module.exports = {
         })
       }
     }
-  }
+  },
+  modules: [
+    ['nuxt-sass-resources-loader', '~/assets/main.scss']
+  ]
 }
