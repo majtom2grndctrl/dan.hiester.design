@@ -39,6 +39,7 @@ module.exports = {
       }
     }
   },
+  css: ['~/assets/html.css'],
   modules: [
     ['nuxt-sass-resources-loader', '~/assets/main.scss']
   ]

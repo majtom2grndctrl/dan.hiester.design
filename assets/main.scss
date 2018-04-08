@@ -9,10 +9,17 @@ $font-body: 'Arimo', sans-serif;
 $gray-400: #717171;
 
 
+// Breakpoints
+
+$viewport-small: (500rem/16);
+$viewport-medium: (980rem/16);
+$viewport-large: (1200/16);
+
 // Global styles
 
 body {
   font-family: $font-body;
+  margin: 0;
 }
 
 
