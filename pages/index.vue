@@ -6,8 +6,8 @@
       <div class="subtitle">Push Farther</div>
     </header>
     <div class="mobile-nav">
-      <button class="mobile-nav-launcher">Menu</button>
-      <nav v-if="mobile-nav" class="mobile-nav-links">
+      <button v-on:click="mobileNav = !mobileNav" class="mobile-nav-launcher">Menu</button>
+      <nav v-if="mobileNav" class="mobile-nav-links">
         <nuxt-link to="/portfolio">Portfolio</nuxt-link>
         <nuxt-link to="/elements-of-my-process">Process</nuxt-link>
         <nuxt-link to="/about">About</nuxt-link>
@@ -33,6 +33,11 @@ export default {
   components: {
     DyLogo,
     DownButton
+  },
+  data: function() {
+    return {
+      mobileNav: false
+    }
   }
 }
 </script>
