@@ -6,13 +6,33 @@
       <div class="subtitle">Push Farther</div>
     </header>
     <div class="mobile-nav">
-      <button v-on:click="mobileNav = !mobileNav" class="mobile-nav-launcher">Menu</button>
-      <nav v-if="mobileNav" class="mobile-nav-links">
-        <nuxt-link to="/portfolio">Portfolio</nuxt-link>
-        <nuxt-link to="/elements-of-my-process">Process</nuxt-link>
-        <nuxt-link to="/about">About</nuxt-link>
-        <nuxt-link to="/contact">Contact</nuxt-link>
-      </nav>
+      <button v-on:click="mobileNav = !mobileNav" class="mobile-nav-launcher">
+        <svg width="18px" height="17px" viewBox="0 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <title></title>
+            <g id="Home-Mobile-3a" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-118.000000, -365.000000)" opacity="0.599524457">
+                <g id="Group" transform="translate(118.000000, 357.000000)" fill="#717171">
+                    <g id="mobile-nav-launcher-icon" transform="translate(0.000000, 8.000000)">
+                        <rect id="Rectangle-2" style="mix-blend-mode: multiply;" x="0" y="0" width="18" height="3"></rect>
+                        <rect id="Rectangle-2-Copy" style="mix-blend-mode: multiply;" x="0" y="7" width="18" height="3"></rect>
+                        <rect id="Rectangle-2-Copy-2" style="mix-blend-mode: multiply;" x="0" y="14" width="18" height="3"></rect>
+                    </g>
+                </g>
+            </g>
+        </svg>
+        <span>Menu</span>
+      </button>
+      <transition name="home-nav">
+        <div v-if="mobileNav">
+          <div class="modal-overlay" v-on:click="mobileNav = !mobileNav" />
+          <nav class="mobile-nav-links" v-on:click="mobileNav = !mobileNav">
+            <h2>Menu</h2>
+            <nuxt-link to="/portfolio">Portfolio</nuxt-link>
+            <nuxt-link to="/elements-of-my-process">Process</nuxt-link>
+            <nuxt-link to="/about">About</nuxt-link>
+            <nuxt-link to="/contact">Contact</nuxt-link>
+          </nav>
+        </div>
+      </transition>
     </div>
     <nav class="widescreen-links">
       <nuxt-link to="/portfolio">Portfolio</nuxt-link>
@@ -20,7 +40,9 @@
       <nuxt-link to="/about">About</nuxt-link>
       <nuxt-link to="/contact">Contact</nuxt-link>
     </nav>
-    <down-button />
+    <nuxt-link class="down-button-link" to="/portfolio">
+      <down-button />
+    </nuxt-link>
   </main>
 </template>
 
@@ -38,7 +60,7 @@ export default {
     return {
       mobileNav: false
     }
-  }
+  },
 }
 </script>
 
@@ -61,16 +83,15 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: (105rem/16);
     @media (min-width: $viewport-small) {
       flex-direction: row;
+      padding-top: (105rem/16);
     }
   }
 }
 .home-logo {
   mix-blend-mode: color-burn;
 }
-
 .title {
   color: $gray-400;
   display: block;
@@ -89,7 +110,6 @@ export default {
     font-size: (29rem/16);
   }
 }
-
 .subtitle {
   display: none;
   @media (min-width: $viewport-small) {
@@ -116,10 +136,75 @@ export default {
     }
   }
 }
+.home-nav-enter-active, .home-nav-leave-active {
+  transition: opacity .2s ease-in-out;
+  position: absolute;
+    z-index: 4;
+}
+.home-nav-enter, .home-nav-leave-to {
+  opacity: 0;
+}
 .mobile-nav {
   @media (min-width: $viewport-small) {
     display: none;
   }
+  &-launcher {
+    background: none;
+    border: none;
+    outline: none;
+    color: #03A1D5;
+    display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    font-family: $font-heading;
+    font-weight: 600;
+    font-size: (24rem/16);
+    margin: 10vh 0 0 0;
+    text-transform: uppercase;
+    width: 5em;
+    &:active {
+      outline: none;
+    }
+  }
+  &-links {
+    border-left: 1px solid rgba(255, 255, 255, .5);
+    box-sizing: border-box;
+    display: flex;
+      flex-direction: column;
+      align-content: flex-start;
+      justify-content: space-between;
+    height: 40vh;
+    padding: 1em 0 1em 2em;
+    position: fixed;
+      top: 30%;
+      left: 38%;
+      z-index: 6;
+    text-align: left;
+    transform: translate(-50%, 0);
+    > h2 {
+      color: rgba(255, 255, 255, .66);
+      font-weight: 400;
+      font-size: (16rem/16);
+      margin: 0;
+      text-transform: uppercase;
+    }
+    > a {
+      color: #fff;
+      display: block;
+      font-size: (24rem/16);
+      text-decoration: none;
+    }
+  }
+}
+.modal-overlay {
+  background: rgba(0, 0, 0, .55);
+  position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
 }
 .widescreen-links {
   display: none;
@@ -138,9 +223,12 @@ export default {
 }
 
 .down-button {
-  position: absolute;
-    top: 78%;
-  opacity: .68;
+  &-link {
+    position: absolute;
+      top: 78%;
+      z-index: 1;
+    opacity: .68;
+  }
   .circle {
     opacity: 0;
   }
