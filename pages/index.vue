@@ -153,6 +153,7 @@ export default {
     border: none;
     outline: none;
     color: #03A1D5;
+    cursor: pointer;
     display: flex;
       flex-direction: row;
       align-items: center;
