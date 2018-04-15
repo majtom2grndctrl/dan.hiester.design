@@ -25,6 +25,7 @@
         <div v-if="mobileNav">
           <div class="modal-overlay" v-on:click="mobileNav = !mobileNav" />
           <nav class="mobile-nav-links" v-on:click="mobileNav = !mobileNav">
+            <CloseButton class="mobile-nav-close-button"/>
             <h2>Menu</h2>
             <nuxt-link to="/portfolio">Portfolio</nuxt-link>
             <nuxt-link to="/elements-of-my-process">Process</nuxt-link>
@@ -48,13 +49,15 @@
 
 
 <script>
-import DyLogo from '~/components/DyLogo.vue'
+import CloseButton from '~/components/CloseButton.vue'
 import DownButton from '~/components/DownButton.vue'
+import DyLogo from '~/components/DyLogo.vue'
 
 export default {
   components: {
-    DyLogo,
-    DownButton
+    CloseButton,
+    DownButton,
+    DyLogo
   },
   data: function() {
     return {
@@ -167,6 +170,12 @@ export default {
     &:active {
       outline: none;
     }
+  }
+  &-close-button {
+    color: rgba(255, 255, 255, .5);
+    position: absolute;
+      top: .95em;
+      left: 150%;
   }
   &-links {
     border-left: 1px solid rgba(255, 255, 255, .5);
