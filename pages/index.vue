@@ -216,7 +216,7 @@ $mobile-nav-transition-duration: .3s;
   }
 }
 .modal-overlay {
-  background: linear-gradient(45deg, rgba(0,66,88,1) 16%, rgba(3,161,213,1) 46%, rgba(3,161,213,1) 58%, rgba(201,242,255,1) 86%);
+  background: linear-gradient(45deg, rgba(0,66,88,1) 16%, rgba(3,161,213,1) 46%, rgba(3,161,213,1) 58%, rgba(201,242,255,1) 94%);
   mix-blend-mode: color-burn;
   position: fixed;
     top: 0;
