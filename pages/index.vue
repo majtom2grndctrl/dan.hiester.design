@@ -101,7 +101,7 @@ $mobile-nav-transition-duration: .5s;
   color: $gray-400;
   display: block;
   font-family: $font-heading;
-  font-weight: 500;
+  font-weight: 600;
   font-size: (24rem/16);
   letter-spacing: .166ex;
   margin: (30rem/16) (20rem/16) 0;
