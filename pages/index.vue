@@ -150,7 +150,7 @@ $mobile-nav-transition-duration: .3s;
 .home-nav-enter, .home-nav-leave-to {
   opacity: 0;
   > .mobile-nav-links {
-    transform: perspective(10em) translate3d(-50%, 0, -5em);
+    transform: perspective(10em) translate3d(-50%, 20%, -5em);
   }
 }
 .mobile-nav {
@@ -216,7 +216,7 @@ $mobile-nav-transition-duration: .3s;
   }
 }
 .modal-overlay {
-  background: linear-gradient(45deg, rgba(0,66,88,1) 16%, rgba(3,161,213,1) 46%, rgba(3,161,213,1) 58%, rgba(201,242,255,1) 94%);
+  background: linear-gradient(45deg, rgba(0,32,42,1) 0%, rgba(0,66,88,1) 16%, rgba(0,82,152,1) 39%, rgba(0,82,152,1) 59%, rgba(34,118,190,1) 65%, rgba(0,82,152,1) 73%, rgba(201,242,255,1) 100%);
   mix-blend-mode: color-burn;
   position: fixed;
     top: 0;
