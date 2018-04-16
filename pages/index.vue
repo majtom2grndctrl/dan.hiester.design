@@ -68,7 +68,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$mobile-nav-transition-duration: .5s;
+$mobile-nav-transition-duration: .3s;
 
 .home-container {
   background: url('~/assets/img/home-header-background@1x.jpg') 50% 50% / cover no-repeat #6E8A93;
@@ -142,8 +142,9 @@ $mobile-nav-transition-duration: .5s;
   }
 }
 .home-nav-enter-active, .home-nav-leave-active {
+  mix-blend-mode: color-burn;
   position: absolute;
-    z-index: 4;
+    z-index: 6;
   transition: opacity .2s ease-in-out, background-color $mobile-nav-transition-duration;
 }
 .home-nav-enter, .home-nav-leave-to {
@@ -215,7 +216,8 @@ $mobile-nav-transition-duration: .5s;
   }
 }
 .modal-overlay {
-  background: rgba(0, 0, 0, .55);
+  background: linear-gradient(45deg, rgba(0,66,88,1) 16%, rgba(3,161,213,1) 46%, rgba(3,161,213,1) 58%, rgba(201,242,255,1) 86%);
+  mix-blend-mode: color-burn;
   position: fixed;
     top: 0;
     right: 0;
