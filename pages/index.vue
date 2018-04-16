@@ -68,6 +68,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$mobile-nav-transition-duration: .5s;
+
 .home-container {
   background: url('~/assets/img/home-header-background@1x.jpg') 50% 50% / cover no-repeat #6E8A93;
   min-height: 100vh;
@@ -140,12 +142,15 @@ export default {
   }
 }
 .home-nav-enter-active, .home-nav-leave-active {
-  transition: opacity .2s ease-in-out;
   position: absolute;
     z-index: 4;
+  transition: opacity .2s ease-in-out, background-color $mobile-nav-transition-duration;
 }
 .home-nav-enter, .home-nav-leave-to {
   opacity: 0;
+  > .mobile-nav-links {
+    transform: perspective(10em) translate3d(-50%, 0, -5em);
+  }
 }
 .mobile-nav {
   @media (min-width: $viewport-small) {
@@ -173,6 +178,7 @@ export default {
   }
   &-close-button {
     color: rgba(255, 255, 255, .5);
+    cursor: pointer;
     position: absolute;
       top: .95em;
       left: 150%;
@@ -191,7 +197,8 @@ export default {
       left: 38%;
       z-index: 6;
     text-align: left;
-    transform: translate(-50%, 0);
+    transition: transform $mobile-nav-transition-duration ease-out;
+    transform: perspective(10em) translate3d(-50%, 0, 0);
     > h2 {
       color: rgba(255, 255, 255, .66);
       font-weight: 400;
