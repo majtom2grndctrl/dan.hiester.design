@@ -2,11 +2,11 @@
   <main class="home-container">
     <header>
       <dy-logo class="home-logo" />
-      <h1 class="title">Distantly Yours</h1>
+      <h1 class="title" :class="mobileNav && 'mobileNavOpen'">Distantly Yours</h1>
       <div class="subtitle">Push Farther</div>
     </header>
     <div class="mobile-nav">
-      <button v-on:click="mobileNav = !mobileNav" class="mobile-nav-launcher">
+      <button v-on:click="mobileNav = !mobileNav" class="mobile-nav-launcher" :class="mobileNav && 'mobileNavOpen'">
         <svg width="18px" height="17px" viewBox="0 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <title></title>
             <g id="Home-Mobile-3a" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-118.000000, -365.000000)" opacity="0.599524457">
@@ -41,7 +41,7 @@
       <nuxt-link to="/about">About</nuxt-link>
       <nuxt-link to="/contact">Contact</nuxt-link>
     </nav>
-    <nuxt-link class="down-button-link" to="/portfolio">
+    <nuxt-link class="down-button-link" :class="mobileNav && 'mobileNavOpen'" to="/portfolio">
       <down-button />
     </nuxt-link>
   </main>
@@ -96,6 +96,8 @@ $mobile-nav-transition-duration: .3s;
 }
 .home-logo {
   mix-blend-mode: color-burn;
+  position: relative;
+    z-index: 1;
 }
 .title {
   color: $gray-400;
@@ -107,6 +109,12 @@ $mobile-nav-transition-duration: .3s;
   margin: (30rem/16) (20rem/16) 0;
   text-transform: uppercase;
   text-align: center;
+  transition: filter .2s, opacity .2s;
+  &.mobileNavOpen {
+//    filter: blur(1em);
+//    opacity: 1;
+    opacity: .075;
+  }
   @media (min-width: $viewport-small) {
     margin: 0 (46rem/16) 0 (30rem/16);
     text-align: left;
@@ -142,13 +150,19 @@ $mobile-nav-transition-duration: .3s;
   }
 }
 .home-nav-enter-active, .home-nav-leave-active {
-  mix-blend-mode: color-burn;
-  position: absolute;
-    z-index: 6;
-  transition: opacity .2s ease-in-out, background-color $mobile-nav-transition-duration;
+  //mix-blend-mode: color-burn;
+  transition: background-color $mobile-nav-transition-duration; // background-color is just there to trigger the transition timing.
+  .modal-overlay {
+    mix-blend-mode: color-burn;
+  }
+  .modal-overlay, .mobile-nav-links {
+    transition: opacity .2s ease-in-out, transform .2s;
+  }
 }
 .home-nav-enter, .home-nav-leave-to {
-  opacity: 0;
+  > .modal-overlay, > .mobile-nav-links {
+    opacity: 0;
+  }
   > .mobile-nav-links {
     transform: perspective(10em) translate3d(-50%, 20%, -5em);
   }
@@ -172,16 +186,22 @@ $mobile-nav-transition-duration: .3s;
     font-size: (24rem/16);
     margin: 10vh 0 0 0;
     text-transform: uppercase;
+    transition: filter .3s, opacity .3s;
     width: 5em;
+    &.mobileNavOpen {
+//      filter: blur(.25em);
+//      opacity: .5;
+        opacity: .1;
+    }
     &:active {
       outline: none;
     }
   }
   &-close-button {
-    color: rgba(255, 255, 255, .5);
+    color: rgba(255, 255, 255, .7);
     cursor: pointer;
     position: absolute;
-      top: .95em;
+      top: 1.025em;
       left: 150%;
   }
   &-links {
@@ -247,6 +267,11 @@ $mobile-nav-transition-duration: .3s;
       top: 78%;
       z-index: 1;
     opacity: .68;
+    transition: filter .3s, opacity .3s;
+    &.mobileNavOpen {
+      filter: blur(.25em);
+      opacity: .5;
+    }
   }
   .circle {
     opacity: 0;
