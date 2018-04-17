@@ -213,7 +213,7 @@ $mobile-nav-transition-duration: .3s;
       align-content: flex-start;
       justify-content: space-between;
     height: 40vh;
-    padding: 1em 0 1em 2em;
+    padding: .5em 0 1em 1em;
     position: fixed;
       top: 30%;
       left: 38%;
@@ -226,12 +226,14 @@ $mobile-nav-transition-duration: .3s;
       font-weight: 400;
       font-size: (16rem/16);
       margin: 0;
+      padding: (12rem/16);
       text-transform: uppercase;
     }
     > a {
       color: #fff;
       display: block;
       font-size: (24rem/16);
+      padding: .5em;
       text-decoration: none;
     }
   }
