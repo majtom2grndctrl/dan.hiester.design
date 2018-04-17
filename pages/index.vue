@@ -111,9 +111,10 @@ $mobile-nav-transition-duration: .3s;
   text-align: center;
   transition: filter .2s, opacity .2s;
   &.mobileNavOpen {
-//    filter: blur(1em);
-//    opacity: 1;
     opacity: .075;
+    @media (min-width: $viewport-small) {
+      opacity: 1;
+    }
   }
   @media (min-width: $viewport-small) {
     margin: 0 (46rem/16) 0 (30rem/16);
@@ -271,6 +272,10 @@ $mobile-nav-transition-duration: .3s;
     &.mobileNavOpen {
       filter: blur(.25em);
       opacity: .5;
+      @media (min-width: $viewport-small) {
+        opacity: 1;
+        filter: none;
+      }
     }
   }
   .circle {
