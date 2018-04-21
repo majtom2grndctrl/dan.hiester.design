@@ -165,7 +165,7 @@ $mobile-nav-transition-duration: .3s;
     opacity: 0;
   }
   > .mobile-nav-links {
-    transform: perspective(10em) translate3d(-50%, 20%, -5em);
+    transform: perspective(10em) translate3d(-70%, 20%, -5em);
   }
 }
 .mobile-nav {
@@ -202,8 +202,8 @@ $mobile-nav-transition-duration: .3s;
     color: rgba(255, 255, 255, .7);
     cursor: pointer;
     position: absolute;
-      top: 1.025em;
-      left: 150%;
+      top: 1.1em;
+      left: 100%;
   }
   &-links {
     border-left: 1px solid rgba(255, 255, 255, .5);
@@ -212,11 +212,13 @@ $mobile-nav-transition-duration: .3s;
       flex-direction: column;
       align-content: flex-start;
       justify-content: space-between;
-    height: 40vh;
-    padding: .5em 0 1em 1em;
+    font-size: (24rem/16);
+    height: 55vh;
+    width: 50vw;
+    padding: .5em 0 1em .5em;
     position: fixed;
-      top: 30%;
-      left: 38%;
+      top: 22.5%;
+      left: 50%;
       z-index: 6;
     text-align: left;
     transition: transform $mobile-nav-transition-duration ease-out;
@@ -224,16 +226,15 @@ $mobile-nav-transition-duration: .3s;
     > h2 {
       color: rgba(255, 255, 255, .66);
       font-weight: 400;
-      font-size: (16rem/16);
+      font-size: (16em/24);
       margin: 0;
-      padding: (12rem/16);
+      padding: (16rem/16);
       text-transform: uppercase;
     }
     > a {
       color: #fff;
       display: block;
-      font-size: (24rem/16);
-      padding: .5em;
+      padding: .75em;
       text-decoration: none;
     }
   }
