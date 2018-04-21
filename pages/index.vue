@@ -240,8 +240,11 @@ $mobile-nav-transition-duration: .3s;
   }
 }
 .modal-overlay {
-  background: linear-gradient(45deg, rgba(0,32,42,1) 0%, rgba(0,66,88,1) 16%, rgba(0,82,152,1) 39%, rgba(0,82,152,1) 59%, rgba(34,118,190,1) 65%, rgba(0,82,152,1) 73%, rgba(201,242,255,1) 100%);
-  mix-blend-mode: color-burn;
+  background: rgba(0,0,0,.6);
+  @supports (mix-blend-mode: color-burn) {
+    background: linear-gradient(45deg, rgba(0,32,42,1) 0%, rgba(0,66,88,1) 16%, rgba(0,82,152,1) 39%, rgba(0,82,152,1) 59%, rgba(34,118,190,1) 65%, rgba(0,82,152,1) 73%, rgba(201,242,255,1) 100%);
+    mix-blend-mode: color-burn;
+  }
   position: fixed;
     top: 0;
     right: 0;
