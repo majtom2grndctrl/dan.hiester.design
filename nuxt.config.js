@@ -43,4 +43,8 @@ module.exports = {
     }
   },
   css: ['~/assets/html.css'],
+  router: {
+    linkActiveClass: 'active',
+    linkExactActiveClass: 'exact-active'
+  }
 }
