@@ -17,21 +17,7 @@
       <div class="subtitle">Push Farther</div>
     </header>
     <div class="mobile-nav">
-      <button v-on:click="mobileNav = !mobileNav" class="mobile-nav-launcher" :class="mobileNav && 'mobileNavOpen'">
-        <svg width="18px" height="17px" viewBox="0 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <title></title>
-            <g id="Home-Mobile-3a" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-118.000000, -365.000000)" opacity="0.599524457">
-                <g id="Group" transform="translate(118.000000, 357.000000)" fill="#717171">
-                    <g id="mobile-nav-launcher-icon" transform="translate(0.000000, 8.000000)">
-                        <rect id="Rectangle-2" style="mix-blend-mode: multiply;" x="0" y="0" width="18" height="3"></rect>
-                        <rect id="Rectangle-2-Copy" style="mix-blend-mode: multiply;" x="0" y="7" width="18" height="3"></rect>
-                        <rect id="Rectangle-2-Copy-2" style="mix-blend-mode: multiply;" x="0" y="14" width="18" height="3"></rect>
-                    </g>
-                </g>
-            </g>
-        </svg>
-        <span>Menu</span>
-      </button>
+      <mobile-nav-launcher v-on:launch="mobileNav = !mobileNav" :class="mobileNav && 'mobileNavOpen'" />
       <transition name="home-nav">
         <div v-if="mobileNav">
           <div class="modal-overlay" v-on:click="mobileNav = !mobileNav" />
@@ -62,24 +48,37 @@
 <script>
 import CloseButton from '~/components/CloseButton.vue'
 import DownButton from '~/components/DownButton.vue'
-import DyLogo from '~/components/DyLogo.vue'
+import MobileNavLauncher from '~/components/buttons/MobileNavLauncher.vue'
 
 export default {
   components: {
     CloseButton,
     DownButton,
-    DyLogo
+    MobileNavLauncher
   },
   data: function() {
     return {
-      mobileNav: false
+      mobileNav: false,
+      logoColors: {
+        dColor: '',
+        overlapColor: '#00B3EE',
+        yColor: '',
+      }
     }
   },
+  methods: {
+    handleScroll () {
+      // TODO Navigate to portfolio on scroll down.
+      return router.push('/portfolio')
+    }
+  }
 }
 </script>
 
+
 <style lang="scss" scoped>
 $mobile-nav-transition-duration: .3s;
+$viewport-small: $viewport-small + 5rem;
 
 .home-container {
   background: url('~/assets/img/home-header-background@1x.jpg') 50% 50% / cover no-repeat #6E8A93;
@@ -184,29 +183,10 @@ $mobile-nav-transition-duration: .3s;
     display: none;
   }
   &-launcher {
-    background: none;
-    border: none;
-    outline: none;
-    color: #03A1D5;
-    cursor: pointer;
-    display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-    font-family: $font-heading;
-    font-weight: 600;
-    font-size: (24rem/16);
     margin: 10vh 0 0 0;
-    text-transform: uppercase;
     transition: filter .3s, opacity .3s;
-    width: 5em;
     &.mobileNavOpen {
-//      filter: blur(.25em);
-//      opacity: .5;
         opacity: .1;
-    }
-    &:active {
-      outline: none;
     }
   }
   &-close-button {
@@ -282,7 +262,7 @@ $mobile-nav-transition-duration: .3s;
 .down-button {
   &-link {
     position: absolute;
-      top: 78%;
+      bottom: 3%;
       z-index: 1;
     opacity: .68;
     transition: filter .3s, opacity .3s;
