@@ -64,3 +64,40 @@ body {
 .page-enter, .page-leave-to {
   opacity: 0;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #97A3A7;
+  font-family: $font-heading;
+  font-weight: 400;
+}
+
+main.container {
+  margin: 0 (20rem/16);
+}
+
+.t1-header {
+  display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+  @media (min-width: $viewport-small) {
+    justify-content: flex-start;
+  }
+}
+.t1-title {
+  font-size: (36rem/16);
+  margin: 0;
+  @media (min-width: $viewport-small) {
+    font-size: (64rem/16);
+    margin: 0 (48rem/16) 0 0;
+  }
+}
+.t1-nav {
+  > a {
+    color: #97A3A7;
+    text-decoration: none;
+    @media (min-width: $viewport-small) {
+      margin: 0 (48rem/16) 0 0;
+    }
+  }
+}

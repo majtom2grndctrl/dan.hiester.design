@@ -3,10 +3,11 @@
     <header class="header">
       <nuxt-link to="/" class="logo">
         <dy-logo />
-        <span>Distantly Yours</span>
+        <span class="distantly-yours">Distantly Yours</span>
       </nuxt-link>
       <mobile-nav-launcher/>
     </header>
+    
     <slot />
     <footer class="footer"></footer>
   </div>
@@ -32,5 +33,11 @@ export default {
       align-content: center;
       flex-direction: row;
       justify-content: space-between;
+    padding: (20rem/16)
+  }
+  .distantly-yours {
+    position: absolute !important;
+      left: -1000rem;
+    clip: rect(1px, 1px, 1px, 1px);
   }
 </style>

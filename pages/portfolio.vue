@@ -1,8 +1,10 @@
 <template>
   <main-layout>
     <main class="container">
-      <h1>Portfolio</h1>
-      <nuxt-link to="/portfolio">All Projects</nuxt-link> | <nuxt-link to="/portfolio/ux">UX</nuxt-link>
+      <header class="t1-header">
+        <h1 class="t1-title">Portfolio</h1>
+        <nav class="t1-nav"><nuxt-link to="/portfolio">All Projects</nuxt-link><nuxt-link to="/portfolio/ux">UX</nuxt-link></nav>
+      </header>
       <nuxt-child/>
     </main>
   </main-layout>
