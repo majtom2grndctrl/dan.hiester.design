@@ -47,15 +47,8 @@ body {
 .home-enter-to {
   transform: perspective(100vw) translate3d(0, 0, 0);
 }
-.home-leave {
-  opacity: 1
-}
 .home-leave-active {
-//  display: none !important;
-//  transition: opacity .33s;
-}
-.home-leave-to {
-  opacity: 1;
+  display: none !important;
 }
 
 .swipe-enter-active, .swipe-leave-active {
