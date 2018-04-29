@@ -1,85 +1,76 @@
 <template>
-  <div>
-    <header class="header">
-      <div class="logo-container">
-        <nuxt-link to="/" class="logo">
-          <span class="logo-container">
-            <dy-logo />
-          </span>
-          <span class="distantly-yours">Distantly Yours</span>
-        </nuxt-link>
-      </div>
-      <nav class="verbose-nav">
-        <nuxt-link to="/portfolio">Portfolio</nuxt-link>
-        <nuxt-link to="/blog">Blog</nuxt-link>
-      </nav>
-      <div class="concise-nav">
-        <mobile-nav-launcher/>
-      </div>
+  <main class="container">
+    <header class="t1-header">
+      <h1 class="t1-title"><slot name="section-title"/></h1>
+      <nav class="t1-nav"><slot name="section-navigation"/></nav>
     </header>
-    
-    <slot />
-    <footer class="footer"></footer>
-  </div>
+    <slot/>
+  </main>
 </template>
 
 
 <script>
-import DyLogo from '~/components/DyLogo.vue'
-import MobileNavLauncher from '~/components/buttons/MobileNavLauncher.vue'
-
 export default {
-  components: {
-    DyLogo,
-    MobileNavLauncher
+
+}
+export function swipeTransition(to, from) {
+  if (!from) {
+    return {
+      name: 'swipe'
+    }
+  } else if (from.path === '/') {
+    return {
+      name: 'home',
+      mode: 'in-out'
+    }
+  } else if (to.path === '/') {
+    return {
+      name: 'fade'
+    }
+  }
+   else {
+    return {
+      name: 'swipe'
+    }
   }
 }
 </script>
 
 
 <style lang="scss" scoped>
-  .header {
-    display: flex;
-      align-content: center;
-      flex-direction: row;
-      justify-content: space-between;
-    margin: (20rem/16);
+.t1-header {
+  display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+  @media (min-width: $viewport-small) {
+    justify-content: flex-start;
+  }
+}
+.t1-title {
+  font-size: (36rem/16);
+  letter-spacing: -.0125em;
+  line-height: .9em;
+  margin: 0;
+  @media (min-width: $viewport-small) {
+    font-size: (64rem/16);
+    margin: 0 (48rem/16) 0 (-5rem/16);
+  }
+}
+.t1-nav {
+  > a {
+    color: #97A3A7;
+    text-decoration: none;
     @media (min-width: $viewport-small) {
-      justify-content: flex-start;
-    }
-    @media (min-width: $viewport-medium) {
-      margin: (34rem/16) auto;
-      width: (100% * 12 / 14);
+      margin: 0 (48rem/16) 0 0;
     }
   }
-  .logo-container {
-    @media (min-width: $viewport-medium) {
-      width: (100% * 1 / 12);
-    }
+}
+main.container {
+  margin: 0 (20rem/16);
+  @media (min-width: $viewport-medium) {
+    margin: 0 auto;
+    width: (100% * 12 / 14);
   }
-  .distantly-yours {
-    position: absolute !important;
-      left: -1000rem;
-    clip: rect(1px, 1px, 1px, 1px);
-  }
-  .concise-nav {
-    @media (min-width: $viewport-small) {
-      display: none;
-    }
-  }
-  .verbose-nav {
-    display: none;
-    @media (min-width: $viewport-small) {
-      display: flex;
-        flex-direction: row;
-        align-items: center;
-      > a {
-        color: #97A3A7;
-        display: block;
-        font-size: (15rem/16);
-        margin: 0 (40rem/16) 0 0;
-        text-decoration: none;
-      }
-    }
-  }
+}
 </style>

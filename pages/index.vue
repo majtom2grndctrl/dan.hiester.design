@@ -34,9 +34,7 @@
     </div>
     <nav class="widescreen-links">
       <nuxt-link to="/portfolio">Portfolio</nuxt-link>
-      <nuxt-link to="/elements-of-my-process">Process</nuxt-link>
-      <nuxt-link to="/about">About</nuxt-link>
-      <nuxt-link to="/contact">Contact</nuxt-link>
+      <nuxt-link to="/blog">Blog</nuxt-link>
     </nav>
     <nuxt-link class="down-button-link" :class="mobileNav && 'mobileNavOpen'" to="/portfolio">
       <down-button />
@@ -70,6 +68,17 @@ export default {
     handleScroll () {
       // TODO Navigate to portfolio on scroll down.
       return router.push('/portfolio')
+    }
+  },
+  transition(to, from) {
+    if (!from) {
+      return
+    } else if (from.path === '/') {
+      return
+    } else {
+      return {
+        name: 'fade'
+      }
     }
   }
 }

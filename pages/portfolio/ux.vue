@@ -6,6 +6,11 @@
 </template>
 
 <script>
+import { swipeTransition } from '~/components/layout/MainLayout'
+
 export default {
+  transition(to, from) {
+    return swipeTransition(to, from)
+  }
 }
 </script>

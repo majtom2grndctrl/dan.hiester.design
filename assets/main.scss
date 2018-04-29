@@ -51,32 +51,30 @@ body {
   opacity: 1
 }
 .home-leave-active {
-  display: none !important;
-  transition: opacity 10s 10s;
+//  display: none !important;
+//  transition: opacity .33s;
 }
 .home-leave-to {
   opacity: 1;
 }
 
-.page-enter-active, .page-leave-active {
-  transition: opacity .33s, transform .33s;
+.swipe-enter-active, .swipe-leave-active {
+  transition: opacity .33s, transform .33s ease;
 }
-.page-enter, .page-leave-to {
+.swipe-enter, .swipe-leave-to {
   opacity: 0;
+}
+.swipe-enter {
+  transform: translate3d(2rem, 0, 0);
+}
+.swipe-leave-to {
+  transform: translate3d(-2rem, 0, 0);
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: #97A3A7;
   font-family: $font-heading;
   font-weight: 400;
-}
-
-main.container {
-  margin: 0 (20rem/16);
-  @media (min-width: $viewport-medium) {
-    margin: 0 auto;
-    width: (100% * 12 / 14);
-  }
 }
 
 .t1-header {
@@ -90,10 +88,12 @@ main.container {
 }
 .t1-title {
   font-size: (36rem/16);
+  letter-spacing: -.0125em;
+  line-height: .9em;
   margin: 0;
   @media (min-width: $viewport-small) {
     font-size: (64rem/16);
-    margin: 0 (48rem/16) 0 0;
+    margin: 0 (48rem/16) 0 (-5rem/16);
   }
 }
 .t1-nav {
@@ -103,5 +103,12 @@ main.container {
     @media (min-width: $viewport-small) {
       margin: 0 (48rem/16) 0 0;
     }
+  }
+}
+main.container {
+  margin: 0 (20rem/16);
+  @media (min-width: $viewport-medium) {
+    margin: 0 auto;
+    width: (100% * 12 / 14);
   }
 }
