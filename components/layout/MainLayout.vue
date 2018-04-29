@@ -54,15 +54,31 @@ export function swipeTransition(to, from) {
   margin: 0;
   @media (min-width: $viewport-small) {
     font-size: (64rem/16);
-    margin: 0 (48rem/16) 0 (-5rem/16);
+    margin: 0 (40rem/16) 0 (-5rem/16);
   }
 }
 .t1-nav {
+  @media (min-width: $viewport-small) {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
   > a {
+    border-bottom: (1rem/16) solid rgba(3, 161, 213, 0);
     color: #97A3A7;
+    display: block;
     text-decoration: none;
+    transition: border-bottom-color .66s;
     @media (min-width: $viewport-small) {
-      margin: 0 (48rem/16) 0 0;
+      margin: 0 (17rem/16) 0 0;
+      padding: (10rem/16) (8rem/16) (8rem/16);
+    }
+    &.exact-active {
+      border-bottom-color: rgba(3, 161, 213, .3);
+      @media (min-resolution: 1.25dppx) {
+        border-bottom-width: (1.5rem/16);
+        padding-bottom: (7.5rem/16);
+      }
     }
   }
 }
