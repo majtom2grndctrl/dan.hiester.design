@@ -19,10 +19,7 @@ export function swipeTransition(to, from) {
       name: 'swipe'
     }
   } else if (from.path === '/') {
-    return {
-      name: 'home',
-      mode: 'in-out'
-    }
+    return
   } else if (to.path === '/') {
     return {
       name: 'fade'

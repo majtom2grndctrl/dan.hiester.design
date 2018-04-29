@@ -8,11 +8,14 @@
 
 
 <script>
-import MainLayout, { pageTransition } from '~/components/layout/MainLayout.vue'
+import MainLayout, { swipeTransition } from '~/components/layout/MainLayout.vue'
 
 export default {
   components: {
     MainLayout
+  },
+  transition(to, from) {
+    return swipeTransition(to, from)
   }
 }
 </script>

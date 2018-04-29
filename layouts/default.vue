@@ -23,9 +23,7 @@
               <mobile-nav-launcher/>
             </div>
           </header>
-          <transition name="swipe">
-            <nuxt/>
-          </transition>
+          <nuxt/>
           <footer class="footer"></footer>
         </div>
       </template>
