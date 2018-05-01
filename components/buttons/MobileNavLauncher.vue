@@ -17,5 +17,24 @@
 </template>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
+.mobile-nav-launcher {
+  background: none;
+  border: none;
+  outline: none;
+  color: #03A1D5;
+  cursor: pointer;
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  font-family: $font-heading;
+  font-weight: 600;
+  font-size: (24rem/16);
+  text-transform: uppercase;
+  width: 5em;
+  &:active {
+    outline: none;
+  }
+}
 </style>
