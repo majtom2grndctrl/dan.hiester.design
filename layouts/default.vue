@@ -6,7 +6,7 @@
       </template>
       <template v-if="$nuxt.$route.path !== '/'">
         <div>
-          <header class="header">
+          <header class="site-header">
             <div class="logo-container">
               <nuxt-link to="/" class="logo">
                 <span class="logo-container">
@@ -60,9 +60,8 @@ export default {
 }
 </script>
 
-
-<style lang="scss" scoped>
-.header {
+<style lang="scss">
+.site-header {
   display: flex;
     align-content: center;
     flex-direction: row;
