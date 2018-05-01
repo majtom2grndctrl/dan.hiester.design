@@ -14,9 +14,7 @@
             <CloseButton class="mobile-nav-close-button"/>
             <h2>Menu</h2>
             <nuxt-link to="/portfolio">Portfolio</nuxt-link>
-            <nuxt-link to="/elements-of-my-process">Process</nuxt-link>
-            <nuxt-link to="/about">About</nuxt-link>
-            <nuxt-link to="/contact">Contact</nuxt-link>
+            <nuxt-link to="/blog">Blog</nuxt-link>
           </nav>
         </div>
       </transition>
@@ -204,11 +202,13 @@ $viewport-small: $viewport-small + 5rem;
       align-content: flex-start;
       justify-content: space-between;
     font-size: (24rem/16);
-    height: 55vh;
+//    height: 55vh;
+    height: 33vh;
     width: 50vw;
     padding: .5em 0 1em .5em;
     position: fixed;
-      top: 22.5%;
+//      top: 22.5%;
+      top: 33%;
       left: 50%;
       z-index: 6;
     text-align: left;
