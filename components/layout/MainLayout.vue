@@ -1,8 +1,8 @@
 <template>
   <main class="container">
-    <header class="t1-header">
-      <h1 class="t1-title"><slot name="section-title"/></h1>
-      <nav class="t1-nav"><slot name="section-navigation"/></nav>
+    <header class="header">
+      <h1 class="title"><slot name="section-title"/></h1>
+      <nav class="nav"><slot name="section-navigation"/></nav>
     </header>
     <slot/>
   </main>
@@ -35,16 +35,17 @@ export function swipeTransition(to, from) {
 
 
 <style lang="scss" scoped>
-.t1-header {
+.header {
   display: flex;
     flex-direction: row;
     align-items: baseline;
     justify-content: space-between;
+  margin: 0 0 (14rem/16) 0;
   @media (min-width: $viewport-small) {
     justify-content: flex-start;
   }
 }
-.t1-title {
+.title {
   font-size: (36rem/16);
   letter-spacing: -.0125em;
   line-height: .9em;
@@ -54,7 +55,7 @@ export function swipeTransition(to, from) {
     margin: 0 (40rem/16) 0 (-5rem/16);
   }
 }
-.t1-nav {
+.nav {
   @media (min-width: $viewport-small) {
     display: flex;
     flex-direction: row;
