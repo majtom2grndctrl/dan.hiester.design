@@ -51,7 +51,7 @@ export default {
     align-content: center;
     flex-direction: row;
     justify-content: space-between;
-  margin: (20rem/16);
+  margin: (20rem/16) (20rem/16) (30rem/16) (20rem/16);
   @media (min-width: $viewport-small) {
     justify-content: flex-start;
   }
