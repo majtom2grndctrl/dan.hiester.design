@@ -24,7 +24,7 @@ export default {
 <style lang="scss" scoped>
   .t1-title {
     > .p {
-      letter-spacing: -.05ex;
+      letter-spacing: -.075ex;
     }
     > .o {
       letter-spacing: -.05ex;
