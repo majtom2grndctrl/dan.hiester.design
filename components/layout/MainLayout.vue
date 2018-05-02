@@ -43,6 +43,7 @@ export function swipeTransition(to, from) {
   margin: 0 0 (14rem/16) 0;
   @media (min-width: $viewport-small) {
     justify-content: flex-start;
+    margin: 0 0 (16rem/16) 0;
   }
 }
 .title {
@@ -52,6 +53,7 @@ export function swipeTransition(to, from) {
   margin: 0;
   @media (min-width: $viewport-small) {
     font-size: (64rem/16);
+    line-height: normal;
     margin: 0 (40rem/16) 0 (-5rem/16);
   }
 }
