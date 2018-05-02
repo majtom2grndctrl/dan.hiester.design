@@ -40,9 +40,11 @@ export function swipeTransition(to, from) {
     flex-direction: row;
     align-items: baseline;
     justify-content: space-between;
-  margin: 0 0 (14rem/16) 0;
+  margin: 0 (20rem/16) (14rem/16) (20rem/16);
   @media (min-width: $viewport-small) {
     justify-content: flex-start;
+  }
+  @media (min-width: $viewport-medium) {
     margin: 0 0 (16rem/16) 0;
   }
 }
@@ -50,11 +52,10 @@ export function swipeTransition(to, from) {
   font-size: (36rem/16);
   letter-spacing: -.0125em;
   line-height: .9em;
-  margin: 0;
+  margin: 0 0 0 -.0625em;
   @media (min-width: $viewport-small) {
     font-size: (64rem/16);
     line-height: normal;
-    margin: 0 (40rem/16) 0 (-5rem/16);
   }
 }
 .nav {
@@ -83,7 +84,7 @@ export function swipeTransition(to, from) {
   }
 }
 main.container {
-  margin: 0 (20rem/16);
+  margin: 0;
   @media (min-width: $viewport-medium) {
     margin: 0 auto;
     width: (100% * 12 / 14);
