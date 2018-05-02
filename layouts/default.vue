@@ -9,9 +9,7 @@
           <header class="site-header">
             <div class="logo-container">
               <nuxt-link to="/" class="logo">
-                <span class="logo-container">
-                  <dy-logo />
-                </span>
+                <dy-logo />
                 <span class="distantly-yours">Distantly Yours</span>
               </nuxt-link>
             </div>
@@ -64,7 +62,7 @@ export default {
 <style lang="scss">
 .site-header {
   display: flex;
-    align-content: center;
+    align-items: center;
     flex-direction: row;
     justify-content: space-between;
   margin: (20rem/16) (20rem/16) (30rem/16) (20rem/16);
@@ -77,68 +75,48 @@ export default {
   }
 }
 .logo-container {
+  width: (100% * 2/12);
   @media (min-width: $viewport-medium) {
+    position: relative;
     width: (100% * 1 / 12);
-  }
-}
-.distantly-yours {
-  position: absolute !important;
-    left: -1000rem;
-  clip: rect(1px, 1px, 1px, 1px);
-}
-.mobile-nav {
-  @media (min-width: $viewport-small) {
-    display: none;
-  }
-}
-.desktop-nav {
-  display: none;
-  @media (min-width: $viewport-small) {
-    display: flex;
-      flex-direction: row;
-      align-items: center;
-    margin: 0 0 0 (-8rem/16);
-    > a {
-      border-bottom: (1rem/16) solid rgba(3, 161, 213, 0);
-      color: #97A3A7;
-      display: block;
-      font-size: (15rem/16);
-      line-height: 1em;
-      margin: 0 (17rem/16) 0 0;
-      padding: (10rem/16) (8rem/16) (8rem/16);
-      text-decoration: none;
-      transition: border-bottom-color .66s;
-      &.active {
-        border-bottom-color: rgba(3, 161, 213, .3);
-        @media (min-resolution: 1.25dppx) {
-          border-bottom-width: (1.5rem/16);
-          padding-bottom: (7.5rem/16);
-        }
+    &:hover {
+      .distantly-yours {
+        opacity: 1;
+        filter: blur(0);
+        transform: translate(0, -50%) rotate3d(0, 0, 0, 45deg);
+      }
+      + .desktop-nav {
+        filter: blur(.5em);
+        opacity: 0;
+        transform: translate3d(3em, 0, 0);
       }
     }
   }
 }
+.distantly-yours {
+  color: $gray-400;
+  filter: blur(.66em);
+  font-family: $font-heading;
+  font-weight: 500;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+    top: 50%;
+    left: 4rem;
+  width: 10em;
+  text-transform: uppercase;
+  transform: translate(0, -50%) rotate3d(-1, 2, 0, 45deg);
+  transition: opacity .6s, filter .6s ease, transform .6s;
+}
+.logo {
+  display: inline-block;
+}
+
+// Navitation
+// -- Mobile Navigation
 
 $mobile-nav-transition-duration: .3s;
 
-.home-nav-enter-active, .home-nav-leave-active {
-  //mix-blend-mode: color-burn;
-  transition: background-color $mobile-nav-transition-duration; // background-color is just there to trigger the transition timing.
-  .modal-overlay {
-    mix-blend-mode: color-burn;
-  }
-  .modal-overlay, .mobile-nav-links {
-    transition: opacity .2s ease-in-out, transform .2s;
-  }
-}
-.home-nav-enter, .home-nav-leave-to {
-  > .modal-overlay, > .mobile-nav-links {
-    opacity: 0;
-  }
-  > .mobile-nav-links {
-    transform: perspective(10em) translate3d(-70%, 20%, -5em);
-  }
-}
 .mobile-nav {
   @media (min-width: $viewport-small) {
     display: none;
@@ -204,6 +182,55 @@ $mobile-nav-transition-duration: .3s;
     bottom: 0;
     left: 0;
     z-index: 5;
+}
+
+// -- Desktop navigation
+.desktop-nav {
+  display: none;
+  @media (min-width: $viewport-small) {
+    display: flex;
+      flex-direction: row;
+      align-items: center;
+    margin: 0 0 0 (-8rem/16);
+    transition: transform .5s ease, opacity .5s, filter .5s;
+    > a {
+      border-bottom: (1rem/16) solid rgba(3, 161, 213, 0);
+      color: #97A3A7;
+      display: block;
+      font-size: (15rem/16);
+      line-height: 1em;
+      margin: 0 (17rem/16) 0 0;
+      padding: (10rem/16) (8rem/16) (8rem/16);
+      text-decoration: none;
+      transition: border-bottom-color .66s;
+      &.active {
+        border-bottom-color: rgba(3, 161, 213, .3);
+        @media (min-resolution: 1.25dppx) {
+          border-bottom-width: (1.5rem/16);
+          padding-bottom: (7.5rem/16);
+        }
+      }
+    }
+  }
+}
+
+.home-nav-enter-active, .home-nav-leave-active {
+  //mix-blend-mode: color-burn;
+  transition: background-color $mobile-nav-transition-duration; // background-color is just there to trigger the transition timing.
+  .modal-overlay {
+    mix-blend-mode: color-burn;
+  }
+  .modal-overlay, .mobile-nav-links {
+    transition: opacity .2s ease-in-out, transform .2s;
+  }
+}
+.home-nav-enter, .home-nav-leave-to {
+  > .modal-overlay, > .mobile-nav-links {
+    opacity: 0;
+  }
+  > .mobile-nav-links {
+    transform: perspective(10em) translate3d(-70%, 20%, -5em);
+  }
 }
 .subtitle {
   display: none;
