@@ -22,15 +22,13 @@ export default {
 
 
 <style lang="scss" scoped>
-  .t1-title {
-    > .p {
-      letter-spacing: -.075ex;
-    }
-    > .o {
-      letter-spacing: -.05ex;
-    }
-    > .f {
-      letter-spacing: -.025ex;
-    }
+  .p {
+    letter-spacing: -.075ex;
+  }
+  .o {
+    letter-spacing: -.05ex;
+  }
+  .f {
+    letter-spacing: -.025ex;
   }
 </style>
