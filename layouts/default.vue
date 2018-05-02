@@ -33,6 +33,7 @@
                 </div>
               </transition>
             </div>
+            <div class="subtitle">Push Farther</div>
           </header>
           <nuxt/>
           <footer class="footer"></footer>
@@ -71,7 +72,7 @@ export default {
     justify-content: flex-start;
   }
   @media (min-width: $viewport-medium) {
-    margin: (34rem/16) auto;
+    margin: (34rem/16) auto (20rem/16) auto;
     width: (100% * 12 / 14);
   }
 }
@@ -203,6 +204,35 @@ $mobile-nav-transition-duration: .3s;
     bottom: 0;
     left: 0;
     z-index: 5;
+}
+.subtitle {
+  display: none;
+  @media (min-width: $viewport-medium) {
+    color: #797979;
+    display: block;
+    font-weight: 300;
+    font-size: (15rem/16);
+    letter-spacing: .05ex;
+    opacity: .6;
+    padding: 0;
+    position: absolute;
+      top: (48rem/16);
+      right: (100% * 1/14);
+    text-transform: uppercase;
+    &:before {
+      color: #076381;
+      content: '//';
+      font-size: (26em/15);
+      font-weight: bold;
+      font-style: italic;
+      mix-blend-mode: color-burn;
+      padding: 0 .125em;
+      position: absolute;
+        left: -(20em/15);
+        top: 45%;
+      transform: translate(0, -50%);
+    }
+  }
 }
 
 </style>

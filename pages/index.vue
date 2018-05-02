@@ -3,7 +3,7 @@
     <header>
       <dy-logo width="71px" height="52px" style="mix-blend-mode: color-burn;" d-fill="rgba(3, 161, 213, 100)" d-style="mix-blend-mode: color-burn;" y-fill="rgba(3, 161, 213, 100)" y-style="mix-blend-mode: color-burn;" overlap-fill="#00B3EE" />
       <h1 class="title" :class="mobileNav && 'mobileNavOpen'">Distantly Yours</h1>
-      <div class="subtitle">Push Farther</div>
+      <div class="home-subtitle">Push Farther</div>
     </header>
     <div class="mobile-nav">
       <mobile-nav-launcher v-on:launch="mobileNav = !mobileNav" :class="mobileNav && 'mobileNavOpen'" />
@@ -132,7 +132,7 @@ $viewport-small: $viewport-small + 5rem;
     font-size: (29rem/16);
   }
 }
-.subtitle {
+.home-subtitle {
   display: none;
   @media (min-width: $viewport-small) {
     color: #797979;
