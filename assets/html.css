@@ -1,4 +1,6 @@
+@media (min-width: 50rem) {
 html {
-/*  font-size: calc(100% + 4 * (100vw - 1024px) / 896);*/
-  font-size: calc(100% + 4 * (100vw - 1280px) / 896);
+  /*  font-size: calc(100% + 4 * (100vw - 1024px) / 896);*/
+    font-size: calc(100% + 4 * (100vw - 1280px) / 896);
+  }
 }
