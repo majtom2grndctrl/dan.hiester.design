@@ -77,7 +77,6 @@ export default {
 .logo-container {
   width: (100% * 2/12);
   @media (min-width: $viewport-medium) {
-    position: relative;
     width: (100% * 1 / 12);
     &:hover {
       .distantly-yours {
@@ -93,23 +92,26 @@ export default {
     }
   }
 }
+.logo {
+  display: inline-block;
+  position: relative;
+}
 .distantly-yours {
   color: $gray-400;
   filter: blur(.66em);
   font-family: $font-heading;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: (18rem/16);
+  letter-spacing: .166ex;
   opacity: 0;
   pointer-events: none;
   position: absolute;
     top: 50%;
-    left: 4rem;
-  width: 10em;
+    left: 142%;
+  width: 12em;
   text-transform: uppercase;
   transform: translate(0, -50%) rotate3d(-1, 2, 0, 55deg);
   transition: opacity .4s, filter .6s ease, transform .6s;
-}
-.logo {
-  display: inline-block;
 }
 
 // Navitation
