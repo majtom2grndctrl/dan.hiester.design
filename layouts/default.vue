@@ -105,8 +105,8 @@ export default {
     left: 4rem;
   width: 10em;
   text-transform: uppercase;
-  transform: translate(0, -50%) rotate3d(-1, 2, 0, 45deg);
-  transition: opacity .6s, filter .6s ease, transform .6s;
+  transform: translate(0, -50%) rotate3d(-1, 2, 0, 55deg);
+  transition: opacity .4s, filter .6s ease, transform .6s;
 }
 .logo {
   display: inline-block;
