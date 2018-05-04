@@ -17,6 +17,7 @@
               <nuxt-link to="/portfolio">Portfolio</nuxt-link>
               <nuxt-link to="/blog">Blog</nuxt-link>
             </nav>
+            <div class="push-farther">Push Farther</div>
             <div class="mobile-nav">
               <mobile-nav-launcher v-on:launch="mobileNav = !mobileNav" :class="mobileNav && 'mobileNavOpen'" />
               <transition name="home-nav">
@@ -31,7 +32,6 @@
                 </div>
               </transition>
             </div>
-            <div class="subtitle">Push Farther</div>
           </header>
           <nuxt/>
           <footer class="footer"></footer>
@@ -85,9 +85,12 @@ export default {
         transform: translate(0, -50%) rotate3d(0, 0, 0, 45deg);
       }
       + .desktop-nav {
-        filter: blur(.5em);
         opacity: 0;
         transform: translate3d(3em, 0, 0);
+        + .push-farther {
+          opacity: 0;
+          transform: translate3d(3em, 0, 0);
+        }
       }
     }
   }
@@ -194,7 +197,7 @@ $mobile-nav-transition-duration: .3s;
       flex-direction: row;
       align-items: center;
     margin: 0 0 0 (-8rem/16);
-    transition: transform .5s ease, opacity .5s, filter .5s;
+    transition: transform .5s ease, opacity .5s;
     > a {
       border-bottom: (1rem/16) solid rgba(3, 161, 213, 0);
       color: #97A3A7;
@@ -234,7 +237,7 @@ $mobile-nav-transition-duration: .3s;
     transform: perspective(10em) translate3d(-70%, 20%, -5em);
   }
 }
-.subtitle {
+.push-farther {
   display: none;
   @media (min-width: $viewport-medium) {
     color: #797979;
@@ -248,6 +251,7 @@ $mobile-nav-transition-duration: .3s;
       top: (48rem/16);
       right: (100% * 1/14);
     text-transform: uppercase;
+    transition: transform .5s ease, opacity .5s;
     &:before {
       color: #076381;
       content: '//';
