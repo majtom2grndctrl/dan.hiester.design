@@ -14,9 +14,11 @@
   },
   "dependencies": {
     "nuxt": "npm:nuxt-edge",
-    "nuxt-edge": "npm:nuxt-edge"
+    "nuxt-edge": "npm:nuxt-edge",
+    "nuxt-property-decorator": "^1.2.0"
   },
   "devDependencies": {
+    "@types/node": "^10.0.4",
     "babel-eslint": "^8.2.3",
     "eslint": "^4.15.0",
     "eslint-friendly-formatter": "^4.0.1",
@@ -24,6 +26,8 @@
     "eslint-plugin-vue": "^4.5.0",
     "node-sass": "^4.9.0",
     "nuxt-sass-resources-loader": "^2.0.0",
-    "sass-loader": "^7.0.1"
+    "sass-loader": "^7.0.1",
+    "ts-loader": "^4.2.0",
+    "typescript": "^2.8.3"
   }
 }
