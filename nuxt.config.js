@@ -22,7 +22,8 @@ module.exports = {
   */
   loading: { color: 'rgba(3, 161, 213, .3)' },
   modules: [
-    ['nuxt-sass-resources-loader', '~/assets/main.scss']
+    ['nuxt-sass-resources-loader', '~/assets/main.scss'],
+    '~/modules/typescript.js'
   ],
   /*
   ** Build configuration
