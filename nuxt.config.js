@@ -32,6 +32,17 @@ module.exports = {
     ** Run ESLint on save
     */
     extend (config, { isDev, isClient }) {
+      const tsLoader = {
+        loader: 'ts-loader',
+        options: { appendTsSuffixTo: [/\.vue$/], transpileOnly: true },
+        exclude: [/vendor/, /\.nuxt/],
+      }
+      config.module.rules.push({ test: /((client|server)\.js)|(\.tsx?)$/, ...tsLoader })
+      config.resolve.extensions.push('.ts')
+      config.module.rules.map((rule) => {
+        if (rule.loader === 'vue-loader') { rule.options.loaders = { ts: tsLoader } }
+        return rule
+      })
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
