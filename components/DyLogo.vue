@@ -10,42 +10,34 @@
 </template>
 
 
-<script>
-export default {
-  props: {
-    width: {
-      default: `${46/16}rem`,
-      type: String
-    },
-    height: {
-      default: `${34/16}rem`,
-      type: String
-    },
-    dFill: {
-      default: 'rgba(3, 161, 213, .3)',
-      type: String
-    },
-    dStyle: {
-      default: '',
-      type: String
-    },
-    overlapFill: {
-      default: 'rgba(174, 200, 209, .6)',
-      type: String
-    },
-    yFill: {
-      default: 'rgba(3, 161, 213, .17)',
-      type: String
-    },
-    yStyle: {
-      default: '',
-      type: String
-    }
-  },
-  computed: {
-    style () {
-      return `width: ${this.width}; height: ${this.height};`
-    }
+<script lang="ts">
+import { Vue, Component, Prop } from 'nuxt-property-decorator'
+
+@Component({})
+export default class DyLogo extends Vue {
+  @Prop({ default: `${46/16}rem` })
+  width: String
+
+  @Prop({ default: `${34/16}rem` })
+  height: String
+
+  @Prop({ default: 'rgba(3, 161, 213, .3)' })
+  dFill: String
+
+  @Prop({ default: '' })
+  dStyle: String
+
+  @Prop({ default: 'rgba(174, 200, 209, .6)'})
+  overlapFill: String
+
+  @Prop({ default: 'rgba(3, 161, 213, .17)' })
+  yFill: String
+
+  @Prop({ default: '' })
+  yStyle: String
+
+  get style () {
+    return `width: ${this.width}; height: ${this.height};`
   }
 }
 </script>
