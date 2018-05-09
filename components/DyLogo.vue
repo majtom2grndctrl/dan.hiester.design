@@ -16,27 +16,27 @@ import { Vue, Component, Prop } from 'nuxt-property-decorator'
 @Component({})
 export default class DyLogo extends Vue {
   @Prop({ default: `${46/16}rem` })
-  width: String
+  width: string
 
   @Prop({ default: `${34/16}rem` })
-  height: String
+  height: string
 
   @Prop({ default: 'rgba(3, 161, 213, .3)' })
-  dFill: String
+  dFill: string
 
   @Prop({ default: '' })
-  dStyle: String
+  dStyle: string
 
   @Prop({ default: 'rgba(174, 200, 209, .6)'})
-  overlapFill: String
+  overlapFill: string
 
   @Prop({ default: 'rgba(3, 161, 213, .17)' })
-  yFill: String
+  yFill: string
 
   @Prop({ default: '' })
-  yStyle: String
+  yStyle: string
 
-  get style () {
+  get style (): string {
     return `width: ${this.width}; height: ${this.height};`
   }
 }
