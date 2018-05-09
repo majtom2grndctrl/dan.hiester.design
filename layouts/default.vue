@@ -1,6 +1,6 @@
 <template>
   <div>
-    <transition :name="$nuxt.$route.path === '/' ? '' : 'home'" mode="in-out">
+    <transition :name="$nuxt.$route.path === '/' ? '' : 'home'">
       <template v-if="$nuxt.$route.path === '/'">
         <nuxt/>
       </template>
