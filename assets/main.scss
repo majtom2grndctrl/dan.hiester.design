@@ -34,12 +34,12 @@ body {
 }
 
 .home-enter {
-  opacity: 0;
-  transform: perspective(100vw) translate3d(0, 65%, 0);
+  opacity: .5;
+  transform: perspective(100vh) translate3d(0, 100%, 0);
 }
 .home-enter-active {
   background: #fff;
-  transition: opacity .666s, transform .666s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity .33s, transform .666s cubic-bezier(0.165, 0.84, 0.44, 1);
   position: fixed;
     top: 0;
     bottom: 0;
@@ -48,16 +48,16 @@ body {
     z-index: 5;
 }
 .home-enter-to {
-  transform: perspective(100vw) translate3d(0, 0, 0);
+  transform: perspective(100vh) translate3d(0, 0, 0);
 }
 .home-leave-active {
-  transition: opacity .666s, transform .666s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform .666s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .home-leave {
-  transform: perspective(100vw) translate3d(0, 0, 0);
+  transform: perspective(100vh) translate3d(0, 0, 0);
 }
 .home-leave-to {
-  transform: perspective(100vw) translate3d(0, -32.5%, 0);  
+  transform: perspective(100vh) translate3d(0, -60%, 0);
 }
 
 .swipe-enter-active, .swipe-leave-active {
