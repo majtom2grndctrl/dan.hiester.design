@@ -51,7 +51,13 @@ body {
   transform: perspective(100vw) translate3d(0, 0, 0);
 }
 .home-leave-active {
-  display: none !important;
+  transition: opacity .666s, transform .666s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.home-leave {
+  transform: perspective(100vw) translate3d(0, 0, 0);
+}
+.home-leave-to {
+  transform: perspective(100vw) translate3d(0, -32.5%, 0);  
 }
 
 .swipe-enter-active, .swipe-leave-active {
