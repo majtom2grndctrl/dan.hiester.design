@@ -100,7 +100,7 @@ export default {
   position: relative;
 }
 .distantly-yours {
-  color: $gray-400;
+  color: $gray-500;
   filter: blur(.66em);
   font-family: $font-heading;
   font-weight: 600;
