@@ -66,7 +66,7 @@ export function swipeTransition(to, from) {
   }
   > a {
     border-bottom: (1rem/16) solid rgba(3, 161, 213, 0);
-    color: $gray-500;
+    color: $gray-600;
     display: block;
     text-decoration: none;
     transition: border-bottom-color .66s;
