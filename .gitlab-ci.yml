@@ -1,3 +1,5 @@
+image: node:6.10.0
+
 pages:
   script:
   - npm install
@@ -5,5 +7,8 @@ pages:
   artifacts:
     paths:
     - public
+  cache:
+    paths:
+      - node_modules
   only:
   - master
