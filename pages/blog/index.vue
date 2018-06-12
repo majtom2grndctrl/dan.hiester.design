@@ -17,7 +17,7 @@ import PrismicDOM from 'prismic-dom'
 const apiEndpoint = 'https://distantly-yours-blog.cdn.prismic.io/api/v2'
 
 export default {
-  asyncData (context) {
+  async asyncData (context) {
     return Prismic.getApi(apiEndpoint).then( function (api) {
       return api.query(
         Prismic.Predicates.at('document.type', 'blog_post'),
@@ -32,9 +32,7 @@ export default {
             content: PrismicDOM.RichText.asHtml(result.data.body)
           })
         })
-        return {
-          blog_posts: parsed_posts
-        }
+        return { blog_posts: parsed_posts }
       }, (err) => {
         console.log('Something went wrong: ', err)
         return { title: err }
