@@ -1,10 +1,10 @@
 <template>
   <div>
-    <transition :name="$nuxt.$route.path === '/' ? '' : 'home'">
-      <template v-if="$nuxt.$route.path === '/'">
+    <transition :name="this.$route.path === '/' ? '' : 'home'">
+      <template v-if="this.$route.path === '/'">
         <nuxt/>
       </template>
-      <template v-if="$nuxt.$route.path !== '/'">
+      <template v-if="this.$route.path !== '/'">
         <div>
           <header class="site-header">
             <div class="logo-container">
