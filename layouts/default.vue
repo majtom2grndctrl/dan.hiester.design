@@ -89,6 +89,7 @@ export default {
         transform: translate3d(3em, 0, 0);
         + .push-farther {
           opacity: 0;
+          filter: blur(.25em);
           transform: translate3d(3em, 0, 0);
         }
       }
@@ -251,7 +252,7 @@ $mobile-nav-transition-duration: .3s;
       top: (48rem/16);
       right: (100% * 1/14);
     text-transform: uppercase;
-    transition: transform .5s ease, opacity .5s;
+    transition: transform .5s ease, opacity .5s, filter .5s;
     &:before {
       color: #076381;
       content: '//';
