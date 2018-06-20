@@ -1,3 +1,6 @@
+const Prismic = require('prismic-javascript')
+const PrismicDOM = require('prismic-dom')
+
 module.exports = {
   /*
   ** Headers of the page
@@ -54,6 +57,52 @@ module.exports = {
     }
   },
   css: ['~/assets/html.css'],
+  generate: {
+    routes: function () {
+      return Prismic.getApi('https://distantly-yours-blog.cdn.prismic.io/api/v2').then( function (api) {
+        return api.query(
+          Prismic.Predicates.at('document.type', 'blog_post'),
+          { orderings : '[my.blog_post.date desc]'}
+        ).then( function (response) {
+          console.log('blog_posts = ', response.results)
+          const routesList = [
+            {
+              route: '/blog',
+              payload: response.results.map( (result) => {
+                return {
+                  title: PrismicDOM.RichText.asText(result.data.title),
+                  content: PrismicDOM.RichText.asHtml(result.data.body)
+                }
+              })
+            }
+          ]
+          response.results.map((result) => {
+            console.log('result = ',result)
+            routesList.push({
+              route: '/blog/' + result.data.slug,
+              payload: {
+                title: PrismicDOM.RichText.asText(result.data.title),
+                content: PrismicDOM.RichText.asHtml(result.data.body)
+              }
+            })
+          })
+          console.log('routesList = ', routesList)
+          return routesList
+/*
+          response.results.map((result) => {
+            return {
+              route: '/blog/' + result.data.slug,
+              payload: {
+                title: PrismicDOM.RichText.asText(result.data.title),
+                content: PrismicDOM.RichText.asHtml(result.data.body)
+              }
+            }
+          })
+*/
+        })
+      })
+    }
+  },
   router: {
     linkActiveClass: 'active',
     linkExactActiveClass: 'exact-active'
