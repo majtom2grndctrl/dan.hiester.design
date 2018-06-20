@@ -8,7 +8,6 @@
 
 <script>
 import Prismic from 'prismic-javascript'
-import PrismicDOM from 'prismic-dom'
 import { apiEndpoint, parseResponse } from './index'
 
 export default {
