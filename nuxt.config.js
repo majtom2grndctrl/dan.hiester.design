@@ -6,17 +6,23 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'distantlyyours-v8',
+    title: 'Distantly Yours',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Codebase for distantlyyours.com, version 8.' }
+      { hid: 'description', name: 'description', content: 'UX Design and Consulting in Seattle, WA' },
+      { name: 'application-name', content: 'Distantly Yours' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png?v=wAO9R4Y0rn' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png?v=wAO9R4Y0rn' },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png?v=wAO9R4Y0rn' },
+      { rel: 'manifest', href:'/site.webmanifest?v=wAO9R4Y0rn' },
+      { rel: 'mask-icon', href:'/safari-pinned-tab.svg?v=wAO9R4Y0rn', color: '#5bbad5' },
+      { rel: 'shortcut icon', href:'/favicon.ico?v=wAO9R4Y0rn', color: '#5bbad5' },
       {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i|Poppins:400,500,600"
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i|Poppins:400,500,600'
       }
     ],
   },
