@@ -1,7 +1,7 @@
 <template>
   <section class="blogIndex">
     <article class="blogPost" v-for="(post, index) in blog_posts" :key="index">
-      <h2><a :href="'/blog/' + post.slug">{{ post.title }}</a></h2>
+      <h2><a :href="'/blog/' + post.slug" v-html="post.title" /></h2>
       <div v-html="post.content" />
     </article>
   </section>
