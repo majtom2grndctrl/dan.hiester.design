@@ -1,7 +1,7 @@
 <template>
   <section class="blogIndex">
     <article class="blogPost" v-for="(post, index) in blog_posts" :key="index">
-      <h2><a :href="'/blog/' + post.slug" v-html="post.title" /></h2>
+      <h2><nuxt-link :to="post.url" v-html="post.title" /></h2>
       <div v-html="post.content" />
     </article>
   </section>
@@ -18,7 +18,7 @@ export const apiEndpoint = 'https://distantly-yours-blog.cdn.prismic.io/api/v2'
 export function parseResponse (response) {
   function parseOne(result) {
     return {
-      slug: result.data.slug,
+      url: '/blog/' + result.data.slug,
       title: PrismicDOM.RichText.asText(result.data.title),
       content: PrismicDOM.RichText.asHtml(result.data.body)
     }
