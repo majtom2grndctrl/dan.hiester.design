@@ -77,7 +77,9 @@ module.exports = {
               payload: response.results.map( (result) => {
                 return {
                   title: PrismicDOM.RichText.asText(result.data.title),
-                  content: PrismicDOM.RichText.asHtml(result.data.body)
+                  content: PrismicDOM.RichText.asHtml(result.data.body),
+                  slug: result.data.slug,
+                  url: '/blog/' + result.data.slug
                 }
               })
             }
@@ -88,23 +90,14 @@ module.exports = {
               route: '/blog/' + result.data.slug,
               payload: {
                 title: PrismicDOM.RichText.asText(result.data.title),
-                content: PrismicDOM.RichText.asHtml(result.data.body)
+                content: PrismicDOM.RichText.asHtml(result.data.body),
+                slug: result.data.slug,
+                url: '/blog/' + result.data.slug
               }
             })
           })
           console.log('routesList = ', routesList)
           return routesList
-/*
-          response.results.map((result) => {
-            return {
-              route: '/blog/' + result.data.slug,
-              payload: {
-                title: PrismicDOM.RichText.asText(result.data.title),
-                content: PrismicDOM.RichText.asHtml(result.data.body)
-              }
-            }
-          })
-*/
         })
       })
     }
