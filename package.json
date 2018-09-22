@@ -13,8 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "nuxt": "npm:nuxt-edge",
-    "nuxt-edge": "npm:nuxt-edge",
+    "nuxt": "^2.0.0",
     "nuxt-property-decorator": "^1.2.0",
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^1.5.0"
