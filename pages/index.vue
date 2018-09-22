@@ -79,7 +79,7 @@ $mobile-nav-transition-duration: .3s;
 $viewport-small: $viewport-small + 5rem;
 
 .home-container {
-  background: url('~/assets/img/home-header-background@1x.jpg') 50% 50% / cover no-repeat #6E8A93;
+  background: url('/img/home-header-background@1x.jpg') 50% 50% / cover no-repeat #6E8A93;
   min-height: 100vh;
   display: flex;
     flex-direction: column;
@@ -87,10 +87,10 @@ $viewport-small: $viewport-small + 5rem;
     align-items: center;
   text-align: center;
   @media (min-width: $viewport-medium) {
-    background: url('~/assets/img/home-header-background@1x.jpg') 50% 50% / contain no-repeat #6E8A93;
+    background: url('/img/home-header-background@1x.jpg') 50% 50% / contain no-repeat #6E8A93;
   }
   @media (min-resolution: 150dpi) {
-    background-image: url('~/assets/img/home-header-background@2x.jpg');
+    background-image: url('/img/home-header-background@2x.jpg');
   }
   > header {
     display: flex;
