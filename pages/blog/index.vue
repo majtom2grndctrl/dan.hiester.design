@@ -38,8 +38,10 @@ console.log('blog_posts = ', response.results)
 
 export default {
   async asyncData (ctx) {
+    console.log('env = ', process.env)
     if (ctx.payload) return { blog_posts: ctx.payload }
-    else return Prismic.getApi(apiEndpoint).then( function (api) {
+
+    else if (process.env.NODE_ENV !== 'production') return Prismic.getApi(apiEndpoint).then( function (api) {
       return api.query(
         Prismic.Predicates.at('document.type', 'blog_post'),
         { orderings : '[my.blog_post.date desc]'}
@@ -50,6 +52,7 @@ export default {
         return { title: err }
       })
     })
+
   },
   transition (to, from) {
     return swipeTransition(to, from)
