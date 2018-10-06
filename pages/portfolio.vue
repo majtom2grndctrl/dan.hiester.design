@@ -8,8 +8,7 @@
 
 
 <script lang="ts">
-import Vue from 'vue'
-import { Component } from 'nuxt-property-decorator'
+import { Vue, Component } from 'nuxt-property-decorator'
 import MainLayout, { swipeTransition } from '~/components/layout/MainLayout.vue'
 
 @Component({
