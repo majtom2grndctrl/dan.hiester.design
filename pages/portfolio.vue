@@ -18,9 +18,9 @@ import MainLayout, { swipeTransition } from '~/components/layout/MainLayout.vue'
   }
 })
 export default class Portfolio extends Vue {
-    transition(to, from) {
-      return swipeTransition(to, from)
-    }
+  transition(to, from) {
+    return swipeTransition(to, from)
+  }
 }
 </script>
 
