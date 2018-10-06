@@ -11,18 +11,24 @@
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
+import { VueClass } from 'vue-class-component/lib/declarations';
 
 @Component({})
 export default class MainLayout extends Vue {
 
 }
-export function swipeTransition(to, from) {
+
+interface transitionReturn {
+    name?: String
+}
+
+export function swipeTransition(to, from): transitionReturn {
   if (!from) {
     return {
       name: 'swipe'
     }
   } else if (from.path === '/') {
-    return
+    return {}
   } else if (to.path === '/') {
     return {
       name: 'fade'
