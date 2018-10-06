@@ -9,8 +9,12 @@
 </template>
 
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+import { Component } from 'nuxt-property-decorator'
+
+@Component({})
+export default class MainLayout extends Vue {
 
 }
 export function swipeTransition(to, from) {

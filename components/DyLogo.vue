@@ -43,7 +43,7 @@ export default Vue.extend({
     }
   },
   computed: {
-    style: function(): string {
+    style: function(): String {
       return `width: ${this.width}; height: ${this.height};`
     }
   }

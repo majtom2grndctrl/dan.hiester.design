@@ -7,16 +7,20 @@
 </template>
 
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
+import { Component } from 'nuxt-property-decorator'
 import MainLayout, { swipeTransition } from '~/components/layout/MainLayout.vue'
 
-export default {
+@Component({
   components: {
     MainLayout
-  },
-  transition(to, from) {
-    return swipeTransition(to, from)
   }
+})
+export default class Portfolio extends Vue {
+    transition(to, from) {
+      return swipeTransition(to, from)
+    }
 }
 </script>
 
