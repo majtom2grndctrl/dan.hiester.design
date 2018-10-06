@@ -21,14 +21,14 @@
   "devDependencies": {
     "@types/node": "10.11.4",
     "babel-eslint": "8.2.6",
-    "eslint": "5.3.0",
+    "eslint": "5.6.1",
     "eslint-friendly-formatter": "4.0.1",
-    "eslint-loader": "2.1.0",
+    "eslint-loader": "2.1.1",
     "eslint-plugin-vue": "4.7.1",
     "node-sass": "4.9.3",
-    "nuxt-sass-resources-loader": "2.0.4",
+    "nuxt-sass-resources-loader": "2.0.5",
     "sass-loader": "7.1.0",
-    "ts-loader": "4.4.2",
-    "typescript": "3.0.1"
+    "ts-loader": "5.2.1",
+    "typescript": "3.1.1"
   }
 }
