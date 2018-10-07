@@ -25,7 +25,7 @@ interface TransitionPath {
     path: String
 }
 
-export function swipeTransition(to: TransitionPath, from: TransitionPath): TransitionReturn {
+export function swipeTransition(to: TransitionPath, from?: TransitionPath): TransitionReturn {
   if (!from) {
     return {
       name: 'swipe'
