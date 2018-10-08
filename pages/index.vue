@@ -1,13 +1,15 @@
+<!-- Splash page -->
+
 <template>
-  <main class="home-container">
+  <main class="splash-container">
     <header>
       <dy-logo width="71px" height="52px" style="mix-blend-mode: color-burn;" d-fill="rgba(3, 161, 213, 100)" d-style="mix-blend-mode: color-burn;" y-fill="rgba(3, 161, 213, 100)" y-style="mix-blend-mode: color-burn;" overlap-fill="#00B3EE" />
       <h1 class="title" :class="mobileNav && 'mobileNavOpen'">Distantly Yours</h1>
-      <div class="home-subtitle">Push Farther</div>
+      <div class="splash-subtitle">Push Farther</div>
     </header>
     <div class="mobile-nav">
       <mobile-nav-launcher v-on:launch="mobileNav = !mobileNav" :class="mobileNav && 'mobileNavOpen'" />
-      <transition name="home-nav">
+      <transition name="splash-nav">
         <div v-if="mobileNav">
           <div class="modal-overlay" v-on:click="mobileNav = !mobileNav" />
           <nav class="mobile-nav-links" v-on:click="mobileNav = !mobileNav">
@@ -78,7 +80,7 @@ export default {
 $mobile-nav-transition-duration: .3s;
 $viewport-small: $viewport-small + 5rem;
 
-.home-container {
+.splash-container {
   background: url('/img/home-header-background@1x.jpg') 50% 50% / cover no-repeat #6E8A93;
   min-height: 100vh;
   display: flex;
@@ -102,7 +104,7 @@ $viewport-small: $viewport-small + 5rem;
     }
   }
 }
-.home-logo {
+.splash-logo {
   mix-blend-mode: color-burn;
   position: relative;
     z-index: 1;
@@ -132,7 +134,7 @@ $viewport-small: $viewport-small + 5rem;
     font-size: (29rem/16);
   }
 }
-.home-subtitle {
+.splash-subtitle {
   display: none;
   @media (min-width: $viewport-small) {
     color: #797979;
@@ -158,7 +160,7 @@ $viewport-small: $viewport-small + 5rem;
     }
   }
 }
-.home-nav-enter-active, .home-nav-leave-active {
+.splash-nav-enter-active, .splash-nav-leave-active {
   //mix-blend-mode: color-burn;
   transition: background-color $mobile-nav-transition-duration; // background-color is just there to trigger the transition timing.
   .modal-overlay {
@@ -168,7 +170,7 @@ $viewport-small: $viewport-small + 5rem;
     transition: opacity .2s ease-in-out, transform .2s;
   }
 }
-.home-nav-enter, .home-nav-leave-to {
+.splash-nav-enter, .splash-nav-leave-to {
   > .modal-overlay, > .mobile-nav-links {
     opacity: 0;
   }
