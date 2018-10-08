@@ -26,7 +26,6 @@ import SiteHeader from '~/components/layout/SiteHeader.vue'
 
 export default {
   components: {
-    DyLogo,
     MobileNavLauncher,
     SiteHeader
   },
