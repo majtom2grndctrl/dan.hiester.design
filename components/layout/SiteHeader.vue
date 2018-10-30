@@ -1,10 +1,17 @@
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
 import DyLogo from '~/components/DyLogo.vue'
+import MobileNavLauncher from '~/components/buttons/MobileNavLauncher.vue'
 
 export default Vue.extend({
   components: {
-    DyLogo
+    DyLogo,
+    MobileNavLauncher
+  },
+  data() {
+    return {
+      mobileNav: false
+    }
   }
 })
 </script>

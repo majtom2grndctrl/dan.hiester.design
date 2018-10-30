@@ -21,18 +21,11 @@
 
 
 <script>
-import MobileNavLauncher from '~/components/buttons/MobileNavLauncher.vue'
 import SiteHeader from '~/components/layout/SiteHeader.vue'
 
 export default {
   components: {
-    MobileNavLauncher,
     SiteHeader
-  },
-  data() {
-    return {
-      mobileNav: false
-    }
   }
 }
 </script>
