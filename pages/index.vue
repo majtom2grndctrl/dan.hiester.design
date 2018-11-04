@@ -77,7 +77,6 @@ export default {
 
 
 <style lang="scss" scoped>
-$mobile-nav-transition-duration: .3s;
 $viewport-small: $viewport-small + 5rem;
 
 .splash-container {
@@ -167,7 +166,7 @@ $viewport-small: $viewport-small + 5rem;
     mix-blend-mode: color-burn;
   }
   .modal-overlay, .mobile-nav-links {
-    transition: opacity .2s ease-in-out, transform .2s;
+    transition: opacity ($mobile-nav-transition-duration * 2/3) ease-in-out, transform ($mobile-nav-transition-duration * 2/3);
   }
 }
 .splash-nav-enter, .splash-nav-leave-to {
