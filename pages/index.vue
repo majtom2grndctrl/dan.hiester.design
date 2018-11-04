@@ -162,9 +162,6 @@ $viewport-small: $viewport-small + 5rem;
 .splash-nav-enter-active, .splash-nav-leave-active {
   //mix-blend-mode: color-burn;
   transition: background-color $mobile-nav-transition-duration; // background-color is just there to trigger the transition timing.
-  .modal-overlay {
-    mix-blend-mode: color-burn;
-  }
   .modal-overlay, .mobile-nav-links {
     transition: opacity ($mobile-nav-transition-duration * 2/3) ease-in-out, transform ($mobile-nav-transition-duration * 2/3);
   }
