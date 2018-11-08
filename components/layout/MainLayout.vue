@@ -1,8 +1,15 @@
 <template>
   <main class="container">
     <header class="header">
-      <h1 class="title"><slot name="section-title"/></h1>
-      <nav class="nav"><slot name="section-navigation"/></nav>
+      <h1 class="title">
+        <div class="title-prefix" v-if="this.$slots['section-title-prefix']">
+          <slot name="section-title-prefix"/>
+        </div>
+        <slot name="section-title"/>
+      </h1>
+      <nav class="nav" v-if="this.$slots['section-navigation']">
+        <slot name="section-navigation"/>
+      </nav>
     </header>
     <slot/>
   </main>
@@ -52,13 +59,13 @@ export function swipeTransition(to: TransitionPath, from?: TransitionPath): Tran
     flex-direction: row;
     align-items: baseline;
     justify-content: space-between;
-  margin: (30rem/16) (20rem/16) (14rem/16) (20rem/16);
+  margin: (30rem/16) (20rem/16) (20rem/16) (20rem/16);
   @media (min-width: $viewport-small) {
     justify-content: flex-start;
-    margin: (30rem/16) (20rem/16) (14rem/16) (20rem/16);
+    margin: (30rem/16) (20rem/16) (20rem/16) (20rem/16);
   }
   @media (min-width: $viewport-medium) {
-    margin: (30rem/16) 0 (30rem/16) 0;
+    margin: (42rem/16) 0 (42rem/16) 0;
   }
 }
 .title {
@@ -68,6 +75,15 @@ export function swipeTransition(to: TransitionPath, from?: TransitionPath): Tran
   margin: 0 0 0 -.0625em;
   @media (min-width: $viewport-small) {
     font-size: (64rem/16);
+  }
+}
+.title-prefix {
+  font-size: (12rem/16);
+  line-height: 1.5em;
+  margin-left: .1em;
+  @media (min-width: $viewport-small) {
+    font-size: (20rem/16);
+    margin-left: .2em;
   }
 }
 .nav {
