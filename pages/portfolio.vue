@@ -32,6 +32,6 @@ export default class Portfolio extends Vue {
     letter-spacing: -.05ex;
   }
   .f {
-    letter-spacing: -.025ex;
+    letter-spacing: -.1ex;
   }
 </style>

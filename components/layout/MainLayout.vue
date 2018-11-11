@@ -72,18 +72,19 @@ export function swipeTransition(to: TransitionPath, from?: TransitionPath): Tran
   font-size: (36rem/16);
   letter-spacing: -.0125em;
   line-height: .9em;
-  margin: 0 0 0 -.0625em;
+  margin: 0 0 0 -.075em;
   @media (min-width: $viewport-small) {
     font-size: (64rem/16);
+    margin: 0 0 0 -.07em;
   }
 }
 .title-prefix {
   font-size: (12rem/16);
   line-height: 1.5em;
-  margin-left: .1em;
+  margin-left: .15em;
   @media (min-width: $viewport-small) {
     font-size: (20rem/16);
-    margin-left: .2em;
+    margin-left: .175em;
   }
 }
 .nav {
