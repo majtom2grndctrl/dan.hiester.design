@@ -14,7 +14,7 @@
     "test": "echo \"No test configured\" && exit 0"
   },
   "dependencies": {
-    "nuxt": "2.2.0",
+    "nuxt": "2.3.2",
     "nuxt-property-decorator": "^1.2.0",
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^1.5.0"
