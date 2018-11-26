@@ -64,42 +64,48 @@ module.exports = {
   },
   css: ['~/assets/html.css'],
   generate: {
-    routes: function () {
-      return Prismic.getApi('https://distantly-yours-blog.cdn.prismic.io/api/v2').then( function (api) {
-        return api.query(
-          Prismic.Predicates.at('document.type', 'blog_post'),
-          { orderings : '[my.blog_post.date desc]'}
-        ).then( function (response) {
-          console.log('blog_posts = ', response.results)
-          const routesList = [
-            {
-              route: '/blog',
-              payload: response.results.map( (result) => {
-                return {
-                  title: PrismicDOM.RichText.asText(result.data.title),
-                  content: PrismicDOM.RichText.asHtml(result.data.body),
-                  slug: result.data.slug,
-                  url: '/blog/' + result.data.slug
-                }
-              })
+    routes: async function () {
+      const api = await Prismic.getApi('https://distantly-yours-blog.cdn.prismic.io/api/v2')
+      const blogQuery = await api.query(Prismic.Predicates.at('document.type', 'blog_post'), { orderings: '[my.blog_post.date desc]' })
+      console.log('blog_posts = ', blogQuery.results)
+      const portfolioQuery = await api.query(Prismic.Predicates.at('document.type', 'case_study'), {} )
+      console.log('Case Studies fetched: ', portfolioQuery.results)
+      const routesList = [
+        {
+          route: '/blog',
+          payload: blogQuery.results.map((result) => {
+            return {
+              title: PrismicDOM.RichText.asText(result.data.title),
+              content: PrismicDOM.RichText.asHtml(result.data.body),
+              slug: result.data.slug,
+              url: '/blog/' + result.data.slug
             }
-          ]
-          response.results.map((result) => {
-            console.log('result = ',result)
-            routesList.push({
-              route: '/blog/' + result.data.slug,
-              payload: {
-                title: PrismicDOM.RichText.asText(result.data.title),
-                content: PrismicDOM.RichText.asHtml(result.data.body),
-                slug: result.data.slug,
-                url: '/blog/' + result.data.slug
-              }
-            })
           })
-          console.log('routesList = ', routesList)
-          return routesList
+        }
+      ]
+      blogQuery.results.map( result => {
+        console.log('result = ', result);
+        routesList.push({
+          route: '/blog/' + result.data.slug,
+          payload: {
+            title: PrismicDOM.RichText.asText(result.data.title),
+            content: PrismicDOM.RichText.asHtml(result.data.body),
+            slug: result.data.slug,
+            url: '/blog/' + result.data.slug
+          }
         })
       })
+      portfolioQuery.results.map( result => {
+        console.log('case study: ', result)
+        routesList.push({
+          route:'/portfolio' + result.data.uid,
+          payload: {
+            data: result.data
+          }
+        })
+      })
+      console.log('routesList = ', routesList)
+      return routesList
     }
   },
   router: {
