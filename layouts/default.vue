@@ -20,14 +20,15 @@
 </template>
 
 
-<script>
+<script lang="ts">
+import { Vue } from 'nuxt-property-decorator'
 import SiteHeader from '~/components/layout/SiteHeader.vue'
 
-export default {
+export default Vue.extend ({
   components: {
     SiteHeader
   }
-}
+})
 </script>
 
 <style lang="scss">

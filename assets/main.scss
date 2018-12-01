@@ -7,7 +7,7 @@ $font-body: 'Arimo', sans-serif;
 $mobile-nav-transition-duration: .3s;
 
 // Colors
-$gray-400: #717171;
+$gray-400: #707B7F;
 $gray-500: #899497;
 $gray-600: #97A3A7;
 
@@ -15,11 +15,15 @@ $bg-blue-600: #197FA1;
 $bg-blue-400: #55768C;
 $bg-blue-200: #296C82;
 
+$blue-400: #03A1D5;
+
+$white: #fff;
+
 // Breakpoints
 
 $viewport-small: (500rem/16);
-$viewport-medium: (980rem/16);
-$viewport-large: (1200/16);
+$viewport-medium: (820rem/16);
+$viewport-large: (1300/16);
 
 // Global styles
 
@@ -28,6 +32,14 @@ body {
   margin: 0;
 }
 
+a {
+  color: $blue-400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  font-weight: 400;
+}
 
 // Transitions
 
@@ -75,8 +87,67 @@ body {
   transform: translate3d(-2rem, 0, 0);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #97A3A7;
-  font-family: $font-heading;
-  font-weight: 400;
+.prismic-content {
+  font-size: (16rem/16);
+  color: $gray-400;
+  .lede p {
+    font-size: (18rem/16);
+    line-height: (26em/18);
+  }
+  img {
+    max-width: 100%;
+  }
+  p, ol, ul {
+    line-height: (40em/24);
+  }
+  p, ol, ul, h2, h3, h4, h5, h6 {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: $gray-600;
+  }
+  h2 {
+
+  }
+  figure {
+    font-size: (14rem/16);
+    margin: 1rem;
+    p {
+      margin: 1em 0 1em 0;
+      &:first-child {
+        margin-top: .33em;
+      }
+    }
+  }
+  @media (min-width: $viewport-medium) {
+    font-size: (22rem/16);
+    p, ol, ul {
+      line-height: (44em/20);
+    }
+    p, ol, ul, h2, h3, h4, h5, h6 {
+      margin-right: auto;
+      margin-left: auto;
+      width: (100% * 8 / 12);
+    }
+    .lede p {
+      font-size: (32rem/16);
+      line-height: (53em/32);
+    }
+    figure {
+      font-size: (18rem/16);
+    }
+    h2 {
+      font-size: (48rem/16);
+      line-height: (53rem/16);
+      margin: 3rem 0 .5
+    }
+  }
+  @media (min-width: $viewport-large) {
+    font-size: (24rem/16);
+    p, ol, ul {
+      line-height: (53em/24);
+    }
+  }
 }
+

@@ -69,6 +69,7 @@ export function swipeTransition(to: TransitionPath, from?: TransitionPath): Tran
   }
 }
 .title {
+  color: $gray-600;
   font-size: (36rem/16);
   letter-spacing: -.0125em;
   line-height: .9em;
