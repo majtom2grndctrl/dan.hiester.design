@@ -77,8 +77,8 @@ module.exports = {
             return {
               title: PrismicDOM.RichText.asText(result.data.title),
               content: PrismicDOM.RichText.asHtml(result.data.body),
-              slug: result.data.slug,
-              url: '/blog/' + result.data.slug
+              slug: result.uid,
+              url: '/blog/' + result.uid
             }
           })
         }
@@ -86,12 +86,12 @@ module.exports = {
       blogQuery.results.map( result => {
         console.log('result = ', result);
         routesList.push({
-          route: '/blog/' + result.data.slug,
+          route: '/blog/' + result.uid,
           payload: {
             title: PrismicDOM.RichText.asText(result.data.title),
             content: PrismicDOM.RichText.asHtml(result.data.body),
-            slug: result.data.slug,
-            url: '/blog/' + result.data.slug
+            slug: result.uid,
+            url: '/blog/' + result.uid
           }
         })
       })
