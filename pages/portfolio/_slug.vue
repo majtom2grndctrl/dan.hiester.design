@@ -22,8 +22,7 @@ export const parsers = {
     return contentString
   },
   image (block) {
-
-    console.log('Current image block is: ', block)
+//    console.log('Current image block is: ', block)
     return `
       <figure>
         <img src="${block.image.url}" alt="${block.image.alt}" />
