@@ -32,7 +32,7 @@ export const parsers = {
   }
 }
 
-export function parseCaseStudy (data) {
+function parseCaseStudy (data) {
   let parsedContent = ''
   data.body.map( slice => {
     switch(slice.slice_type) {
