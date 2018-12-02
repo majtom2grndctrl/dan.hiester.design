@@ -98,7 +98,7 @@ module.exports = {
       portfolioQuery.results.map( result => {
         console.log('case study: ', result)
         routesList.push({
-          route: '/portfolio' + result.data.uid,
+          route: '/portfolio/' + result.uid,
           payload: {
             data: result.data
           }

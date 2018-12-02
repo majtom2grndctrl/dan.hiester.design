@@ -32,31 +32,33 @@ export const parsers = {
   }
 }
 
+export function parseCaseStudy (data) {
+  let parsedContent = ''
+  data.body.map( slice => {
+    switch(slice.slice_type) {
+      case 'content_block': return parsedContent = parsedContent + parsers.content(slice.primary)
+      case 'image_block': return parsedContent = parsedContent + parsers.image(slice.primary)
+    }
+  })
+//  console.log('data = ', data)
+//  console.log('parsedContent = ', parsedContent)
+  return {
+    headline: PrismicDOM.RichText.asText(data.headline),
+    content: parsedContent
+  }
+}
+
 export default {
   async asyncData (ctx) {
 //    console.log ('ctx.params.slug = ', ctx.params.slug)
     if (ctx.payload) {
 //      console.log('payload = ', ctx.payload)
-      return { data: ctx.payload.data }
+      return parseCaseStudy(ctx.payload.data)
     } else return Prismic.getApi('https://distantly-yours-blog.cdn.prismic.io/api/v2').then( function (api) {
       return api.query(
         Prismic.Predicates.at('my.case_study.uid', ctx.params.slug),
       ).then( function (response) {
-        const data = response.results[0].data
-
-        let parsedContent = ''
-        data.body.map( slice => {
-          switch(slice.slice_type) {
-            case 'content_block': return parsedContent = parsedContent + parsers.content(slice.primary)
-            case 'image_block': return parsedContent = parsedContent + parsers.image(slice.primary)
-          }
-        })
-//        console.log('data = ', data)
-//        console.log('parsedContent = ', parsedContent)
-        return {
-          headline: PrismicDOM.RichText.asText(data.headline),
-          content: parsedContent
-        }
+        return parseCaseStudy(response.results[0].data)
       }, (err) => {
         console.error('Something went wrong: ', err)
         return { title: err }
