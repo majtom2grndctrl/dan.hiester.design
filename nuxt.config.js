@@ -22,7 +22,7 @@ module.exports = {
       { rel: 'shortcut icon', href:'/favicon.ico?v=wAO9R4Y0rn', color: '#5bbad5' },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i|Poppins:400,500,600'
+        href: 'https://use.typekit.net/czd3cnh.css'
       }
     ],
   },
