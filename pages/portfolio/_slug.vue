@@ -1,7 +1,17 @@
 <template>
   <div>
     <header class="caseStudy-header">
-      <h1 v-html="headline" class="caseStudy-title" />
+      <div class="caseStudy-meta">
+        <h1 v-html="headline" class="caseStudy-title" />
+        <div>
+          <span class="caseStudy-projectName">{{ meta.project_name }}</span>
+          <span class="caseStudy-type">{{ meta.case_study_type }}</span>
+        </div>
+        <div class="caseStudy-projectDates">{{ meta.start_date }}&ndash;{{ meta.end_date }}</div>
+      </div>
+      <div class="caseStudy-hero">
+        <img :src="hero_image.url" class="caseStudy-heroImage" :alt="hero_image.alt" />
+      </div>
     </header>
     <div v-html="content" class="prismic-content" />
   </div>
@@ -34,16 +44,43 @@ export const parsers = {
 
 function parseCaseStudy (data) {
   let parsedContent = ''
+  function parseDate(date) {
+    const months = Object.freeze({
+      '01': 'Jan',
+      '02': 'Feb',
+      '03': 'Mar',
+      '04': 'Apr',
+      '05': 'May',
+      '06': 'Jun',
+      '07': 'Jul',
+      '08': 'Aug',
+      '09': 'Sep',
+      '10': 'Oct',
+      '11': 'Nov',
+      '12': 'Dec'
+    })
+    date = date.split('-')
+    return `${months[date[1]]} ${date[0]}`
+  }
   data.body.map( slice => {
     switch(slice.slice_type) {
       case 'content_block': return parsedContent = parsedContent + parsers.content(slice.primary)
       case 'image_block': return parsedContent = parsedContent + parsers.image(slice.primary)
     }
   })
-//  console.log('data = ', data)
+  console.log('data = ', data)
 //  console.log('parsedContent = ', parsedContent)
   return {
     headline: PrismicDOM.RichText.asText(data.headline),
+    meta: {
+      case_study_type: data.case_study_type,
+      project_name:  data.project_name,
+      start_date: parseDate(data.start_date),
+      end_date: parseDate(data.end_date)
+    },
+    hero_image: {
+      url: data.hero_image.url
+    },
     content: parsedContent
   }
 }
@@ -72,21 +109,89 @@ export default {
   .caseStudy-header {
     background: $bg-blue-400;
     color: $white;
+    display: flex;
+      flex-direction: column;
     margin: 0 0 3rem 0;
     overflow: hidden;
+  }
+  .caseStudy-meta {
+    margin: 1em;
   }
   .caseStudy-title {
     color: $white;
     font-size: (24rem/16);
     line-height: 1.4em;
-    margin: 1rem 1rem;
+    margin: .5em 0 .66em 0;
+  }
+  .caseStudy-projectName {
+    display: inline-block;
+    font-family: $font-heading;
+    font-weight: 500;
+    margin-right: .666em;
+  }
+  .caseStudy-type {
+    display: inline-block;
+    font-family: $font-heading;
+    font-weight: 500;
+    margin-bottom: .66em;
+    opacity: .7;
+  }
+  .caseStudy-hero {
+    text-align: center;
+    margin: .5em 2rem 2rem 2rem;
+  }
+  .caseStudy-heroImage {
+    max-width: 15em;
+    width: 100%;
+  }
+  @media (min-width: $viewport-small) {
+    .caseStudy-title {
+      margin: 1em auto .5em;
+      max-width: 20em;
+      text-align: center;
+    }
+    .caseStudy-meta {
+      text-align: center;
+    }
   }
   @media (min-width: $viewport-medium) {
     .caseStudy-header {
+      align-items: center;
+      flex-direction: row;
+      min-height: 25rem;
     }
     .caseStudy-title {
       font-size: (42rem/16);
-      line-height: (52rem/16);
+      line-height: (1.275em);
+      margin: 0 0 .66em 0;
+      text-align: left;
+    }
+    .caseStudy-meta {
+      box-sizing: border-box;
+      flex-basis: 50%;
+      margin: 0;
+      padding: 0 (100% * 1 / 12) 0 (100% * 1 / 12);
+      text-align: left;
+      width: 100%;
+    }
+    .caseStudy-projectName {
+      font-size: (20rem/16);
+    }
+    .caseStudy-type {
+      font-size: (20rem/16);
+    }
+    .caseStudy-dates {
+      font-size: (18rem/16);
+    }
+    .caseStudy-hero {
+      box-sizing: border-box;
+      flex-basis: 50%;
+      margin: 0;
+      padding: 3rem (100% * 1 / 12) 3rem 0;
+      width: 100%;
+    }
+    .caseStudy-heroImage {
+      max-width: 100%;
     }
   }
 </style>
