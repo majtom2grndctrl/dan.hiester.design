@@ -11,13 +11,16 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' },
       { hid: 'description', name: 'description', content: 'Product Design, UX Design, and Design Consulting in Seattle, WA' },
-      { name: 'application-name', content: 'Distantly Yours' }
+      { name: 'application-name', content: 'Distantly Yours' },
+      { name: 'theme-color', content: '#197FA1' },
+      { name: 'msapplication-navbutton-color', content: '#03a1d5'},
+      { name: 'apple-mobile-web-app-status-bar-style', content: '#197FA1'}
     ],
     link: [
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png?v=wAO9R4Y0rn' },
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png?v=wAO9R4Y0rn' },
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png?v=wAO9R4Y0rn' },
-      { rel: 'manifest', href:'/site.webmanifest?v=M4mqnvYrQq' },
+      { rel: 'manifest', href:'/site.webmanifest?v=YAmWaLEo7o' },
       { rel: 'mask-icon', href:'/safari-pinned-tab.svg?v=wAO9R4Y0rn', color: '#5bbad5' },
       { rel: 'shortcut icon', href:'/favicon.ico?v=wAO9R4Y0rn', color: '#5bbad5' },
       {
