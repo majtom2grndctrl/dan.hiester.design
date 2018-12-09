@@ -30,11 +30,9 @@ export default Vue.extend ({
   },
   mounted: function() {
     const ua = window.navigator.userAgent;
-    const iPhone = !!ua.match(/iPhone/i);
-    const webkit = !!ua.match(/WebKit/i);
-    const iPhoneSafari = iPhone && webkit && !ua.match(/CriOS/i);
+    const iPhone = !!ua.match(/iPhone/i) && !ua.match(/CriOS/i);
 
-    if (iPhoneSafari === true) {
+    if (iPhone === true) {
       document.documentElement.classList.add('iphone')
     }
   }
