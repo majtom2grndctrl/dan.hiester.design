@@ -27,6 +27,11 @@ $viewport-large: (1300/16);
 
 // Global styles
 
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   font-family: $font-body;
   margin: 0;

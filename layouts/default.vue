@@ -27,6 +27,16 @@ import SiteHeader from '~/components/layout/SiteHeader.vue'
 export default Vue.extend ({
   components: {
     SiteHeader
+  },
+  mounted: function() {
+    const ua = window.navigator.userAgent;
+    const iPhone = !!ua.match(/iPhone/i);
+    const webkit = !!ua.match(/WebKit/i);
+    const iPhoneSafari = iPhone && webkit && !ua.match(/CriOS/i);
+
+    if (iPhoneSafari === true) {
+      document.documentElement.classList.add('iphone')
+    }
   }
 })
 </script>

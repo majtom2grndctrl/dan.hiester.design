@@ -1,6 +1,8 @@
-@media (min-width: 50rem) {
+@media (min-width: 60rem) {
   html {
-    /*font-size: calc(100% + 4 * (100vw - 1024px) / 896);*/
     font-size: calc(100% + 10 * (100vw - 1440px) / 900);
+  }
+  html.iphone {
+    font-size: 100%;
   }
 }
