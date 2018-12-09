@@ -9,8 +9,8 @@ module.exports = {
     title: 'Distantly Yours',
     meta: [
       { charset: 'utf-8' },
-      { hid: 'description', name: 'description', content: 'UX Design and Consulting in Seattle, WA' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' },
+      { hid: 'description', name: 'description', content: 'Product Design, UX Design, and Design Consulting in Seattle, WA' },
       { name: 'application-name', content: 'Distantly Yours' }
     ],
     link: [
