@@ -67,13 +67,6 @@ export default {
     width: 100%;
   }
 }
-.cta-link {
-  background: rgba(255, 255, 255, .85);
-  color: #004055;
-  font-weight: 500;
-  font-family: $font-heading;
-  text-align: center;
-}
 @media (min-width: $viewport-medium) {
   .inroads-mobile-teaser {
     display: none;
@@ -106,6 +99,13 @@ export default {
   margin: (35rem/16) 0;
   &:first-of-type {
     margin-top: (15rem/16);
+  }
+  .cta-link {
+    background: rgba(255, 255, 255, .85);
+    color: #004055;
+    font-weight: 500;
+    font-family: $font-heading;
+    text-align: center;
   }
 }
 .caseStudy-type {
