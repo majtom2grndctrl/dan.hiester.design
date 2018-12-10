@@ -28,7 +28,7 @@ export default Vue.extend ({
   components: {
     SiteHeader
   },
-  mounted: function() {
+  beforeMount: function() {
     const ua = window.navigator.userAgent;
 
     if (!!ua.match(/iPhone/i)) {
