@@ -2,8 +2,6 @@ const Prismic = require('prismic-javascript')
 const PrismicDOM = require('prismic-dom')
 require('dotenv').config()
 
-console.log('process.env = ', process.env)
-
 module.exports = {
   /*
   ** Headers of the page
