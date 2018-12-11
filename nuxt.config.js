@@ -1,5 +1,8 @@
 const Prismic = require('prismic-javascript')
 const PrismicDOM = require('prismic-dom')
+require('dotenv').config()
+
+console.log('process.env = ', process.env)
 
 module.exports = {
   /*
@@ -44,7 +47,8 @@ module.exports = {
   */
   loading: { color: 'rgba(3, 161, 213, .3)' },
   modules: [
-    ['nuxt-sass-resources-loader', '~/assets/main.scss']
+    ['nuxt-sass-resources-loader', '~/assets/main.scss'],
+    ['@nuxtjs/google-tag-manager', { id: process.env.NUXT_ENV_GTM_ID }]
   ],
   /*
   ** Build configuration
