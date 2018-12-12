@@ -5,19 +5,23 @@
       <div class="hero-image">
         <img src="https://distantly-yours-blog.cdn.prismic.io/distantly-yours-blog/398418c1a3fcf707f6953f0cfb7388e9b9d3c818_inroads-hero2x.jpg" alt="inRoads responsive design on an iMac and Android phone" />
       </div>
-      <p>An award-winning web application that doesn’t just make it easier for the public to know when roads will close—it makes it possible for the public to see closings in the app they already use.</p>
+      <p>An award-winning web application that doesn’t just make it easier for the public to know when roads will close—it makes it possible for the public to see closings in the app they already&nbsp;use.</p>
       <h2 class="inroads-mobile-teaser">One&nbsp;product. Two&nbsp;stories.</h2>
     </header>
     <div class="caseStudy-collection">
       <div class="caseStudy-item">
-        <h3 class="caseStudy-type">UI Case Study</h3>
-        <div calss="caseStudy-description">How I re-imagined an app in progress, and built a UI the team thought impossible, without a total rewrite.</div>
-        <cta-link to="/portfolio/inroads-ui">Designing the UI</cta-link>
+        <div class="caseStudy-content">
+          <h3 class="caseStudy-type">UI Case Study</h3>
+          <div class="caseStudy-description">My team thought a responsive map app was impossible—until a user asked why we hadn’t done it.</div>
+          <cta-link to="/portfolio/inroads-ui">How I made it possible</cta-link>
+        </div>
       </div>
       <div class="caseStudy-item">
-        <h3 class="caseStudy-type">UX Case Study</h3>
-        <div calss="caseStudy-description">Before inRoads, collecting and publishing road closing information was arduous work for one employee.</div>
-        <cta-link to="/portfolio/inroads-ux">How we rescued Fridays</cta-link>
+        <div class="caseStudy-content">
+          <h3 class="caseStudy-type">UX Case Study</h3>
+          <div class="caseStudy-description">Before inRoads, collecting and publishing road closing information was arduous work for one employee.</div>
+          <cta-link to="/portfolio/inroads-ux">How we rescued Fridays</cta-link>
+        </div>
       </div>
     </div>
   </section>
@@ -67,14 +71,35 @@ export default {
     width: 100%;
   }
 }
+@media (min-width: $viewport-small) {
+  .hero {
+    max-width: 30rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
 @media (min-width: $viewport-medium) {
+  .project {
+    margin: 2rem 0;
+    padding: 0;
+  }
+  .project--inroads {
+    .hero {
+      display: flex;
+      justify-content: center;
+      h1 {
+        font-size: (48rem/16);
+        margin: .5em 0 0 0;
+      }
+    }
+  }
   .inroads-mobile-teaser {
     display: none;
   }  
   .hero {
-    height: 30rem;
+    height: 25.5rem;
     overflow: hidden;
-    padding: 0 (100% * 1/12);
+    padding: 0 60% 0 13%;
     position: relative;
     h1 {
       text-align: left; 
@@ -83,9 +108,9 @@ export default {
   .hero-image {
     margin: 0;
     position: absolute;
-      top: 2rem;
+      top: 1rem;
       right: (100% * 1/12);
-    width: (100% * 6/12);
+    width: (100% * 5.5/12);
   }
 }
 @media (min-width: $viewport-large) {
@@ -110,20 +135,64 @@ export default {
 }
 .caseStudy-type {
   font-size: (14rem/16);
+  font-weight: 500;
   line-height: 1em;
   margin: 0 0 (5rem/16) 0;
   text-transform: uppercase;
+}
+.caseStudy-description {
+  font-size: 1rem;
+  line-height: 1.5em;
+  margin: (5rem/16) 0 (15rem/16) 0;
+}
+@media (min-width: $viewport-small) {
+  .caseStudy-item {
+    .cta-link {
+      max-width: 15rem;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  .caseStudy-content {
+    max-width: 30rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 @media (min-width: $viewport-medium) {
   .caseStudy-collection {
     flex-direction: row;
   }
   .caseStudy-item {
-    padding: 0 (100% * 1/12);
-    margin: 3rem 0;
+    box-sizing: border-box;
+    display: flex;
+      flex-direction: column;
+      flex-basis: 50%;
+    padding: 4rem 0 4.25rem 0;
+    margin: 0;
     &:first-of-type {
-      margin-top: 3rem;
+      margin-top: 0;
     }
+    &:nth-child(2n+1) {
+      background: $bg-blue-600;
+    }
+    &:nth-child(2n) {
+      background: $bg-blue-200;
+    }
+    .cta-link {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+  .caseStudy-content {
+    display: flex;
+      flex-direction: column;
+      flex-basis: 100%;
+    width: 50%;
+  }
+  .caseStudy-description {
+    font-size: (18rem/16);
+    flex-basis: 100%;
   }
 }
 @media (min-width: $viewport-large) {
