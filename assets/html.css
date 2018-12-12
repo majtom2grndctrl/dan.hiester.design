@@ -1,4 +1,4 @@
-@media (min-width: 60rem) {
+@media (min-width: calc(820em/16)) {
   html {
     font-size: calc(100% + 10 * (100vw - 1440px) / 900);
   }
