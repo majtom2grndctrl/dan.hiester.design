@@ -114,8 +114,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 1.5em;
     margin-bottom: .75em;
   }
-  h2 {
-  }
   figure {
     font-size: (14rem/16);
     margin: 1rem;
@@ -145,7 +143,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     h2 {
       font-size: (48rem/16);
-      line-height: (53rem/16);
+      line-height: 1.38em;
       margin: 3rem 0 .5
     }
   }
