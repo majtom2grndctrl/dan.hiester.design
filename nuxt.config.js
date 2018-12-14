@@ -27,17 +27,7 @@ module.exports = {
         rel: 'stylesheet',
         href: 'https://use.typekit.net/czd3cnh.css'
       }
-    ],
-    script: [
-      {
-        innerHTML: `
-          var ua = window.navigator.userAgent;
-          ua.match(/iPhone/i) && document.documentElement.classList.add('iphone');
-        `,
-        type: 'text/javascript'
-      }
-    ],
-    __dangerouslyDisableSanitizers: ['script']
+    ]
   },
   /*
   ** Customize the progress bar color
