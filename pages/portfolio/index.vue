@@ -12,14 +12,14 @@
       <div class="caseStudy-item">
         <div class="caseStudy-content">
           <h3 class="caseStudy-type">UI Case Study</h3>
-          <div class="caseStudy-description">My team thought a responsive map app was impossible—until a user asked why we hadn’t done&nbsp;it.</div>
+          <div class="caseStudy-description">My team thought a responsive map app was impossible—until someone tweet-shamed&nbsp;us for not doing it.</div>
           <cta-link to="/portfolio/inroads-ui">How I made it possible</cta-link>
         </div>
       </div>
       <div class="caseStudy-item">
         <div class="caseStudy-content">
           <h3 class="caseStudy-type">UX Case Study</h3>
-          <div class="caseStudy-description">Before inRoads, collecting and publishing road closing information was arduous work for one&nbsp;employee.</div>
+          <div class="caseStudy-description">Before inRoads, collecting and publishing road closing information was overwhelming for one&nbsp;employee.</div>
           <cta-link to="/portfolio/inroads-ux">How we rescued Fridays</cta-link>
         </div>
       </div>
