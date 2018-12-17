@@ -13,6 +13,38 @@
         <img :src="hero_image.url" class="caseStudy-heroImage" :alt="hero_image.alt" />
       </div>
     </header>
+    <div class="caseStudy-about" v-if="meta">
+      <div class="caseStudy-team" v-if="meta.employer || meta.client || meta.team">
+        <div v-if="meta.employer">
+          <h2>Employer</h2>
+          <div v-html="meta.employer" />
+        </div>
+        <div v-if="meta.client">
+          <h2>Client</h2>
+          <div v-html="meta.client" />
+        </div>
+        <div v-if="meta.roles">
+          <h2>Team</h2>
+          <ul class="caseStudy-about-list">
+            <li v-for="(role, index) in meta.roles" :key="index" v-html="role.title" />
+          </ul>
+        </div>
+      </div>
+      <div class="caseStudy-skills" v-if="meta.skills || meta.tools">
+        <div v-if="meta.skills">
+          <h2>What I did</h2>
+          <ul class="caseStudy-about-list">
+            <li v-for="(skill, index) in meta.skills" v-html="skill.name" :key="index" />
+          </ul>
+        </div>
+        <div v-if="meta.tools">
+          <h2>What I used</h2>
+          <ul class="caseStudy-about-list">
+            <li v-for="(tool, index) in meta.tools" v-html="tool.name" :key="index" />
+          </ul>
+        </div>
+      </div>
+    </div>
     <div v-html="parsedContent" class="prismic-content" />
   </article>
 </template>
@@ -76,7 +108,12 @@ function parseCaseStudy (data) {
       case_study_type: data.case_study_type,
       project_name:  data.project_name,
       start_date: parseDate(data.start_date),
-      end_date: parseDate(data.end_date)
+      end_date: parseDate(data.end_date),
+      employer: data.employer,
+      client: data.client,
+      roles: data.roles,
+      skills: data.skills,
+      tools: data.tools
     },
     hero_image: {
       url: data.hero_image.url
@@ -144,6 +181,27 @@ export default {
     max-width: 15em;
     width: 100%;
   }
+  .caseStudy-about {
+    color: $gray-400;
+    line-height: 1.5em;
+    margin: 2rem 1rem;
+    h2 {
+      color: $gray-600;
+      font-size: 1em;
+      margin: 1.5em 0 .5em;
+      text-transform: uppercase;
+    }
+  }
+  .caseStudy-about-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    > li {
+      display: block;
+      margin: .5em 0;
+      padding: 0;
+    }
+  }
   @media (min-width: $viewport-small) {
     .caseStudy-title {
       margin: 1em auto .5em;
@@ -152,6 +210,14 @@ export default {
     }
     .caseStudy-meta {
       text-align: center;
+    }
+    .caseStudy-about {
+      display: grid;
+      grid-template-columns: 60% 40%;
+      grid-column-gap: 2rem;
+    }
+    .caseStudy-team, .caseStudy-skills {
+      flex-basis: 50%;
     }
   }
   @media (min-width: $viewport-medium) {
@@ -192,6 +258,11 @@ export default {
     }
     .caseStudy-heroImage {
       max-width: 100%;
+    }
+    .caseStudy-about {
+      margin-right: auto;
+      margin-left: auto;
+      width: (100% * 8/12);
     }
   }
 </style>
