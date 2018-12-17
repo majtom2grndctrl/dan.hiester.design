@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <article>
     <header class="caseStudy-header">
       <div class="caseStudy-meta">
         <h1 v-html="headline" class="caseStudy-title" />
@@ -13,8 +13,8 @@
         <img :src="hero_image.url" class="caseStudy-heroImage" :alt="hero_image.alt" />
       </div>
     </header>
-    <div v-html="content" class="prismic-content" />
-  </div>
+    <div v-html="parsedContent" class="prismic-content" />
+  </article>
 </template>
 
 
@@ -36,7 +36,7 @@ export const parsers = {
     return `
       <figure>
         <img src="${block.image.url}" alt="${block.image.alt}" />
-        <div>${PrismicDOM.RichText.asHtml(block.caption)}</div>
+        <figcaption>${PrismicDOM.RichText.asHtml(block.caption)}</figcaption>
       </figure>
     `
   }
@@ -81,7 +81,7 @@ function parseCaseStudy (data) {
     hero_image: {
       url: data.hero_image.url
     },
-    content: parsedContent
+    parsedContent: parsedContent,
   }
 }
 
