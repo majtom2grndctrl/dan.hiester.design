@@ -6,7 +6,7 @@
         <img src="https://distantly-yours-blog.cdn.prismic.io/distantly-yours-blog/398418c1a3fcf707f6953f0cfb7388e9b9d3c818_inroads-hero2x.jpg" alt="inRoads responsive design on an iMac and Android phone" />
       </div>
       <p>An award-winning web application that doesn’t just make it easier for the public to know when roads will close—it makes it possible for the public to see closings in the app they already&nbsp;use.</p>
-      <h2 class="inroads-mobile-teaser">One&nbsp;product. Two&nbsp;stories.</h2>
+      <h2 class="inroads-mobile-teaser">One&nbsp;project. Two&nbsp;stories.</h2>
     </header>
     <div class="caseStudy-collection">
       <div class="caseStudy-item">
