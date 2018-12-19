@@ -138,7 +138,8 @@ export default {
         return { title: err }
       })
     })
-  }
+  },
+  scrollToTop: true,
 }
 </script>
 
