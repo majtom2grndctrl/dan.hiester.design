@@ -11,9 +11,9 @@
 
 
 <script lang="ts">
-import { Vue, Component, Prop } from "nuxt-property-decorator"
+import { Vue, Component } from "nuxt-property-decorator"
 
-export default Vue.extend({
+@Component({
   props: {
     width: {
       type: String,
@@ -41,12 +41,12 @@ export default Vue.extend({
     yStyle: {
       type: String
     }
-  },
-  computed: {
-    style: function(): String {
-      return `width: ${this.width}; height: ${this.height};`
-    }
   }
 })
+export default class DyLogo extends Vue {
+  get style (): string {
+    return `width: ${this.width}; height: ${this.height};`
+  }
+}
 </script>
 
