@@ -3,17 +3,19 @@ import { Vue, Component } from 'nuxt-property-decorator'
 import DyLogo from '~/components/DyLogo.vue'
 import MobileNavLauncher from '~/components/buttons/MobileNavLauncher.vue'
 
-export default Vue.extend({
+@Component({
   components: {
     DyLogo,
     MobileNavLauncher
-  },
+  }
+})
+export default class SiteHeader extends Vue {
   data() {
     return {
       mobileNav: false
     }
   }
-})
+}
 </script>
 
 
