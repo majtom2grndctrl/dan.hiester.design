@@ -18,13 +18,13 @@ export const apiEndpoint = 'https://distantly-yours-blog.cdn.prismic.io/api/v2'
 export function parseResponse (response) {
   function parseOne(result) {
     return {
-      url: '/blog/' + result.data.slug,
+      url: '/blog/' + result.uid,
       title: PrismicDOM.RichText.asText(result.data.title),
       content: PrismicDOM.RichText.asHtml(result.data.body)
     }
   }
 
-console.log('blog_posts = ', response.results)
+//  console.log('blog_posts = ', response.results)
   if (response.results.length === 1) {
     return parseOne(response.results[0])
   } else {

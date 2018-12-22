@@ -12,14 +12,15 @@ import { apiEndpoint, parseResponse } from './index'
 
 export default {
   async asyncData (ctx) {
-    console.log ('ctx.params.slug = ', ctx.params.slug)
+//    console.log ('ctx.params.slug = ', ctx.params.slug)
     if (ctx.payload) {
-      console.log('payload = ', ctx.payload)
+//      console.log('payload = ', ctx.payload)
       return { post: ctx.payload }
     } else return Prismic.getApi(apiEndpoint).then( function (api) {
       return api.query(
-        Prismic.Predicates.at('my.blog_post.slug', ctx.params.slug),
+        Prismic.Predicates.at('my.blog_post.uid', ctx.params.slug),
       ).then( function (response) {
+//        console.log('Response = ', response)
         return { post: parseResponse(response) }
       }, (err) => {
         console.log('Something went wrong: ', err)
