@@ -125,9 +125,6 @@ h1, h2, h3, h4, h5, h6 {
     }
     p {
       margin: 1em;
-      &:first-child {
-        margin-top: .33em;
-      }
     }
   }
   @media (min-width: $viewport-medium) {
@@ -147,6 +144,8 @@ h1, h2, h3, h4, h5, h6 {
     figure {
       font-size: (18rem/16);
       p {
+        margin-right: auto;
+        margin-left: auto;
         width: 68%;
       }
     }
