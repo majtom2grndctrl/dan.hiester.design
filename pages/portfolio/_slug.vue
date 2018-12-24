@@ -215,7 +215,7 @@ export default {
     }
     .caseStudy-about {
       display: grid;
-      grid-template-columns: 60% 40%;
+      grid-template-columns: 6fr 4fr;
       grid-column-gap: 2rem;
     }
     .caseStudy-team, .caseStudy-skills {
