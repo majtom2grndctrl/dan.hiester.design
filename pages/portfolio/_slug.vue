@@ -24,7 +24,7 @@
           <div v-html="meta.client" />
         </div>
         <div v-if="meta.roles">
-          <h2>Team</h2>
+          <h2>{{ meta.team_label }}</h2>
           <ul class="caseStudy-about-list">
             <li v-for="(role, index) in meta.roles" :key="index" v-html="role.title" />
           </ul>
@@ -111,6 +111,7 @@ function parseCaseStudy (data) {
       end_date: parseDate(data.end_date),
       employer: data.employer,
       client: data.client,
+      team_label: data.team_label || 'Team',
       roles: data.roles,
       skills: data.skills,
       tools: data.tools
@@ -214,7 +215,7 @@ export default {
     }
     .caseStudy-about {
       display: grid;
-      grid-template-columns: 60% 40%;
+      grid-template-columns: 6fr 4fr;
       grid-column-gap: 2rem;
     }
     .caseStudy-team, .caseStudy-skills {

@@ -115,19 +115,22 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: .75em;
   }
   figure {
+    background: $bg-blue-400;
+    color: $white;
     font-size: (14rem/16);
     margin: 1rem;
+    padding: (1rem/16) (1rem/16) 1.5em (1rem/16);
+    a {
+      color: $white;
+    }
     p {
-      margin: 1em 0 1em 0;
-      &:first-child {
-        margin-top: .33em;
-      }
+      margin: 1em;
     }
   }
   @media (min-width: $viewport-medium) {
     font-size: (22rem/16);
     p, ol, ul {
-      line-height: (44em/20);
+      line-height: (44em/22);
     }
     p, ol, ul, h2, h3, h4, h5, h6 {
       margin-right: auto;
@@ -140,11 +143,19 @@ h1, h2, h3, h4, h5, h6 {
     }
     figure {
       font-size: (18rem/16);
+      p {
+        margin-right: auto;
+        margin-left: auto;
+        width: 68%;
+      }
     }
     h2 {
       font-size: (48rem/16);
-      line-height: 1.38em;
+      line-height: 1.5em;
       margin: 2em auto .5em;
+    }
+    h3 {
+      font-size: (35rem/16);
     }
   }
   @media (min-width: $viewport-large) {
