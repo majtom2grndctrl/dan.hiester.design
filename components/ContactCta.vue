@@ -77,6 +77,7 @@ export default class ContactCta extends Vue {}
     padding: 1rem 0;
     &-content {
       flex-basis: 47%;
+      padding-right: 1.5rem;
       > h1, > p, > .cta-link {
         max-width: 22rem;
         margin-right: auto;
