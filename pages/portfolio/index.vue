@@ -1,42 +1,48 @@
 <template>
-  <section class="project project--inroads">
-    <header class="hero">
-      <h1>inRoads</h1>
-      <div class="hero-image">
-        <img src="https://distantly-yours-blog.cdn.prismic.io/distantly-yours-blog/398418c1a3fcf707f6953f0cfb7388e9b9d3c818_inroads-hero2x.jpg" alt="inRoads responsive design on an iMac and Android phone" />
-      </div>
-      <p>An award-winning web application that doesn’t just make it easier for the public to know when roads will close—it makes it possible for the public to see closings in the app they already&nbsp;use.</p>
-      <h2 class="inroads-mobile-teaser">One&nbsp;project. Two&nbsp;stories.</h2>
-    </header>
-    <div class="caseStudy-collection">
-      <div class="caseStudy-item">
-        <div class="caseStudy-content">
-          <h3 class="caseStudy-type">UI Case Study</h3>
-          <div class="caseStudy-description">My team thought a responsive map app was impossible—until we were tweet-shamed for not doing it.</div>
-          <cta-link to="/portfolio/inroads-ui">How I made it possible</cta-link>
+  <div>
+    <section class="project project--inroads">
+      <header class="hero">
+        <h1>inRoads</h1>
+        <div class="hero-image">
+          <img src="https://distantly-yours-blog.cdn.prismic.io/distantly-yours-blog/398418c1a3fcf707f6953f0cfb7388e9b9d3c818_inroads-hero2x.jpg" alt="inRoads responsive design on an iMac and Android phone" />
+        </div>
+        <p>An award-winning web application that doesn’t just make it easier for the public to know when roads will close—it makes it possible for the public to see closings in the app they already&nbsp;use.</p>
+        <h2 class="inroads-mobile-teaser">One&nbsp;project. Two&nbsp;stories.</h2>
+      </header>
+      <div class="caseStudy-collection">
+        <div class="caseStudy-item">
+          <div class="caseStudy-content">
+            <h3 class="caseStudy-type">UI Case Study</h3>
+            <div class="caseStudy-description">My team thought a responsive map app was impossible—until we were tweet-shamed for not doing it.</div>
+            <cta-link to="/portfolio/inroads-ui" variant="white">How I made it possible</cta-link>
+          </div>
+        </div>
+        <div class="caseStudy-item">
+          <div class="caseStudy-content">
+            <h3 class="caseStudy-type">UX Case Study</h3>
+            <div class="caseStudy-description">Before inRoads, collecting and publishing road closing information was overwhelming for one&nbsp;employee.</div>
+            <cta-link to="/portfolio/inroads-ux" variant="white">How we rescued Fridays</cta-link>
+          </div>
         </div>
       </div>
-      <div class="caseStudy-item">
-        <div class="caseStudy-content">
-          <h3 class="caseStudy-type">UX Case Study</h3>
-          <div class="caseStudy-description">Before inRoads, collecting and publishing road closing information was overwhelming for one&nbsp;employee.</div>
-          <cta-link to="/portfolio/inroads-ux">How we rescued Fridays</cta-link>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+    <contact-cta />
+  </div>
 </template>
 
 
 <script>
 import { swipeTransition } from "~/components/layout/MainLayout"
 import CtaLink from "~/components/buttons/CtaLink"
+import ContactCta from '~/components/ContactCta.vue'
+
 export default {
   transition(to, from) {
     return swipeTransition(to, from);
   },
   components: {
-    CtaLink
+    CtaLink,
+    ContactCta
   }
 }
 </script>
@@ -125,14 +131,6 @@ export default {
   &:first-of-type {
     margin-top: (15rem/16);
   }
-  .cta-link {
-    background: #fff;
-    color: #406A79;
-    font-weight: 500;
-    font-family: $font-heading;
-    opacity: .85;
-    text-align: center;
-  }
 }
 .caseStudy-type {
   font-size: (14rem/16);
@@ -149,7 +147,7 @@ export default {
 @media (min-width: $viewport-small) {
   .caseStudy-item {
     .cta-link {
-      max-width: 15rem;
+      max-width: 20rem;
       margin-right: auto;
       margin-left: auto;
     }
