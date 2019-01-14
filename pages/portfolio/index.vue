@@ -126,10 +126,11 @@ export default {
     margin-top: (15rem/16);
   }
   .cta-link {
-    background: rgba(255, 255, 255, .85);
-    color: #004055;
+    background: #fff;
+    color: #406A79;
     font-weight: 500;
     font-family: $font-heading;
+    opacity: .85;
     text-align: center;
   }
 }
