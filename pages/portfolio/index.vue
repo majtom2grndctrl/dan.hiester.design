@@ -14,14 +14,14 @@
           <div class="caseStudy-content">
             <h3 class="caseStudy-type">UI Case Study</h3>
             <div class="caseStudy-description">My team thought a responsive map app was impossible—until we were tweet-shamed for not doing it.</div>
-            <cta-link to="/portfolio/inroads-ui" variant="white">How I made it possible</cta-link>
+            <cta-link to="/portfolio/inroads-ui">How I made it possible</cta-link>
           </div>
         </div>
         <div class="caseStudy-item">
           <div class="caseStudy-content">
             <h3 class="caseStudy-type">UX Case Study</h3>
             <div class="caseStudy-description">Before inRoads, collecting and publishing road closing information was overwhelming for one&nbsp;employee.</div>
-            <cta-link to="/portfolio/inroads-ux" variant="white">How we rescued Fridays</cta-link>
+            <cta-link to="/portfolio/inroads-ux">How we rescued Fridays</cta-link>
           </div>
         </div>
       </div>
@@ -125,14 +125,24 @@ export default {
 .caseStudy-collection {
   display: flex;
   flex-direction: column;
+  padding-bottom: 1.5rem;
 }
 .caseStudy-item {
-  margin: (35rem/16) 0;
+  background-color: $white;
+  border-radius: (8rem/16);
+  color: $gray-400;
+  margin: (12rem/16) 0;
+  padding: 1rem;
   &:first-of-type {
     margin-top: (15rem/16);
   }
+  .cta-link {
+    background-color: $gray-800;
+    opacity: 1;
+  }
 }
 .caseStudy-type {
+  color: $gray-600;
   font-size: (14rem/16);
   font-weight: 500;
   line-height: 1em;
@@ -146,29 +156,33 @@ export default {
 }
 @media (min-width: $viewport-small) {
   .caseStudy-item {
+    max-width: 30rem;
+    margin-right: auto;
+    margin-left: auto;
     .cta-link {
       max-width: 20rem;
       margin-right: auto;
       margin-left: auto;
     }
   }
-  .caseStudy-content {
-    max-width: 30rem;
-    margin-right: auto;
-    margin-left: auto;
-  }
 }
 @media (min-width: $viewport-medium) {
   .caseStudy-collection {
     flex-direction: row;
+    padding-bottom: 0;
+  }
+  .caseStudy-type {
+    color: inherit;
   }
   .caseStudy-item {
+    color: inherit;
     box-sizing: border-box;
     display: flex;
       flex-direction: column;
       flex-basis: 50%;
     padding: 4rem 0 4.25rem 0;
     margin: 0;
+    max-width: none;
     &:first-of-type {
       margin-top: 0;
     }
@@ -179,6 +193,8 @@ export default {
       background: $bg-blue-200;
     }
     .cta-link {
+      background-color: $white;
+      opacity: .85;
       margin-right: 0;
       margin-left: 0;
     }
@@ -187,6 +203,9 @@ export default {
     display: flex;
       flex-direction: column;
       flex-basis: 100%;
+    max-width: 30rem;
+    margin-right: auto;
+    margin-left: auto;
     width: 50%;
   }
   .caseStudy-description {
