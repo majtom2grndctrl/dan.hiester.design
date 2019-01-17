@@ -136,7 +136,7 @@ export default {
   &:first-of-type {
     margin-top: (15rem/16);
   }
-  .cta-link {
+  .cta-link.cta-link--white {
     background-color: $gray-800;
     opacity: 1;
   }
@@ -192,7 +192,7 @@ export default {
     &:nth-child(2n) {
       background: $bg-blue-200;
     }
-    .cta-link {
+    .cta-link.cta-link--white {
       background-color: $white;
       opacity: .85;
       margin-right: 0;
