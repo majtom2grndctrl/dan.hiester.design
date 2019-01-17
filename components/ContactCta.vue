@@ -1,7 +1,9 @@
 <template>
   <section class="contact-cta">
-    <img class="contact-cta-image-mobile" src="/img/project-collage-tablet.jpg" alt="" />
-    <img class="contact-cta-image-desktop" src="/img/project-collage-desktop.jpg" alt="" />
+    <div class="contact-cta-image-container">
+      <img class="contact-cta-image-mobile" src="/img/project-collage-tablet.jpg" alt="" />
+      <img class="contact-cta-image-desktop" src="/img/project-collage-desktop.jpg" alt="" />
+    </div>
     <div class="contact-cta-content">
       <h1>There’s so much more to talk&nbsp;about!</h1>
       <p>I’ve worked on many different teams and challenges. Some of that work hasn’t been published here yet&mdash;<strong>much of it can’t be</strong>. The best way to get to know what I have to offer is to talk shop over coffee.</p>
@@ -95,12 +97,15 @@ export default class ContactCta extends Vue {}
       }
     }
     &-image {
+      &-container {
+        flex-basis: 53%;
+      }
       &-mobile {
         display: none;
       }
       &-desktop {
         display: block;
-        flex-basis: 53%;
+        width: 100%;
       }
     }
   }
