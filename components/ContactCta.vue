@@ -6,7 +6,7 @@
     </div>
     <div class="contact-cta-content">
       <h1>There’s so much more to talk&nbsp;about!</h1>
-      <p>I’ve worked on many different teams and challenges. Some of that work hasn’t been published here yet&mdash;<strong>much of it can’t be</strong>. The best way to get to know what I have to offer is to talk shop over coffee.</p>
+      <p>I’ve worked on many different teams and challenges. Some of that work hasn’t been published here yet&mdash;<strong>much of it can’t be</strong>. The&nbsp;best way to get to know what I have to offer is to talk shop over&nbsp;coffee.</p>
       <cta-link href="https://www.linkedin.com/in/danhiester" variant="white">Contact me on LinkedIn</cta-link>
     </div>
   </section>
