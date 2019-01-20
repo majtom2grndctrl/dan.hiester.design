@@ -13,7 +13,7 @@
         <div class="caseStudy-item">
           <div class="caseStudy-content">
             <h3 class="caseStudy-type">UI Case Study</h3>
-            <div class="caseStudy-description">My team thought a responsive map app was impossible—until we were tweet-shamed for not doing it.</div>
+            <div class="caseStudy-description">My team thought a responsive map app was impossible—until we were tweet-shamed for not doing&nbsp;it.</div>
             <cta-link to="/portfolio/inroads-ui">How I made it possible</cta-link>
           </div>
         </div>
