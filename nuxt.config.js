@@ -34,7 +34,7 @@ module.exports = {
   */
   loading: { color: 'rgba(3, 161, 213, .3)' },
   modules: [
-    ['nuxt-sass-resources-loader', '~/assets/main.scss']
+    '@nuxtjs/style-resources'
   ],
   /*
   ** Build configuration
@@ -64,6 +64,9 @@ module.exports = {
         })
       }
     }
+  },
+  styleResources: {
+    sass: ['~/assets/main.scss']
   },
   css: ['~/assets/html.css'],
   generate: {
