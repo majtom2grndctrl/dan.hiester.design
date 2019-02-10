@@ -78,7 +78,7 @@ export default ContactCta
       flex-direction: row;
       align-items: center;
       justify-items: center;
-    margin: 4rem 0;
+    margin: (1 / 12 * 100%) 0;
     padding: 1rem 0;
     &-content {
       flex-basis: 47%;
