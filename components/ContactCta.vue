@@ -22,7 +22,10 @@ import CtaLink from '~/components/buttons/CtaLink.vue'
     CtaLink
   }
 })
-export default class ContactCta extends Vue {}
+
+class ContactCta extends Vue {}
+
+export default ContactCta
 </script>
 
 

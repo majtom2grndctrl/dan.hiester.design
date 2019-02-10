@@ -20,7 +20,7 @@
 import { Vue, Component } from 'nuxt-property-decorator'
 
 @Component({})
-export default class MainLayout extends Vue {
+class MainLayout extends Vue {
 
 }
 
@@ -50,6 +50,7 @@ export function swipeTransition(to: TransitionPath, from?: TransitionPath): Tran
     }
   }
 }
+export default MainLayout
 </script>
 
 
