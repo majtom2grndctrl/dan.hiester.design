@@ -18,9 +18,7 @@ The design persona is a seasoned explorer. They have seen a lot, and do not seem
 
 ### Sonic Moodboard
 
-When I get a chance to dig deeply enough into a design or branding project, I curate a list of tracks that encapsulate the mood or emotions I want to imbue into the design. Listening to this playlist when I work on the project helps to anchor me after I put the project down and come back to it later.
-
-<iframe src="https://open.spotify.com/embed/user/222a4yr6cein4qwin7hhkus7a/playlist/0eouNA79O4qYBqlXTb2N0I" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+When I work on this project, I listen to the [Distantly Yours v8 Moodboard](https://open.spotify.com/user/222a4yr6cein4qwin7hhkus7a/playlist/0eouNA79O4qYBqlXTb2N0I?si=jKPqtjD_Qw2lpdP8Pa66cw) playlist. When I get a chance to dig deeply enough into a design or branding project, I curate a list of tracks that encapsulate the mood or emotions I want to imbue into the design. Listening to this playlist when I work helps to anchor me after I put the project down and come back later.
 
 ### Relevant Cultural Artifacts
 * [Lessons from Swiss Style Graphic Design (Smashing Magazine, August 2009)](https://www.smashingmagazine.com/2009/07/lessons-from-swiss-style-graphic-design/)
