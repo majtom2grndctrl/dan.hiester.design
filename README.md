@@ -16,6 +16,12 @@ Seattle’s history has close ties with Nordic tradition, and this style of grap
 
 The design persona is a seasoned explorer. They have seen a lot, and do not seem surprised by the unexpected. They aren’t fazed by a wall of gray fog, because they have already been to the other side and back. Their calm, collected demeanor blends into the tranquility of pristine but unexuberant environments of the Pacific Northwest.
 
+### Sonic Moodboard
+
+When I get a chance to dig deeply enough into a design or branding project, I curate a list of tracks that encapsulate the mood or emotions I want to imbue into the design. Listening to this playlist when I work on the project helps to anchor me after I put the project down and come back to it later.
+
+<iframe src="https://open.spotify.com/embed/user/222a4yr6cein4qwin7hhkus7a/playlist/0eouNA79O4qYBqlXTb2N0I" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
 ### Relevant Cultural Artifacts
 * [Lessons from Swiss Style Graphic Design (Smashing Magazine, August 2009)](https://www.smashingmagazine.com/2009/07/lessons-from-swiss-style-graphic-design/)
 
