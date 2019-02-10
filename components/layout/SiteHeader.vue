@@ -9,13 +9,16 @@ import MobileNavLauncher from '~/components/buttons/MobileNavLauncher.vue'
     MobileNavLauncher
   }
 })
-export default class SiteHeader extends Vue {
+
+class SiteHeader extends Vue {
   data() {
     return {
       mobileNav: false
     }
   }
 }
+
+export default SiteHeader
 </script>
 
 

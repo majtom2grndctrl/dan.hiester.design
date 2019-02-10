@@ -14,7 +14,7 @@
 import { Vue, Component, Prop } from "nuxt-property-decorator"
 
 @Component({})
-export default class DyLogo extends Vue {
+class DyLogo extends Vue {
   @Prop({ type: String, default: `${46/16}rem` })
   width: string
 
@@ -41,5 +41,6 @@ export default class DyLogo extends Vue {
   }
 
 }
+export default DyLogo
 </script>
 
