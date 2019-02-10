@@ -14,6 +14,8 @@ This redesign is inspired heavily by the Swedish Style and International Style. 
 
 Seattle’s history has close ties with Nordic tradition, and this style of graphic design is also seen by many as timeless. Compared with the sunny weather celebrated down the Pacific coast, Seattle’s weather sets a somber tone.
 
+The design persona is a seasoned explorer. They have seen a lot, and do not seem surprised by the unexpected. They aren’t fazed by a wall of gray fog, because they have already been to the other side and back. Their calm, collected demeanor blends into the tranquility of pristine but unexuberant environments of the Pacific Northwest.
+
 ### Relevant Cultural Artifacts
 * [Lessons from Swiss Style Graphic Design (Smashing Magazine, August 2009)](https://www.smashingmagazine.com/2009/07/lessons-from-swiss-style-graphic-design/)
 
