@@ -912,6 +912,11 @@
     webpack-node-externals "^1.7.2"
     webpackbar "^3.1.5"
 
+"@nuxtjs/google-tag-manager@2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/google-tag-manager/-/google-tag-manager-2.1.2.tgz#1b858bbb102505b1df6bdf16ee0cab2408853b02"
+  integrity sha512-CQfNDKXSZgBTTYqz7p5MMkWDKnQO9qn7KDbYRTec5Jr/JQwiryPKHWwpAp4PwG20T2dKSXmw1Wb+44aOsQGeUQ==
+
 "@nuxtjs/style-resources@0.1.2":
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@nuxtjs/style-resources/-/style-resources-0.1.2.tgz#6d90637611d3a445158224c34e42ec5769e13aaa"
@@ -2813,6 +2818,11 @@ dot-prop@^4.1.1:
   integrity sha512-tUMXrxlExSW6U2EXiiKGSBVdYgtV8qlHL+C10TsW4PURY/ic+eaysnSkwB4kA/mBlCyy/IKDJ+Lc3wbWeaXtuQ==
   dependencies:
     is-obj "^1.0.0"
+
+dotenv@6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-6.2.0.tgz#941c0410535d942c8becf28d3f357dbd9d476064"
+  integrity sha512-HygQCKUBSFl8wKQZBSemMywRWcEDNidvNbjGVyZu3nbZ8qq9ubiPoGLMdRDpfSrpkkm9BXYFkpKxxFX38o/76w==
 
 duplexer@^0.1.1:
   version "0.1.1"
