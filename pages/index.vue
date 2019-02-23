@@ -12,7 +12,7 @@
       <transition name="splash-nav">
         <div v-if="mobileNav">
           <div class="modal-overlay" v-on:click="mobileNav = !mobileNav" />
-          <nav class="mobile-nav-links" v-on:click="mobileNav = !mobileNav">
+          <nav class="mobile-nav-links">
             <CloseButton class="mobile-nav-close-button"/>
             <h2>Menu</h2>
             <nuxt-link to="/portfolio">Portfolio</nuxt-link>
@@ -204,6 +204,7 @@ $viewport-small: $viewport-small + 5rem;
     height: 33vh;
     width: 50vw;
     padding: .5em 0 1em .5em;
+    pointer-events: none;
     position: fixed;
 //      top: 22.5%;
       top: 33%;
@@ -224,6 +225,7 @@ $viewport-small: $viewport-small + 5rem;
       color: #fff;
       display: block;
       padding: .75em;
+      pointer-events: all;
       text-decoration: none;
     }
   }
