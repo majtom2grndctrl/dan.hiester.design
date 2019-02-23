@@ -7,7 +7,7 @@
       <h1 class="title" :class="mobileNav && 'mobileNavOpen'">Distantly Yours</h1>
       <div class="splash-subtitle">Push Farther</div>
     </header>
-    <div class="mobile-nav">
+    <div :class="'mobile-nav' + (isNavigating ? ' mobile-nav--navigating' : '')">
       <mobile-nav-launcher v-on:launch="mobileNav = !mobileNav" :class="mobileNav && 'mobileNavOpen'" />
       <transition name="splash-nav">
         <div v-if="mobileNav">
@@ -16,7 +16,7 @@
             <CloseButton class="mobile-nav-close-button"/>
             <h2>Menu</h2>
             <nuxt-link to="/portfolio">Portfolio</nuxt-link>
-            <nuxt-link to="/blog">Blog</nuxt-link>
+            <nuxt-link to="/blog"><div v-on:click="isNavigating = true">Blog</div></nuxt-link>
           </nav>
         </div>
       </transition>
@@ -48,6 +48,7 @@ export default {
   data: function() {
     return {
       mobileNav: false,
+      isNavigating: false,
       logoColors: {
         dColor: '',
         overlapColor: '#00B3EE',
@@ -235,6 +236,11 @@ $viewport-small: $viewport-small + 5rem;
   @supports (mix-blend-mode: color-burn) {
     background: linear-gradient(45deg, rgba(0,32,42,1) 0%, rgba(0,66,88,1) 16%, rgba(0,82,152,1) 39%, rgba(0,82,152,1) 59%, rgba(34,118,190,1) 65%, rgba(0,82,152,1) 73%, rgba(201,242,255,1) 100%);
     mix-blend-mode: color-burn;
+  }
+  filter: saturate(100%);
+  transition: filter .9s linear;
+  .mobile-nav--navigating & {
+    filter: saturate(0%) brightness(80%);
   }
   position: fixed;
     top: 0;
