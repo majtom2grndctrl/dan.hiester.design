@@ -25,10 +25,10 @@ export default SiteHeader
 <template>
   <header class="site-header">
     <div class="logo-container">
-        <nuxt-link to="/" class="logo">
+      <nuxt-link to="/" class="logo">
         <dy-logo />
         <span class="distantly-yours">Distantly Yours</span>
-        </nuxt-link>
+      </nuxt-link>
     </div>
     <nav class="desktop-nav">
         <nuxt-link to="/portfolio">Portfolio</nuxt-link>
@@ -36,18 +36,18 @@ export default SiteHeader
     </nav>
     <div class="push-farther">Push Farther</div>
     <div class="mobile-nav">
-        <mobile-nav-launcher v-on:launch="mobileNav = !mobileNav" :class="mobileNav && 'mobileNavOpen'" />
-        <transition name="home-nav">
-          <div v-if="mobileNav">
-            <div class="modal-overlay" v-on:click="mobileNav = !mobileNav" />
-            <nav class="mobile-nav-links" v-on:click="mobileNav = !mobileNav">
+      <mobile-nav-launcher v-on:launch="mobileNav = !mobileNav" :class="mobileNav && 'mobileNavOpen'" />
+      <transition name="home-nav">
+        <div v-if="mobileNav">
+          <div class="modal-overlay" v-on:click="mobileNav = !mobileNav" />
+          <nav class="mobile-nav-links" v-on:click="mobileNav = !mobileNav">
             <CloseButton class="mobile-nav-close-button"/>
             <h2>Menu</h2>
             <nuxt-link to="/portfolio">Portfolio</nuxt-link>
             <nuxt-link to="/blog">Blog</nuxt-link>
-            </nav>
-          </div>
-        </transition>
+          </nav>
+        </div>
+      </transition>
     </div>
   </header>
 </template>
