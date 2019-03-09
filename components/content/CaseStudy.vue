@@ -2,60 +2,83 @@
   <article>
     <header class="caseStudy-header">
       <div class="caseStudy-meta">
-        <h1 v-html="headline" class="caseStudy-title" />
+        <h1 v-html="data.headline" class="caseStudy-title" />
         <div>
-          <span class="caseStudy-projectName">{{ meta.project_name }}</span>
-          <span class="caseStudy-type">{{ meta.case_study_type }}</span>
+          <span class="caseStudy-projectName">{{ data.meta.project_name }}</span>
+          <span class="caseStudy-type">{{ data.meta.case_study_type }}</span>
         </div>
-        <div class="caseStudy-projectDates">{{ meta.start_date }}&ndash;{{ meta.end_date }}</div>
+        <div class="caseStudy-projectDates">{{ data.meta.start_date }}&ndash;{{ data.meta.end_date }}</div>
       </div>
       <div class="caseStudy-hero">
-        <img :src="hero_image.url" class="caseStudy-heroImage" :alt="hero_image.alt" />
+        <img :src="data.hero_image.url" class="caseStudy-heroImage" :alt="data.hero_image.alt" />
       </div>
     </header>
-    <div class="caseStudy-about" v-if="meta">
-      <div class="caseStudy-team" v-if="meta.employer || meta.client || meta.team">
-        <div v-if="meta.employer">
+    <div class="caseStudy-about" v-if="data.meta">
+      <div class="caseStudy-team" v-if="data.meta.employer || data.meta.client || data.meta.team">
+        <div v-if="data.meta.employer">
           <h2>Employer</h2>
-          <div v-html="meta.employer" />
+          <div v-html="data.meta.employer" />
         </div>
-        <div v-if="meta.client">
+        <div v-if="data.meta.client">
           <h2>Client</h2>
-          <div v-html="meta.client" />
+          <div v-html="data.meta.client" />
         </div>
-        <div v-if="meta.roles">
-          <h2>{{ meta.team_label }}</h2>
+        <div v-if="data.meta.roles">
+          <h2>{{ data.meta.team_label }}</h2>
           <ul class="caseStudy-about-list">
-            <li v-for="(role, index) in meta.roles" :key="index" v-html="role.title" />
+            <li v-for="(role, index) in data.meta.roles" :key="index" v-html="role.title" />
           </ul>
         </div>
       </div>
-      <div class="caseStudy-skills" v-if="meta.skills || meta.tools">
-        <div v-if="meta.skills">
+      <div class="caseStudy-skills" v-if="data.meta.skills || data.meta.tools">
+        <div v-if="data.meta.skills">
           <h2>What I did</h2>
           <ul class="caseStudy-about-list">
-            <li v-for="(skill, index) in meta.skills" v-html="skill.name" :key="index" />
+            <li v-for="(skill, index) in data.meta.skills" v-html="skill.name" :key="index" />
           </ul>
         </div>
-        <div v-if="meta.tools">
+        <div v-if="data.meta.tools">
           <h2>What I used</h2>
           <ul class="caseStudy-about-list">
-            <li v-for="(tool, index) in meta.tools" v-html="tool.name" :key="index" />
+            <li v-for="(tool, index) in data.meta.tools" v-html="tool.name" :key="index" />
           </ul>
         </div>
       </div>
     </div>
-    <div v-html="parsedContent" class="prismic-content" />
+    <div v-html="data.parsedContent" class="prismic-content" />
   </article>
 </template>
 
 
-<script>
+<script lang="ts">
+import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import Prismic from 'prismic-javascript'
 import PrismicDOM from 'prismic-dom'
 //import { apiEndpoint, parseResponse } from './index'
 
-export const parsers = {
+export interface ICaseStudyData {
+  data: {
+    headline: string;
+    meta: {
+      case_study_type: string;
+      project_name: string;
+      start_date: string;
+      end_date: string;
+      employer: string;
+      client: string;
+      team_label: string;
+      roles: string;
+      skills: string;
+      tools: string;
+    };
+    hero_image: {
+      url: string;
+    };
+    parsedContent: string;
+  };
+}
+
+const parsers = {
   content (block) {
     let contentString = ''
     !!block.title1 && (contentString += PrismicDOM.RichText.asHtml(block.title1))
@@ -74,7 +97,7 @@ export const parsers = {
   }
 }
 
-function parseCaseStudy (data) {
+export function parseCaseStudy (data): ICaseStudyData {
   let parsedContent = ''
   function parseDate(date) {
     const months = Object.freeze({
@@ -103,45 +126,38 @@ function parseCaseStudy (data) {
   console.log('data = ', data)
 //  console.log('parsedContent = ', parsedContent)
   return {
-    headline: PrismicDOM.RichText.asText(data.headline),
-    meta: {
-      case_study_type: data.case_study_type,
-      project_name:  data.project_name,
-      start_date: parseDate(data.start_date),
-      end_date: parseDate(data.end_date),
-      employer: data.employer,
-      client: data.client,
-      team_label: data.team_label || 'Team',
-      roles: data.roles,
-      skills: data.skills,
-      tools: data.tools
-    },
-    hero_image: {
-      url: data.hero_image.url
-    },
-    parsedContent: parsedContent,
+    data: {
+      headline: PrismicDOM.RichText.asText(data.headline),
+      meta: {
+        case_study_type: data.case_study_type,
+        project_name:  data.project_name,
+        start_date: parseDate(data.start_date),
+        end_date: parseDate(data.end_date),
+        employer: data.employer,
+        client: data.client,
+        team_label: data.team_label || 'Team',
+        roles: data.roles,
+        skills: data.skills,
+        tools: data.tools
+      },
+      hero_image: {
+        url: data.hero_image.url
+      },
+      parsedContent: parsedContent,
+    }
   }
 }
 
-export default {
-  async asyncData (ctx) {
-//    console.log ('ctx.params.slug = ', ctx.params.slug)
-    if (ctx.payload) {
-//      console.log('payload = ', ctx.payload)
-      return parseCaseStudy(ctx.payload.data)
-    } else return Prismic.getApi('https://distantly-yours-blog.cdn.prismic.io/api/v2').then( function (api) {
-      return api.query(
-        Prismic.Predicates.at('my.case_study.uid', ctx.params.slug),
-      ).then( function (response) {
-        return parseCaseStudy(response.results[0].data)
-      }, (err) => {
-        console.error('Something went wrong: ', err)
-        return { title: err }
-      })
-    })
-  },
-  scrollToTop: true,
+@Component({})
+
+class CaseStudy extends Vue {
+
+  @Prop()
+  data: ICaseStudyData
+
 }
+
+export default CaseStudy
 </script>
 
 <style lang="scss" scoped>
