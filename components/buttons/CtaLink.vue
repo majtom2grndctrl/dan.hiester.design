@@ -21,31 +21,36 @@
       color: #406A79;
       opacity: .85;
     }
+    &.cta-link--blue-300 {
+      background: #296C82;
+      color: rgba(255, 255, 255, .8);
+    }
   }
 </style>
 
 <script lang="ts">
 import Vue from 'vue'
 
-const variants = Object.freeze({
+export const ctaStyles = Object.freeze({
   white: 'cta-link--white',
+  blue300: 'cta-link--blue-300',
 })
 
 export default Vue.extend({
   props: {
     to: String,
     href: String,
-    variant: {
+    ctaStyle: {
       type: String,
       default: 'white',
       validator: function (value) {
-        return Object.keys(variants).indexOf(value) !== -1
+        return Object.keys(ctaStyles).indexOf(value) !== -1
       }
     }
   },
   computed: {
     className: function() {
-      return 'cta-link ' + variants[this.variant]
+      return 'cta-link ' + ctaStyles[this.ctaStyle]
     }
   }
 })
