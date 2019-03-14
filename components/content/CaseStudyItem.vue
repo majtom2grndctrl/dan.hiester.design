@@ -1,6 +1,10 @@
 <template>
-  <div class="caseStudyItem">
-    <img src="thumbnail.src" alt="thumbnail.alt" />
+  <div class="item">
+    <img :src="imgSrc" :alt="imgAlt" />
+    <div class="content">
+      <h2 class="title">{{ title }}</h2>
+      <slot />
+    </div>
   </div>
 </template>
 
@@ -8,21 +12,25 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
 
-export interface ICaseStudyItem {
-  title: string;
-  categories: [string];
-  img: {
-    src: string;
-    alt: string;
-  }
-}
-
 @Component({})
 class CaseStudyItem extends Vue {
   @Prop()
-  details: ICaseStudyItem
+  title: string
+
+  @Prop()
+  categories: [string]
+
+  @Prop()
+  imgSrc: string;
+
+  @Prop()
+  imgAlt: string;
 }
 
 export default CaseStudyItem
 </script>
+
+<style lang="scss" scoped>
+
+</style>
 
