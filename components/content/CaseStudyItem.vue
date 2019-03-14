@@ -1,5 +1,5 @@
 <template>
-  <div class="caseSudyItem">
+  <div class="caseStudyItem">
     <img src="thumbnail.src" alt="thumbnail.alt" />
   </div>
 </template>
