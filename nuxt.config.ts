@@ -78,35 +78,63 @@ module.exports = {
       console.log('blog_posts = ', blogQuery.results)
       const portfolioQuery = await api.query(Prismic.Predicates.at('document.type', 'case_study'), {} )
       console.log('Case Studies fetched: ', portfolioQuery.results)
+      const paths = Object.freeze ({
+        blog: '/blog',
+        blog_item: (slug: string) => '/blog/' + slug,
+        portfolio: '/portfolio',
+        portfolio_item: (slug: string) => '/portfolio/' + slug,
+        portfolio_all: '/portfolio/all-projects',
+        portfolio_all_item: (slug: string) => '/portfolio/all-projects/' + slug
+      })
       const routesList = [
         {
-          route: '/blog',
+          route: paths.blog,
           payload: blogQuery.results.map((result) => {
             return {
               title: PrismicDOM.RichText.asText(result.data.title),
               content: PrismicDOM.RichText.asHtml(result.data.body),
               slug: result.uid,
-              url: '/blog/' + result.uid
+              url: paths.blog_item(result.uid)
             }
           })
+        },
+        {
+          route: paths.portfolio_all,
+          payload: portfolioQuery.results.map(result => {
+            return {
+              data: result.data,
+              slug: result.uid,
+              url: paths.portfolio_all_item(result.uid)
+            }
+          })
+        },
+        {
+          route: '/work',
+          redirect: paths.portfolio_all
         }
       ]
       blogQuery.results.map( result => {
         console.log('result = ', result);
         routesList.push({
-          route: '/blog/' + result.uid,
+          route: paths.blog_item(result.uid),
           payload: {
             title: PrismicDOM.RichText.asText(result.data.title),
             content: PrismicDOM.RichText.asHtml(result.data.body),
             slug: result.uid,
-            url: '/blog/' + result.uid
+            url: paths.blog_item(result.uid)
           }
         })
       })
       portfolioQuery.results.map( result => {
         console.log('case study: ', result)
         routesList.push({
-          route: '/portfolio/' + result.uid,
+          route: paths.portfolio_item(result.uid),
+          payload: {
+            data: result.data
+          }
+        })
+        routesList.push({
+          route: paths.portfolio_all_item(result.uid),
           payload: {
             data: result.data
           }
