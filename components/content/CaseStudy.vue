@@ -153,7 +153,7 @@ export function parseCaseStudy (data): ICaseStudyData {
 class CaseStudy extends Vue {
 
   @Prop()
-  data: ICaseStudyData
+  data!: ICaseStudyData
 
 }
 
