@@ -15,16 +15,16 @@ import { Vue, Component, Prop } from 'nuxt-property-decorator'
 @Component({})
 class CaseStudyItem extends Vue {
   @Prop()
-  title: string
+  title!: string
 
   @Prop()
-  categories: [string]
+  categories!: [string]
 
   @Prop()
-  imgSrc: string;
+  imgSrc!: string;
 
   @Prop()
-  imgAlt: string;
+  imgAlt!: string;
 }
 
 export default CaseStudyItem
