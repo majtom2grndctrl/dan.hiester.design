@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "es2015"],
+    "lib": [
+      "dom",
+      "es2015",
+      "dom"
+    ],
     "module": "es2015",
     "moduleResolution": "node",
     "experimentalDecorators": true,
@@ -14,7 +18,20 @@
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./*"]
-    }
+      "~/*": [
+        "./*"
+      ],
+      "@/*": [
+        "./*"
+      ]
+    },
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "strict": true,
+    "noEmit": true,
+    "types": [
+      "@types/node",
+      "@nuxt/vue-app"
+    ]
   }
 }
