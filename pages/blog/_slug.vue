@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 v-html="post.title" />
-    <article v-html="post.content" />
+    <article v-html="post.content" class="prismic-content" />
   </div>
 </template>
 
