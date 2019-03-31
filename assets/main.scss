@@ -26,6 +26,26 @@ $viewport-small: (500rem/16);
 $viewport-medium: (820rem/16);
 $viewport-large: (1300/16);
 
+// CSS Variables
+
+:root {
+  --gray-400: #707B7F;
+  --gray-500: #899497;
+  --gray-600: #97A3A7;
+  --gray-800: #D9E1E5;
+
+  --bg-blue-600: #197FA1;
+  --bg-blue-400: #55768C;
+  --bg-blue-200: #296C82;
+
+  --blue-400: #03A1D5;
+
+  --white: #fff;
+
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Arimo', sans-serif;
+}
+
 // Global styles
 
 html {
@@ -34,16 +54,16 @@ html {
 }
 
 body {
-  font-family: $font-body;
+  font-family: var(--font-body);
   margin: 0;
 }
 
 a {
-  color: $blue-400;
+  color: var(--blue-400);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-heading;
+  font-family: var(--font-heading);
   font-weight: 400;
 }
 
@@ -59,7 +79,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: perspective(100vh) translate3d(0, 100%, 0);
 }
 .home-enter-active {
-  background: #fff;
+  background: var(--white);
   transition: opacity .444s, transform .666s cubic-bezier(0.165, 0.84, 0.44, 1);
   position: fixed;
     top: 0;
@@ -95,7 +115,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .prismic-content {
   font-size: (16rem/16);
-  color: $gray-400;
+  color: var(--gray-400);
   .lede p {
     font-size: (18rem/16);
     line-height: (26em/18);
@@ -116,13 +136,13 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: .75em;
   }
   figure {
-    background: $bg-blue-400;
-    color: $white;
+    background: var(--bg-blue-400);
+    color: var(--white);
     font-size: (14rem/16);
     margin: 1rem;
     padding: (1rem/16) (1rem/16) 1.5em (1rem/16);
     a {
-      color: $white;
+      color: var(--white);
     }
     p {
       margin: 1em;
