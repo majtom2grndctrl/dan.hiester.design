@@ -1,26 +1,27 @@
 <template>
   <div>
-    <section class="project project--inroads">
-      <header class="hero">
+    <anthology :data="inRoadsData" />
+    <section class="anthology anthology--inroads">
+      <header class="anthology-hero">
         <h1>inRoads</h1>
-        <div class="hero-image">
+        <div class="anthology-hero-image">
           <img src="https://distantly-yours-blog.cdn.prismic.io/distantly-yours-blog/398418c1a3fcf707f6953f0cfb7388e9b9d3c818_inroads-hero2x.jpg" alt="inRoads responsive design on an iMac and Android phone" />
         </div>
         <p>An award-winning web application that doesn’t just make it easier for the public to know when roads will close—it makes it possible for the public to see closings in the app they already&nbsp;use.</p>
         <h2 class="inroads-mobile-teaser">One&nbsp;project. Two&nbsp;stories.</h2>
       </header>
-      <div class="caseStudy-collection">
-        <div class="caseStudy-item">
-          <div class="caseStudy-content">
-            <h3 class="caseStudy-type">UI Case Study</h3>
-            <div class="caseStudy-description">My team thought a responsive map app was impossible—until we were tweet-shamed for not doing&nbsp;it.</div>
+      <div class="anthology-list">
+        <div class="anthology-item">
+          <div class="anthology-item-content">
+            <h3 class="anthology-item-type">UI Case Study</h3>
+            <div class="anthology-item-description">My team thought a responsive map app was impossible—until we were tweet-shamed for not doing&nbsp;it.</div>
             <cta-link to="/portfolio/inroads-ui">How I made it possible</cta-link>
           </div>
         </div>
-        <div class="caseStudy-item">
-          <div class="caseStudy-content">
-            <h3 class="caseStudy-type">UX Case Study</h3>
-            <div class="caseStudy-description">Before inRoads, collecting and publishing road closing information was overwhelming for one&nbsp;employee.</div>
+        <div class="anthology-item">
+          <div class="anthology-item-content">
+            <h3 class="anthology-item-type">UX Case Study</h3>
+            <div class="anthology-item-description">Before inRoads, collecting and publishing road closing information was overwhelming for one&nbsp;employee.</div>
             <cta-link to="/portfolio/inroads-ux">How we rescued Fridays</cta-link>
           </div>
         </div>
@@ -31,31 +32,61 @@
 </template>
 
 
-<script>
-import { swipeTransition } from "~/components/layout/MainLayout"
-import CtaLink from "~/components/buttons/CtaLink"
+<script lang="ts">
+import { Vue, Component, Prop } from 'nuxt-property-decorator'
+import { swipeTransition } from "~/components/layout/MainLayout.vue"
+import Anthology, { AnthologyData } from '~/components/content/Anthology.vue'
+import CtaLink from "~/components/buttons/CtaLink.vue"
 import ContactCta from '~/components/ContactCta.vue'
+import AnthologyItem from '../../components/content/AnthologyItem.vue';
 
-export default {
-  transition(to, from) {
-    return swipeTransition(to, from);
-  },
+@Component({
   components: {
+    Anthology,
     CtaLink,
     ContactCta
   }
+})
+class Index extends Vue {
+  transition(to, from) {
+    return swipeTransition(to, from);
+  }
+  inRoadsData: AnthologyData = {
+    hero: {
+      title: '',
+      image: '',
+      description: '',
+      subhead: ''
+    },
+    items: [
+      {
+        type: '',
+        description: '',
+        ctaText: '',
+        href: ''
+      },
+      {
+        type: '',
+        description: '',
+        ctaText: '',
+        href: ''
+      }
+    ]
+  }
 }
+
+export default Index
 </script>
 
 
 <style lang="scss" scoped>
-.project {
+.anthology {
   background: var(--bg-blue-400);
   box-sizing: border-box;
   color: var(--white);
   padding: 0 (20rem/16);
 }
-.hero {
+.anthology-hero {
   display: flex;
   flex-direction: column;
   h1, .inroads-mobile-teaser {
@@ -71,47 +102,47 @@ export default {
     line-height: (24em/16);
   }
 }
-.hero-image {
+.anthology-hero-image {
   margin: 0 15%;
   > img {
     width: 100%;
   }
 }
 @media (min-width: $viewport-small) {
-  .hero {
+  .anthology-hero {
     max-width: 30rem;
     margin-right: auto;
     margin-left: auto;
   }
 }
 @media (min-width: $viewport-medium) {
-  .project {
+  .anthology {
     margin: 2rem 0;
     padding: 0;
   }
-  .project--inroads {
-    .hero {
-      display: flex;
-      justify-content: center;
+  .anthology--inroads {
+    .anthology-hero {
       h1 {
         font-size: (48rem/16);
-        margin: .5em 0 0 0;
       }
     }
   }
   .inroads-mobile-teaser {
     display: none;
   }  
-  .hero {
+  .anthology-hero {
+    display: flex;
     height: 25.5rem;
+    justify-content: center;
     overflow: hidden;
     padding: 0 60% 0 13%;
     position: relative;
     h1 {
+      margin: .5em 0 0 0;
       text-align: left; 
     }
   }
-  .hero-image {
+  .anthology-hero-image {
     margin: 0;
     position: absolute;
       top: 1rem;
@@ -122,12 +153,12 @@ export default {
 @media (min-width: $viewport-large) {
 }
 
-.caseStudy-collection {
+.anthology-list {
   display: flex;
   flex-direction: column;
   padding-bottom: 1.5rem;
 }
-.caseStudy-item {
+.anthology-item {
   background-color: var(--white);
   border-radius: (8rem/16);
   color: var(--gray-400);
@@ -141,7 +172,7 @@ export default {
     opacity: 1;
   }
 }
-.caseStudy-type {
+.anthology-item-type {
   color: var(--gray-600);
   font-size: (14rem/16);
   font-weight: 500;
@@ -149,13 +180,13 @@ export default {
   margin: 0 0 (5rem/16) 0;
   text-transform: uppercase;
 }
-.caseStudy-description {
+.anthology-item-description {
   font-size: 1rem;
   line-height: 1.5em;
   margin: (5rem/16) 0 (15rem/16) 0;
 }
 @media (min-width: $viewport-small) {
-  .caseStudy-item {
+  .anthology-item {
     max-width: 30rem;
     margin-right: auto;
     margin-left: auto;
@@ -167,14 +198,14 @@ export default {
   }
 }
 @media (min-width: $viewport-medium) {
-  .caseStudy-collection {
+  .anthology-list {
     flex-direction: row;
     padding-bottom: 0;
   }
-  .caseStudy-type {
+  .anthology-item-type {
     color: inherit;
   }
-  .caseStudy-item {
+  .anthology-item {
     color: inherit;
     box-sizing: border-box;
     display: flex;
@@ -199,7 +230,7 @@ export default {
       margin-left: 0;
     }
   }
-  .caseStudy-content {
+  .anthology-item-content {
     display: flex;
       flex-direction: column;
       flex-basis: 100%;
@@ -208,7 +239,7 @@ export default {
     margin-left: auto;
     width: 50%;
   }
-  .caseStudy-description {
+  .anthology-item-description {
     font-size: (18rem/16);
     flex-basis: 100%;
   }
