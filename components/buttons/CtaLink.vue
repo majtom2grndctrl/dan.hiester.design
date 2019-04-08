@@ -43,7 +43,7 @@ export default Vue.extend({
     ctaStyle: {
       type: String,
       default: 'white',
-      validator: function (value) {
+      validator: function (value: string) {
         return Object.keys(ctaStyles).indexOf(value) !== -1
       }
     }
