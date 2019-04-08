@@ -50,16 +50,16 @@ export default {
 
 <style lang="scss" scoped>
 .project {
-  background: $bg-blue-400;
+  background: var(--bg-blue-400);
   box-sizing: border-box;
-  color: #fff;
+  color: var(--white);
   padding: 0 (20rem/16);
 }
 .hero {
   display: flex;
   flex-direction: column;
   h1, .inroads-mobile-teaser {
-    color: #fff;
+    color: var(--white);
     font-size: (30rem/16);
     font-weight: 400;
     line-height: (38em/30);
@@ -128,21 +128,21 @@ export default {
   padding-bottom: 1.5rem;
 }
 .caseStudy-item {
-  background-color: $white;
+  background-color: var(--white);
   border-radius: (8rem/16);
-  color: $gray-400;
+  color: var(--gray-400);
   margin: (12rem/16) 0;
   padding: 1rem;
   &:first-of-type {
     margin-top: (15rem/16);
   }
   .cta-link.cta-link--white {
-    background-color: $gray-800;
+    background-color: var(--gray-800);
     opacity: 1;
   }
 }
 .caseStudy-type {
-  color: $gray-600;
+  color: var(--gray-600);
   font-size: (14rem/16);
   font-weight: 500;
   line-height: 1em;
@@ -187,13 +187,13 @@ export default {
       margin-top: 0;
     }
     &:nth-child(2n+1) {
-      background: $bg-blue-600;
+      background: var(--bg-blue-600);
     }
     &:nth-child(2n) {
-      background: $bg-blue-200;
+      background: var(--bg-blue-200);
     }
     .cta-link.cta-link--white {
-      background-color: $white;
+      background-color: var(--white);
       opacity: .85;
       margin-right: 0;
       margin-left: 0;
