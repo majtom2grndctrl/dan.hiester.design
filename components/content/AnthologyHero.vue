@@ -1,11 +1,11 @@
 <template>
   <header class="anthology-hero">
-    <h1>{{ title }}</h1>
+    <h1>{{ data.title }}</h1>
     <div class="anthology-hero-image">
-      <img :src="heroImage" alt="" />
+      <img :src="data.image" alt="" />
     </div>
-    <div class="anthology-hero-description" v-html="heroDescription" />
-    <h2 class="anthology-hero-subhead">{{ heroSubhead }}</h2>
+    <div class="anthology-hero-description" v-html="data.description" />
+    <h2 class="anthology-hero-subhead" v-html="data.subhead" />
   </header>
 </template>
 
