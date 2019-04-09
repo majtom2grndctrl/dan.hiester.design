@@ -53,23 +53,23 @@ class Index extends Vue {
   }
   inRoadsData: AnthologyData = {
     hero: {
-      title: '',
-      image: '',
-      description: '',
-      subhead: ''
+      title: 'inRoads',
+      image: 'https://distantly-yours-blog.cdn.prismic.io/distantly-yours-blog/398418c1a3fcf707f6953f0cfb7388e9b9d3c818_inroads-hero2x.jpg',
+      description: 'An award-winning web application that doesn’t just make it easier for the public to know when roads will close—it makes it possible for the public to see closings in the app they already&nbsp;use.',
+      subhead: 'One&nbsp;project. Two&nbsp;stories.'
     },
     items: [
       {
-        type: '',
-        description: '',
-        ctaText: '',
-        href: ''
+        type: 'UI Case Study',
+        description: 'My team thought a responsive map app was impossible—until we were tweet-shamed for not doing&nbsp;it.',
+        ctaText: 'How I made it possible',
+        href: '/portfolio/inroads-ui'
       },
       {
-        type: '',
-        description: '',
-        ctaText: '',
-        href: ''
+        type: 'UX Case Study',
+        description: 'Before inRoads, collecting and publishing road closing information was overwhelming for one&nbsp;employee.',
+        ctaText: 'How we rescued Fridays',
+        href: '/portfolio/inroads-ux'
       }
     ]
   }
