@@ -28,3 +28,60 @@ class AnthologyHero extends Vue {
 
 export default AnthologyHero
 </script>
+
+<style lang="scss" scoped>
+.anthology-hero {
+  display: flex;
+  flex-direction: column;
+  h1, .anthology-hero-subhead {
+    color: var(--white);
+    font-size: (30rem/16);
+    font-weight: 400;
+    line-height: (38em/30);
+    margin: (35em/30) 0 (20em/30) 0;
+    text-align: center;
+  }
+  p {
+    font-size: 1rem;
+    line-height: (24em/16);
+  }
+}
+.anthology-hero-image {
+  margin: 0 15%;
+  > img {
+    width: 100%;
+  }
+}
+@media (min-width: $viewport-small) {
+  .anthology-hero {
+    max-width: 30rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media (min-width: $viewport-medium) {
+  .anthology-hero {
+    display: flex;
+    height: 25.5rem;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0 60% 0 13%;
+    position: relative;
+    h1 {
+      margin: .5em 0 0 0;
+      text-align: left; 
+    }
+  }
+  .anthology-hero-subhead {
+    display: none;
+  }  
+  .anthology-hero-image {
+    margin: 0;
+    position: absolute;
+      top: 1rem;
+      right: (100% * 1/12);
+    width: (100% * 5.5/12);
+  }
+}
+
+</style>

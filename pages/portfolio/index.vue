@@ -1,6 +1,6 @@
 <template>
   <div>
-    <anthology :data="inRoadsData" />
+    <anthology :data="inRoadsData" mod-class="anthology--inroads" />
     <section class="anthology anthology--inroads">
       <header class="anthology-hero">
         <h1>inRoads</h1>
@@ -80,74 +80,13 @@ export default Index
 
 
 <style lang="scss" scoped>
-.anthology {
-  background: var(--bg-blue-400);
-  box-sizing: border-box;
-  color: var(--white);
-  padding: 0 (20rem/16);
-}
-.anthology-hero {
-  display: flex;
-  flex-direction: column;
-  h1, .inroads-mobile-teaser {
-    color: var(--white);
-    font-size: (30rem/16);
-    font-weight: 400;
-    line-height: (38em/30);
-    margin: (35em/30) 0 (20em/30) 0;
-    text-align: center;
-  }
-  p {
-    font-size: 1rem;
-    line-height: (24em/16);
-  }
-}
-.anthology-hero-image {
-  margin: 0 15%;
-  > img {
-    width: 100%;
-  }
-}
-@media (min-width: $viewport-small) {
-  .anthology-hero {
-    max-width: 30rem;
-    margin-right: auto;
-    margin-left: auto;
-  }
-}
 @media (min-width: $viewport-medium) {
-  .anthology {
-    margin: 2rem 0;
-    padding: 0;
-  }
   .anthology--inroads {
     .anthology-hero {
       h1 {
         font-size: (48rem/16);
       }
     }
-  }
-  .inroads-mobile-teaser {
-    display: none;
-  }  
-  .anthology-hero {
-    display: flex;
-    height: 25.5rem;
-    justify-content: center;
-    overflow: hidden;
-    padding: 0 60% 0 13%;
-    position: relative;
-    h1 {
-      margin: .5em 0 0 0;
-      text-align: left; 
-    }
-  }
-  .anthology-hero-image {
-    margin: 0;
-    position: absolute;
-      top: 1rem;
-      right: (100% * 1/12);
-    width: (100% * 5.5/12);
   }
 }
 @media (min-width: $viewport-large) {
@@ -157,45 +96,6 @@ export default Index
   display: flex;
   flex-direction: column;
   padding-bottom: 1.5rem;
-}
-.anthology-item {
-  background-color: var(--white);
-  border-radius: (8rem/16);
-  color: var(--gray-400);
-  margin: (12rem/16) 0;
-  padding: 1rem;
-  &:first-of-type {
-    margin-top: (15rem/16);
-  }
-  .cta-link.cta-link--white {
-    background-color: var(--gray-800);
-    opacity: 1;
-  }
-}
-.anthology-item-type {
-  color: var(--gray-600);
-  font-size: (14rem/16);
-  font-weight: 500;
-  line-height: 1em;
-  margin: 0 0 (5rem/16) 0;
-  text-transform: uppercase;
-}
-.anthology-item-description {
-  font-size: 1rem;
-  line-height: 1.5em;
-  margin: (5rem/16) 0 (15rem/16) 0;
-}
-@media (min-width: $viewport-small) {
-  .anthology-item {
-    max-width: 30rem;
-    margin-right: auto;
-    margin-left: auto;
-    .cta-link {
-      max-width: 20rem;
-      margin-right: auto;
-      margin-left: auto;
-    }
-  }
 }
 @media (min-width: $viewport-medium) {
   .anthology-list {
