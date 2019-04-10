@@ -1,32 +1,6 @@
 <template>
   <div>
     <anthology :data="inRoadsData" mod-class="anthology--inroads" />
-    <section class="anthology anthology--inroads">
-      <header class="anthology-hero">
-        <h1>inRoads</h1>
-        <div class="anthology-hero-image">
-          <img src="https://distantly-yours-blog.cdn.prismic.io/distantly-yours-blog/398418c1a3fcf707f6953f0cfb7388e9b9d3c818_inroads-hero2x.jpg" alt="inRoads responsive design on an iMac and Android phone" />
-        </div>
-        <p>An award-winning web application that doesn’t just make it easier for the public to know when roads will close—it makes it possible for the public to see closings in the app they already&nbsp;use.</p>
-        <h2 class="inroads-mobile-teaser">One&nbsp;project. Two&nbsp;stories.</h2>
-      </header>
-      <div class="anthology-list">
-        <div class="anthology-item">
-          <div class="anthology-item-content">
-            <h3 class="anthology-item-type">UI Case Study</h3>
-            <div class="anthology-item-description">My team thought a responsive map app was impossible—until we were tweet-shamed for not doing&nbsp;it.</div>
-            <cta-link to="/portfolio/inroads-ui">How I made it possible</cta-link>
-          </div>
-        </div>
-        <div class="anthology-item">
-          <div class="anthology-item-content">
-            <h3 class="anthology-item-type">UX Case Study</h3>
-            <div class="anthology-item-description">Before inRoads, collecting and publishing road closing information was overwhelming for one&nbsp;employee.</div>
-            <cta-link to="/portfolio/inroads-ux">How we rescued Fridays</cta-link>
-          </div>
-        </div>
-      </div>
-    </section>
     <contact-cta />
   </div>
 </template>
