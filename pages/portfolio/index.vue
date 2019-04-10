@@ -12,7 +12,7 @@ import { swipeTransition } from "~/components/layout/MainLayout.vue"
 import Anthology, { AnthologyData } from '~/components/content/Anthology.vue'
 import CtaLink from '~/components/buttons/CtaLink.vue'
 import ContactCta from '~/components/ContactCta.vue'
-import AnthologyItem from '~/components/content/AnthologyItem.vue';
+import AnthologyItem from '~/components/content/AnthologyItem.vue'
 
 @Component({
   components: {
