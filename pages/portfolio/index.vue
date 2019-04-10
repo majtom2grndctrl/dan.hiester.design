@@ -10,9 +10,9 @@
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import { swipeTransition } from "~/components/layout/MainLayout.vue"
 import Anthology, { AnthologyData } from '~/components/content/Anthology.vue'
-import CtaLink from "~/components/buttons/CtaLink.vue"
+import CtaLink from '~/components/buttons/CtaLink.vue'
 import ContactCta from '~/components/ContactCta.vue'
-import AnthologyItem from '../../components/content/AnthologyItem.vue';
+import AnthologyItem from '~/components/content/AnthologyItem.vue';
 
 @Component({
   components: {
@@ -29,7 +29,7 @@ class Index extends Vue {
     hero: {
       title: 'inRoads',
       image: 'https://distantly-yours-blog.cdn.prismic.io/distantly-yours-blog/398418c1a3fcf707f6953f0cfb7388e9b9d3c818_inroads-hero2x.jpg',
-      description: 'An award-winning web application that doesn’t just make it easier for the public to know when roads will close—it makes it possible for the public to see closings in the app they already&nbsp;use.',
+      description: '<p>An award-winning web application that doesn’t just make it easier for the public to know when roads will close—it makes it possible for the public to see closings in the app they already&nbsp;use.</p>',
       subhead: 'One&nbsp;project. Two&nbsp;stories.'
     },
     items: [
@@ -54,71 +54,22 @@ export default Index
 
 
 <style lang="scss" scoped>
+@media (min-width: $viewport-large) {
+}
+
+@media (min-width: $viewport-medium) {
+}
+@media (min-width: $viewport-large) {
+
+}
+</style>
+
+<style lang="scss">
 @media (min-width: $viewport-medium) {
   .anthology--inroads {
-    .anthology-hero {
-      h1 {
-        font-size: (48rem/16);
-      }
+    .anthology-title {
+      font-size: (48rem/16) !important;
     }
   }
-}
-@media (min-width: $viewport-large) {
-}
-
-.anthology-list {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 1.5rem;
-}
-@media (min-width: $viewport-medium) {
-  .anthology-list {
-    flex-direction: row;
-    padding-bottom: 0;
-  }
-  .anthology-item-type {
-    color: inherit;
-  }
-  .anthology-item {
-    color: inherit;
-    box-sizing: border-box;
-    display: flex;
-      flex-direction: column;
-      flex-basis: 50%;
-    padding: 4rem 0 4.25rem 0;
-    margin: 0;
-    max-width: none;
-    &:first-of-type {
-      margin-top: 0;
-    }
-    &:nth-child(2n+1) {
-      background: var(--bg-blue-600);
-    }
-    &:nth-child(2n) {
-      background: var(--bg-blue-200);
-    }
-    .cta-link.cta-link--white {
-      background-color: var(--white);
-      opacity: .85;
-      margin-right: 0;
-      margin-left: 0;
-    }
-  }
-  .anthology-item-content {
-    display: flex;
-      flex-direction: column;
-      flex-basis: 100%;
-    max-width: 30rem;
-    margin-right: auto;
-    margin-left: auto;
-    width: 50%;
-  }
-  .anthology-item-description {
-    font-size: (18rem/16);
-    flex-basis: 100%;
-  }
-}
-@media (min-width: $viewport-large) {
-
 }
 </style>

@@ -1,10 +1,10 @@
 <template>
   <header class="anthology-hero">
-    <h1>{{ data.title }}</h1>
+    <h1 class="anthology-title">{{ data.title }}</h1>
     <div class="anthology-hero-image">
       <img :src="data.image" alt="" />
     </div>
-    <div class="anthology-hero-description" v-html="data.description" />
+    <div class="anthology-description" v-html="data.description" />
     <h2 class="anthology-hero-subhead" v-html="data.subhead" />
   </header>
 </template>
@@ -33,24 +33,31 @@ export default AnthologyHero
 .anthology-hero {
   display: flex;
   flex-direction: column;
-  h1, .anthology-hero-subhead {
-    color: var(--white);
-    font-size: (30rem/16);
-    font-weight: 400;
-    line-height: (38em/30);
-    margin: (35em/30) 0 (20em/30) 0;
-    text-align: center;
-  }
-  p {
-    font-size: 1rem;
-    line-height: (24em/16);
-  }
+}
+.anthology-title {
+  color: var(--white);
+  font-size: (30rem/16);
+  font-weight: 400;
+  line-height: (38em/30);
+  margin: (35em/30) 0 (20em/30) 0;
+  text-align: center;
+}
+.anthology-description {
+  font-size: 1rem;
+  line-height: (24em/16);
 }
 .anthology-hero-image {
   margin: 0 15%;
   > img {
     width: 100%;
   }
+}
+.anthology-hero-subhead {
+  font-size: 1.875rem;
+  font-weight: 400;
+  line-height: 1.26667em;
+  margin: 1.16667em 0 .66667em;
+  text-align: center;
 }
 @media (min-width: $viewport-small) {
   .anthology-hero {
@@ -67,10 +74,10 @@ export default AnthologyHero
     overflow: hidden;
     padding: 0 60% 0 13%;
     position: relative;
-    h1 {
-      margin: .5em 0 0 0;
-      text-align: left; 
-    }
+  }
+  .anthology-title {
+    margin: .5em 0 0 0;
+    text-align: left; 
   }
   .anthology-hero-subhead {
     display: none;
