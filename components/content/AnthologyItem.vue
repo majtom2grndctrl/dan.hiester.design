@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
-import CtaLink from '~/Components/buttons/CtaLink.vue'
+import CtaLink from '~/components/buttons/CtaLink.vue'
 
 export interface AnthologyItemData {
   type: string
