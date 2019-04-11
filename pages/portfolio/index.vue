@@ -12,11 +12,11 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import { swipeTransition } from "~/components/layout/MainLayout.vue"
-import Anthology, { AnthologyData } from '~/components/content/Anthology.vue'
+import Anthology from '~/components/content/Anthology.vue'
 import CtaLink from '~/components/buttons/CtaLink.vue'
 import ContactCta from '~/components/ContactCta.vue'
-import AnthologyHero from '~/components/content/AnthologyHero.vue'
-import AnthologyItem from '~/components/content/AnthologyItem.vue'
+import AnthologyHero, { AnthologyHeroData } from '~/components/content/AnthologyHero.vue'
+import AnthologyItem, { AnthologyItemData } from '~/components/content/AnthologyItem.vue'
 
 @Component({
   components: {
@@ -31,7 +31,7 @@ class Index extends Vue {
   transition(to, from) {
     return swipeTransition(to, from);
   }
-  inRoadsData: AnthologyData = {
+  inRoadsData: {hero: AnthologyHeroData, items: AnthologyItemData[]} = {
     hero: {
       title: 'inRoads',
       image: 'https://distantly-yours-blog.cdn.prismic.io/distantly-yours-blog/398418c1a3fcf707f6953f0cfb7388e9b9d3c818_inroads-hero2x.jpg',
