@@ -10,21 +10,12 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
 
-export interface AnthologyData {
-  hero: AnthologyHeroData
-  items: AnthologyItemData[]
-}
-
 @Component({})
 class Anthology extends Vue {
   @Prop()
   modClass?: string
 
-  @Prop()
-  data!: AnthologyData
-
   sectionClass = this.modClass ? `anthology ${this.modClass}` : 'anthology'
-
 }
 
 export default Anthology
