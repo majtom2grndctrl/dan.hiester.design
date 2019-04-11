@@ -89,6 +89,13 @@ export default AnthologyHero
       right: (100% * 1/12);
     width: (100% * 5.5/12);
   }
+
+  /* Modification classes */
+  .anthology--inroads {
+    .anthology-title {
+      font-size: (48rem/16) !important;
+    }
+  }
 }
 
 </style>

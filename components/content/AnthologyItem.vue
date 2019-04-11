@@ -3,7 +3,7 @@
     <div class="anthology-item-content">
       <h3 class="anthology-item-type" v-html="data.type" />
       <div class="anthology-item-description" v-html="data.description" />
-      <cta-link :to="data.href" v-html="data.ctaText"></cta-link>
+      <cta-link :to="data.href" v-html="data.ctaText" />
     </div>
   </div>
 </template>

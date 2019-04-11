@@ -1,6 +1,9 @@
 <template>
   <div>
-    <anthology :data="inRoadsData" mod-class="anthology--inroads" />
+    <anthology :data="inRoadsData" mod-class="anthology--inroads">
+      <template slot="hero"><anthology-hero :data="inRoadsData.hero" /></template>
+      <anthology-item v-for="(data, index) in inRoadsData.items" :data="data" :key="'key-' + index" />
+    </anthology>
     <contact-cta />
   </div>
 </template>
@@ -12,11 +15,14 @@ import { swipeTransition } from "~/components/layout/MainLayout.vue"
 import Anthology, { AnthologyData } from '~/components/content/Anthology.vue'
 import CtaLink from '~/components/buttons/CtaLink.vue'
 import ContactCta from '~/components/ContactCta.vue'
+import AnthologyHero from '~/components/content/AnthologyHero.vue'
 import AnthologyItem from '~/components/content/AnthologyItem.vue'
 
 @Component({
   components: {
     Anthology,
+    AnthologyHero,
+    AnthologyItem,
     CtaLink,
     ContactCta
   }
@@ -51,25 +57,3 @@ class Index extends Vue {
 
 export default Index
 </script>
-
-
-<style lang="scss" scoped>
-@media (min-width: $viewport-large) {
-}
-
-@media (min-width: $viewport-medium) {
-}
-@media (min-width: $viewport-large) {
-
-}
-</style>
-
-<style lang="scss">
-@media (min-width: $viewport-medium) {
-  .anthology--inroads {
-    .anthology-title {
-      font-size: (48rem/16) !important;
-    }
-  }
-}
-</style>
