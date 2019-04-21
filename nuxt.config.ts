@@ -1,3 +1,4 @@
+import { blogDataMock } from './dataMocks'
 const Prismic = require('prismic-javascript')
 const PrismicDOM = require('prismic-dom')
 
@@ -61,11 +62,30 @@ module.exports = {
   css: ['~/assets/html.css'],
   generate: {
     routes: async function () {
-      const api = await Prismic.getApi('https://distantly-yours-blog.cdn.prismic.io/api/v2')
-      const blogQuery = await api.query(Prismic.Predicates.at('document.type', 'blog_post'), { orderings: '[my.blog_post.date desc]' })
-      console.log('blog_posts = ', blogQuery.results)
-      const portfolioQuery = await api.query(Prismic.Predicates.at('document.type', 'case_study'), {} )
-      console.log('Case Studies fetched: ', portfolioQuery.results)
+      const apiUrl = 'https://distantly-yours-blog.cdn.prismic.io/api/v2'
+      const blogQuery = await Prismic.getApi(apiUrl)
+        .then( api =>  {
+          return api.query(
+            Prismic.Predicates.at('document.type', 'blog_post'), { orderings: '[my.blog_post.date desc]' }
+          )
+        })
+        .catch(err => {
+          console.warn('Hey, something happened to the network.', err)
+          // If we’re in dev mode, return a data mock. Otherwise, return null and force an error.
+          return process.env.NODE_ENV === 'development' ? { blogDataMock } : { results: [] }
+        })
+      console.log('blogQuery = ', blogQuery)
+      const portfolioQuery = await Prismic.getApi(apiUrl)
+        .then( api => { 
+          return api.query(
+            Prismic.Predicates.at('document.type', 'case_study'), null 
+          )
+        }).catch(err => {
+          console.warn('Hey, something happened to the network.', err)
+          // If we’re in dev mode, return a data mock. Otherwise, return null and force an error.
+          return process.env.NODE_ENV === 'development' ? { results: [] } : null
+        })
+      console.log('portfolioQuery = ', portfolioQuery)
       const routesList = [
         {
           route: '/blog',
