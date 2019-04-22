@@ -62,14 +62,6 @@ module.exports = {
   css: ['~/assets/html.css'],
   generate: {
     routes: async function () {
-      const paths = Object.freeze ({
-        blog: '/blog',
-        blog_item: (slug: string) => '/blog/' + slug,
-        portfolio: '/portfolio',
-        portfolio_item: (slug: string) => '/portfolio/' + slug,
-        portfolio_all: '/portfolio/all-projects',
-        portfolio_all_item: (slug: string) => '/portfolio/all-projects/' + slug
-      })
       const apiUrl = 'https://distantly-yours-blog.cdn.prismic.io/api/v2'
       const blogQuery = await Prismic.getApi(apiUrl)
         .then( api =>  {
@@ -96,7 +88,7 @@ module.exports = {
       console.log('portfolioQuery = ', portfolioQuery)
       const routesList = [
         {
-          route: paths.blog,
+          route: '/blog',
           payload: blogQuery.results.map((result) => {
             return {
               title: PrismicDOM.RichText.asText(result.data.title),
@@ -110,7 +102,7 @@ module.exports = {
       blogQuery.results.map( result => {
         console.log('result = ', result);
         routesList.push({
-          route: paths.blog_item(result.uid),
+          route: '/blog/' + result.uid,
           payload: {
             title: PrismicDOM.RichText.asText(result.data.title),
             content: PrismicDOM.RichText.asHtml(result.data.body),
@@ -122,7 +114,7 @@ module.exports = {
       portfolioQuery.results.map( result => {
         console.log('case study: ', result)
         routesList.push({
-          route: paths.portfolio_item(result.uid),
+          route: '/portfolio/' + result.uid,
           payload: {
             data: result.data
           }
