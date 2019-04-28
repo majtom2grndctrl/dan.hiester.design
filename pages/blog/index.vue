@@ -1,9 +1,6 @@
 <template>
   <section class="blogIndex" v-if="blog_posts">
-    <article class="blogPost" v-for="(post, index) in blog_posts" :key="index">
-      <h2><nuxt-link :to="post.url" v-html="post.title" /></h2>
-      <div v-html="post.content" />
-    </article>
+    <blog-post v-for="(post, index) in blog_posts" :post="post" :key="index" />
   </section>
   <section v-else>
     <h1>Signal disrupted</h1>
@@ -19,6 +16,7 @@ import Prismic from 'prismic-javascript'
 import PrismicDOM from 'prismic-dom'
 import ApiSearchResponse from 'prismic-javascript/d.ts/ApiSearchResponse'
 import { Document } from 'prismic-javascript/d.ts/documents'
+import BlogPost from '~/components/content/BlogPost.vue'
 import { blogDataMock } from '~/dataMocks'
 
 export const apiEndpoint = 'https://distantly-yours-blog.cdn.prismic.io/api/v2'
@@ -27,7 +25,11 @@ export interface BlogPostData {
   uid?: string;
   url: string;
   title: string;
+  subhead?: string;
   content: string;
+  preview?: string;
+  cta?: string;
+  indexBgColor?: string;
 }
 
 export function parseResponse (response: ApiSearchResponse) {
@@ -35,8 +37,12 @@ export function parseResponse (response: ApiSearchResponse) {
     const output: BlogPostData = {
       url: '/blog/' + result.uid,
       title: PrismicDOM.RichText.asText(result.data.title),
-      content: PrismicDOM.RichText.asHtml(result.data.body)
+      content: PrismicDOM.RichText.asHtml(result.data.body),
     }
+    result.data.subhead && (output.subhead = PrismicDOM.RichText.asText(result.data.subhead))
+    result.data.preview && (output.preview = PrismicDOM.RichText.asHtml(result.data.preview))
+    result.data.cta && (output.cta = result.data.cta)
+    result.data.index_page_background_color && (output.indexBgColor = result.data.index_page_background_color)
     return output
   }
 
@@ -52,7 +58,11 @@ export function parseResponse (response: ApiSearchResponse) {
   }
 }
 
-@Component({})
+@Component({
+  components: {
+    BlogPost
+  }
+})
 class BlogIndex extends Vue {
   async asyncData (ctx) {
     if (ctx.payload) return { blog_posts: ctx.payload }
