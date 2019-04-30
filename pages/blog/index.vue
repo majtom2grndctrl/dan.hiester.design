@@ -91,5 +91,23 @@ export default BlogIndex
 
 
 <style lang="scss" scoped>
-  
+  @media (min-width: $viewport-medium) {
+    .blogIndex {
+      --right-side: calc(100% * 5 / 12);
+      background-color: var(--gray-600);
+      position: relative;
+      overflow: hidden;
+      padding-right: var(--right-side);
+      &::before {
+        background: var(--gray-400);
+        content: '';
+        display: block;
+        position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+        width: var(--right-side);
+      }
+    }
+  }
 </style>
