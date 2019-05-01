@@ -29,7 +29,6 @@ class BlogPost extends Vue {
     const rootElement = this.$refs.rootElement as HTMLDivElement
     indexBgColor && rootElement.style.setProperty('--block-background', indexBgColor)
   }
-
 }
 
 

@@ -99,7 +99,7 @@ export default BlogIndex
       overflow: hidden;
       padding-right: var(--right-side);
       &::before {
-        background: var(--gray-400);
+        background: var(--gray-400) url('/img/blog-index-photo.jpg') no-repeat 50% 50% / cover;
         content: '';
         display: block;
         position: absolute;
