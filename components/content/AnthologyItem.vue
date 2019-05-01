@@ -2,7 +2,7 @@
   <div class="anthology-item">
     <div class="anthology-item-content">
       <h3 class="anthology-item-type" v-html="data.type" />
-      <div class="anthology-item-description" v-html="data.description" />
+      <div class="anthology-item-description block-preview" v-html="data.description" />
       <cta-link :to="data.href" v-html="data.ctaText" />
     </div>
   </div>
@@ -57,8 +57,7 @@ export default AnthologyItem
   text-transform: uppercase;
 }
 .anthology-item-description {
-  font-size: 1rem;
-  line-height: 1.5em;
+  // Should extend .block-description
   margin: (5rem/16) 0 (15rem/16) 0;
 }
 @media (min-width: $viewport-small) {
@@ -112,7 +111,6 @@ export default AnthologyItem
     width: 50%;
   }
   .anthology-item-description {
-    font-size: (18rem/16);
     flex-basis: 100%;
   }
 }

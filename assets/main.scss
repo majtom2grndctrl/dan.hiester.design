@@ -187,3 +187,10 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.block-preview {
+  font-size: 1rem;
+  line-height: 1.5em;
+  @media (min-width: $viewport-medium) {
+    font-size: (18rem/16);
+  }
+}

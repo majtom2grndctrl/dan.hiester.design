@@ -43,7 +43,7 @@ export default ContactCta
     }
   }
   &-content {
-    margin: 0 1rem;
+    margin: 0 1.25rem;
     padding: 0;
     overflow: hidden;
     > h1 {
