@@ -4,7 +4,7 @@
     <div class="text">
       <h2 class="title" v-html="post.title" />
       <div class="preview block-preview" v-html="post.preview" />
-      <cta-link :to="'/blog/' + post.uid">{{ post.cta }}</cta-link>
+      <cta-link :to="post.url">{{ post.cta }}</cta-link>
     </div>
   </div>
 </template>
