@@ -131,7 +131,9 @@ module.exports = {
             title: PrismicDOM.RichText.asText(result.data.title),
             content: PrismicDOM.RichText.asHtml(result.data.body),
             slug: result.uid,
-            url: paths.blog_item(result.uid)
+            url: paths.blog_item(result.uid),
+            cta: result.cta,
+            indexBgColor: result.data.index_page_background_color,
           }
         })
       })
