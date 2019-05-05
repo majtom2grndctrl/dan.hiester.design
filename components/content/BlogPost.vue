@@ -1,10 +1,10 @@
 <template>
-  <div class="item" ref="rootElement">
-    <img src="imgSrc" alt="imgAlt" />
+  <div class="blog-index-item" :style="`background: ${post.indexBgColor};`" ref="rootElement" v-on:click="this.handleTileClick">
+    <!--<img src="imgSrc" alt="imgAlt" />-->
     <div class="text">
       <h2 class="title" v-html="post.title" />
       <div class="preview block-preview" v-html="post.preview" />
-      <cta-link :to="post.url">{{ post.cta }}</cta-link>
+      <cta-link class="blog-index-cta" :to="post.url">{{ post.cta }}</cta-link>
     </div>
   </div>
 </template>
@@ -24,10 +24,8 @@ class BlogPost extends Vue {
   @Prop()
   post!: BlogPostData
 
-  mounted() {
-    const { indexBgColor } = this.post
-    const rootElement = this.$refs.rootElement as HTMLDivElement
-    indexBgColor && rootElement.style.setProperty('--block-background', indexBgColor)
+  handleTileClick() {
+    this.$router.push(this.post.url)
   }
 }
 
@@ -36,21 +34,23 @@ export default BlogPost
 </script>
 
 <style lang="scss" scoped>
-  .item {
+  .blog-index-item {
     background: var(--block-background);
     color: var(--white);
+    cursor: pointer;
     --block-background: var(--bg-blue-400);
   }
   .text {
     margin: 0 auto;
     max-width: 30rem;
-    padding: 1.25rem;
+    padding: 3rem 1.25rem;
   }
   .title {
     font-size: (26rem/16);
     line-height: (32em/26);
+    margin-top: 0;
   }
-  .cta-link {
+  .cta-link.blog-index-cta {
     max-width: 20rem;
     margin-left: auto;
     margin-right: auto;

@@ -43,20 +43,11 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    /*
-    ** Run ESLint on save
-    */
-   /*
-    extend (config, ctx) {
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
+    postcss: {
+      plugins: {
+        'postcss-custom-media': {},
       }
-    }*/
+    }
   },
   styleResources: {
     sass: ['~/assets/main.scss']
@@ -124,16 +115,19 @@ module.exports = {
         }
       ]
       blogQuery.results.map( result => {
-        console.log('result = ', result);
+        console.log('result = ', result)
+        const { data } = result
         routesList.push({
           route: paths.blog_item(result.uid),
           payload: {
-            title: PrismicDOM.RichText.asText(result.data.title),
-            content: PrismicDOM.RichText.asHtml(result.data.body),
+            title: PrismicDOM.RichText.asText(data.title),
+            content: PrismicDOM.RichText.asHtml(data.body),
             slug: result.uid,
             url: paths.blog_item(result.uid),
             cta: result.cta,
-            indexBgColor: result.data.index_page_background_color,
+            indexBgColor: data.index_page_background_color,
+            heroImage: data.hero_image,
+            heroBackground: data.hero_background,
           }
         })
       })
