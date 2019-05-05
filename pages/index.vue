@@ -77,6 +77,13 @@ export default {
 </script>
 
 
+<style lang="postcss">
+  @custom-media --viewport-small (min-width: calc(500rem/16));
+  @custom-media --viewport-medium (min-width: calc(820rem/16));
+  @custom-media --viewport-large (min-width: calc(1300rem/16));
+</style>
+
+
 <style lang="scss" scoped>
 $viewport-small: $viewport-small + 5rem;
 
