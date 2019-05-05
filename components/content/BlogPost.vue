@@ -1,5 +1,5 @@
 <template>
-  <div class="blog-index-item" ref="rootElement" v-on:click="this.handleTileClick">
+  <div class="blog-index-item" :style="`background: ${post.indexBgColor};`" ref="rootElement" v-on:click="this.handleTileClick">
     <!--<img src="imgSrc" alt="imgAlt" />-->
     <div class="text">
       <h2 class="title" v-html="post.title" />
@@ -23,12 +23,6 @@ import { BlogPostData } from '~/pages/blog/index.vue'
 class BlogPost extends Vue {
   @Prop()
   post!: BlogPostData
-
-  mounted() {
-    const { indexBgColor } = this.post
-    const rootElement = this.$refs.rootElement as HTMLDivElement
-    indexBgColor && rootElement.style.setProperty('--block-background', indexBgColor)
-  }
 
   handleTileClick() {
     this.$router.push(this.post.url)
