@@ -121,6 +121,7 @@ module.exports = {
           route: paths.blog_item(result.uid),
           payload: {
             title: PrismicDOM.RichText.asText(data.title),
+            subhead: PrismicDOM.RichText.asText(data.subhead),
             content: PrismicDOM.RichText.asHtml(data.body),
             slug: result.uid,
             url: paths.blog_item(result.uid),
