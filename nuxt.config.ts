@@ -103,6 +103,7 @@ module.exports = {
             }
           })
         },
+        /*
         {
           route: paths.portfolio_all,
           payload: portfolioQuery.results.map(result => {
@@ -117,9 +118,10 @@ module.exports = {
           route: '/work',
           redirect: paths.portfolio_all
         }
+        */
       ]
       blogQuery.results.map( result => {
-        console.log('result = ', result)
+        console.log('blog post: ', result)
         const { data } = result
         routesList.push({
           route: paths.blog_item(result.uid),
@@ -142,12 +144,14 @@ module.exports = {
             data: result.data
           }
         })
+        /*
         routesList.push({
           route: paths.portfolio_all_item(result.uid),
           payload: {
             data: result.data
           }
         })
+        */
       })
       console.log('routesList = ', routesList)
       return routesList
