@@ -81,12 +81,16 @@ module.exports = {
         {
           route: '/blog',
           payload: blogQuery.results.map((result) => {
+            const { data } = result
             return {
-              title: PrismicDOM.RichText.asText(result.data.title),
-              content: PrismicDOM.RichText.asHtml(result.data.body),
+              title: PrismicDOM.RichText.asText(data.title),
+              content: PrismicDOM.RichText.asHtml(data.body),
+              preview: PrismicDOM.RichText.asHtml(data.preview),
               slug: result.uid,
-              url: '/blog/' + result.uid
-            }
+              url: '/blog/' + result.uid,
+              cta: data.cta,
+              indexBgColor: data.index_page_background_color,
+              }
           })
         }
       ]
@@ -101,8 +105,6 @@ module.exports = {
             content: PrismicDOM.RichText.asHtml(data.body),
             slug: result.uid,
             url: '/blog/' + result.uid,
-            cta: result.cta,
-            indexBgColor: data.index_page_background_color,
             heroImage: data.hero_image,
             heroBackground: data.hero_background,
           }
