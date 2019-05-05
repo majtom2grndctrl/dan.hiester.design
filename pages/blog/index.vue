@@ -30,8 +30,8 @@ export interface BlogPostData {
   preview?: string;
   cta?: string;
   indexBgColor?: string;
-  heroImage?: string;
-  heroBackground?: string;
+  heroImage?: {};
+  heroBackground?: {};
 }
 
 export function parseResponse (response: ApiSearchResponse) {
@@ -47,7 +47,7 @@ export function parseResponse (response: ApiSearchResponse) {
     data.cta && (output.cta = data.cta)
     data.index_page_background_color && (output.indexBgColor = data.index_page_background_color)
     data.hero_image && (output.heroImage = data.hero_image)
-    data.hero_background && (output.heroBackground = data.hero_background.url)
+    data.hero_background && (output.heroBackground = data.hero_background)
     return output
   }
 
