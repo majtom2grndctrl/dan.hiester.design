@@ -78,6 +78,10 @@ export default BlogView
       justify-content: center;
       padding: 0;
     }
+    .title {
+      font-size: calc(42rem/16);
+      line-height: (52em/42);
+    }
     .subtitle {
       font-size: calc(26rem/16);
       line-height: calc(32em/26);
