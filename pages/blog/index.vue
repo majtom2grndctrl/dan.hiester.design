@@ -52,7 +52,7 @@ export function parseResponse (response: ApiSearchResponse) {
 //  console.log('blog_posts = ', response.results)
   if (response.results.length === 1) {
     return parseOne(response.results[0])
-  } else if (response.results.length > 1) {
+  } else {
     const parsed_posts: BlogPostData[] = []
     response.results.map((result) => {
       parsed_posts.push(parseOne(result))
