@@ -34,15 +34,18 @@ export interface BlogPostData {
 
 export function parseResponse (response: ApiSearchResponse) {
   function parseOne(result: Document) {
+    const { data } = result
     const output: BlogPostData = {
       url: '/blog/' + result.uid,
-      title: PrismicDOM.RichText.asText(result.data.title),
-      content: PrismicDOM.RichText.asHtml(result.data.body),
+      title: PrismicDOM.RichText.asText(data.title),
+      content: PrismicDOM.RichText.asHtml(data.body),
     }
-    result.data.subhead && (output.subhead = PrismicDOM.RichText.asText(result.data.subhead))
-    result.data.preview && (output.preview = PrismicDOM.RichText.asHtml(result.data.preview))
-    result.data.cta && (output.cta = result.data.cta)
-    result.data.index_page_background_color && (output.indexBgColor = result.data.index_page_background_color)
+    data.subhead && (output.subhead = PrismicDOM.RichText.asText(data.subhead))
+    data.preview && (output.preview = PrismicDOM.RichText.asHtml(data.preview))
+    data.cta && (output.cta = data.cta)
+    data.index_page_background_color && (output.indexBgColor = data.index_page_background_color)
+    data.hero_image && (output.heroImage = data.hero_image)
+    data.hero_background && (output.heroBackground = data.hero_background.url)
     return output
   }
 
