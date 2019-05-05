@@ -30,6 +30,8 @@ export interface BlogPostData {
   preview?: string;
   cta?: string;
   indexBgColor?: string;
+  heroImage?: string;
+  heroBackground?: string;
 }
 
 export function parseResponse (response: ApiSearchResponse) {

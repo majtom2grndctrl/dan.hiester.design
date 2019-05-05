@@ -102,6 +102,8 @@ module.exports = {
             url: '/blog/' + result.uid,
             cta: result.cta,
             indexBgColor: data.index_page_background_color,
+            heroImage: data.hero_image,
+            heroBackground: data.hero_background,
           }
         })
       })
