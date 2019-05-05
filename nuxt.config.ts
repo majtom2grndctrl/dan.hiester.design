@@ -91,16 +91,17 @@ module.exports = {
         }
       ]
       blogQuery.results.map( result => {
-        console.log('result = ', result);
+        console.log('result = ', result)
+        const { data } = result
         routesList.push({
           route: '/blog/' + result.uid,
           payload: {
-            title: PrismicDOM.RichText.asText(result.data.title),
-            content: PrismicDOM.RichText.asHtml(result.data.body),
+            title: PrismicDOM.RichText.asText(data.title),
+            content: PrismicDOM.RichText.asHtml(data.body),
             slug: result.uid,
             url: '/blog/' + result.uid,
             cta: result.cta,
-            indexBgColor: result.data.index_page_background_color,
+            indexBgColor: data.index_page_background_color,
           }
         })
       })
