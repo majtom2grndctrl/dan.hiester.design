@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header class="hero" :style="`background-image: url('${post.heroBackground}')`" ref="heroRoot">
+    <header class="hero" :style="`background-image: url('${post.heroBackground.url}')`" ref="heroRoot">
       <div class="meta">
         <h1 class="title" v-html="post.title" />
         <div class="subtitle" v-html="post.subhead" />
