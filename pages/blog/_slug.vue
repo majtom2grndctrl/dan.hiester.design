@@ -58,6 +58,7 @@ export default BlogView
     font-family: var(--font-heading);
     font-size: calc(18rem/16);
     line-height: calc(26em/18);
+    margin: 1em 0;
   }
   .hero-image {
     display: block;
@@ -85,6 +86,7 @@ export default BlogView
     .subtitle {
       font-size: calc(26rem/16);
       line-height: calc(32em/26);
+      margin: unset;
     }
     .hero-image {
       max-width: unset;
