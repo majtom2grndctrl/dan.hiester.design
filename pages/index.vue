@@ -78,9 +78,9 @@ export default {
 
 
 <style lang="postcss">
-  @custom-media --viewport-small (min-width: calc(500rem/16));
-  @custom-media --viewport-medium (min-width: calc(820rem/16));
-  @custom-media --viewport-large (min-width: calc(1300rem/16));
+  @custom-media --viewport-small (min-width: 31.25rem); /* 500 / 16 */
+  @custom-media --viewport-medium (min-width: 51.25rem); /* 820 / 16 */
+  @custom-media --viewport-large (min-width: 81.25rem); /* 1300 / 16 */
 </style>
 
 
