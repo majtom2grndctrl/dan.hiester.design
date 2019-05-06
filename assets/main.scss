@@ -148,14 +148,20 @@ h1, h2, h3, h4, h5, h6 {
       margin: 1em;
     }
   }
+  @media (min-width: $viewport-small) {
+    p, ol, ul, h2, h3, h4, h5, h6 {
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 30rem;
+    }
+  }
   @media (min-width: $viewport-medium) {
     font-size: (22rem/16);
     p, ol, ul {
       line-height: (44em/22);
     }
     p, ol, ul, h2, h3, h4, h5, h6 {
-      margin-right: auto;
-      margin-left: auto;
+      max-width: unset;
       width: (100% * 8 / 12);
     }
     .lede p {

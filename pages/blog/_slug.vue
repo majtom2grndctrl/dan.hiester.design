@@ -65,6 +65,16 @@ export default BlogView
     margin: 2rem auto 0;
     max-width: 50%;
   }
+  @media (--viewport-small) {
+    .title {
+      margin: 1em auto .5em;
+      max-width: 30rem;
+    }
+    .subtitle {
+      margin: 0 auto 1em;
+      max-width: 30rem;
+    }
+  }
   @media (--viewport-medium) {
     .hero {
       display: grid;
@@ -82,6 +92,7 @@ export default BlogView
     .title {
       font-size: calc(42rem/16);
       line-height: (52em/42);
+      max-width: unset;
     }
     .subtitle {
       font-size: calc(26rem/16);
