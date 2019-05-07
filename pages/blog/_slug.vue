@@ -49,29 +49,35 @@ export default BlogView
     color: white;
     display: flex;
     flex-direction: column-reverse;
-    margin: 0 0 3rem 0;
-    padding: 1rem;
+    margin: 0 0 2rem 0;
+    padding: 0 1.25rem;
   }
   .meta {
+  }
+  .title {
+    font-size: calc(24rem / 16);
+    line-height: 1.4em;
   }
   .subtitle {
     font-family: var(--font-heading);
     font-size: calc(18rem/16);
     line-height: calc(26em/18);
-    margin: 1em 0;
+    margin: 0 0 6.25%;
   }
   .hero-image {
     display: block;
-    margin: 2rem auto 0;
+    margin: 12.5% auto .5rem;
     max-width: 50%;
   }
   @media (--viewport-small) {
+    .hero {
+      margin: 0 0 3rem 0;
+    }
     .title {
       margin: 1em auto .5em;
       max-width: 30rem;
     }
     .subtitle {
-      margin: 0 auto 1em;
       max-width: 30rem;
     }
   }
@@ -91,7 +97,7 @@ export default BlogView
     }
     .title {
       font-size: calc(42rem/16);
-      line-height: (52em/42);
+      line-height: 1.275em;
       max-width: unset;
     }
     .subtitle {
