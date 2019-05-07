@@ -1,22 +1,25 @@
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
 import DyLogo from '~/components/DyLogo.vue'
-import MobileNavLauncher from '~/components/buttons/MobileNavLauncher.vue'
+//import MobileNavLauncher from '~/components/buttons/MobileNavLauncher.vue'
 
 @Component({
   components: {
     DyLogo,
-    MobileNavLauncher
+//    MobileNavLauncher
   }
 })
 
 class SiteHeader extends Vue {
+/*
   data() {
     return {
       mobileNav: false
     }
   }
+*/
 }
+
 
 export default SiteHeader
 </script>
@@ -30,11 +33,12 @@ export default SiteHeader
         <span class="distantly-yours">Distantly Yours</span>
       </nuxt-link>
     </div>
-    <nav class="desktop-nav">
+    <nav class="site-nav">
         <nuxt-link to="/portfolio">Portfolio</nuxt-link>
         <nuxt-link to="/blog">Blog</nuxt-link>
     </nav>
     <div class="push-farther">Push Farther</div>
+<!--
     <div class="mobile-nav">
       <mobile-nav-launcher v-on:launch="mobileNav = !mobileNav" :class="mobileNav && 'mobileNavOpen'" />
       <transition name="home-nav">
@@ -49,6 +53,7 @@ export default SiteHeader
         </div>
       </transition>
     </div>
+-->
   </header>
 </template>
 
@@ -58,34 +63,31 @@ export default SiteHeader
     display: flex;
       align-items: center;
       flex-direction: row;
-      justify-content: space-between;
-    margin: (20rem/16) (20rem/16) (30rem/16) (20rem/16);
-    @media (min-width: $viewport-small) {
       justify-content: flex-start;
-    }
+    margin: (20rem/16) (20rem/16) (30rem/16) (20rem/16);
     @media (min-width: $viewport-medium) {
       margin: (34rem/16) auto (20rem/16) auto;
       width: (100% * 12 / 14);
     }
   }
   .logo-container {
-    width: (100% * 2/12);
+    width: 5rem;
     @media (min-width: $viewport-medium) {
       width: (100% * 1 / 12);
-      &:hover {
-        .distantly-yours {
-          opacity: 1;
-          filter: blur(0);
-          transform: translate(0, -50%) rotate3d(0, 0, 0, 45deg);
-        }
-        + .desktop-nav {
+    }
+    &:hover {
+      .distantly-yours {
+        opacity: 1;
+        filter: blur(0);
+        transform: translate(0, -50%) rotate3d(0, 0, 0, 45deg);
+      }
+      + .site-nav {
+        opacity: 0;
+        transform: translate3d(3em, 0, 0);
+        + .push-farther {
           opacity: 0;
+          filter: blur(.25em);
           transform: translate3d(3em, 0, 0);
-          + .push-farther {
-            opacity: 0;
-            filter: blur(.25em);
-            transform: translate3d(3em, 0, 0);
-          }
         }
       }
     }
@@ -112,6 +114,41 @@ export default SiteHeader
     transition: opacity .4s, filter .6s ease, transform .6s;
   }
 
+.push-farther {
+  display: none;
+  @media (min-width: $viewport-small) {
+    color: #797979;
+    display: block;
+    font-weight: 300;
+    font-size: (15rem/16);
+    letter-spacing: .05ex;
+    opacity: .6;
+    padding: 0;
+    position: absolute;
+      top: (32rem/16);
+      right: (100% * 1/14);
+    text-transform: uppercase;
+    transition: transform .5s ease, opacity .5s, filter .5s;
+    &:before {
+      color: #076381;
+      content: '//';
+      font-size: (26em/15);
+      font-weight: bold;
+      font-style: italic;
+      mix-blend-mode: color-burn;
+      padding: 0 .125em;
+      position: absolute;
+        left: -(20em/15);
+        top: 45%;
+      transform: translate(0, -50%);
+    }
+  }
+  @media (min-width: $viewport-medium) {
+          top: (48rem/16);
+  }
+}
+
+
 // Navigation
 
 .home-nav-enter-active, .home-nav-leave-active {
@@ -129,7 +166,7 @@ export default SiteHeader
     transform: perspective(10em) translate3d(-70%, 20%, -5em);
   }
 }
-
+/*
 // -- Mobile Navigation
 
 .mobile-nav {
@@ -194,32 +231,29 @@ export default SiteHeader
     left: 0;
     z-index: 15;
 }
-
+*/
 // -- Desktop navigation
-.desktop-nav {
-  display: none;
-  @media (min-width: $viewport-small) {
-    display: flex;
-      flex-direction: row;
-      align-items: center;
-    margin: 0 0 0 (-8rem/16);
-    transition: transform .5s ease, opacity .5s;
-    > a {
-      border-bottom: (1rem/16) solid rgba(3, 161, 213, 0);
-      color: #97A3A7;
-      display: block;
-      font-size: (15rem/16);
-      line-height: 1em;
-      margin: 0 (17rem/16) 0 0;
-      padding: (10rem/16) (8rem/16) (8rem/16);
-      text-decoration: none;
-      transition: border-bottom-color .66s;
-      &.active {
-        border-bottom-color: rgba(3, 161, 213, .3);
-        @media (min-resolution: 1.25dppx) {
-          border-bottom-width: (1.5rem/16);
-          padding-bottom: (7.5rem/16);
-        }
+.site-nav {
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+  margin: 0 0 0 (-8rem/16);
+  transition: transform .5s ease, opacity .5s;
+  > a {
+    border-bottom: (1rem/16) solid rgba(3, 161, 213, 0);
+    color: #97A3A7;
+    display: block;
+    font-size: (15rem/16);
+    line-height: 1em;
+    margin: 0 (17rem/16) 0 0;
+    padding: (10rem/16) (8rem/16) (8rem/16);
+    text-decoration: none;
+    transition: border-bottom-color .66s;
+    &.active {
+      border-bottom-color: rgba(3, 161, 213, .3);
+      @media (min-resolution: 1.25dppx) {
+        border-bottom-width: (1.5rem/16);
+        padding-bottom: (7.5rem/16);
       }
     }
   }
