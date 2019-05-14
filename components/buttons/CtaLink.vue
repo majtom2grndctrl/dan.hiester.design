@@ -3,13 +3,13 @@
   <a v-else :href="href" :class="this.className"><slot /></a>
 </template>
 
-<style lang="scss" scoped>
+<style lang="postcss" scoped>
   .cta-link {
     box-sizing: border-box;
-    border-radius: (8em/16);
+    border-radius: .5em;
     display: block;
     font-weight: 500;
-    font-family: $font-heading;
+    font-family: var(--font-heading);
     font-size: 1rem;
     padding: .5em 3em;
     text-align: center;
