@@ -46,6 +46,7 @@ module.exports = {
     postcss: {
       plugins: {
         'postcss-custom-media': {},
+        'postcss-nesting': {},
       }
     }
   },
