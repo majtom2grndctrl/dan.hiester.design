@@ -17,7 +17,7 @@
 </template>
 
 
-<style lang="scss" scoped>
+<style lang="postcss" scoped>
 .mobile-nav-launcher {
   background: none;
   border: none;
@@ -28,9 +28,9 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-  font-family: $font-heading;
+  font-family: var(--font-heading);
   font-weight: 600;
-  font-size: (24rem/16);
+  font-size: calc(24rem/16);
   text-transform: uppercase;
   width: 5em;
   &:active {
