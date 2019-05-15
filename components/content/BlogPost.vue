@@ -50,7 +50,7 @@ export default BlogPost
     line-height: (32em/26);
     margin-top: 0;
   }
-  .cta-link.blog-index-cta {
+  .CtaLink.blog-index-cta {
     max-width: 20rem;
     margin-left: auto;
     margin-right: auto;

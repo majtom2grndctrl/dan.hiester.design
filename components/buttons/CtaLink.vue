@@ -4,7 +4,7 @@
 </template>
 
 <style lang="postcss" scoped>
-  .cta-link {
+  .CtaLink {
     box-sizing: border-box;
     border-radius: .5em;
     display: block;
@@ -16,12 +16,12 @@
     text-decoration: none;
     text-transform: uppercase;
 
-    &.cta-link--white {
+    &.CtaLink--white {
       background: #fff;
       color: #406A79;
       opacity: .85;
     }
-    &.cta-link--blue-300 {
+    &.CtaLink--blue-300 {
       background: #296C82;
       color: rgba(255, 255, 255, .8);
     }
@@ -32,8 +32,8 @@
 import Vue from 'vue'
 
 export const ctaStyles = Object.freeze({
-  white: 'cta-link--white',
-  blue300: 'cta-link--blue-300',
+  white: 'CtaLink--white',
+  blue300: 'CtaLink--blue-300',
 })
 
 export default Vue.extend({
@@ -50,7 +50,7 @@ export default Vue.extend({
   },
   computed: {
     className: function() {
-      return 'cta-link ' + ctaStyles[this.ctaStyle]
+      return 'CtaLink ' + ctaStyles[this.ctaStyle]
     }
   }
 })

@@ -43,7 +43,7 @@ export default AnthologyItem
   &:first-of-type {
     margin-top: (15rem/16);
   }
-  .cta-link.cta-link--white {
+  .CtaLink.CtaLink--white {
     background-color: var(--gray-800);
     opacity: 1;
   }
@@ -65,7 +65,7 @@ export default AnthologyItem
     max-width: 30rem;
     margin-right: auto;
     margin-left: auto;
-    .cta-link {
+    .CtaLink {
       max-width: 20rem;
       margin-right: auto;
       margin-left: auto;
@@ -94,7 +94,7 @@ export default AnthologyItem
     &:nth-child(2n) {
       background: var(--bg-blue-200);
     }
-    .cta-link.cta-link--white {
+    .CtaLink.CtaLink--white {
       background-color: var(--white);
       opacity: .85;
       margin-right: 0;
