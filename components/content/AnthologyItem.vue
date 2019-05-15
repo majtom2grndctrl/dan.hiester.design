@@ -3,7 +3,7 @@
     <div class="anthology-item-content">
       <h3 class="anthology-item-type" v-html="data.type" />
       <div class="anthology-item-description block-preview" v-html="data.description" />
-      <cta-link :to="data.href" v-html="data.ctaText" />
+      <cta-link :to="data.href" v-html="data.ctaText" class="cta" />
     </div>
   </div>
 </template>
@@ -43,7 +43,7 @@ export default AnthologyItem
   &:first-of-type {
     margin-top: (15rem/16);
   }
-  .CtaLink.CtaLink--white {
+  .cta {
     background-color: var(--gray-800);
     opacity: 1;
   }
@@ -65,7 +65,7 @@ export default AnthologyItem
     max-width: 30rem;
     margin-right: auto;
     margin-left: auto;
-    .CtaLink {
+    .cta {
       max-width: 20rem;
       margin-right: auto;
       margin-left: auto;
@@ -94,7 +94,7 @@ export default AnthologyItem
     &:nth-child(2n) {
       background: var(--bg-blue-200);
     }
-    .CtaLink.CtaLink--white {
+    .cta {
       background-color: var(--white);
       opacity: .85;
       margin-right: 0;

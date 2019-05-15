@@ -4,7 +4,7 @@
     <div class="text">
       <h2 class="title" v-html="post.title" />
       <div class="preview block-preview" v-html="post.preview" />
-      <cta-link class="blog-index-cta" :to="post.url">{{ post.cta }}</cta-link>
+      <cta-link class="cta" :to="post.url">{{ post.cta }}</cta-link>
     </div>
   </div>
 </template>
@@ -50,7 +50,7 @@ export default BlogPost
     line-height: (32em/26);
     margin-top: 0;
   }
-  .CtaLink.blog-index-cta {
+  .cta {
     max-width: 20rem;
     margin-left: auto;
     margin-right: auto;
