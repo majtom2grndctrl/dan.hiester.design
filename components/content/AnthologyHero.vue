@@ -1,11 +1,11 @@
 <template>
-  <header class="anthology-hero">
-    <h1 class="anthology-title">{{ data.title }}</h1>
-    <div class="anthology-hero-image">
+  <header class="AnthologyHero">
+    <h1 class="title">{{ data.title }}</h1>
+    <div class="image">
       <img :src="data.image" alt="" />
     </div>
-    <div class="anthology-description" v-html="data.description" />
-    <h2 class="anthology-hero-subhead" v-html="data.subhead" />
+    <div class="description" v-html="data.description" />
+    <h2 class="subhead" v-html="data.subhead" />
   </header>
 </template>
 
@@ -29,45 +29,45 @@ class AnthologyHero extends Vue {
 export default AnthologyHero
 </script>
 
-<style lang="scss" scoped>
-.anthology-hero {
+<style lang="postcss" scoped>
+.AnthologyHero {
   display: flex;
   flex-direction: column;
 }
-.anthology-title {
+.title {
   color: var(--white);
-  font-size: (30rem/16);
+  font-size: calc(30rem/16);
   font-weight: 400;
-  line-height: (38em/30);
-  margin: (35em/30) 0 (20em/30) 0;
+  line-height: calc(38em/30);
+  margin: calc(35em/30) 0 calc(20em/30) 0;
   text-align: center;
 }
-.anthology-description {
+.description {
   font-size: 1rem;
-  line-height: (24em/16);
+  line-height: calc(24em/16);
 }
-.anthology-hero-image {
+.image {
   margin: 0 15%;
-  > img {
+  & > img {
     width: 100%;
   }
 }
-.anthology-hero-subhead {
+.subhead {
   font-size: 1.875rem;
   font-weight: 400;
   line-height: 1.26667em;
   margin: 1.16667em 0 .66667em;
   text-align: center;
 }
-@media (min-width: $viewport-small) {
-  .anthology-hero {
+@media (--viewport-small) {
+  .AnthologyHero {
     max-width: 30rem;
     margin-right: auto;
     margin-left: auto;
   }
 }
-@media (min-width: $viewport-medium) {
-  .anthology-hero {
+@media (--viewport-medium) {
+  .AnthologyHero {
     display: flex;
     height: 25.5rem;
     justify-content: center;
@@ -75,25 +75,25 @@ export default AnthologyHero
     padding: 0 60% 0 13%;
     position: relative;
   }
-  .anthology-title {
+  .title {
     margin: .5em 0 0 0;
     text-align: left; 
   }
-  .anthology-hero-subhead {
+  .subhead {
     display: none;
   }  
-  .anthology-hero-image {
+  .image {
     margin: 0;
     position: absolute;
       top: 1rem;
-      right: (100% * 1/12);
-    width: (100% * 5.5/12);
+      right: calc(100% * 1/12);
+    width: calc(100% * 5.5/12);
   }
 
   /* Modification classes */
-  .anthology--inroads {
-    .anthology-title {
-      font-size: (48rem/16) !important;
+  .Anthology--inroads {
+    & .title {
+      font-size: calc(48rem/16) !important;
     }
   }
 }

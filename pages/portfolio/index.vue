@@ -1,6 +1,6 @@
 <template>
   <div>
-    <anthology mod-class="anthology--inroads">
+    <anthology class="Anthology--inroads">
       <template v-slot:hero><anthology-hero :data="inRoadsData.hero" /></template>
       <anthology-item v-for="(data, index) in inRoadsData.items" :data="data" :key="'key-' + index" />
     </anthology>
