@@ -26,7 +26,7 @@ export default SiteHeader
 
 
 <template>
-  <header class="site-header">
+  <header class="SiteHeader">
     <div class="logo-container">
       <nuxt-link to="/" class="logo">
         <dy-logo />
@@ -58,33 +58,26 @@ export default SiteHeader
 </template>
 
 
-<style lang="scss" scoped>
-  .site-header {
+<style lang="postcss" scoped>
+  .SiteHeader {
     display: flex;
       align-items: center;
       flex-direction: row;
       justify-content: flex-start;
-    margin: (20rem/16) (20rem/16) (30rem/16) (20rem/16);
-    @media (min-width: $viewport-medium) {
-      margin: (34rem/16) auto (20rem/16) auto;
-      width: (100% * 12 / 14);
-    }
+    margin: calc(20rem/16) calc(20rem/16) calc(30rem/16) calc(20rem/16);
   }
   .logo-container {
     width: 5rem;
-    @media (min-width: $viewport-medium) {
-      width: (100% * 1 / 12);
-    }
     &:hover {
-      .distantly-yours {
+      & .distantly-yours {
         opacity: 1;
         filter: blur(0);
         transform: translate(0, -50%) rotate3d(0, 0, 0, 45deg);
       }
-      + .site-nav {
+      & + .site-nav {
         opacity: 0;
         transform: translate3d(3em, 0, 0);
-        + .push-farther {
+        & + .push-farther {
           opacity: 0;
           filter: blur(.25em);
           transform: translate3d(3em, 0, 0);
@@ -97,11 +90,11 @@ export default SiteHeader
     position: relative;
   }
   .distantly-yours {
-    color: $gray-500;
+    color: var(--gray-500);
     filter: blur(.66em);
-    font-family: $font-heading;
+    font-family: var(--font-heading);
     font-weight: 600;
-    font-size: (18rem/16);
+    font-size: calc(18rem/16);
     letter-spacing: .166ex;
     opacity: 0;
     pointer-events: none;
@@ -113,46 +106,61 @@ export default SiteHeader
     transform: translate(0, -50%) rotate3d(-1, 2, 0, 55deg);
     transition: opacity .4s, filter .6s ease, transform .6s;
   }
+  @media (--viewport-medium) {
+    .SiteHeader {
+      margin: calc(34rem/16) auto calc(20rem/16) auto;
+      width: calc(100% * 12 / 14);
+    }
+    .logo-container {
+      width: calc(100% * 1 / 12);
+    }
+  }
 
+
+/* Push Farther */
 .push-farther {
   display: none;
-  @media (min-width: $viewport-small) {
+}
+@media (--viewport-small) {
+  .push-farther {
     color: #797979;
     display: block;
     font-weight: 300;
-    font-size: (15rem/16);
+    font-size: calc(15rem/16);
     letter-spacing: .05ex;
     opacity: .6;
     padding: 0;
     position: absolute;
-      top: (32rem/16);
-      right: (100% * 1/14);
+      top: calc(32rem/16);
+      right: calc(100% * 1/14);
     text-transform: uppercase;
     transition: transform .5s ease, opacity .5s, filter .5s;
     &:before {
       color: #076381;
       content: '//';
-      font-size: (26em/15);
+      font-size: calc(26em/15);
       font-weight: bold;
       font-style: italic;
       mix-blend-mode: color-burn;
       padding: 0 .125em;
       position: absolute;
-        left: -(20em/15);
+        left: calc(-20em/15);
         top: 45%;
       transform: translate(0, -50%);
     }
   }
-  @media (min-width: $viewport-medium) {
-          top: (48rem/16);
+}
+@media (--viewport-medium) {
+  .push-farther{
+    top: calc(48rem/16);
   }
 }
 
 
-// Navigation
+/* Navigation */
 
 .home-nav-enter-active, .home-nav-leave-active {
-  //mix-blend-mode: color-burn;
+  /*mix-blend-mode: color-burn;*/
   transition: background-color $mobile-nav-transition-duration; // background-color is just there to trigger the transition timing.
   .modal-overlay, .mobile-nav-links {
     transition: opacity ($mobile-nav-transition-duration * 2/3) ease-in-out, transform ($mobile-nav-transition-duration * 2/3);
@@ -167,7 +175,7 @@ export default SiteHeader
   }
 }
 /*
-// -- Mobile Navigation
+/ -- Mobile Navigation 
 
 .mobile-nav {
   @media (min-width: $viewport-small) {
@@ -193,7 +201,7 @@ export default SiteHeader
       flex-direction: column;
       align-content: flex-start;
       justify-content: space-between;
-    font-size: (24rem/16);
+    font-size: calc(24rem/16);
 //    height: 55vh;
     height: 33vh;
     width: 50vw;
@@ -209,9 +217,9 @@ export default SiteHeader
     > h2 {
       color: rgba(255, 255, 255, .66);
       font-weight: 400;
-      font-size: (16em/24);
+      font-size: calc(16em/24);
       margin: 0;
-      padding: (16rem/16);
+      padding: calc(16rem/16);
       text-transform: uppercase;
     }
     > a {
@@ -232,30 +240,32 @@ export default SiteHeader
     z-index: 15;
 }
 */
-// -- Desktop navigation
+/* -- Desktop navigation */
 .site-nav {
   display: flex;
     flex-direction: row;
     align-items: center;
-  margin: 0 0 0 (-8rem/16);
+  margin: 0 0 0 calc(-8rem/16);
   transition: transform .5s ease, opacity .5s;
-  > a {
-    border-bottom: (1rem/16) solid rgba(3, 161, 213, 0);
+  & > a {
+    border-bottom: calc(1rem/16) solid rgba(3, 161, 213, 0);
     color: #97A3A7;
     display: block;
-    font-size: (15rem/16);
+    font-size: calc(15rem/16);
     line-height: 1em;
-    margin: 0 (17rem/16) 0 0;
-    padding: (10rem/16) (8rem/16) (8rem/16);
+    margin: 0 calc(17rem/16) 0 0;
+    padding: calc(10rem/16) calc(8rem/16) calc(8rem/16);
     text-decoration: none;
     transition: border-bottom-color .66s;
     &.active {
       border-bottom-color: rgba(3, 161, 213, .3);
-      @media (min-resolution: 1.25dppx) {
-        border-bottom-width: (1.5rem/16);
-        padding-bottom: (7.5rem/16);
-      }
     }
+  }
+}
+@media (min-resolution: 1.25dppx) {
+  .site-nav > a.active {
+    border-bottom-width: calc(1.5rem/16);
+    padding-bottom: calc(7.5rem/16);
   }
 }
 
