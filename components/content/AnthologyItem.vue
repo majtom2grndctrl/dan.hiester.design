@@ -1,8 +1,8 @@
 <template>
-  <div class="anthology-item">
-    <div class="anthology-item-content">
-      <h3 class="anthology-item-type" v-html="data.type" />
-      <div class="anthology-item-description block-preview" v-html="data.description" />
+  <div class="AnthologyItem">
+    <div class="content">
+      <h3 class="type" v-html="data.type" />
+      <div class="description block-preview" v-html="data.description" />
       <cta-link :to="data.href" v-html="data.ctaText" class="cta" />
     </div>
   </div>
@@ -33,50 +33,48 @@ class AnthologyItem extends Vue {
 export default AnthologyItem
 </script>
 
-<style lang="scss" scoped>
-.anthology-item {
+<style lang="postcss" scoped>
+.AnthologyItem {
   background-color: var(--white);
-  border-radius: (8rem/16);
+  border-radius: calc(8rem/16);
   color: var(--gray-400);
-  margin: (12rem/16) 0;
+  margin: calc(12rem/16) 0;
   padding: 1rem;
   &:first-of-type {
-    margin-top: (15rem/16);
+    margin-top: calc(15rem/16);
   }
-  .cta {
+  & .cta {
     background-color: var(--gray-800);
     opacity: 1;
   }
 }
-.anthology-item-type {
+.type {
   color: var(--gray-600);
-  font-size: (14rem/16);
+  font-size: calc(14rem/16);
   font-weight: 500;
   line-height: 1em;
-  margin: 0 0 (5rem/16) 0;
+  margin: 0 0 calc(5rem/16) 0;
   text-transform: uppercase;
 }
-.anthology-item-description {
-  // Should extend .block-description
-  margin: (5rem/16) 0 (15rem/16) 0;
+.description {
+  /* Should extend .block-description */
+  margin: calc(5rem/16) 0 calc(15rem/16) 0;
 }
-@media (min-width: $viewport-small) {
-  .anthology-item {
+@media (--viewport-small) {
+  .AnthologyItem {
     max-width: 30rem;
     margin-right: auto;
     margin-left: auto;
-    .cta {
+
+    & .cta {
       max-width: 20rem;
       margin-right: auto;
       margin-left: auto;
     }
   }
 }
-@media (min-width: $viewport-medium) {
-  .anthology-item-type {
-    color: inherit;
-  }
-  .anthology-item {
+@media (--viewport-medium) {
+  .AnthologyItem {
     color: inherit;
     box-sizing: border-box;
     display: flex;
@@ -94,14 +92,17 @@ export default AnthologyItem
     &:nth-child(2n) {
       background: var(--bg-blue-200);
     }
-    .cta {
+    & .cta {
       background-color: var(--white);
       opacity: .85;
       margin-right: 0;
       margin-left: 0;
     }
   }
-  .anthology-item-content {
+  .type {
+    color: inherit;
+  }
+  .content {
     display: flex;
       flex-direction: column;
       flex-basis: 100%;
@@ -110,7 +111,7 @@ export default AnthologyItem
     margin-left: auto;
     width: 50%;
   }
-  .anthology-item-description {
+  .description {
     flex-basis: 100%;
   }
 }
