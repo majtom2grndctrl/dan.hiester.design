@@ -1,5 +1,5 @@
 <template>
-  <div class="blog-index-item" :style="`background: ${post.indexBgColor};`" ref="rootElement" v-on:click="this.handleTileClick">
+  <div class="BlogPost" :style="`background: ${post.indexBgColor};`" ref="rootElement" v-on:click="this.handleTileClick">
     <!--<img src="imgSrc" alt="imgAlt" />-->
     <div class="text">
       <h2 class="title" v-html="post.title" />
@@ -33,8 +33,8 @@ class BlogPost extends Vue {
 export default BlogPost
 </script>
 
-<style lang="scss" scoped>
-  .blog-index-item {
+<style lang="postcss" scoped>
+  .BlogPost {
     background: var(--block-background);
     color: var(--white);
     cursor: pointer;
@@ -46,20 +46,14 @@ export default BlogPost
     padding: 3rem 1.25rem;
   }
   .title {
-    font-size: (26rem/16);
-    line-height: (32em/26);
+    font-size: calc(26rem/16);
+    line-height: calc(32em/26);
     margin-top: 0;
   }
   .cta {
     max-width: 20rem;
     margin-left: auto;
     margin-right: auto;
-  }
-  @media (min-width: $viewport-small) {
-  }
-  @media (min-width: $viewport-medium) {
-  }
-  @media (min-width: $viewport-large) {
   }
 </style>
 
