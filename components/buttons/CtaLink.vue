@@ -15,16 +15,15 @@
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
-
-    &.CtaLink--white {
-      background: #fff;
-      color: #406A79;
-      opacity: .85;
-    }
-    &.CtaLink--blue-300 {
-      background: #296C82;
-      color: rgba(255, 255, 255, .8);
-    }
+  }
+  .CtaLink--white {
+    background: #fff;
+    color: #406A79;
+    opacity: .85;
+  }
+  .CtaLink--blue-300 {
+    background: #296C82;
+    color: rgba(255, 255, 255, .8);
   }
 </style>
 
