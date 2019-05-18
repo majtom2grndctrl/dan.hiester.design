@@ -143,21 +143,6 @@ export default SiteHeader
 
 /* Navigation */
 
-.home-nav-enter-active, .home-nav-leave-active {
-  /*mix-blend-mode: color-burn;*/
-  transition: background-color var(--mobile-nav-transition-duration); // background-color is just there to trigger the transition timing.
-  .modal-overlay, .mobile-nav-links {
-    transition: opacity (var(--mobile-nav-transition-duration) * 2/3) ease-in-out, transform (var(--mobile-nav-transition-duration) * 2/3);
-  }
-}
-.home-nav-enter, .home-nav-leave-to {
-  > .modal-overlay, > .mobile-nav-links {
-    opacity: 0;
-  }
-  > .mobile-nav-links {
-    transform: perspective(10em) translate3d(-70%, 20%, -5em);
-  }
-}
 /* -- Desktop navigation */
 .site-nav {
   display: flex;
