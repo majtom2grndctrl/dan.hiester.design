@@ -50,9 +50,6 @@ module.exports = {
       }
     }
   },
-  styleResources: {
-    sass: ['~/assets/main.scss']
-  },
   css: ['~/assets/html.css'],
   generate: {
     routes: async function () {
