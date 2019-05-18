@@ -133,8 +133,8 @@ h1, h2, h3, h4, h5, h6 {
   font-size: calc(16rem/16);
   color: var(--gray-400);
   & .lede p {
-    font-size: (18rem/16);
-    line-height: (26em/18);
+    font-size: calc(18rem/16);
+    line-height: calc(26em/18);
   }
   & img {
     max-width: 100%;
@@ -154,9 +154,9 @@ h1, h2, h3, h4, h5, h6 {
   & figure {
     background: var(--bg-blue-400);
     color: var(--white);
-    font-size: (14rem/16);
+    font-size: calc(14rem/16);
     margin: 1rem;
-    padding: (1rem/16) (1rem/16) 1.5em (1rem/16);
+    padding: calc(1rem/16) calc(1rem/16) 1.5em calc(1rem/16);
     & a {
       color: var(--white);
     }
