@@ -34,7 +34,7 @@ export default Vue.extend ({
 <style lang="scss">
 // This prevents major CSS breakage.
 .unused-class {
-  color: $bg-blue-400;
+  width: $viewport-small;
 }
 
 </style>
