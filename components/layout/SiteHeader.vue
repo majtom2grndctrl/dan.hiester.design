@@ -161,9 +161,9 @@ export default SiteHeader
 
 .home-nav-enter-active, .home-nav-leave-active {
   /*mix-blend-mode: color-burn;*/
-  transition: background-color $mobile-nav-transition-duration; // background-color is just there to trigger the transition timing.
+  transition: background-color var(--mobile-nav-transition-duration); // background-color is just there to trigger the transition timing.
   .modal-overlay, .mobile-nav-links {
-    transition: opacity ($mobile-nav-transition-duration * 2/3) ease-in-out, transform ($mobile-nav-transition-duration * 2/3);
+    transition: opacity (var(--mobile-nav-transition-duration) * 2/3) ease-in-out, transform (var(--mobile-nav-transition-duration) * 2/3);
   }
 }
 .home-nav-enter, .home-nav-leave-to {
@@ -212,7 +212,7 @@ export default SiteHeader
       left: 50%;
       z-index: 16;
     text-align: left;
-    transition: transform $mobile-nav-transition-duration ease-out;
+    transition: transform var(--mobile-nav-transition-duration) ease-out;
     transform: perspective(10em) translate3d(-50%, 0, 0);
     > h2 {
       color: rgba(255, 255, 255, .66);

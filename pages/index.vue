@@ -1,11 +1,11 @@
 <!-- Splash page -->
 
 <template>
-  <main class="splash-container">
+  <main class="Splash">
     <header>
       <dy-logo width="71px" height="52px" style="mix-blend-mode: color-burn;" d-fill="rgba(3, 161, 213, 100)" d-style="mix-blend-mode: color-burn;" y-fill="rgba(3, 161, 213, 100)" y-style="mix-blend-mode: color-burn;" overlap-fill="#00B3EE" />
       <h1 class="title" :class="mobileNav && 'mobileNavOpen'">Distantly Yours</h1>
-      <div class="splash-subtitle">Push Farther</div>
+      <div class="subtitle">Push Farther</div>
     </header>
     <div :class="'mobile-nav' + (isNavigating ? ' mobile-nav--navigating' : '')">
       <mobile-nav-launcher v-on:launch="mobileNav = !mobileNav" :class="mobileNav && 'mobileNavOpen'" />
@@ -84,10 +84,10 @@ export default {
 </style>
 
 
-<style lang="scss" scoped>
-$viewport-small: $viewport-small + 5rem;
+<style lang="postcss" scoped>
 
-.splash-container {
+.Splash {
+/*  --viewport-small: calc(--viewport-small + 5rem);*/
   background: url('/img/home-header-background@1x.jpg') 50% 50% / cover no-repeat #6E8A93;
   min-height: 100vh;
   display: flex;
@@ -95,67 +95,60 @@ $viewport-small: $viewport-small + 5rem;
     justify-content: center;
     align-items: center;
   text-align: center;
-  @media (min-width: $viewport-medium) {
-    background: url('/img/home-header-background@1x.jpg') 50% 50% / contain no-repeat #6E8A93;
-  }
-  @media (min-resolution: 150dpi) {
-    background-image: url('/img/home-header-background@2x.jpg');
-  }
-  > header {
+  & > header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    @media (min-width: $viewport-small) {
-      flex-direction: row;
-      padding-top: (105rem/16);
-    }
   }
 }
-.splash-logo {
-  mix-blend-mode: color-burn;
-  position: relative;
-    z-index: 1;
-}
 .title {
-  color: $gray-400;
+  color: var(--gray-400);
   display: block;
-  font-family: $font-heading;
+  font-family: var(--font-heading);
   font-weight: 600;
-  font-size: (24rem/16);
+  font-size: calc(24rem/16);
   letter-spacing: .166ex;
-  margin: (30rem/16) (20rem/16) 0;
+  margin: calc(30rem/16) calc(20rem/16) 0;
   text-transform: uppercase;
   text-align: center;
   transition: filter .2s, opacity .2s;
   &.mobileNavOpen {
     opacity: .075;
-    @media (min-width: $viewport-small) {
+  }
+}
+.subtitle {
+  display: none;
+}
+@media (min-resolution: 150dpi) {
+  .Splash {
+    background-image: url('/img/home-header-background@2x.jpg');
+  }
+}
+@media (--viewport-small) {
+  .Splash > header {
+    flex-direction: row;
+    padding-top: calc(105rem/16);
+  }
+  .title {
+    margin: 0 calc(46rem/16) 0 calc(30rem/16);
+    text-align: left;
+    &.mobileNavOpen {
       opacity: 1;
     }
   }
-  @media (min-width: $viewport-small) {
-    margin: 0 (46rem/16) 0 (30rem/16);
-    text-align: left;
-  }
-  @media (min-width: $viewport-medium) {
-    font-size: (29rem/16);
-  }
-}
-.splash-subtitle {
-  display: none;
-  @media (min-width: $viewport-small) {
+  .subtitle {
     color: #797979;
     display: block;
     font-weight: 300;
-    font-size: (21rem/16);
+    font-size: calc(21rem/16);
     letter-spacing: .05ex;
-    padding: 0 0 0 (82rem/16);
+    padding: 0 0 0 calc(82rem/16);
     position: relative;
     text-transform: uppercase;
     &:before {
       color: #076381;
       content: '//';
-      font-size: (38rem/16);
+      font-size: calc(38rem/16);
       font-weight: bold;
       font-style: italic;
       mix-blend-mode: color-burn;
@@ -167,88 +160,91 @@ $viewport-small: $viewport-small + 5rem;
     }
   }
 }
+@media (--viewport-medium) {
+  .Splash {
+    background: url('/img/home-header-background@1x.jpg') 50% 50% / contain no-repeat #6E8A93;
+  }
+  .title {
+    font-size: calc(29rem/16);
+  }
+}
+
+/*
+Page transitions
+****************************/
+
 .splash-nav-enter-active, .splash-nav-leave-active {
-  //mix-blend-mode: color-burn;
-  transition: background-color $mobile-nav-transition-duration; // background-color is just there to trigger the transition timing.
-  .modal-overlay, .mobile-nav-links {
-    transition: opacity ($mobile-nav-transition-duration * 2/3) ease-in-out, transform ($mobile-nav-transition-duration * 2/3);
+  transition: background-color var(--mobile-nav-transition-duration); /* background-color is just there to trigger the transition timing. */
+  & .modal-overlay, & .mobile-nav-links {
+    transition: opacity calc(var(--mobile-nav-transition-duration) * 2/3) ease-in-out, transform calc(var(--mobile-nav-transition-duration) * 2/3);
   }
 }
 .splash-nav-enter, .splash-nav-leave-to {
-  > .modal-overlay, > .mobile-nav-links {
+  & > .modal-overlay, & > .mobile-nav-links {
     opacity: 0;
   }
-  > .mobile-nav-links {
+  & > .mobile-nav-links {
     transform: perspective(10em) translate3d(-70%, 20%, -5em);
   }
 }
-.mobile-nav {
-  @media (min-width: $viewport-small) {
-    display: none;
+
+/*
+  Navigation
+****************************/
+
+.mobile-nav-launcher {
+  margin: 10vh 0 0 0;
+  transition: filter .3s, opacity .3s;
+  &.mobileNavOpen {
+      opacity: .1;
   }
-  &-launcher {
-    margin: 10vh 0 0 0;
-    transition: filter .3s, opacity .3s;
-    &.mobileNavOpen {
-        opacity: .1;
-    }
+}
+.mobile-nav-close-button {
+  color: rgba(255, 255, 255, .7);
+  cursor: pointer;
+  position: absolute;
+    top: 1.1em;
+    left: 100%;
+}
+.mobile-nav-links {
+  border-left: 1px solid rgba(255, 255, 255, .5);
+  box-sizing: border-box;
+  display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: space-between;
+  font-size: calc(24rem/16);
+  height: 33vh;
+  width: 50vw;
+  padding: .5em 0 1em .5em;
+  pointer-events: none;
+  position: fixed;
+    top: 33%;
+    left: 50%;
+    z-index: 6;
+  text-align: left;
+  transition: transform var(--mobile-nav-transition-duration) ease-out;
+  transform: perspective(10em) translate3d(-50%, 0, 0);
+  & > h2 {
+    color: rgba(255, 255, 255, .66);
+    font-weight: 400;
+    font-size: calc(16em/24);
+    margin: 0;
+    padding: calc(16rem/16);
+    text-transform: uppercase;
   }
-  &-close-button {
-    color: rgba(255, 255, 255, .7);
-    cursor: pointer;
-    position: absolute;
-      top: 1.1em;
-      left: 100%;
-  }
-  &-links {
-    border-left: 1px solid rgba(255, 255, 255, .5);
-    box-sizing: border-box;
-    display: flex;
-      flex-direction: column;
-      align-content: flex-start;
-      justify-content: space-between;
-    font-size: (24rem/16);
-//    height: 55vh;
-    height: 33vh;
-    width: 50vw;
-    padding: .5em 0 1em .5em;
-    pointer-events: none;
-    position: fixed;
-//      top: 22.5%;
-      top: 33%;
-      left: 50%;
-      z-index: 6;
-    text-align: left;
-    transition: transform $mobile-nav-transition-duration ease-out;
-    transform: perspective(10em) translate3d(-50%, 0, 0);
-    > h2 {
-      color: rgba(255, 255, 255, .66);
-      font-weight: 400;
-      font-size: (16em/24);
-      margin: 0;
-      padding: (16rem/16);
-      text-transform: uppercase;
-    }
-    > a {
-      color: #fff;
-      display: block;
-      padding: .75em;
-      pointer-events: all;
-      text-decoration: none;
-    }
+  & > a {
+    color: #fff;
+    display: block;
+    padding: .75em;
+    pointer-events: all;
+    text-decoration: none;
   }
 }
 .modal-overlay {
   background: rgba(0,0,0,.6);
-  @supports (mix-blend-mode: color-burn) {
-    background: linear-gradient(45deg, rgba(0,32,42,1) 0%, rgba(0,66,88,1) 16%, rgba(0,82,152,1) 39%, rgba(0,82,152,1) 59%, rgba(34,118,190,1) 65%, rgba(0,82,152,1) 73%, rgba(201,242,255,1) 100%);
-    mix-blend-mode: color-burn;
-  }
   filter: saturate(100%);
   transition: filter .9s linear;
-  .mobile-nav--navigating & {
-    filter: saturate(0%) brightness(80%);
-  }
   position: fixed;
     top: 0;
     right: 0;
@@ -256,40 +252,53 @@ $viewport-small: $viewport-small + 5rem;
     left: 0;
     z-index: 5;
 }
-.widescreen-links {
-  display: none;
-  @media (min-width: $viewport-small) {
-    display: block;
-    padding-top: (65rem/16);
-    > a {
-      color: $gray-400;
-      font-size: (21rem/16);
-      text-decoration: none;
-      @media (min-width: $viewport-small) {
-        margin: 0 (38rem/16);
-      }
-    }
+.mobile-nav--navigating {
+  & .modal-overlay {
+    filter: saturate(0%) brightness(80%);
   }
 }
+@supports (mix-blend-mode: color-burn) {
+  .modal-overlay {
+    background: linear-gradient(45deg, rgba(0,32,42,1) 0%, rgba(0,66,88,1) 16%, rgba(0,82,152,1) 39%, rgba(0,82,152,1) 59%, rgba(34,118,190,1) 65%, rgba(0,82,152,1) 73%, rgba(201,242,255,1) 100%);
+    mix-blend-mode: color-burn;
+  }
+}
+.widescreen-links {
+  display: none;
+}
 
-.down-button {
-  &-link {
-    position: absolute;
-      bottom: 3%;
-      z-index: 1;
-    opacity: .68;
-    transition: filter .3s, opacity .3s;
-    &.mobileNavOpen {
-      filter: blur(.25em);
-      opacity: .5;
-      @media (min-width: $viewport-small) {
-        opacity: 1;
-        filter: none;
-      }
+.down-button-link {
+  position: absolute;
+    bottom: 3%;
+    z-index: 1;
+  opacity: .68;
+  transition: filter .3s, opacity .3s;
+  &.mobileNavOpen {
+    filter: blur(.25em);
+    opacity: .5;
+  }
+}
+.down-button .circle {
+  opacity: 0;
+}
+
+@media (--viewport-small) {
+  .mobile-nav {
+    display: none;
+  }
+  .widescreen-links {
+    display: block;
+    padding-top: calc(65rem/16);
+    & > a {
+      color: var(--gray-400);
+      font-size: calc(21rem/16);
+      text-decoration: none;
+      margin: 0 calc(38rem/16);
     }
   }
-  .circle {
-    opacity: 0;
+  .down-button.mobileNavOpen {
+    opacity: 1;
+    filter: none;
   }
 }
 </style>
