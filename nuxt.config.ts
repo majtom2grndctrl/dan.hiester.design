@@ -37,7 +37,6 @@ module.exports = {
   loading: { color: 'rgba(3, 161, 213, .3)' },
   modules: [
     ['@nuxtjs/google-tag-manager', { id: process.env.NUXT_ENV_GTM_ID }],
-    '@nuxtjs/style-resources'
   ],
   /*
   ** Build configuration
