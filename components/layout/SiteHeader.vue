@@ -34,26 +34,10 @@ export default SiteHeader
       </nuxt-link>
     </div>
     <nav class="site-nav">
-        <nuxt-link to="/portfolio">Portfolio</nuxt-link>
-        <nuxt-link to="/blog">Blog</nuxt-link>
+      <nuxt-link to="/portfolio">Portfolio</nuxt-link>
+      <nuxt-link to="/blog">Blog</nuxt-link>
     </nav>
     <div class="push-farther">Push Farther</div>
-<!--
-    <div class="mobile-nav">
-      <mobile-nav-launcher v-on:launch="mobileNav = !mobileNav" :class="mobileNav && 'mobileNavOpen'" />
-      <transition name="home-nav">
-        <div v-if="mobileNav">
-          <div class="modal-overlay" v-on:click="mobileNav = !mobileNav" />
-          <nav class="mobile-nav-links" v-on:click="mobileNav = !mobileNav">
-            <CloseButton class="mobile-nav-close-button"/>
-            <h2>Menu</h2>
-            <nuxt-link to="/portfolio">Portfolio</nuxt-link>
-            <nuxt-link to="/blog">Blog</nuxt-link>
-          </nav>
-        </div>
-      </transition>
-    </div>
--->
   </header>
 </template>
 
@@ -174,72 +158,6 @@ export default SiteHeader
     transform: perspective(10em) translate3d(-70%, 20%, -5em);
   }
 }
-/*
-/ -- Mobile Navigation 
-
-.mobile-nav {
-  @media (min-width: $viewport-small) {
-    display: none;
-  }
-  &-launcher {
-    transition: filter .3s, opacity .3s;
-    &.mobileNavOpen {
-        opacity: .1;
-    }
-  }
-  &-close-button {
-    color: rgba(255, 255, 255, .7);
-    cursor: pointer;
-    position: absolute;
-      top: 1.1em;
-      left: 100%;
-  }
-  &-links {
-    border-left: 1px solid rgba(255, 255, 255, .5);
-    box-sizing: border-box;
-    display: flex;
-      flex-direction: column;
-      align-content: flex-start;
-      justify-content: space-between;
-    font-size: calc(24rem/16);
-//    height: 55vh;
-    height: 33vh;
-    width: 50vw;
-    padding: .5em 0 1em .5em;
-    position: fixed;
-//      top: 22.5%;
-      top: 33%;
-      left: 50%;
-      z-index: 16;
-    text-align: left;
-    transition: transform var(--mobile-nav-transition-duration) ease-out;
-    transform: perspective(10em) translate3d(-50%, 0, 0);
-    > h2 {
-      color: rgba(255, 255, 255, .66);
-      font-weight: 400;
-      font-size: calc(16em/24);
-      margin: 0;
-      padding: calc(16rem/16);
-      text-transform: uppercase;
-    }
-    > a {
-      color: #fff;
-      display: block;
-      padding: .75em;
-      text-decoration: none;
-    }
-  }
-}
-.modal-overlay {
-  background: rgba(0,0,0,.6);
-  position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 15;
-}
-*/
 /* -- Desktop navigation */
 .site-nav {
   display: flex;
