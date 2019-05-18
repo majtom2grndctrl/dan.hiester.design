@@ -23,8 +23,6 @@
   },
   "devDependencies": {
     "@nuxt/typescript": "2.6.3",
-    "@types/node": "10.14.5",
-    "node-sass": "4.11.0",
-    "sass-loader": "7.1.0"
+    "@types/node": "10.14.5"
   }
 }
