@@ -28,7 +28,7 @@ export default Portfolio
 </script>
 
 
-<style lang="scss" scoped>
+<style lang="postcss" scoped>
   .p {
     letter-spacing: -.075ex;
   }

@@ -10,13 +10,11 @@
   </svg>
 </template>
 
-<style lang="scss" scoped>
-  .down-button {
-    .circle {
-      fill: #ffffff;
-    }
-    .arrow {
-      fill: #467382;
-    }
+<style lang="postcss" scoped>
+  .circle {
+    fill: #ffffff;
+  }
+  .arrow {
+    fill: #467382;
   }
 </style>

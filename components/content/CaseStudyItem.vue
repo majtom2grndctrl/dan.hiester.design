@@ -1,3 +1,10 @@
+<!--
+/////////////////////
+    THIS FILE IS A
+    WORK IN PROGRESS
+/////////////////////
+-->
+
 <template>
   <div class="item">
     <img :src="imgSrc" :alt="imgAlt" />
@@ -30,7 +37,7 @@ class CaseStudyItem extends Vue {
 export default CaseStudyItem
 </script>
 
-<style lang="scss" scoped>
+<style lang="postcss" scoped>
 
 </style>
 

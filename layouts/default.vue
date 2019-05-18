@@ -31,10 +31,202 @@ export default Vue.extend ({
 })
 </script>
 
-<style lang="scss">
-// This prevents major CSS breakage.
-.unused-class {
-  color: $bg-blue-400;
+<style lang="postcss">
+  /* 
+    Global CSS Variables 
+  ****************************/
+
+  :root {
+    --gray-400: #707B7F;
+    --gray-500: #899497;
+    --gray-600: #97A3A7;
+    --gray-800: #D9E1E5;
+
+    --bg-blue-600: #197FA1;
+    --bg-blue-400: #55768C;
+    --bg-blue-200: #296C82;
+
+    --blue-400: #03A1D5;
+
+    --white: #fff;
+
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Arimo', sans-serif;
+    --mobile-nav-transition-duration: .3s;
+  }
+/*
+  Global styles
+****************************/
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  margin: 0;
+}
+
+a {
+  color: var(--blue-400);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+}
+
+/*
+  Page Transitions
+****************************/
+
+.container {
+  position: relative;
+  z-index: 0;
+}
+
+.home-enter {
+  opacity: .5;
+  transform: perspective(100vh) translate3d(0, 100%, 0);
+}
+.home-enter-active {
+  background: var(--white);
+  transition: opacity .444s, transform .666s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.home-enter-to {
+  transform: perspective(100vh) translate3d(0, 0, 0);
+}
+.home-leave-active {
+  transition: transform .666s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.home-leave {
+  transform: perspective(100vh) translate3d(0, 0, 0);
+}
+.home-leave-to {
+  transform: perspective(100vh) translate3d(0, -60%, 0);
+}
+
+.swipe-enter-active, .swipe-leave-active {
+  transition: opacity .33s, transform .33s ease;
+}
+.swipe-enter, .swipe-leave-to {
+  opacity: 0;
+}
+.swipe-enter {
+  transform: translate3d(2rem, 0, 0);
+}
+.swipe-leave-to {
+  transform: translate3d(-2rem, 0, 0);
+}
+
+
+/*
+  Styles for content retrieved from the cloud CMS
+****************************/
+
+.prismic-content {
+  font-size: calc(16rem/16);
+  color: var(--gray-400);
+  & .lede p {
+    font-size: calc(18rem/16);
+    line-height: calc(26em/18);
+  }
+  & img {
+    max-width: 100%;
+  }
+  & p, & ol, & ul {
+    line-height: calc(40em/24);
+  }
+  & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6 {
+    margin-right: 1.25rem;
+    margin-left: 1.25rem;
+  }
+  & h1, & h2, & h3, & h4, & h5, & h6 {
+    color: var(--gray-600);
+    margin-top: 1.5em;
+    margin-bottom: .75em;
+  }
+  & figure {
+    background: var(--bg-blue-400);
+    color: var(--white);
+    font-size: calc(14rem/16);
+    margin: 1rem;
+    padding: calc(1rem/16) calc(1rem/16) 1.5em calc(1rem/16);
+    & a {
+      color: var(--white);
+    }
+    & p {
+      margin: 1em;
+    }
+  }
+}
+@media (--viewport-small) {
+  .prismic-content {
+    & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6 {
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 30rem;
+    }
+  }
+}
+@media (--viewport-medium) {
+  .prismic-content {
+    font-size: calc(22rem/16);
+    & p, & ol, & ul {
+      line-height: calc(44em/22);
+    }
+    & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6 {
+      max-width: unset;
+      width: calc(100% * 8 / 12);
+    }
+    & .lede p {
+      font-size: calc(32rem/16);
+      line-height: calc(53em/32);
+    }
+    & figure {
+      font-size: calc(18rem/16);
+      & p {
+        margin-right: auto;
+        margin-left: auto;
+        width: 68%;
+      }
+    }
+    & h2 {
+      font-size: calc(48rem/16);
+      line-height: 1.5em;
+      margin: 2em auto .5em;
+    }
+    & h3 {
+      font-size: calc(35rem/16);
+    }  
+  }
+}
+@media (--viewport-large) {
+  .prismic-content {
+    font-size: calc(24rem/16);
+    & p, & ol, & ul {
+      line-height: calc(53em/24);
+    }
+  }
+}
+
+/*
+  Styles for types of blocks
+***********************************/
+
+.block-preview {
+  font-size: 1rem;
+  line-height: 1.5em;
+}
+@media (--viewport-medium) {
+  .block-preview {
+    font-size: calc(18rem/16);
+  }
 }
 
 </style>

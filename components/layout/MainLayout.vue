@@ -1,5 +1,5 @@
 <template>
-  <main class="container">
+  <main class="MainLayout">
     <header class="header">
       <h1 class="title">
         <div class="title-prefix" v-if="this.$slots['section-title-prefix']">
@@ -54,71 +54,77 @@ export default MainLayout
 </script>
 
 
-<style lang="scss" scoped>
+<style lang="postcss" scoped>
+.MainLayout {
+  margin: 0;
+}
 .header {
   display: flex;
     flex-direction: row;
     align-items: baseline;
     justify-content: space-between;
-  margin: (30rem/16) (20rem/16) (20rem/16) (20rem/16);
-  @media (min-width: $viewport-small) {
-    justify-content: flex-start;
-    margin: (30rem/16) (20rem/16) (20rem/16) (20rem/16);
-  }
-  @media (min-width: $viewport-medium) {
-    margin: (42rem/16) 0 (42rem/16) 0;
-  }
+  margin: calc(30rem/16) calc(20rem/16) calc(20rem/16) calc(20rem/16);
 }
 .title {
-  color: $gray-600;
-  font-size: (36rem/16);
+  color: var(--gray-600);
+  font-size: calc(36rem/16);
   letter-spacing: -.0125em;
   line-height: .9em;
   margin: 0 0 0 -.075em;
-  @media (min-width: $viewport-small) {
-    font-size: (64rem/16);
-    margin: 0 0 0 -.07em;
-  }
 }
 .title-prefix {
-  font-size: (12rem/16);
+  font-size: calc(12rem/16);
   line-height: 1.5em;
   margin-left: .15em;
-  @media (min-width: $viewport-small) {
-    font-size: (20rem/16);
+}
+@media (--viewport-small) {
+  .header {
+    justify-content: flex-start;
+    margin: calc(30rem/16) calc(20rem/16) calc(20rem/16) calc(20rem/16);
+  }
+  .title {
+    font-size: calc(64rem/16);
+    margin: 0 0 0 -.07em;
+  }
+  .title-prefix {
+    font-size: calc(20rem/16);
     margin-left: .175em;
   }
-}
-.nav {
-  @media (min-width: $viewport-small) {
+  .nav {
+    --link-bottom-padding: calc(8rem/16); /* This value must match in more than one place */
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-  }
-  > a {
-    border-bottom: (1rem/16) solid rgba(3, 161, 213, 0);
-    color: $gray-600;
-    display: block;
-    text-decoration: none;
-    transition: border-bottom-color .66s;
-    @media (min-width: $viewport-small) {
-      margin: 0 (17rem/16) 0 0;
-      padding: (10rem/16) (8rem/16) (8rem/16);
-    }
-    &.exact-active {
-      border-bottom-color: rgba(3, 161, 213, .3);
-      @media (min-resolution: 1.25dppx) {
-        border-bottom-width: (1.5rem/16);
-        padding-bottom: (7.5rem/16);
+    margin: 0 0 calc(var(--link-bottom-padding) * -1) 2rem;
+    & > a {
+      border-bottom: calc(1rem/16) solid rgba(3, 161, 213, 0);
+      color: var(--gray-600);
+      display: block;
+      font-size: calc(15rem/16);
+      text-decoration: none;
+      transition: border-bottom-color .66s;
+      margin: 0 calc(17rem/16) 0 0;
+      padding: calc(10rem/16) var(--link-bottom-padding) calc(8rem/16);
+      &.exact-active {
+        border-bottom-color: rgba(3, 161, 213, .3);
       }
     }
   }
 }
-main.container {
-  margin: 0;
-  @media (min-width: $viewport-medium) {
+@media (--viewport-medium) {
+  .MainLayout {
     margin: 0 auto;
-    width: (100% * 12 / 14);
+    width: calc(100% * 12 / 14);
+  }
+  .header {
+    margin: calc(42rem/16) 0 calc(42rem/16) 0;
   }
 }
+@media (min-resolution: 1.25dppx) {
+  .nav > a.exact-active {
+    border-bottom-width: calc(1.5rem/16);
+    padding-bottom: calc(7.5rem/16);
+  }
+}
+
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <section class="blogIndex" v-if="blog_posts">
+  <section class="BlogIndex" v-if="blog_posts">
     <blog-post v-for="(post, index) in blog_posts" :post="post" :key="index" />
   </section>
   <section v-else>
@@ -95,9 +95,9 @@ export default BlogIndex
 </script>
 
 
-<style lang="scss" scoped>
-  @media (min-width: $viewport-medium) {
-    .blogIndex {
+<style lang="postcss" scoped>
+  @media (--viewport-medium) {
+    .BlogIndex {
       --right-side: calc(100% * 5 / 12);
       background-color: var(--gray-600);
       position: relative;

@@ -21,19 +21,19 @@ class Anthology extends Vue {
 export default Anthology
 </script>
 
-<style lang="scss" scoped>
+<style lang="postcss" scoped>
 .anthology {
   background: var(--bg-blue-400);
   box-sizing: border-box;
   color: var(--white);
-  padding: 0 (20rem/16);
+  padding: 0 calc(20rem/16);
 }
 .anthology-list {
   display: flex;
   flex-direction: column;
   padding-bottom: 1.5rem;
 }
-@media (min-width: $viewport-medium) {
+@media (--viewport-medium) {
   .anthology {
     margin: 2rem 0;
     padding: 0;
