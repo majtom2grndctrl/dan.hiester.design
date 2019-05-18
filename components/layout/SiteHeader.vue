@@ -141,9 +141,9 @@ export default SiteHeader
 }
 
 
-/* Navigation */
-
-/* -- Desktop navigation */
+/* 
+   Navigation
+******************************/
 .site-nav {
   display: flex;
     flex-direction: row;
@@ -171,7 +171,5 @@ export default SiteHeader
     padding-bottom: calc(7.5rem/16);
   }
 }
-
-
 
 </style>
