@@ -6,7 +6,7 @@
     </anthology>
 
     <div class="grid-8-3">
-      <StandAlone :story="fn1Data" class="fn1" />
+      <stand-alone :story="fn1Data" class="fn1" />
       <div />
       <div>
         <h1>Blog CTA is still under development</h1>
