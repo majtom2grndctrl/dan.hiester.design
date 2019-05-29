@@ -2,7 +2,7 @@
   <section class="StandAlone">
     <div class="content">
       <h2 class="title">{{story.title}}</h2>
-      <div class="type">{{story.type}}</div>
+      <block-type class="type">{{story.type}}</block-type>
       <div class="description block-preview">{{story.description}}</div>
       <cta-link class="cta" :to="story.href">{{story.ctaLabel}}</cta-link>
     </div>
@@ -16,6 +16,7 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import CtaLink from '~/components/buttons/CtaLink.vue'
+import BlockType from '~/components/text/BlockType.vue'
 
 export interface StandAloneProps {
   title: string
@@ -32,6 +33,7 @@ export interface StandAloneProps {
 @Component({
   components: {
     CtaLink,
+    BlockType,
   }
 })
 class StandAlone extends Vue {
@@ -59,13 +61,6 @@ export default StandAlone
   .title {
     font-size: calc(24rem/16);
     margin: calc(18em/24) 0 calc(18em/24) 0;
-  }
-  .type {
-    font-size: calc(14rem/16);
-    font-weight: 500;
-    line-height: 1em;
-    margin: 0 0 calc(5rem/16) 0;
-    text-transform: uppercase;
   }
   .description {
     /* should extend .block-preview */
