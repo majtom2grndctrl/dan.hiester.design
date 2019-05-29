@@ -1,7 +1,7 @@
 <template>
   <div class="AnthologyItem">
     <div class="content">
-      <h3 class="type" v-html="data.type" />
+      <block-type class="type">{{ data.type }}</block-type>
       <div class="description block-preview" v-html="data.description" />
       <cta-link :to="data.href" v-html="data.ctaText" class="cta" />
     </div>
@@ -11,6 +11,7 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import CtaLink from '~/components/buttons/CtaLink.vue'
+import BlockType from '~/components/text/BlockType.vue'
 
 export interface AnthologyItemData {
   type: string
@@ -21,7 +22,8 @@ export interface AnthologyItemData {
 
 @Component({
   components: {
-    CtaLink
+    CtaLink,
+    BlockType
   }
 })
 
@@ -50,14 +52,8 @@ export default AnthologyItem
 }
 .type {
   color: var(--gray-600);
-  font-size: calc(14rem/16);
-  font-weight: 500;
-  line-height: 1em;
-  margin: 0 0 calc(5rem/16) 0;
-  text-transform: uppercase;
 }
 .description {
-  /* Should extend .block-description */
   margin: calc(5rem/16) 0 calc(15rem/16) 0;
 }
 @media (--viewport-small) {
