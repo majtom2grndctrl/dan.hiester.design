@@ -8,9 +8,7 @@
     <div class="grid-8-3">
       <stand-alone :story="fn1Data" class="fn1" />
       <div />
-      <div>
-        <h1>Blog CTA is still under development</h1>
-      </div>
+      <suggestion :data="blogSuggestion" class="featured-blog" />
     </div>
 
     <contact-cta />
@@ -27,6 +25,7 @@ import ContactCta from '~/components/ContactCta.vue'
 import AnthologyHero, { AnthologyHeroData } from '~/components/content/AnthologyHero.vue'
 import AnthologyItem, { AnthologyItemData } from '~/components/content/AnthologyItem.vue'
 import StandAlone, { StandAloneProps } from '~/components/content/StandAlone.vue'
+import Suggestion, { SuggestionProps } from '~/components/content/Suggestion.vue'
 
 @Component({
   components: {
@@ -36,6 +35,7 @@ import StandAlone, { StandAloneProps } from '~/components/content/StandAlone.vue
     CtaLink,
     ContactCta,
     StandAlone,
+    Suggestion,
   }
 })
 class Index extends Vue {
@@ -73,6 +73,16 @@ class Index extends Vue {
     imgSrc: 'https://prismic-io.s3.amazonaws.com/distantly-yours-blog%2Fa3cc84a9-67d1-4b4a-b7b1-81d71fad434f_fn1-hero-3.jpg',
     imgAlt: '',
   }
+  blogSuggestion: SuggestionProps = {
+    type: 'Featured Blog Post',
+    title: 'In defense of brutalist web design',
+    ctaLabel: 'Read on. Brutal',
+    ctaHref: '/blog/in-defense-of-brutalist-web-design',
+    altCta: {
+      label: 'See more posts',
+      href: '/blog',
+    }
+  }
 }
 
 export default Index
@@ -81,6 +91,9 @@ export default Index
 <style lang="postcss" scoped>
 .fn1 {
   background: #199FA1;
+}
+.featured-blog {
+  background: #30A088;
 }
 </style>
 
