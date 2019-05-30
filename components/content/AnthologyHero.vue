@@ -36,15 +36,15 @@ export default AnthologyHero
 }
 .title {
   color: var(--white);
-  font-size: calc(24rem/16);
+  font-size: var(--scale-3);
   font-weight: 400;
   line-height: calc(38em/30);
   margin: calc(35em/30) 0 calc(20em/30) 0;
   text-align: center;
 }
 .description {
-  font-size: 1rem;
-  line-height: calc(24em/16);
+  font-size: var(--scale-1);
+  line-height: 1.5em;
 }
 .image {
   margin: 0 15%;
@@ -53,7 +53,7 @@ export default AnthologyHero
   }
 }
 .subhead {
-  font-size: calc(24rem/16);
+  font-size: var(--scale-2);
   font-weight: 400;
   line-height: 1.26667em;
   margin: 1.16667em 0 .66667em;

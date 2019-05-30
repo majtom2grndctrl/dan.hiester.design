@@ -41,7 +41,7 @@ export default AnthologyItem
   border-radius: calc(8rem/16);
   color: var(--gray-400);
   margin: calc(12rem/16) 0;
-  padding: 1rem;
+  padding: var(--scale-0);
   &:first-of-type {
     margin-top: calc(15rem/16);
   }
@@ -61,6 +61,7 @@ export default AnthologyItem
     max-width: 30rem;
     margin-right: auto;
     margin-left: auto;
+    padding: var(--scale-1);
 
     & .cta {
       max-width: 20rem;

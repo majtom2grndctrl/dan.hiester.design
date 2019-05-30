@@ -57,7 +57,8 @@ export default Suggestion
     text-transform: uppercase;
   }
   .title {
-    font-size: calc(24rem/16);
+    font-size: var(--scale-2);
+    line-height: 1.375em;
   }
   .cta {
     margin: 1rem 0;

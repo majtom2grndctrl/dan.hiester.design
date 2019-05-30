@@ -5,7 +5,7 @@
       <img class="image-desktop" src="/img/project-collage-desktop.jpg" alt="" />
     </div>
     <div class="content">
-      <h1>There’s so much more to talk&nbsp;about!</h1>
+      <h1 class="title">There’s so much more to talk&nbsp;about!</h1>
       <p>I’ve worked on many different teams and challenges. Some of that work hasn’t been published here yet&mdash;<strong>much of it can’t be</strong>. The&nbsp;best way to get to know what I have to offer is to talk shop over&nbsp;coffee.</p>
       <cta-link class="cta" href="https://www.linkedin.com/in/danhiester" variant="white">Contact me on LinkedIn</cta-link>
     </div>
@@ -42,17 +42,17 @@ export default ContactCta
   display: none;
 }
 .content {
-  margin: 0 1.25rem;
+  margin: 0 var(--scale-1);
   padding: 0;
   overflow: hidden;
-  & > h1 {
+  & > .title {
     font-weight: 400;
-    font-size: calc(30rem/16);
-    line-height: calc(38rem/16);
-    margin: 1em 0 .25em;
+    font-size: var(--scale-2);
+    line-height: 1.375em;
+    margin: 1em 0 var(--scale-0);
   }
   & > p {
-    font-size: 1rem;
+    font-size: var(--scale-1);
     line-height: 1.5rem;
     margin: .5em 0 1.5em;
   }
@@ -62,8 +62,7 @@ export default ContactCta
   .content {
     margin: 0 auto;
     max-width: 30rem;
-    & > h1 {
-      margin-bottom: .5em;
+    & > .title {
       text-align: center;
     }
   }
@@ -85,14 +84,13 @@ export default ContactCta
   .content {
     flex-basis: 47%;
     padding-right: 1.5rem;
-    & > h1, & > p, & > .cta {
+    & > .title, & > p, & > .cta {
       max-width: 22rem;
       margin-right: auto;
       margin-left: auto;
     }
-    & > h1 {
-      font-size: calc(36rem/16);
-      line-height: calc(50em/36);
+    & > .title {
+      font-size: var(--scale-3);
       margin-top: 0;
       text-align: left;
     }
