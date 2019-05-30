@@ -88,10 +88,10 @@ export default Index
 </script>
 
 <style lang="postcss" scoped>
-.fn1 {
+.fn1[class] {
   background: #199FA1;
 }
-.featured-blog {
+.featured-blog[class] {
   background: #30A088;
 }
 </style>
