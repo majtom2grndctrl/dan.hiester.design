@@ -6,9 +6,8 @@
     </anthology>
 
     <div class="grid-8-3">
-      <stand-alone :story="fn1Data" class="fn1" />
-      <div />
-      <suggestion :data="blogSuggestion" class="featured-blog" />
+      <stand-alone :story="fn1Data" class="fn1 grid-child-8" />
+      <suggestion :data="blogSuggestion" class="featured-blog grid-child-3" />
     </div>
 
     <contact-cta />
