@@ -143,6 +143,12 @@ export default Vue.extend ({
     grid-template-columns: 8fr 1fr 3fr;
     column-gap: calc(20rem/16);
     margin: calc(100% * 1 / 12) 0;
+    & > .grid-child-8 {
+      grid-area: 1 / 1 / 2 / 2;
+    }
+    & > .grid-child-3 {
+      grid-area: 1 / 3 / 2 / 4;
+    }
   }
 }
 </style>
