@@ -45,13 +45,13 @@ export default AnthologyItem
   &:first-of-type {
     margin-top: calc(15rem/16);
   }
+  & .type {
+    color: var(--gray-600);
+  }
   & .cta {
     background-color: var(--gray-800);
     opacity: 1;
   }
-}
-.type {
-  color: var(--gray-600);
 }
 .description {
   margin: calc(5rem/16) 0 calc(15rem/16) 0;
@@ -88,15 +88,15 @@ export default AnthologyItem
     &:nth-child(2n) {
       background: var(--bg-blue-200);
     }
+    & .type {
+      color: inherit;
+    }
     & .cta {
       background-color: var(--white);
       opacity: .85;
       margin-right: 0;
       margin-left: 0;
     }
-  }
-  .type {
-    color: inherit;
   }
   .content {
     display: flex;
