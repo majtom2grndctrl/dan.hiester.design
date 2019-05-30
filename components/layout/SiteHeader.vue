@@ -95,7 +95,7 @@ export default SiteHeader
   }
   @media (--viewport-medium) {
     .SiteHeader {
-      margin: calc(34rem/16) auto calc(20rem/16) auto;
+      margin: var(--scale-3) auto 0 auto;
       width: calc(100% * 12 / 14);
     }
     .logo-container {
