@@ -132,8 +132,8 @@ export default Vue.extend ({
   line-height: 1.5em;
 }
 @media (--viewport-medium) {
-  .block-preview {
-    font-size: calc(18rem/16);
+  .block-preview{
+    font-size: var(--scale-1);
   }
 }
 

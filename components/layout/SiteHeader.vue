@@ -28,8 +28,8 @@ export default SiteHeader
 <template>
   <header class="SiteHeader">
     <div class="logo-container">
-      <nuxt-link to="/" class="logo">
-        <dy-logo />
+      <nuxt-link to="/" class="logo-link">
+        <dy-logo class="logo" width="" height="" />
         <span class="distantly-yours">Distantly Yours</span>
       </nuxt-link>
     </div>
@@ -48,7 +48,7 @@ export default SiteHeader
       align-items: center;
       flex-direction: row;
       justify-content: flex-start;
-    margin: calc(20rem/16) calc(20rem/16) calc(30rem/16) calc(20rem/16);
+    margin: var(--scale-2) var(--scale-2) 0 var(--scale-2);
   }
   .logo-container {
     width: 5rem;
@@ -69,16 +69,19 @@ export default SiteHeader
       }
     }
   }
-  .logo {
+  .logo-link {
     display: inline-block;
     position: relative;
+  }
+  .logo {
+    height: calc(var(--scale-5) * .8);
   }
   .distantly-yours {
     color: var(--gray-500);
     filter: blur(.66em);
     font-family: var(--font-heading);
     font-weight: 600;
-    font-size: calc(18rem/16);
+    font-size: var(--scale-1);
     letter-spacing: .166ex;
     opacity: 0;
     pointer-events: none;
@@ -98,6 +101,9 @@ export default SiteHeader
     .logo-container {
       width: calc(100% * 1 / 12);
     }
+    .logo {
+      height: calc(var(--scale-4) * .8);
+    }
   }
 
 
@@ -110,7 +116,7 @@ export default SiteHeader
     color: #797979;
     display: block;
     font-weight: 300;
-    font-size: calc(15rem/16);
+    font-size: var(--scale-0);
     letter-spacing: .05ex;
     opacity: .6;
     padding: 0;
@@ -148,16 +154,16 @@ export default SiteHeader
   display: flex;
     flex-direction: row;
     align-items: center;
-  margin: 0 0 0 calc(-8rem/16);
+  margin: 0 0 0 calc(-8em/16);
   transition: transform .5s ease, opacity .5s;
   & > a {
     border-bottom: calc(1rem/16) solid rgba(3, 161, 213, 0);
     color: #97A3A7;
     display: block;
-    font-size: calc(15rem/16);
+    font-size: var(--scale-0);
     line-height: 1em;
-    margin: 0 calc(17rem/16) 0 0;
-    padding: calc(10rem/16) calc(8rem/16) calc(8rem/16);
+    margin: 0 var(--scale-1) 0 0;
+    padding: calc(10rem/16) calc(8em/16) calc(8em/16);
     text-decoration: none;
     transition: border-bottom-color .66s;
     &.active {
@@ -169,6 +175,11 @@ export default SiteHeader
   .site-nav > a.active {
     border-bottom-width: calc(1.5rem/16);
     padding-bottom: calc(7.5rem/16);
+  }
+}
+@media (--viewport-medium) {
+  .site-nav > a {
+    font-size: var(--scale-1);
   }
 }
 

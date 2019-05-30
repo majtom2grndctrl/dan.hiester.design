@@ -58,7 +58,8 @@ module.exports = {
         portfolio: '/portfolio',
         portfolio_item: (slug: string) => '/portfolio/' + slug,
         portfolio_all: '/portfolio/all-projects',
-        portfolio_all_item: (slug: string) => '/portfolio/all-projects/' + slug
+        portfolio_all_item: (slug: string) => '/portfolio/all-projects/' + slug,
+        styleguide: '/styleguide',
       })
       const apiUrl = 'https://distantly-yours-blog.cdn.prismic.io/api/v2'
       const blogQuery = await Prismic.getApi(apiUrl)

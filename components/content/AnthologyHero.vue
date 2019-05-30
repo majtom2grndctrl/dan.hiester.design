@@ -93,7 +93,7 @@ export default AnthologyHero
   /* Modification classes */
   .Anthology--inroads {
     & .title {
-      font-size: calc(48rem/16) !important;
+      font-size: var(--scale-5) !important;
     }
   }
 }
