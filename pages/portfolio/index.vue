@@ -4,6 +4,12 @@
       <template v-slot:hero><anthology-hero :data="inRoadsData.hero" /></template>
       <anthology-item v-for="(data, index) in inRoadsData.items" :data="data" :key="'key-' + index" />
     </anthology>
+
+    <div class="grid-8-3">
+      <stand-alone :story="fn1Data" class="fn1 grid-child-8" />
+      <suggestion :data="blogSuggestion" class="featured-blog grid-child-3" />
+    </div>
+
     <contact-cta />
   </div>
 </template>
@@ -17,6 +23,8 @@ import CtaLink from '~/components/buttons/CtaLink.vue'
 import ContactCta from '~/components/ContactCta.vue'
 import AnthologyHero, { AnthologyHeroData } from '~/components/content/AnthologyHero.vue'
 import AnthologyItem, { AnthologyItemData } from '~/components/content/AnthologyItem.vue'
+import StandAlone, { StandAloneProps } from '~/components/content/StandAlone.vue'
+import Suggestion, { SuggestionProps } from '~/components/content/Suggestion.vue'
 
 @Component({
   components: {
@@ -24,7 +32,9 @@ import AnthologyItem, { AnthologyItemData } from '~/components/content/Anthology
     AnthologyHero,
     AnthologyItem,
     CtaLink,
-    ContactCta
+    ContactCta,
+    StandAlone,
+    Suggestion,
   }
 })
 class Index extends Vue {
@@ -53,7 +63,36 @@ class Index extends Vue {
       }
     ]
   }
+  fn1Data: StandAloneProps = {
+    title: 'Factory Number One',
+    type: 'Pattern Library Case Study',
+    description: 'How do you improve the design of internal tools when resources are stretched thin?',
+    href: '/portfolio/factory-number-one',
+    ctaLabel: 'Patterns to the rescue!',
+    imgSrc: 'https://prismic-io.s3.amazonaws.com/distantly-yours-blog%2Fa3cc84a9-67d1-4b4a-b7b1-81d71fad434f_fn1-hero-3.jpg',
+    imgAlt: '',
+  }
+  blogSuggestion: SuggestionProps = {
+    type: 'Featured Blog Post',
+    title: 'In defense of brutalist web design',
+    ctaLabel: 'Read on. Brutal',
+    ctaHref: '/blog/in-defense-of-brutalist-web-design',
+    altCta: {
+      label: 'See more posts',
+      href: '/blog',
+    }
+  }
 }
 
 export default Index
 </script>
+
+<style lang="postcss" scoped>
+.fn1[class] {
+  background: #199FA1;
+}
+.featured-blog[class] {
+  background: #30A088;
+}
+</style>
+
