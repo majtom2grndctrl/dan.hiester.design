@@ -95,14 +95,14 @@ export default SiteHeader
   }
   @media (--viewport-medium) {
     .SiteHeader {
-      margin: var(--type-scale-3) auto 0 auto;
+      margin: var(--spatial-scale-4) auto 0 auto;
       width: calc(100% * 12 / 14);
     }
     .logo-container {
       width: calc(100% * 1 / 12);
     }
     .logo {
-      height: calc(var(--type-scale-4) * .8);
+      height: var(--spatial-scale-4);
     }
   }
 

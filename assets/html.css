@@ -31,6 +31,18 @@
   --type-scale-6: calc(var(--type-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
   --type-scale-7: calc(var(--type-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
   --type-scale-8: calc(var(--type-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
+
+  --spatial-scale-base: .8rem;
+  --spatial-scale-0: calc(var(--spatial-scale-base) / var(--scale-multiplier));
+  --spatial-scale-1: var(--spatial-scale-base);
+  --spatial-scale-2: calc(var(--spatial-scale-base) * var(--scale-multiplier) * var(--scale-multiplier));
+  --spatial-scale-3: calc(var(--spatial-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
+  --spatial-scale-4: calc(var(--spatial-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
+  --spatial-scale-5: calc(var(--spatial-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
+  --spatial-scale-6: calc(var(--spatial-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
+  --spatial-scale-7: calc(var(--spatial-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
+  --spatial-scale-8: calc(var(--spatial-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
+
 }
 
 /* Lessons were learned here: */
