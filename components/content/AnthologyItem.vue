@@ -54,7 +54,7 @@ export default AnthologyItem
   }
 }
 .description {
-  margin: var(--spatial-scale-0) 0 var(--spatial-scale-1) 0;
+  margin: 0 0 var(--spatial-scale-1) 0;
 }
 @media (--viewport-small) {
   .AnthologyItem {

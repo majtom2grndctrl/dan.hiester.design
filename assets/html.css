@@ -20,8 +20,9 @@
   --font-body: 'Arimo', sans-serif;
   --mobile-nav-transition-duration: .3s;
 
-  --type-scale-base: 1rem;
+  --type-scale-base: calc(18rem/16);
   --scale-multiplier: 1.2;
+  --type-scale-00: calc(var(--type-scale-base) / var(--scale-multiplier) / var(--scale-multiplier));
   --type-scale-0: calc(var(--type-scale-base) / var(--scale-multiplier));
   --type-scale-1: var(--type-scale-base);
   --type-scale-2: calc(var(--type-scale-base) * var(--scale-multiplier) * var(--scale-multiplier));
@@ -32,7 +33,8 @@
   --type-scale-7: calc(var(--type-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
   --type-scale-8: calc(var(--type-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
 
-  --spatial-scale-base: .8rem;
+  --spatial-scale-base: calc(var(--type-scale-base) * .705);
+  --spatial-scale-00: calc(var(--spatial-scale-base) / var(--scale-multiplier) / var(--scale-multiplier));
   --spatial-scale-0: calc(var(--spatial-scale-base) / var(--scale-multiplier));
   --spatial-scale-1: var(--spatial-scale-base);
   --spatial-scale-2: calc(var(--spatial-scale-base) * var(--scale-multiplier) * var(--scale-multiplier));

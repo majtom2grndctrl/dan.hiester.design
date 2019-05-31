@@ -13,8 +13,8 @@ export default Vue.extend({})
     color: var(--white);
     font-size: var(--type-scale-0);
     font-weight: 500;
-    line-height: 1em;
-    margin: 0 0 calc(5rem/16) 0;
+    line-height: var(--spatial-scale-0);
+    margin: 0 0 var(--spatial-scale-0) 0;
     text-transform: uppercase;
   }
 </style>
