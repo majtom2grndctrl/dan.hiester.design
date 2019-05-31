@@ -21,16 +21,16 @@
   --mobile-nav-transition-duration: .3s;
 
   --type-scale-base: 1rem;
-  --type-scale-multiplier: 1.2;
-  --type-scale-0: calc(var(--type-scale-base) / var(--type-scale-multiplier));
+  --scale-multiplier: 1.2;
+  --type-scale-0: calc(var(--type-scale-base) / var(--scale-multiplier));
   --type-scale-1: var(--type-scale-base);
-  --type-scale-2: calc(var(--type-scale-base) * var(--type-scale-multiplier) * var(--type-scale-multiplier));
-  --type-scale-3: calc(var(--type-scale-base) * var(--type-scale-multiplier) * var(--type-scale-multiplier) * var(--type-scale-multiplier));
-  --type-scale-4: calc(var(--type-scale-base) * var(--type-scale-multiplier) * var(--type-scale-multiplier) * var(--type-scale-multiplier) * var(--type-scale-multiplier));
-  --type-scale-5: calc(var(--type-scale-base) * var(--type-scale-multiplier) * var(--type-scale-multiplier) * var(--type-scale-multiplier) * var(--type-scale-multiplier) * var(--type-scale-multiplier));
-  --type-scale-6: calc(var(--type-scale-base) * var(--type-scale-multiplier) * var(--type-scale-multiplier) * var(--type-scale-multiplier) * var(--type-scale-multiplier) * var(--type-scale-multiplier) * var(--type-scale-multiplier));
-  --type-scale-7: calc(var(--type-scale-base) * var(--type-scale-multiplier) * var(--type-scale-multiplier) * var(--type-scale-multiplier) * var(--type-scale-multiplier) * var(--type-scale-multiplier) * var(--type-scale-multiplier) * var(--type-scale-multiplier));
-  --type-scale-8: calc(var(--type-scale-base) * var(--type-scale-multiplier) * var(--type-scale-multiplier) * var(--type-scale-multiplier) * var(--type-scale-multiplier) * var(--type-scale-multiplier) * var(--type-scale-multiplier) * var(--type-scale-multiplier) * var(--type-scale-multiplier));
+  --type-scale-2: calc(var(--type-scale-base) * var(--scale-multiplier) * var(--scale-multiplier));
+  --type-scale-3: calc(var(--type-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
+  --type-scale-4: calc(var(--type-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
+  --type-scale-5: calc(var(--type-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
+  --type-scale-6: calc(var(--type-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
+  --type-scale-7: calc(var(--type-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
+  --type-scale-8: calc(var(--type-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
 }
 
 /* Lessons were learned here: */
@@ -39,7 +39,7 @@
     font-size: calc(100% + 8 * (100vw - 1440px) / 900);
   }
   :root {
-    --type-scale-multiplier: 1.25;
+    --scale-multiplier: 1.25;
   }
 }
 
