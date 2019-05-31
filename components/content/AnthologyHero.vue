@@ -36,14 +36,14 @@ export default AnthologyHero
 }
 .title {
   color: var(--white);
-  font-size: var(--scale-3);
+  font-size: var(--type-scale-3);
   font-weight: 400;
   line-height: calc(38em/30);
   margin: calc(35em/30) 0 calc(20em/30) 0;
   text-align: center;
 }
 .description {
-  font-size: var(--scale-1);
+  font-size: var(--type-scale-1);
   line-height: 1.5em;
 }
 .image {
@@ -53,7 +53,7 @@ export default AnthologyHero
   }
 }
 .subhead {
-  font-size: var(--scale-2);
+  font-size: var(--type-scale-2);
   font-weight: 400;
   line-height: 1.26667em;
   margin: 1.16667em 0 .66667em;
@@ -93,7 +93,7 @@ export default AnthologyHero
   /* Modification classes */
   .Anthology--inroads {
     & .title {
-      font-size: var(--scale-5) !important;
+      font-size: var(--type-scale-5) !important;
     }
   }
 }

@@ -63,11 +63,11 @@ export default MainLayout
     flex-direction: row;
     align-items: baseline;
     justify-content: space-between;
-  margin: var(--scale-4) var(--scale-2) var(--scale-2) var(--scale-2);
+  margin: var(--type-scale-4) var(--type-scale-2) var(--type-scale-2) var(--type-scale-2);
 }
 .title {
   color: var(--gray-600);
-  font-size: var(--scale-5);
+  font-size: var(--type-scale-5);
   letter-spacing: -.0125em;
   line-height: .8em;
   margin: 0 0 0 -.075em;
@@ -82,7 +82,7 @@ export default MainLayout
     justify-content: flex-start;
   }
   .title {
-    font-size: var(--scale-6);
+    font-size: var(--type-scale-6);
     margin: 0 0 0 -.07em;
   }
   .title-prefix {
@@ -116,7 +116,7 @@ export default MainLayout
     width: calc(100% * 12 / 14);
   }
   .header {
-    margin: calc(var(--scale-5) * .8) 0;
+    margin: calc(var(--type-scale-5) * .8) 0;
   }
 }
 @media (min-resolution: 1.25dppx) {

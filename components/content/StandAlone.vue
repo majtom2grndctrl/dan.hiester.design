@@ -59,7 +59,7 @@ export default StandAlone
     padding: 0 1.5rem;
   }
   .title {
-    font-size: var(--scale-2);
+    font-size: var(--type-scale-2);
     line-height: 1.375em;
     margin: calc(18em/24) 0 calc(18em/24) 0;
   }

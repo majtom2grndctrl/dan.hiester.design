@@ -133,7 +133,7 @@ export default Vue.extend ({
 }
 @media (--viewport-medium) {
   .block-preview{
-    font-size: var(--scale-1);
+    font-size: var(--type-scale-1);
   }
 }
 

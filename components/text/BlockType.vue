@@ -11,7 +11,7 @@ export default Vue.extend({})
 <style lang="postcss" scoped>
   .BlockType {
     color: var(--white);
-    font-size: var(--scale-0);
+    font-size: var(--type-scale-0);
     font-weight: 500;
     line-height: 1em;
     margin: 0 0 calc(5rem/16) 0;

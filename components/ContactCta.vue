@@ -42,17 +42,17 @@ export default ContactCta
   display: none;
 }
 .content {
-  margin: 0 var(--scale-1);
+  margin: 0 var(--type-scale-1);
   padding: 0;
   overflow: hidden;
   & > .title {
     font-weight: 400;
-    font-size: var(--scale-2);
+    font-size: var(--type-scale-2);
     line-height: 1.375em;
-    margin: 1em 0 var(--scale-0);
+    margin: 1em 0 var(--type-scale-0);
   }
   & > p {
-    font-size: var(--scale-1);
+    font-size: var(--type-scale-1);
     line-height: 1.5rem;
     margin: .5em 0 1.5em;
   }
@@ -90,7 +90,7 @@ export default ContactCta
       margin-left: auto;
     }
     & > .title {
-      font-size: var(--scale-3);
+      font-size: var(--type-scale-3);
       margin-top: 0;
       text-align: left;
     }

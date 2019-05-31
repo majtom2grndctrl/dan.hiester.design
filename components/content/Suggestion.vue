@@ -57,7 +57,7 @@ export default Suggestion
     text-transform: uppercase;
   }
   .title {
-    font-size: var(--scale-2);
+    font-size: var(--type-scale-2);
     line-height: 1.375em;
   }
   .cta {
