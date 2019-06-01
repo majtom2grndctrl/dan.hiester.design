@@ -61,7 +61,8 @@ export default Suggestion
     line-height: 1.375em;
   }
   .cta {
-    margin: 1rem 0;
+    margin: var(--spatial-scale-2) auto var(--spatial-scale-1);
+    max-width: 20em;
   }
   .altCta-container {
     text-align: center;

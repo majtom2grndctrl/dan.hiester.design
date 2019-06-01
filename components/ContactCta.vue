@@ -33,7 +33,7 @@ export default ContactCta
 .ContactCta {
   background: #486172;
   color: var(--white);
-  padding: 0 0 2rem 0;
+  padding: 0 0 var(--spatial-scale-3) 0;
 }
 .image-mobile {
   width: 100%;
@@ -42,19 +42,19 @@ export default ContactCta
   display: none;
 }
 .content {
-  margin: 0 var(--type-scale-1);
+  margin: 0 var(--spatial-scale-3);
   padding: 0;
   overflow: hidden;
   & > .title {
     font-weight: 400;
     font-size: var(--type-scale-2);
-    line-height: 1.375em;
-    margin: 1em 0 var(--type-scale-0);
+    line-height: var(--spatial-scale-6);
+    margin: 1em 0 var(--spatial-scale-1);
   }
   & > p {
     font-size: var(--type-scale-1);
-    line-height: 1.5rem;
-    margin: .5em 0 1.5em;
+    line-height: var(--spatial-scale-5);
+    margin: var(--spatial-scale-1) 0 var(--spatial-scale-3);
   }
 }
 
@@ -95,8 +95,7 @@ export default ContactCta
       text-align: left;
     }
     & > p {
-      font-size: calc(18rem/16);
-      line-height: calc(28rem/16);
+      line-height: var(--spatial-scale-4);
     }
   }
   .image-container {

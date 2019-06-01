@@ -84,8 +84,8 @@ export default MainLayout
     margin-left: var(--spatial-scale-4);
   }
   .title {
-    font-size: var(--type-scale-6);
-    line-height: var(--spatial-scale-6);
+    font-size: var(--type-scale-5);
+    line-height: var(--spatial-scale-5);
     margin: 0 0 0 -.07em;
   }
   .title-prefix {
@@ -119,7 +119,7 @@ export default MainLayout
     width: calc(100% * 12 / 14);
   }
   .header {
-    margin: calc(var(--type-scale-5) * .8) 0;
+    margin: var(--spatial-scale-5) 0 var(--spatial-scale-4) 0;
   }
 }
 @media (min-resolution: 1.25dppx) {

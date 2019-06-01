@@ -128,12 +128,13 @@ export default Vue.extend ({
 ***********************************/
 
 .block-preview {
-  font-size: 1rem;
+  font-size: var(--type-scale-1);
   line-height: 1.5em;
 }
 @media (--viewport-medium) {
   .block-preview{
     font-size: var(--type-scale-1);
+    line-height: var(--spatial-scale-4);
   }
 }
 

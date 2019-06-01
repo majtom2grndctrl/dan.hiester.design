@@ -56,12 +56,12 @@ export default StandAlone
   .content {
     max-width: 30rem;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0 var(--spatial-scale-3);
   }
   .title {
     font-size: var(--type-scale-2);
     line-height: 1.375em;
-    margin: calc(18em/24) 0 calc(18em/24) 0;
+    margin: var(--spatial-scale-2) 0 var(--spatial-scale-2) 0;
   }
   .description {
     /* should extend .block-preview */
@@ -82,6 +82,9 @@ export default StandAlone
     max-width: 20rem;
   }
   @media (--viewport-small) {
+    .content {
+      padding: 0 var(--spatial-scale-4);
+    }
   }
   @media (--viewport-medium) {
     .StandAlone {

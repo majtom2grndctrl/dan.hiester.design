@@ -31,23 +31,21 @@ export default AnthologyHero
 
 <style lang="postcss" scoped>
 .AnthologyHero {
-  display: flex;
-  flex-direction: column;
 }
 .title {
   color: var(--white);
-  font-size: var(--type-scale-3);
+  font-size: var(--type-scale-2);
   font-weight: 400;
-  line-height: calc(38em/30);
-  margin: calc(35em/30) 0 calc(20em/30) 0;
+  line-height: 1.375em;
+  margin: var(--spatial-scale-4) 0 var(--spatial-scale-1);
   text-align: center;
 }
 .description {
   font-size: var(--type-scale-1);
-  line-height: 1.5em;
+  line-height: var(--spatial-scale-5);
 }
 .image {
-  margin: 0 15%;
+  margin: var(--spatial-scale-1) 15%;
   & > img {
     width: 100%;
   }
@@ -55,8 +53,8 @@ export default AnthologyHero
 .subhead {
   font-size: var(--type-scale-2);
   font-weight: 400;
-  line-height: 1.26667em;
-  margin: 1.16667em 0 .66667em;
+  line-height: 1.375em;
+  margin: var(--spatial-scale-2) 0 var(--spatial-scale-1);
   text-align: center;
 }
 @media (--viewport-small) {
@@ -69,6 +67,7 @@ export default AnthologyHero
 @media (--viewport-medium) {
   .AnthologyHero {
     display: flex;
+    flex-direction: column;
     height: 25.5rem;
     justify-content: center;
     overflow: hidden;
@@ -81,7 +80,10 @@ export default AnthologyHero
   }
   .subhead {
     display: none;
-  }  
+  }
+  .description {
+    line-height: var(--spatial-scale-4);
+  }
   .image {
     margin: 0;
     position: absolute;
@@ -93,7 +95,7 @@ export default AnthologyHero
   /* Modification classes */
   .Anthology--inroads {
     & .title {
-      font-size: var(--type-scale-5) !important;
+      font-size: var(--type-scale-4) !important;
     }
   }
 }
