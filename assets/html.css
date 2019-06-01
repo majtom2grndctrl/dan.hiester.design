@@ -50,7 +50,7 @@
 /* Lessons were learned here: */
 @media (min-width: 820px /* 51.25rem *//* 820 / 16 */) {
   html {
-    font-size: calc(100% + 8 * (100vw - 1440px) / 900);
+    font-size: calc(100% + 10 * (100vw - 1440px) / 900);
   }
   :root {
     --scale-multiplier: 1.25;
