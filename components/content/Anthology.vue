@@ -29,16 +29,18 @@ export default Anthology
   padding: 0 calc(20rem/16);
 }
 .anthology-list {
-  display: flex;
-  flex-direction: column;
   padding-bottom: 1.5rem;
 }
 @media (--viewport-medium) {
   .anthology {
     margin: 2rem 0;
     padding: 0;
+    &:first-child {
+      margin-top: 0;
+    }
   }
   .anthology-list {
+    display: flex;
     flex-direction: row;
     padding-bottom: 0;
   }

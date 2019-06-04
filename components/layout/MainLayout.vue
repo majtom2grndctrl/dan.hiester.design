@@ -63,13 +63,13 @@ export default MainLayout
     flex-direction: row;
     align-items: baseline;
     justify-content: space-between;
-  margin: calc(30rem/16) calc(20rem/16) calc(20rem/16) calc(20rem/16);
+  margin: var(--spatial-scale-5) var(--spatial-scale-2) var(--spatial-scale-3) var(--spatial-scale-2);
 }
 .title {
   color: var(--gray-600);
-  font-size: calc(36rem/16);
+  font-size: var(--type-scale-4);
   letter-spacing: -.0125em;
-  line-height: .9em;
+  line-height: var(--spatial-scale-4);
   margin: 0 0 0 -.075em;
 }
 .title-prefix {
@@ -80,10 +80,12 @@ export default MainLayout
 @media (--viewport-small) {
   .header {
     justify-content: flex-start;
-    margin: calc(30rem/16) calc(20rem/16) calc(20rem/16) calc(20rem/16);
+    margin-right: var(--spatial-scale-4);
+    margin-left: var(--spatial-scale-4);
   }
   .title {
-    font-size: calc(64rem/16);
+    font-size: var(--type-scale-5);
+    line-height: var(--spatial-scale-5);
     margin: 0 0 0 -.07em;
   }
   .title-prefix {
@@ -117,7 +119,7 @@ export default MainLayout
     width: calc(100% * 12 / 14);
   }
   .header {
-    margin: calc(42rem/16) 0 calc(42rem/16) 0;
+    margin: var(--spatial-scale-5) 0 var(--spatial-scale-4) 0;
   }
 }
 @media (min-resolution: 1.25dppx) {

@@ -58,7 +58,8 @@ module.exports = {
         portfolio: '/portfolio',
         portfolio_item: (slug: string) => '/portfolio/' + slug,
         portfolio_all: '/portfolio/all-projects',
-        portfolio_all_item: (slug: string) => '/portfolio/all-projects/' + slug
+        portfolio_all_item: (slug: string) => '/portfolio/all-projects/' + slug,
+        styleguide: '/styleguide',
       })
       const apiUrl = 'https://distantly-yours-blog.cdn.prismic.io/api/v2'
       const blogQuery = await Prismic.getApi(apiUrl)
@@ -69,6 +70,7 @@ module.exports = {
         })
         .catch(err => {
           console.warn('Hey, something happened to the network.', err)
+          console.log('Using datamocks for blog posts: ', blogDataMock)
           // If we’re in dev mode, return a data mock. Otherwise, return null and force an error.
           return process.env.NODE_ENV === 'development' ? { blogDataMock } : { results: [] }
         })

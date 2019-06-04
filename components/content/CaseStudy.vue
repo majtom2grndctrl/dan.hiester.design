@@ -4,8 +4,7 @@
       <div class="meta">
         <h1 v-html="data.headline" class="title" />
         <div>
-          <span class="projectName">{{ data.meta.project_name }}</span>
-          <span class="type">{{ data.meta.case_study_type }}</span>
+          <span class="projectName">{{ data.meta.project_name }}</span><span class="type">{{ data.meta.case_study_type }}</span>
         </div>
         <div class="projectDates">{{ data.meta.start_date }}&ndash;{{ data.meta.end_date }}</div>
       </div>
@@ -164,36 +163,34 @@ export default CaseStudy
   .header {
     background: var(--bg-blue-400);
     color: var(--white);
-    display: flex;
-      flex-direction: column;
     margin: 0 0 3rem 0;
     overflow: hidden;
   }
   .meta {
-    margin: 1em;
+    margin: var(--spatial-scale-2);
   }
   .title {
     color: var(--white);
-    font-size: calc(24rem/16);
-    line-height: 1.4em;
-    margin: .5em 0 .66em 0;
+    font-size: var(--type-scale-2);
+    line-height: var(--spatial-scale-6);
+    margin: 0 0 var(--spatial-scale-2) 0;
   }
   .projectName {
     display: inline-block;
     font-family: var(--font-heading);
     font-weight: 500;
-    margin-right: .666em;
+    margin-right: var(--spatial-scale-1);
   }
   .type {
     display: inline-block;
     font-family: var(--font-heading);
     font-weight: 500;
-    margin-bottom: .66em;
+    margin-bottom: var(--spatial-scale-00);
     opacity: .7;
   }
   .hero {
     text-align: center;
-    margin: .5em 2rem 2rem 2rem;
+    margin: var(--spatial-scale-2);
   }
   .heroImage {
     max-width: 15em;
@@ -201,12 +198,14 @@ export default CaseStudy
   }
   .about {
     color: var(--gray-400);
-    line-height: 1.5em;
+    font-size: var(--type-scale-0);
+    line-height: var(--spatial-scale-2);
     margin: 2rem 1rem;
     & h2 {
       color: var(--gray-600);
-      font-size: 1em;
-      margin: 1.5em 0 .5em;
+      font-size: var(--type-scale-00);
+      line-height: var(--spatial-scale-0);
+      margin: var(--spatial-scale-4) 0 var(--spatial-scale-1);
       text-transform: uppercase;
     }
   }
@@ -222,7 +221,8 @@ export default CaseStudy
   }
   @media (--viewport-small) {
     .title {
-      margin: 1em auto .5em;
+      margin-right: auto;
+      margin-left: auto;
       max-width: 20em;
       text-align: center;
     }
@@ -232,7 +232,10 @@ export default CaseStudy
     .about {
       display: grid;
       grid-template-columns: 6fr 4fr;
-      grid-column-gap: 2rem;
+      grid-column-gap: var(--spatial-scale-2);
+      max-width: 30rem;
+      margin-right: auto;
+      margin-left: auto;
     }
     .team, .skills {
       flex-basis: 50%;
@@ -240,6 +243,8 @@ export default CaseStudy
   }
   @media (--viewport-medium) {
     .header {
+      display: grid;
+      grid-template-columns: 1fr 4fr 1fr 5fr 1fr;
       align-items: center;
       flex-direction: row;
       min-height: 25rem;
@@ -252,9 +257,9 @@ export default CaseStudy
     }
     .meta {
       box-sizing: border-box;
-      flex-basis: 50%;
+      grid-area: 1 / 2 / 2 / 3;
       margin: 0;
-      padding: 0 calc(100% * 1 / 12) 0 calc(100% * 1 / 12);
+      padding: 0;
       text-align: left;
       width: 100%;
     }
@@ -269,18 +274,24 @@ export default CaseStudy
     }
     .hero {
       box-sizing: border-box;
-      flex-basis: 50%;
+      grid-area: 1 / 4 / 2 / 5;
       margin: 0;
-      padding: 3rem calc(100% * 1 / 12) 3rem 0;
+      padding: var(--spatial-scale-5) 0;
       width: 100%;
     }
     .heroImage {
       max-width: 100%;
     }
     .about {
+      font-size: var(--type-scale-1);
+      line-height: var(--spatial-scale-3);
       margin-right: auto;
       margin-left: auto;
+      max-width: unset;
       width: calc(100% * 8/12);
+      & h2 {
+        font-size: var(--type-scale-0);
+      }
     }
   }
 </style>

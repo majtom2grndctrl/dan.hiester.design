@@ -9,7 +9,6 @@
   </svg>
 </template>
 
-
 <script lang="ts">
 import { Vue, Component, Prop } from "nuxt-property-decorator"
 
@@ -43,4 +42,3 @@ class DyLogo extends Vue {
 }
 export default DyLogo
 </script>
-

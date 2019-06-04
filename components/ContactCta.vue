@@ -5,7 +5,7 @@
       <img class="image-desktop" src="/img/project-collage-desktop.jpg" alt="" />
     </div>
     <div class="content">
-      <h1>There’s so much more to talk&nbsp;about!</h1>
+      <h1 class="title">There’s so much more to talk&nbsp;about!</h1>
       <p>I’ve worked on many different teams and challenges. Some of that work hasn’t been published here yet&mdash;<strong>much of it can’t be</strong>. The&nbsp;best way to get to know what I have to offer is to talk shop over&nbsp;coffee.</p>
       <cta-link class="cta" href="https://www.linkedin.com/in/danhiester" variant="white">Contact me on LinkedIn</cta-link>
     </div>
@@ -33,7 +33,7 @@ export default ContactCta
 .ContactCta {
   background: #486172;
   color: var(--white);
-  padding: 0 0 2rem 0;
+  padding: 0 0 var(--spatial-scale-3) 0;
 }
 .image-mobile {
   width: 100%;
@@ -42,35 +42,34 @@ export default ContactCta
   display: none;
 }
 .content {
-  margin: 0 1.25rem;
+  margin: 0 var(--spatial-scale-3);
   padding: 0;
   overflow: hidden;
-  & > h1 {
+  & > .title {
     font-weight: 400;
-    font-size: calc(30rem/16);
-    line-height: calc(38rem/16);
-    margin: 1em 0 .25em;
+    font-size: var(--type-scale-2);
+    line-height: var(--spatial-scale-6);
+    margin: 1em 0 var(--spatial-scale-1);
   }
   & > p {
-    font-size: 1rem;
-    line-height: 1.5rem;
-    margin: .5em 0 1.5em;
+    font-size: var(--type-scale-1);
+    line-height: var(--spatial-scale-5);
+    margin: var(--spatial-scale-1) 0 var(--spatial-scale-3);
   }
+}
+.cta {
+  max-width: 20rem;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @media (--viewport-small) {
   .content {
     margin: 0 auto;
     max-width: 30rem;
-    & > h1 {
-      margin-bottom: .5em;
+    & > .title {
       text-align: center;
     }
-  }
-  .cta {
-    max-width: 20rem;
-    margin-right: auto;
-    margin-left: auto;
   }
 }
 @media (--viewport-medium) {
@@ -85,20 +84,22 @@ export default ContactCta
   .content {
     flex-basis: 47%;
     padding-right: 1.5rem;
-    & > h1, & > p, & > .cta {
+    & > .title, & > p, & > .cta {
       max-width: 22rem;
       margin-right: auto;
       margin-left: auto;
     }
-    & > h1 {
-      font-size: calc(36rem/16);
-      line-height: calc(50em/36);
+    & > .title {
+      font-size: var(--type-scale-2);
+      line-height: var(--spatial-scale-5);
       margin-top: 0;
+      margin-bottom: var(--spatial-scale-1);
       text-align: left;
     }
     & > p {
-      font-size: calc(18rem/16);
-      line-height: calc(28rem/16);
+      font-size: var(--type-scale-0);
+      line-height: var(--spatial-scale-3);
+      margin-bottom: var(--spatial-scale-2);
     }
   }
   .image-container {

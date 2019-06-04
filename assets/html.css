@@ -1,10 +1,3 @@
-/* Lessons were learned here: */
-@media (min-width: 820px /* 51.25rem *//* 820 / 16 */) {
-  html {
-    font-size: calc(100% + 10 * (100vw - 1440px) / 900);
-  }
-}
-
 /* 
   Global CSS Variables 
 ****************************/
@@ -26,7 +19,45 @@
   --font-heading: 'Poppins', sans-serif;
   --font-body: 'Arimo', sans-serif;
   --mobile-nav-transition-duration: .3s;
+
+  --type-scale-base: calc(18rem/16);
+  --scale-multiplier: 1.2;
+  --type-scale-00: calc(var(--type-scale-base) / var(--scale-multiplier) / var(--scale-multiplier));
+  --type-scale-0: calc(var(--type-scale-base) / var(--scale-multiplier));
+  --type-scale-1: var(--type-scale-base);
+  --type-scale-2: calc(var(--type-scale-base) * var(--scale-multiplier) * var(--scale-multiplier));
+  --type-scale-3: calc(var(--type-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
+  --type-scale-4: calc(var(--type-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
+  --type-scale-5: calc(var(--type-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
+  --type-scale-6: calc(var(--type-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
+  --type-scale-7: calc(var(--type-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
+  --type-scale-8: calc(var(--type-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
+
+  --spatial-scale-base: calc(var(--type-scale-base) * .705);
+  --spatial-scale-00: calc(var(--spatial-scale-base) / var(--scale-multiplier) / var(--scale-multiplier));
+  --spatial-scale-0: calc(var(--spatial-scale-base) / var(--scale-multiplier));
+  --spatial-scale-1: var(--spatial-scale-base);
+  --spatial-scale-2: calc(var(--spatial-scale-base) * var(--scale-multiplier) * var(--scale-multiplier));
+  --spatial-scale-3: calc(var(--spatial-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
+  --spatial-scale-4: calc(var(--spatial-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
+  --spatial-scale-5: calc(var(--spatial-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
+  --spatial-scale-6: calc(var(--spatial-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
+  --spatial-scale-7: calc(var(--spatial-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
+  --spatial-scale-8: calc(var(--spatial-scale-base) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier) * var(--scale-multiplier));
+
 }
+
+/* Lessons were learned here: */
+@media (min-width: 820px /* 51.25rem *//* 820 / 16 */) {
+  html {
+    font-size: calc(100% + 10 * (100vw - 1440px) / 900);
+  }
+  :root {
+    --scale-multiplier: 1.25;
+    --type-scale-base: calc(22rem/16);
+  }
+}
+
 /*
   Global styles
 ****************************/

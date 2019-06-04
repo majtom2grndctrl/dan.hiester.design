@@ -82,7 +82,7 @@ class BlogIndex extends Vue {
         return { title: err }
       })
     }).catch( err => {
-      console.warn("Error downloading posts")
+      console.warn("Error downloading posts (pages/blog/index)")
       return process.env.NODE_ENV === 'development' ? { blog_posts: parseResponse(blogDataMock) } : { blog_posts: undefined }
     })
   }
@@ -100,6 +100,7 @@ export default BlogIndex
     .BlogIndex {
       --right-side: calc(100% * 5 / 12);
       background-color: var(--gray-600);
+      margin: 0 0 calc(100% * 1 / 14);
       position: relative;
       overflow: hidden;
       padding-right: var(--right-side);

@@ -40,11 +40,8 @@ export default AnthologyItem
   background-color: var(--white);
   border-radius: calc(8rem/16);
   color: var(--gray-400);
-  margin: calc(12rem/16) 0;
-  padding: 1rem;
-  &:first-of-type {
-    margin-top: calc(15rem/16);
-  }
+  margin: var(--spatial-scale-2) 0;
+  padding: var(--spatial-scale-3) var(--spatial-scale-1) var(--spatial-scale-1);
   & .type {
     color: var(--gray-600);
   }
@@ -54,13 +51,14 @@ export default AnthologyItem
   }
 }
 .description {
-  margin: calc(5rem/16) 0 calc(15rem/16) 0;
+  margin: 0 0 var(--spatial-scale-1) 0;
 }
 @media (--viewport-small) {
   .AnthologyItem {
     max-width: 30rem;
     margin-right: auto;
     margin-left: auto;
+    padding: var(--type-scale-1);
 
     & .cta {
       max-width: 20rem;
@@ -76,12 +74,9 @@ export default AnthologyItem
     display: flex;
       flex-direction: column;
       flex-basis: 50%;
-    padding: 4rem 0 4.25rem 0;
+    padding: var(--spatial-scale-8) 0 var(--spatial-scale-8) 0;
     margin: 0;
     max-width: none;
-    &:first-of-type {
-      margin-top: 0;
-    }
     &:nth-child(2n+1) {
       background: var(--bg-blue-600);
     }
@@ -90,6 +85,10 @@ export default AnthologyItem
     }
     & .type {
       color: inherit;
+      font-size: var(--type-scale-00);
+      line-height: var(--spatial-scale-00);
+    }
+    & .description {
     }
     & .cta {
       background-color: var(--white);

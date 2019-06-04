@@ -57,10 +57,12 @@ export default Suggestion
     text-transform: uppercase;
   }
   .title {
-    font-size: calc(24rem/16);
+    font-size: var(--type-scale-2);
+    line-height: 1.375em;
   }
   .cta {
-    margin: 1rem 0;
+    margin: var(--spatial-scale-2) auto var(--spatial-scale-1);
+    max-width: 20em;
   }
   .altCta-container {
     text-align: center;
@@ -74,6 +76,9 @@ export default Suggestion
       flex-direction: row;
       align-items: center;
     }
+    .type {
+      font-size: var(--type-scale-00);
+    }
     .content {
       padding: calc(30rem/16);
     }
@@ -81,5 +86,10 @@ export default Suggestion
       font-size: calc(26rem/16);
       line-height: calc(32em/26);
     }
+    .altCta {
+      color: var(--white);
+      font-size: var(--type-scale-0);
+    }
+
   }
 </style>
