@@ -16,6 +16,7 @@
 import { Vue, Component } from 'nuxt-property-decorator'
 import Prismic from 'prismic-javascript'
 import { apiEndpoint, parseResponse, BlogPostData } from './index.vue'
+import { blogPostMock } from '~/dataMocks';
 
 @Component({})
 class BlogView extends Vue {
@@ -24,17 +25,25 @@ class BlogView extends Vue {
     if (ctx.payload) {
 //      console.log('payload = ', ctx.payload)
       return { post: ctx.payload as BlogPostData }
-    } else return Prismic.getApi(apiEndpoint).then( function (api) {
+    } else return Prismic.getApi(apiEndpoint).then( api => {
       return api.query(
         Prismic.Predicates.at('my.blog_post.uid', ctx.params.slug),
         {}
-      ).then( function (response) {
+      ).then( response => {
 //        console.log('Response = ', response)
         return { post: parseResponse(response) as BlogPostData }
-      }, (err) => {
+      }, err => {
         console.log('Something went wrong: ', err)
         return { title: err }
       })
+    }).catch( err => {
+      console.warn('Error downloading posts (/pages/blog/_slug.vue)', err)
+      console.log('Using data mock: ', { post: parseResponse(blogPostMock)})
+      const returnPost = parseResponse(blogPostMock) as BlogPostData
+      returnPost.heroImage = ''
+      returnPost.heroBackground = 'var(--bg-blue-400)'
+
+      return { post: returnPost }
     })
   }
 }
