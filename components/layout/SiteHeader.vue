@@ -45,9 +45,8 @@ export default SiteHeader
 <style lang="postcss" scoped>
   .SiteHeader {
     display: flex;
-      align-items: center;
+      align-items: stretch;
       flex-direction: row;
-      justify-content: flex-start;
     margin: var(--spatial-scale-2) var(--spatial-scale-2) 0 var(--spatial-scale-2);
   }
   .logo-container {
@@ -79,6 +78,7 @@ export default SiteHeader
   }
   .logo {
     height: var(--spatial-scale-5);
+    display: block;
   }
   .distantly-yours {
     color: var(--gray-500);
@@ -169,9 +169,9 @@ export default SiteHeader
 .site-nav {
   display: flex;
     flex-direction: row;
-    align-items: center;
-    align-content: center;
   margin: 0;
+  position: relative;
+    top: calc(var(--spatial-scale-1) * .1875);
   transition: transform .5s ease, opacity .5s;
   & > a {
     border-bottom: calc(1rem/16) solid rgba(3, 161, 213, 0);
@@ -179,14 +179,16 @@ export default SiteHeader
     display: flex;
       align-items: center;
     font-size: var(--type-scale-0);
-    height: var(--spatial-scale-4);
     line-height: var(--spatial-scale-0);
     margin: 0 var(--type-scale-1) 0 0;
-    padding: 0 var(--spatial-scale-1);
+    padding: 0 var(--spatial-scale-1) 0;
     text-decoration: none;
     transition: border-bottom-color .66s;
     &.active {
       border-bottom-color: rgba(3, 161, 213, .3);
+    }
+    & > span {
+      display: block;
     }
   }
 }
