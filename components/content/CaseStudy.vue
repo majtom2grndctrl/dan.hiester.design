@@ -250,8 +250,8 @@ export default CaseStudy
       min-height: 25rem;
     }
     .title {
-      font-size: calc(42rem/16);
-      line-height: calc(1.275em);
+      font-size: var(--type-scale-3);
+      line-height: var(--spatial-scale-6);
       margin: 0 0 .66em 0;
       text-align: left;
     }
