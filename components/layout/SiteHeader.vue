@@ -131,7 +131,7 @@ export default SiteHeader
     color: #797979;
     display: block;
     font-weight: 300;
-    font-size: var(--type-scale-0);
+    font-size: var(--type-scale-00);
     letter-spacing: .05ex;
     opacity: .6;
     padding: 0;
@@ -200,7 +200,7 @@ export default SiteHeader
     grid-area: 1 / 2 / 2 / 3;
     margin-left: calc(var(--spatial-scale-1) * -1);
     & > a {
-      font-size: var(--type-scale-0);
+      font-size: var(--type-scale-00);
     }
   }
 }
