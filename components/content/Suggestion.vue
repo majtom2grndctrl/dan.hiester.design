@@ -47,7 +47,7 @@ export default Suggestion
   .content {
     max-width: 30rem;
     margin: 0 auto;
-    padding: 2rem 1.5rem;
+    padding: var(--spatial-scale-4) var(--spatial-scale-2);
   }
   .type {
     font-size: calc(14rem/16);
