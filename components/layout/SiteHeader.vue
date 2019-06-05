@@ -87,10 +87,11 @@ export default SiteHeader
     font-weight: 600;
     font-size: var(--type-scale-0);
     letter-spacing: .166ex;
+    line-height: var(--spatial-scale-0);
     opacity: 0;
     pointer-events: none;
     position: absolute;
-      top: 50%;
+      top: 52%;
       left: 142%;
     width: 12em;
     text-transform: uppercase;
