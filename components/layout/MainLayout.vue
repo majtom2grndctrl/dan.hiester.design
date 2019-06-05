@@ -119,7 +119,7 @@ export default MainLayout
     width: calc(100% * 12 / 14);
   }
   .header {
-    margin: var(--spatial-scale-5) 0 var(--spatial-scale-5) 0;
+    margin: var(--spatial-scale-5) 0 var(--spatial-scale-4) 0;
   }
 }
 @media (min-resolution: 1.25dppx) {
