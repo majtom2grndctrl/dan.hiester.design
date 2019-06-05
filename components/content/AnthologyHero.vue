@@ -4,7 +4,7 @@
     <div class="image">
       <img :src="data.image" alt="" />
     </div>
-    <div class="description" v-html="data.description" />
+    <div class="block-preview" v-html="data.description" />
     <h2 class="subhead" v-html="data.subhead" />
   </header>
 </template>
@@ -35,27 +35,23 @@ export default AnthologyHero
 }
 .title {
   color: var(--white);
-  font-size: var(--type-scale-2);
+  font-size: var(--type-scale-4);
   font-weight: 400;
   line-height: 1.375em;
-  margin: var(--spatial-scale-4) 0 var(--spatial-scale-1);
+  margin: var(--spatial-scale-5) 0 var(--spatial-scale-1);
   text-align: center;
 }
-.description {
-  font-size: var(--type-scale-1);
-  line-height: var(--spatial-scale-5);
-}
 .image {
-  margin: var(--spatial-scale-1) 15%;
+  margin: var(--spatial-scale-2) 15%;
   & > img {
     width: 100%;
   }
 }
 .subhead {
-  font-size: var(--type-scale-2);
+  font-size: var(--type-scale-3);
   font-weight: 400;
   line-height: 1.375em;
-  margin: var(--spatial-scale-2) 0 var(--spatial-scale-1);
+  margin: var(--spatial-scale-3) 0 0;
   text-align: center;
 }
 @media (--viewport-small) {
@@ -81,10 +77,6 @@ export default AnthologyHero
   }
   .subhead {
     display: none;
-  }
-  .description {
-    font-size: var(--type-scale-0);
-    line-height: var(--spatial-scale-3);
   }
   .image {
     margin: 0;

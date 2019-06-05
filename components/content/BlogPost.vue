@@ -46,8 +46,8 @@ export default BlogPost
     padding: var(--spatial-scale-5) var(--spatial-scale-2);
   }
   .title {
-    font-size: var(--type-scale-2);
-    line-height: var(--spatial-scale-5);
+    font-size: var(--type-scale-3);
+    line-height: var(--spatial-scale-6);
     margin-top: 0;
     margin-bottom: var(--spatial-scale-2);
   }

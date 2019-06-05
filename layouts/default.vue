@@ -62,7 +62,7 @@ export default Vue.extend ({
     margin-bottom: .75em;
   }
   & h2 {
-    font-size: var(--type-scale-2);
+    font-size: var(--type-scale-3);
     line-height: var(--spatial-scale-6);
     margin-top: var(--spatial-scale-6);
     margin-bottom: var(--spatial-scale-1);
@@ -98,7 +98,7 @@ export default Vue.extend ({
       line-height: var(--spatial-scale-8);
     }
     & .lede p {
-      font-size: var(--type-scale-2);
+      font-size: var(--type-scale-3);
       line-height: var(--spatial-scale-6);
     }
   }
@@ -119,7 +119,7 @@ export default Vue.extend ({
       width: calc(100% * 8 / 12);
     }
     & .lede p {
-      font-size: var(--type-scale-2);
+      font-size: var(--type-scale-3);
       line-height: var(--spatial-scale-6);
     }
     & figure {
@@ -137,7 +137,7 @@ export default Vue.extend ({
       margin: var(--spatial-scale-7) auto var(--spatial-scale-3);
     }
     & h3 {
-      font-size: var(--type-scale-2);
+      font-size: var(--type-scale-3);
     }  
   }
 }
@@ -156,12 +156,12 @@ export default Vue.extend ({
 
 .block-preview {
   font-size: var(--type-scale-1);
-  line-height: var(--spatial-scale-4);
+  line-height: var(--spatial-scale-5);
 }
 @media (--viewport-medium) {
   .block-preview{
     font-size: var(--type-scale-0);
-    line-height: var(--spatial-scale-3);
+    line-height: var(--spatial-scale-4);
   }
 }
 

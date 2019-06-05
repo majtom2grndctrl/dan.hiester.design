@@ -77,8 +77,8 @@ export default SiteHeader
     position: relative;
   }
   .logo {
-    height: var(--spatial-scale-5);
     display: block;
+    height: var(--spatial-scale-6);
   }
   .distantly-yours {
     color: var(--gray-500);
