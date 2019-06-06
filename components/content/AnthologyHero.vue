@@ -72,7 +72,7 @@ export default AnthologyHero
     position: relative;
   }
   .title {
-    margin: .5em 0 0 0;
+    margin: var(--spatial-scale-5) 0 0 0;
     text-align: left; 
   }
   .subhead {
