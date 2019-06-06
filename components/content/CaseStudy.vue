@@ -250,9 +250,9 @@ export default CaseStudy
       min-height: 25rem;
     }
     .title {
-      font-size: var(--type-scale-3);
-      line-height: var(--spatial-scale-6);
-      margin: 0 0 .66em 0;
+      font-size: var(--type-scale-4);
+      line-height: var(--spatial-scale-7);
+      margin: 0 0 var(--spatial-scale-4) 0;
       text-align: left;
     }
     .meta {
@@ -284,7 +284,7 @@ export default CaseStudy
     }
     .about {
       font-size: var(--type-scale-1);
-      line-height: var(--spatial-scale-3);
+      line-height: var(--spatial-scale-4);
       margin-right: auto;
       margin-left: auto;
       max-width: unset;
