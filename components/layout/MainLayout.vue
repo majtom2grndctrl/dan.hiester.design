@@ -67,7 +67,7 @@ export default MainLayout
 }
 .title {
   color: var(--gray-600);
-  font-size: var(--type-scale-6);
+  font-size: var(--type-scale-5);
   letter-spacing: -.0125em;
   line-height: var(--spatial-scale-5);
   margin: 0 0 0 -.075em;
