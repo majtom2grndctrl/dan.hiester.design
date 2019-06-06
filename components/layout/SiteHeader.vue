@@ -158,7 +158,7 @@ export default SiteHeader
 }
 @media (--viewport-medium) {
   .push-farther{
-    top: calc(var(--spatial-scale-5) + .25em);
+    top: calc(var(--spatial-scale-5) + .4em);
     right: calc(100% * 1/14);
   }
 }
@@ -203,7 +203,7 @@ export default SiteHeader
     grid-area: 1 / 2 / 2 / 3;
     margin-left: calc(var(--spatial-scale-1) * -1);
     & > a {
-      font-size: var(--type-scale-00);
+      font-size: var(--type-scale-0);
     }
   }
 }
