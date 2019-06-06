@@ -47,7 +47,7 @@ export default Suggestion
   .content {
     max-width: 30rem;
     margin: 0 auto;
-    padding: 2rem 1.5rem;
+    padding: var(--spatial-scale-4) var(--spatial-scale-2);
   }
   .type {
     font-size: calc(14rem/16);
@@ -57,7 +57,7 @@ export default Suggestion
     text-transform: uppercase;
   }
   .title {
-    font-size: var(--type-scale-2);
+    font-size: var(--type-scale-3);
     line-height: 1.375em;
   }
   .cta {
