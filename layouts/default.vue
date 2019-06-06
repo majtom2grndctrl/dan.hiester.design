@@ -67,8 +67,17 @@ export default Vue.extend ({
     margin-bottom: var(--spatial-scale-2);
   }
   & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6 {
-    margin-right: var(--spatial-scale-2);
-    margin-left: var(--spatial-scale-2);
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 40rem;
+    padding-right: var(--spatial-scale-2);
+  }
+  & p, & h2, & h3, & h4, & h5, & h6 {
+    padding-left: var(--spatial-scale-2);
+  }
+  & ol, & ul {
+    padding-left: var(--spatial-scale-8);
   }
   & h1, & h2, & h3, & h4, & h5, & h6 {
     color: var(--gray-600);
@@ -102,14 +111,15 @@ export default Vue.extend ({
     & p, & ol, & ul {
       line-height: var(--spatial-scale-5);
     }
-    & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6 {
-      margin-right: auto;
-      margin-left: auto;
-      max-width: 30rem;
-    }
     & h2 {
       font-size: var(--type-scale-4);
       line-height: var(--spatial-scale-8);
+    }
+    & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6 {
+      padding-right: var(--spatial-scale-5);
+    }
+    & p, & h2, & h3, & h4, & h5, & h6 {
+      padding-left: var(--spatial-scale-5);
     }
     & .lede p {
       font-size: var(--type-scale-3);
@@ -131,6 +141,12 @@ export default Vue.extend ({
     & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6 {
       max-width: unset;
       width: calc(100% * 8 / 12);
+    }
+    & p, & h2, & h3, & h4, & h5, & h6 {
+      padding: unset;
+    }
+    & ul, & ol {
+      padding-left: var(--spatial-scale-5);
     }
     & .lede p {
       font-size: var(--type-scale-3);
