@@ -118,7 +118,7 @@ export default SiteHeader
       margin-right: 0;
     }
     .logo {
-      height: var(--spatial-scale-4);
+      height: var(--spatial-scale-5);
     }
   }
 
