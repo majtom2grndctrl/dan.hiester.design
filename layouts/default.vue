@@ -33,6 +33,20 @@ export default Vue.extend ({
 
 <style lang="postcss">
 
+@media (--viewport-small) {
+  :root {
+    --type-scale-base: calc(20rem/16);
+  }
+}
+
+@media (--viewport-medium) {
+  :root {
+    --scale-multiplier: 1.25;
+    --type-scale-base: calc(22rem/16);
+  }
+}
+
+
 /*
   Styles for content retrieved from the cloud CMS
 ****************************/
