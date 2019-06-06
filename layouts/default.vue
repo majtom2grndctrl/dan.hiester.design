@@ -48,7 +48,7 @@ export default Vue.extend ({
     max-width: 100%;
   }
   & p, & ol, & ul {
-    line-height: var(--spatial-scale-4);
+    line-height: var(--spatial-scale-5);
     margin-top: var(--spatial-scale-1);
     margin-bottom: var(--spatial-scale-2);
   }
@@ -63,8 +63,8 @@ export default Vue.extend ({
   }
   & h2 {
     font-size: var(--type-scale-3);
-    line-height: var(--spatial-scale-6);
-    margin-top: var(--spatial-scale-6);
+    line-height: var(--spatial-scale-7);
+    margin-top: var(--spatial-scale-7);
     margin-bottom: var(--spatial-scale-1);
   }
   & figure {

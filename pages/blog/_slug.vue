@@ -110,13 +110,13 @@ export default BlogView
       padding: 0;
     }
     .title {
-      font-size: var(--type-scale-3);
-      line-height: var(--spatial-scale-6);
+      font-size: var(--type-scale-4);
+      line-height: var(--spatial-scale-7);
       max-width: unset;
     }
     .subtitle {
       font-size: var(--type-scale-1);
-      line-height: var(--spatial-scale-4);
+      line-height: var(--spatial-scale-5);
       margin: unset;
     }
     .hero .image {
