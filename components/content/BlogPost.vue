@@ -47,7 +47,7 @@ export default BlogPost
   }
   .title {
     font-size: var(--type-scale-3);
-    line-height: var(--spatial-scale-6);
+    line-height: var(--spatial-scale-7);
     margin-top: 0;
     margin-bottom: var(--spatial-scale-2);
   }
