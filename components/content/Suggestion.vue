@@ -68,7 +68,18 @@ export default Suggestion
     text-align: center;
   }
   .altCta {
+    background: rgba(255, 255, 255, 0);
+    border-radius: .5em;
     color: var(--white);
+    display: inline-block;
+    mix-blend-mode: hard-light;
+    opacity: .8;
+    padding: .5em 1em;
+    text-decoration: none;
+    transition: background-color .3s linear;
+    &:active, &:focus {
+      background: rgba(255, 255, 255, .25);
+    }
   }
   @media (--viewport-medium) {
     .Suggestion {
