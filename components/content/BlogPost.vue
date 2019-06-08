@@ -55,5 +55,14 @@ export default BlogPost
     max-width: 20rem;
     margin: var(--spatial-scale-3) auto 0;
   }
+  @media (--viewport-medium) {
+    .text {
+      padding-top: var(--spatial-scale-8);
+      padding-bottom: var(--spatial-scale-8);
+    }
+    .title {
+      line-height: var(--spatial-scale-6);
+    }
+  }
 </style>
 
