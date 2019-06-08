@@ -132,7 +132,7 @@ export default SiteHeader
     color: #797979;
     display: block;
     font-weight: 300;
-    font-size: var(--type-scale-00);
+    font-size: var(--type-scale-0);
     letter-spacing: .05ex;
     opacity: .6;
     padding: 0;
