@@ -172,7 +172,7 @@ export default CaseStudy
   .title {
     color: var(--white);
     font-size: var(--type-scale-3);
-    line-height: var(--spatial-scale-6);
+    line-height: var(--spatial-scale-7);
     margin: 0 0 var(--spatial-scale-2) 0;
   }
   .projectName {
