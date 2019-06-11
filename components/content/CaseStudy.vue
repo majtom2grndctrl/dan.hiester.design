@@ -148,12 +148,9 @@ export function parseCaseStudy (data): ICaseStudyData {
 }
 
 @Component({})
-
 class CaseStudy extends Vue {
-
   @Prop()
   data!: ICaseStudyData
-
 }
 
 export default CaseStudy

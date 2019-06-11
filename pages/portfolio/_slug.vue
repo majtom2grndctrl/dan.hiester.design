@@ -31,6 +31,16 @@ class CaseStudyPage extends Vue {
       })
     })
   }
+  head () {
+    const { data } = this.$data as ICaseStudyData
+    console.log('content = ', data)
+    return {
+      title: data ? `${data.meta.project_name} ${data.meta.case_study_type}` : '…Loading',
+      meta: [
+        { hid: 'og:title', property: 'og:title', content: data ? `${data.meta.project_name} ${data.meta.case_study_type}` : '…Loading'},
+      ]
+    }
+  }
   scrollToTop = true
 }
 

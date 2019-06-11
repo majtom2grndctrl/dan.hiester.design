@@ -13,8 +13,13 @@ export default {
   components: {
     MainLayout
   },
-  transition(to, from) {
+  transition (to, from) {
     return swipeTransition(to, from)
+  },
+  head () {
+    return {
+      title: 'Blog: Notes from the fog',
+    }
   }
 }
 </script>
