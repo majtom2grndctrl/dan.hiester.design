@@ -53,28 +53,28 @@
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import Prismic from 'prismic-javascript'
 import PrismicDOM from 'prismic-dom'
+import { Document } from 'prismic-javascript/d.ts/documents';
 //import { apiEndpoint, parseResponse } from './index'
 
 export interface ICaseStudyData {
-  data: {
-    headline: string;
-    meta: {
-      case_study_type: string;
-      project_name: string;
-      start_date: string;
-      end_date: string;
-      employer: string;
-      client: string;
-      team_label: string;
-      roles: string;
-      skills: string;
-      tools: string;
-    };
-    hero_image: {
-      url: string;
-    };
-    parsedContent: string;
+  headline: string;
+  meta: {
+    case_study_type: string;
+    project_name: string;
+    start_date: string;
+    end_date: string;
+    employer: string;
+    client: string;
+    team_label: string;
+    roles: string;
+    skills: string;
+    tools: string;
   };
+  hero_image: {
+    url: string;
+  };
+  slug?: string;
+  parsedContent: string;
 }
 
 const parsers = {
@@ -96,7 +96,8 @@ const parsers = {
   }
 }
 
-export function parseCaseStudy (data): ICaseStudyData {
+export function parseCaseStudy (payload: Document): ICaseStudyData {
+  const { data } = payload
   let parsedContent = ''
   function parseDate(date) {
     const months = Object.freeze({
@@ -125,25 +126,24 @@ export function parseCaseStudy (data): ICaseStudyData {
   console.log('data = ', data)
 //  console.log('parsedContent = ', parsedContent)
   return {
-    data: {
-      headline: PrismicDOM.RichText.asText(data.headline),
-      meta: {
-        case_study_type: data.case_study_type,
-        project_name:  data.project_name,
-        start_date: parseDate(data.start_date),
-        end_date: parseDate(data.end_date),
-        employer: data.employer,
-        client: data.client,
-        team_label: data.team_label || 'Team',
-        roles: data.roles,
-        skills: data.skills,
-        tools: data.tools
-      },
-      hero_image: {
-        url: data.hero_image.url
-      },
-      parsedContent: parsedContent,
-    }
+    headline: PrismicDOM.RichText.asText(data.headline),
+    meta: {
+      case_study_type: data.case_study_type,
+      project_name:  data.project_name,
+      start_date: parseDate(data.start_date),
+      end_date: parseDate(data.end_date),
+      employer: data.employer,
+      client: data.client,
+      team_label: data.team_label || 'Team',
+      roles: data.roles,
+      skills: data.skills,
+      tools: data.tools
+    },
+    hero_image: {
+      url: data.hero_image.url
+    },
+    slug: payload.uid,
+    parsedContent: parsedContent,
   }
 }
 
