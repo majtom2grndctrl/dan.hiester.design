@@ -24,7 +24,7 @@ module.exports = {
       { property: 'og:site_name', content: 'Distantly Yours' },
       { hid: 'og:title', property: 'og:title', content: 'Blog: Notes from the other side of the fog' },
       { hid: 'og:description', property: 'og:description', content: 'UX consulting by Dan Hiester in Seattle, WA' },
-      { hid: 'og:image', property: 'og:image', content: '' },
+      { hid: 'og:image', property: 'og:image', content: 'https://www.distantlyyours.com/img/fb-ogp-default.jpg' },
       { hid: 'twitter:card', name: 'twitter:card', content: '' },
       { hid: 'twitter:image:alt', name: 'twiter:image:alt', content: 'Distantly Yours: UX consulting by Dan Hiester in Seattle, WA' },
       { name: 'twitter:site', content: '@distantlyyours' },
