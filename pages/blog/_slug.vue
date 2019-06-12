@@ -46,6 +46,19 @@ class BlogView extends Vue {
       return { post: returnPost }
     })
   }
+  head () {
+    const post = this.$data.post as BlogPostData
+    post.title = post.title.replace('&nbsp;', ' ')
+    return {
+      title: post ? post.title : '…Loading',
+      meta: [
+        { hid: 'description', name: 'description', content: post.preview },
+        { hid: 'og:url', property: 'og:url', content: post.url },
+        { hid: 'og:title', property: 'og:title', content: post.title },
+        { hid: 'og:description', property: 'og:description', content: post.preview },
+      ]
+    }
+  }
 }
 
 export default BlogView

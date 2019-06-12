@@ -18,8 +18,13 @@ import MainLayout, { swipeTransition } from '~/components/layout/MainLayout.vue'
 })
 
 class Portfolio extends Vue {
-  transition(to, from) {
+  transition (to, from) {
     return swipeTransition(to, from)
+  }
+  head () {
+    return {
+      title: 'Portfolio'
+    }
   }
 }
 

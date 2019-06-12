@@ -9,6 +9,7 @@ module.exports = {
   */
   head: {
     title: 'Distantly Yours',
+    titleTemplate: '%s • Distantly Yours: UX Consulting by Dan Hiester in Seattle, WA',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -16,7 +17,17 @@ module.exports = {
       { name: 'application-name', content: 'Distantly Yours' },
       { name: 'theme-color', content: '#197FA1' },
       { name: 'msapplication-navbutton-color', content: '#03a1d5'},
-      { name: 'apple-mobile-web-app-status-bar-style', content: '#197FA1'}
+      { name: 'apple-mobile-web-app-status-bar-style', content: '#197FA1'},
+      { property: 'og:locale', content: 'en_US' },
+      { property: 'og:type', content: 'website' },
+      { hid: 'og:url', property: 'og:url', content: 'https://www.distantlyyours.com/blog' },
+      { property: 'og:site_name', content: 'Distantly Yours' },
+      { hid: 'og:title', property: 'og:title', content: 'Blog: Notes from the other side of the fog' },
+      { hid: 'og:description', property: 'og:description', content: 'UX consulting by Dan Hiester in Seattle, WA' },
+      { hid: 'og:image', property: 'og:image', content: 'https://www.distantlyyours.com/img/fb-ogp-default.jpg' },
+      { hid: 'twitter:card', name: 'twitter:card', content: '' },
+      { hid: 'twitter:image:alt', name: 'twiter:image:alt', content: 'Distantly Yours: UX consulting by Dan Hiester in Seattle, WA' },
+      { name: 'twitter:site', content: '@distantlyyours' },
     ],
     link: [
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png?v=wAO9R4Y0rn' },
