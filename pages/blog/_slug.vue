@@ -56,6 +56,10 @@ class BlogView extends Vue {
         { hid: 'og:url', property: 'og:url', content: post.url },
         { hid: 'og:title', property: 'og:title', content: post.title },
         { hid: 'og:description', property: 'og:description', content: post.preview },
+        { hid: 'og:image', property: 'og:image', content: post.heroImage.url },
+        { hid: 'og:image:alt', property: 'og:image:alt', content: post.heroImage.alt },
+        { hid: 'twitter:image', name: 'twitter:image', content: post.heroImage.url },
+        { hid: 'twitter:image:alt', name: 'twiter:image:alt', content: post.heroImage.alt },
       ]
     }
   }

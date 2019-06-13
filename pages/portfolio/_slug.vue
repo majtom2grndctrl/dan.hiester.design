@@ -42,6 +42,10 @@ class CaseStudyPage extends Vue {
         { hid: 'og:title', property: 'og:title', content: caseStudy ? `${caseStudy.meta.project_name} ${caseStudy.meta.case_study_type}` : '…Loading'},
         { hid: 'og:description', property: 'og:description', content: caseStudy ? `${caseStudy.headline}` : '…Loading'},
         { hid: 'og:url', property: 'og:url', content: `https://www.distantlyyours.com/portfolio/${caseStudy.slug}` },
+        { hid: 'og:image', property: 'og:image', content: caseStudy.hero_image.url },
+        { hid: 'og:image:alt', property: 'og:image:alt', content: caseStudy.hero_image.alt },
+        { hid: 'twitter:image', name: 'twitter:image', content: caseStudy.hero_image.url },
+        { hid: 'twitter:image:alt', name: 'twiter:image:alt', content: caseStudy.hero_image.alt },
       ]
     }
   }
