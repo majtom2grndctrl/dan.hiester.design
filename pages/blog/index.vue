@@ -44,13 +44,12 @@ export function parseResponse (response: ApiSearchResponse) {
       url: '/blog/' + result.uid,
       title: PrismicDOM.RichText.asText(data.title),
       content: PrismicDOM.RichText.asHtml(data.body),
+      heroImage: data.hero_image,
     }
     data.subhead && (output.subhead = PrismicDOM.RichText.asText(data.subhead))
     data.preview && (output.preview = PrismicDOM.RichText.asHtml(data.preview))
     data.cta && (output.cta = data.cta)
     data.index_page_background_color && (output.indexBgColor = data.index_page_background_color)
-    data.hero_image && (output.heroImage = data.hero_image)
-    data.hero_background && (output.heroBackground = data.hero_background)
     return output
   }
 

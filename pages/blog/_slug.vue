@@ -40,7 +40,7 @@ class BlogView extends Vue {
       console.warn('Error downloading posts (/pages/blog/_slug.vue)', err)
       console.log('Using data mock: ', { post: parseResponse(blogPostMock)})
       const returnPost = parseResponse(blogPostMock) as BlogPostData
-      returnPost.heroImage = ''
+      returnPost.heroImage = { url: '', alt: ''}
       returnPost.heroBackground = 'var(--bg-blue-400)'
 
       return { post: returnPost }
