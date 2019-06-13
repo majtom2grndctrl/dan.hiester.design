@@ -27,8 +27,9 @@ module.exports = {
       { hid: 'og:image', property: 'og:image', content: 'https://www.distantlyyours.com/img/fb-ogp-default.jpg' },
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
       { hid: 'twitter:image', name: 'twitter:image', content: 'https://www.distantlyyours.com/img/twitter-card-default.jpg' },
-      { hid: 'twitter:image:alt', name: 'twiter:image:alt', content: 'Distantly Yours: UX consulting by Dan Hiester in Seattle, WA' },
-      { name: 'twitter:site', content: '@distantlyyours' },
+      { hid: 'twitter:image:alt', name: 'twiter:image:alt', content: 'Distantly Yours Logo' },
+      { hid: 'twitter:site', name: 'twitter:site', content: '@distantlyyours' },
+      { hid: 'twitter:creator', name: 'twitter:creator', content: '@majtom2grndctrl' },
     ],
     link: [
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png?v=wAO9R4Y0rn' },

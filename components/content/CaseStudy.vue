@@ -72,6 +72,7 @@ export interface ICaseStudyData {
   };
   hero_image: {
     url: string;
+    alt?: string;
   };
   slug?: string;
   parsedContent: string;
@@ -140,7 +141,8 @@ export function parseCaseStudy (payload: Document): ICaseStudyData {
       tools: data.tools
     },
     hero_image: {
-      url: data.hero_image.url
+      url: data.hero_image.url,
+      alt: data.hero_image.alt,
     },
     slug: payload.uid,
     parsedContent: parsedContent,

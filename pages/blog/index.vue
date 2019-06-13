@@ -30,7 +30,10 @@ export interface BlogPostData {
   preview?: string;
   cta?: string;
   indexBgColor?: string;
-  heroImage?: {};
+  heroImage: {
+    url: string;
+    alt?: string;
+  };
   heroBackground?: {};
 }
 
