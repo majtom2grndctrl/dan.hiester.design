@@ -34,7 +34,9 @@ export interface BlogPostData {
     url: string;
     alt?: string;
   };
-  heroBackground?: {};
+  heroBackground: {
+    url: string;
+  };
 }
 
 export function parseResponse (response: ApiSearchResponse) {
@@ -45,6 +47,7 @@ export function parseResponse (response: ApiSearchResponse) {
       title: PrismicDOM.RichText.asText(data.title),
       content: PrismicDOM.RichText.asHtml(data.body),
       heroImage: data.hero_image,
+      heroBackground: data.hero_background,
     }
     data.subhead && (output.subhead = PrismicDOM.RichText.asText(data.subhead))
     data.preview && (output.preview = PrismicDOM.RichText.asHtml(data.preview))

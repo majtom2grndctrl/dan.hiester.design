@@ -41,7 +41,7 @@ class BlogView extends Vue {
       console.log('Using data mock: ', { post: parseResponse(blogPostMock)})
       const returnPost = parseResponse(blogPostMock) as BlogPostData
       returnPost.heroImage = { url: '', alt: ''}
-      returnPost.heroBackground = 'var(--bg-blue-400)'
+      returnPost.heroBackground = { url: '' }
 
       return { post: returnPost }
     })
