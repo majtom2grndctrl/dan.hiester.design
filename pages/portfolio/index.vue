@@ -35,7 +35,8 @@ import Suggestion, { SuggestionProps } from '~/components/content/Suggestion.vue
     ContactCta,
     StandAlone,
     Suggestion,
-  }
+  },
+  scrollToTop: true,
 })
 class Index extends Vue {
   transition(to, from) {

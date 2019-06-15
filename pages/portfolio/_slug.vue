@@ -11,7 +11,8 @@ import { Document } from 'prismic-javascript/d.ts/documents';
 @Component({
   components: {
     CaseStudy
-  }
+  },
+  scrollToTop: true,
 })
 
 class CaseStudyPage extends Vue {
@@ -49,7 +50,6 @@ class CaseStudyPage extends Vue {
       ]
     }
   }
-  scrollToTop = true
 }
 
 export default CaseStudyPage

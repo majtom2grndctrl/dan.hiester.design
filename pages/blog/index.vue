@@ -71,7 +71,8 @@ export function parseResponse (response: ApiSearchResponse) {
 @Component({
   components: {
     BlogPost
-  }
+  },
+  scrollToTop: true,
 })
 class BlogIndex extends Vue {
   async asyncData (ctx) {

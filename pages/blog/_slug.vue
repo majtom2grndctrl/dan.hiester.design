@@ -18,7 +18,9 @@ import Prismic from 'prismic-javascript'
 import { apiEndpoint, parseResponse, BlogPostData } from './index.vue'
 import { blogPostMock } from '~/dataMocks';
 
-@Component({})
+@Component({
+  scrollToTop: true,
+})
 class BlogView extends Vue {
   async asyncData (ctx) {
 //    console.log ('ctx.params.slug = ', ctx.params.slug)
