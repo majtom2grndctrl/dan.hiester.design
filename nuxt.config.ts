@@ -159,7 +159,9 @@ module.exports = {
         routesList.push({
           route: paths.portfolio_item(result.uid),
           payload: {
-            data: result.data
+            data: result.data,
+            slug: result.uid,
+            document: result
           }
         })
         /*

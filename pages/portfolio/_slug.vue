@@ -21,7 +21,9 @@ class CaseStudyPage extends Vue {
     if (ctx.payload) {
 //      console.log('payload = ', ctx.payload)
       const payload = ctx.payload as Document
-      return parseCaseStudy(payload)
+      return {
+        caseStudy: parseCaseStudy(payload)
+      }
     } else return Prismic.getApi('https://distantly-yours-blog.cdn.prismic.io/api/v2').then( function (api) {
       return api.query(
         Prismic.Predicates.at('my.case_study.uid', ctx.params.slug),
