@@ -44,7 +44,7 @@
         </div>
       </div>
     </div>
-    <div v-html="data.parsedContent" class="prismic-content" />
+    <prismic-slices v-if="data.document" :prismicDocument="data.document" />
   </article>
 </template>
 
@@ -54,7 +54,7 @@ import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import Prismic from 'prismic-javascript'
 import PrismicDOM from 'prismic-dom'
 import { Document } from 'prismic-javascript/d.ts/documents';
-//import { apiEndpoint, parseResponse } from './index'
+import PrismicSlices from '~/components/content/PrismicSlices.vue'
 
 export interface ICaseStudyData {
   headline: string;
@@ -75,31 +75,12 @@ export interface ICaseStudyData {
     alt?: string;
   };
   slug?: string;
-  parsedContent: string;
+  document: Document;
 }
 
-const parsers = {
-  content (block) {
-    let contentString = ''
-    !!block.title1 && (contentString += PrismicDOM.RichText.asHtml(block.title1))
-    !!block.lede && (contentString += `<div class="lede">${PrismicDOM.RichText.asHtml(block.lede)}</div>`)
-    !!block.content && (contentString += PrismicDOM.RichText.asHtml(block.content))
-    return contentString
-  },
-  image (block) {
-//    console.log('Current image block is: ', block)
-    return `
-      <figure>
-        <img src="${block.image.url}" alt="${block.image.alt}" />
-        <figcaption>${PrismicDOM.RichText.asHtml(block.caption)}</figcaption>
-      </figure>
-    `
-  }
-}
 
 export function parseCaseStudy (payload: Document): ICaseStudyData {
   const { data } = payload
-  let parsedContent = ''
   function parseDate(date) {
     const months = Object.freeze({
       '01': 'Jan',
@@ -118,14 +99,6 @@ export function parseCaseStudy (payload: Document): ICaseStudyData {
     date = date.split('-')
     return `${months[date[1]]} ${date[0]}`
   }
-  data.body.map( slice => {
-    switch(slice.slice_type) {
-      case 'content_block': return parsedContent = parsedContent + parsers.content(slice.primary)
-      case 'image_block': return parsedContent = parsedContent + parsers.image(slice.primary)
-    }
-  })
-  console.log('data = ', data)
-//  console.log('parsedContent = ', parsedContent)
   return {
     headline: PrismicDOM.RichText.asText(data.headline),
     meta: {
@@ -145,11 +118,15 @@ export function parseCaseStudy (payload: Document): ICaseStudyData {
       alt: data.hero_image.alt,
     },
     slug: payload.uid,
-    parsedContent: parsedContent,
+    document: payload,
   }
 }
 
-@Component({})
+@Component({
+  components: {
+    PrismicSlices
+  }
+})
 class CaseStudy extends Vue {
   @Prop()
   data!: ICaseStudyData
