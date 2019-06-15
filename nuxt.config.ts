@@ -146,11 +146,11 @@ module.exports = {
           payload: {
             title: PrismicDOM.RichText.asText(data.title),
             subhead: PrismicDOM.RichText.asText(data.subhead),
+            heroImage: data.hero_image,
+            heroBackground: data.hero_background,
             prismicDocument: result,
             slug: result.uid,
             url: paths.blog_item(result.uid),
-            heroImage: result.hero_image,
-            heroBackground: result.hero_background,
           }
         })
       })
