@@ -112,7 +112,7 @@ module.exports = {
             const { data } = result
             return {
               title: PrismicDOM.RichText.asText(data.title),
-              content: PrismicDOM.RichText.asHtml(data.body),
+//              content: PrismicDOM.RichText.asHtml(data.body),
               preview: PrismicDOM.RichText.asHtml(data.preview),
               slug: result.uid,
               url: paths.blog_item(result.uid),
@@ -146,11 +146,12 @@ module.exports = {
           payload: {
             title: PrismicDOM.RichText.asText(data.title),
             subhead: PrismicDOM.RichText.asText(data.subhead),
-            content: PrismicDOM.RichText.asHtml(data.body),
-            slug: result.uid,
-            url: '/blog/' + result.uid,
+            preview: PrismicDOM.RichText.asText(data.preview),
             heroImage: data.hero_image,
             heroBackground: data.hero_background,
+            prismicDocument: result,
+            slug: result.uid,
+            url: paths.blog_item(result.uid),
           }
         })
       })
@@ -159,7 +160,9 @@ module.exports = {
         routesList.push({
           route: paths.portfolio_item(result.uid),
           payload: {
-            data: result.data
+            data: result.data,
+            slug: result.uid,
+            document: result
           }
         })
         /*

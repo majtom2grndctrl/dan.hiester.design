@@ -26,7 +26,6 @@ export interface BlogPostData {
   url: string;
   title: string;
   subhead?: string;
-  content: string;
   preview?: string;
   cta?: string;
   indexBgColor?: string;
@@ -37,6 +36,7 @@ export interface BlogPostData {
   heroBackground: {
     url: string;
   };
+  prismicDocument: Document;
 }
 
 export function parseResponse (response: ApiSearchResponse) {
@@ -45,9 +45,9 @@ export function parseResponse (response: ApiSearchResponse) {
     const output: BlogPostData = {
       url: '/blog/' + result.uid,
       title: PrismicDOM.RichText.asText(data.title),
-      content: PrismicDOM.RichText.asHtml(data.body),
       heroImage: data.hero_image,
       heroBackground: data.hero_background,
+      prismicDocument: result,
     }
     data.subhead && (output.subhead = PrismicDOM.RichText.asText(data.subhead))
     data.preview && (output.preview = PrismicDOM.RichText.asHtml(data.preview))
@@ -71,7 +71,8 @@ export function parseResponse (response: ApiSearchResponse) {
 @Component({
   components: {
     BlogPost
-  }
+  },
+  scrollToTop: true,
 })
 class BlogIndex extends Vue {
   async asyncData (ctx) {

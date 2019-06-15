@@ -7,7 +7,7 @@
       </div>
       <img class="image" v-if="post.heroImage" :src="post.heroImage.url" :alt="post.heroImage.alt" />
     </header>
-    <article v-html="post.content" class="prismic-content" />
+    <prismic-slices :prismicDocument="post.prismicDocument" />
   </div>
 </template>
 
@@ -16,9 +16,15 @@
 import { Vue, Component } from 'nuxt-property-decorator'
 import Prismic from 'prismic-javascript'
 import { apiEndpoint, parseResponse, BlogPostData } from './index.vue'
+import PrismicSlices from '~/components/content/PrismicSlices.vue'
 import { blogPostMock } from '~/dataMocks';
 
-@Component({})
+@Component({
+  components: {
+    PrismicSlices
+  },
+  scrollToTop: true,
+})
 class BlogView extends Vue {
   async asyncData (ctx) {
 //    console.log ('ctx.params.slug = ', ctx.params.slug)
@@ -31,6 +37,7 @@ class BlogView extends Vue {
         {}
       ).then( response => {
 //        console.log('Response = ', response)
+        console.log('parsed post: ', parseResponse(response))
         return { post: parseResponse(response) as BlogPostData }
       }, err => {
         console.log('Something went wrong: ', err)
