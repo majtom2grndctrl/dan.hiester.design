@@ -67,10 +67,27 @@ export default StyleGuideSidebar
       padding: var(--spatial-scale-00);
       text-decoration: none;
       transition: background-color .25s, color .25s;
-      &:active, &:focus {
-        background-color: var(--gray-800);
-        color: var(--gray-400);
+      &:focus {
+        animation: navClick .4s linear;
       }
+    }
+  }
+  @keyframes navClick {
+    0% {
+      background-color: rgba(255, 255, 255, 0);
+      color: var(--gray-500);
+    }
+    5% {
+      background-color: rgb(250, 251, 252);
+      color: var(--gray-400);
+    }
+    15% {
+      background-color: var(--gray-800);
+      color: var(--gray-400);
+    }
+    100% {
+      background-color: rgba(255, 255, 255, 0);
+      color: var(--gray-500);
     }
   }
 </style>
