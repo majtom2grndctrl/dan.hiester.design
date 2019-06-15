@@ -146,6 +146,7 @@ module.exports = {
           payload: {
             title: PrismicDOM.RichText.asText(data.title),
             subhead: PrismicDOM.RichText.asText(data.subhead),
+            preview: PrismicDOM.RichText.asText(data.preview),
             heroImage: data.hero_image,
             heroBackground: data.hero_background,
             prismicDocument: result,
