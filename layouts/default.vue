@@ -53,6 +53,7 @@ export default Vue.extend ({
 
 .prismic-content {
   font-size: var(--type-scale-0);
+  line-height: var(--spatial-scale-5);
   color: var(--gray-400);
   & .lede p {
     font-size: var(--type-scale-1);
@@ -62,7 +63,6 @@ export default Vue.extend ({
     max-width: 100%;
   }
   & p, & ol, & ul {
-    line-height: var(--spatial-scale-5);
     margin-top: var(--spatial-scale-1);
     margin-bottom: var(--spatial-scale-2);
   }
@@ -103,6 +103,12 @@ export default Vue.extend ({
       line-height: var(--spatial-scale-4);
       margin: var(--spatial-scale-0) var(--spatial-scale-2);
     }
+  }
+  & > pre {
+    box-sizing: border-box;
+    color: var(--bg-blue-200);
+    overflow-x: auto;
+    padding: 0 var(--spatial-scale-2);
   }
 }
 @media (--viewport-small) {
@@ -149,8 +155,9 @@ export default Vue.extend ({
       padding-left: var(--spatial-scale-5);
     }
     & .lede p {
-      font-size: var(--type-scale-3);
+      font-size: var(--type-scale-2);
       line-height: var(--spatial-scale-6);
+      margin-bottom: var(--spatial-scale-5);
     }
     & figure {
       font-size: var(--type-scale-0);
