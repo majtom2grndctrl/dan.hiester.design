@@ -29,15 +29,13 @@ export default SiteHeader
   <header class="SiteHeader">
     <div class="logo-container">
       <nuxt-link to="/" class="logo-link">
-        <dy-logo class="logo" width="" height="" />
-        <span class="distantly-yours">Distantly Yours</span>
+        <span class="dan-hiester">Dan Hiester</span>
       </nuxt-link>
     </div>
     <nav class="site-nav">
       <nuxt-link to="/portfolio">Portfolio</nuxt-link>
       <nuxt-link to="/blog">Blog</nuxt-link>
     </nav>
-    <div class="push-farther">Push Farther</div>
   </header>
 </template>
 
@@ -47,122 +45,55 @@ export default SiteHeader
     display: flex;
       align-items: stretch;
       flex-direction: row;
-    margin: var(--spatial-scale-2) var(--spatial-scale-2) 0 var(--spatial-scale-2);
+    margin: var(--spatial-scale-00) 0 0 0;
   }
   .logo-container {
     display: flex;
       flex-direction: row;
       justify-content: flex-start;
       align-content: center;
-    margin-right: var(--spatial-scale-2);
-    &:hover {
-      & .distantly-yours {
-        opacity: 1;
-        filter: blur(0);
-        transform: translate(0, -50%) rotate3d(0, 0, 0, 45deg);
-      }
-      & + .site-nav {
-        opacity: 0;
-        transform: translate3d(3em, 0, 0);
-        & + .push-farther {
-          opacity: 0;
-          filter: blur(.25em);
-          transform: translate3d(3em, 0, 0);
-        }
-      }
-    }
+    margin-right: var(--spatial-scale-4);
   }
   .logo-link {
     display: block;
-    position: relative;
+    padding: var(--spatial-scale-1);
+    text-decoration: none;
   }
-  .logo {
-    display: block;
-    height: var(--spatial-scale-6);
-  }
-  .distantly-yours {
+  .dan-hiester {
     color: var(--gray-500);
-    filter: blur(.66em);
+    display: block;
     font-family: var(--font-heading);
     font-weight: 600;
-    font-size: var(--type-scale-0);
+    font-size: var(--type-scale-1);
     letter-spacing: .166ex;
-    line-height: var(--spatial-scale-0);
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-      top: 52%;
-      left: 142%;
-    width: 12em;
+    line-height: var(--spatial-scale-1);
     text-transform: uppercase;
-    transform: translate(0, -50%) rotate3d(-1, 2, 0, 55deg);
-    transition: opacity .4s, filter .6s ease, transform .6s;
   }
   @media (--viewport-small) {
     .SiteHeader {
       margin-right: var(--spatial-scale-4);
-      margin-left: var(--spatial-scale-4);
+      margin-left: var(--spatial-scale-00);
     }
   }
   @media (--viewport-medium) {
     .SiteHeader {
       display: grid;
         grid-column-gap: var(--spatial-scale-2);
-        grid-template-columns: 1fr 7fr 4fr;
+        grid-template-columns: 2fr 10fr;
       margin: var(--spatial-scale-4) auto 0 auto;
       width: calc(100% * 12 / 14);
     }
     .logo-container {
       grid-area: 1 / 1 / 2 / 2;
+      margin: 0;
       width: auto;
-      margin-right: 0;
     }
-    .logo {
-      height: var(--spatial-scale-5);
+    .logo-link {
+      padding-left: 0;
     }
-  }
-
-
-/* Push Farther */
-.push-farther {
-  display: none;
-}
-@media (--viewport-small) {
-  .push-farther {
-    color: #797979;
-    display: block;
-    font-weight: 300;
-    font-size: var(--type-scale-0);
-    letter-spacing: .05ex;
-    opacity: .6;
-    padding: 0;
-    position: absolute;
-      top: calc(32rem/16);
-      right: var(--spatial-scale-4);
-    text-transform: uppercase;
-    transition: transform .5s ease, opacity .5s, filter .5s;
-    &:before {
-      color: #076381;
-      content: '//';
-      font-size: calc(26em/15);
-      font-weight: bold;
-      font-style: italic;
-      mix-blend-mode: color-burn;
-      padding: 0 .125em;
-      position: absolute;
-        left: calc(-20em/15);
-        top: 45%;
-      transform: translate(0, -50%);
+    .dan-hiester {
     }
   }
-}
-@media (--viewport-medium) {
-  .push-farther{
-    top: calc(var(--spatial-scale-5) + .4em);
-    right: calc(100% * 1/14);
-  }
-}
-
 
 /* 
    Navigation
@@ -171,9 +102,6 @@ export default SiteHeader
   display: flex;
     flex-direction: row;
   margin: 0;
-  position: relative;
-    top: calc(var(--spatial-scale-1) * .1875);
-  transition: transform .5s ease, opacity .5s;
   & > a {
     border-bottom: calc(1rem/16) solid rgba(3, 161, 213, 0);
     color: #97A3A7;
