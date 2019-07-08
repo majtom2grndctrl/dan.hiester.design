@@ -30,6 +30,7 @@ export default SiteHeader
     <div class="logo-container">
       <nuxt-link to="/" class="logo-link">
         <span class="dan-hiester">Dan Hiester</span>
+        <span class="specialization">Design Technologist • Seattle</span>
       </nuxt-link>
     </div>
     <nav class="site-nav">
@@ -44,6 +45,7 @@ export default SiteHeader
   .SiteHeader {
     display: flex;
       align-items: stretch;
+      justify-items: stretch;
       flex-direction: row;
     margin: var(--spatial-scale-00) 0 0 0;
   }
@@ -52,22 +54,28 @@ export default SiteHeader
       flex-direction: row;
       justify-content: flex-start;
       align-content: center;
+      flex-basis: 100%;
     margin-right: var(--spatial-scale-4);
   }
   .logo-link {
+    color: var(--gray-500);
     display: block;
     padding: var(--spatial-scale-1);
     text-decoration: none;
   }
   .dan-hiester {
-    color: var(--gray-500);
     display: block;
-    font-family: var(--font-heading);
-    font-weight: 600;
+    font-weight: 400;
     font-size: var(--type-scale-1);
-    letter-spacing: .166ex;
+/*    letter-spacing: .166ex; */
     line-height: var(--spatial-scale-1);
-    text-transform: uppercase;
+    transform: scaleX(1.1);
+    transform-origin: left;
+  }
+  .specialization {
+    display: block;
+    font-size: var(--type-scale-00);
+    margin: var(--spatial-scale-00) 0 0 .025em;
   }
   @media (--viewport-small) {
     .SiteHeader {
@@ -77,9 +85,6 @@ export default SiteHeader
   }
   @media (--viewport-medium) {
     .SiteHeader {
-      display: grid;
-        grid-column-gap: var(--spatial-scale-2);
-        grid-template-columns: 2fr 10fr;
       margin: var(--spatial-scale-4) auto 0 auto;
       width: calc(100% * 12 / 14);
     }
@@ -101,6 +106,8 @@ export default SiteHeader
 .site-nav {
   display: flex;
     flex-direction: row;
+    flex-basis: 100%;
+    justify-content: flex-end;
   margin: 0;
   & > a {
     border-bottom: calc(1rem/16) solid rgba(3, 161, 213, 0);
@@ -109,7 +116,7 @@ export default SiteHeader
       align-items: center;
     font-size: var(--type-scale-0);
     line-height: var(--spatial-scale-0);
-    margin: 0 var(--type-scale-1) 0 0;
+    margin: var(--spatial-scale-0) var(--type-scale-1) var(--spatial-scale-0) 0;
     padding: 0 var(--spatial-scale-1) 0;
     text-decoration: none;
     transition: border-bottom-color .66s;
@@ -128,8 +135,6 @@ export default SiteHeader
 }
 @media (--viewport-medium) {
   .site-nav {
-    grid-area: 1 / 2 / 2 / 3;
-    margin-left: calc(var(--spatial-scale-1) * -1);
     & > a {
       font-size: var(--type-scale-0);
     }

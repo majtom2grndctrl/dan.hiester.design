@@ -207,7 +207,7 @@ export default Vue.extend ({
 
 .block-preview {
   font-size: var(--type-scale-1);
-  line-height: var(--spatial-scale-5);
+  line-height: var(--spatial-scale-6);
 }
 @media (--viewport-medium) {
   .block-preview{
