@@ -70,7 +70,7 @@ export default MainLayout
   font-size: var(--type-scale-5);
   letter-spacing: -.0125em;
   line-height: var(--spatial-scale-5);
-  margin: 0 0 0 -.075em;
+  margin: 0 0 0 -.04em;
 }
 .title-prefix {
   font-size: calc(12rem/16);
@@ -119,7 +119,7 @@ export default MainLayout
     width: calc(100% * 12 / 14);
   }
   .header {
-    margin: var(--spatial-scale-6) 0 var(--spatial-scale-5) 0;
+    margin: var(--spatial-scale-2) 0 var(--spatial-scale-5) 0;
   }
 }
 @media (min-resolution: 1.25dppx) {

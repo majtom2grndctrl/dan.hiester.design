@@ -30,7 +30,6 @@ export default SiteHeader
     <div class="logo-container">
       <nuxt-link to="/" class="logo-link">
         <span class="dan-hiester">Dan Hiester</span>
-        <span class="specialization">Design Technologist • Seattle</span>
       </nuxt-link>
     </div>
     <nav class="site-nav">
@@ -72,11 +71,6 @@ export default SiteHeader
     transform: scaleX(1.1);
     transform-origin: left;
   }
-  .specialization {
-    display: block;
-    font-size: var(--type-scale-00);
-    margin: var(--spatial-scale-00) 0 0 .025em;
-  }
   @media (--viewport-small) {
     .SiteHeader {
       margin-right: var(--spatial-scale-4);
@@ -89,14 +83,11 @@ export default SiteHeader
       width: calc(100% * 12 / 14);
     }
     .logo-container {
-      grid-area: 1 / 1 / 2 / 2;
       margin: 0;
       width: auto;
     }
     .logo-link {
       padding-left: 0;
-    }
-    .dan-hiester {
     }
   }
 
@@ -116,7 +107,7 @@ export default SiteHeader
       align-items: center;
     font-size: var(--type-scale-0);
     line-height: var(--spatial-scale-0);
-    margin: var(--spatial-scale-0) var(--type-scale-1) var(--spatial-scale-0) 0;
+    margin: 0 var(--type-scale-1) 0 0;
     padding: 0 var(--spatial-scale-1) 0;
     text-decoration: none;
     transition: border-bottom-color .66s;
