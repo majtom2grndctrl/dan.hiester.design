@@ -1,11 +1,28 @@
-<!-- Splash page -->
-
 <template>
-  <main class="Splash">
-    <h1>Is this thing on?</h1>
+  <main class="About">
+    <div class="container">
+      <h1 class="dan-hiester">Dan Hiester</h1>
+      <nuxt-link :to="paths.portfolio">Portfolio</nuxt-link>
+      <nuxt-link :to="paths.blog">Blog</nuxt-link>
+    </div>
   </main>
 </template>
 
+<script lang="ts">
+import { Vue, Component } from 'nuxt-property-decorator';
+import paths from '~/paths';
+
+@Component({})
+class AboutPage extends Vue {
+  data() {
+    return {
+      paths
+    }
+  }
+}
+
+export default AboutPage;
+</script>
 
 <style lang="postcss">
   @custom-media --viewport-small (min-width: 31.25rem); /* 500 / 16 */
@@ -15,6 +32,34 @@
 
 
 <style lang="postcss" scoped>
+
+.About {
+  display: grid;
+  grid-gap: var(--spatial-scale-1);
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  min-height: 100vh;
+}
+.container {
+  grid-area: 1 / 2 / 2 / 6;
+}
+@media(--viewport-small) {
+  .About {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+@media(--viewport-medium) {
+  .About {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  .container {
+    grid-area: 1 / 5 / 2 / 11;
+  }
+}
+.dan-hiester {
+  font-family: var(--font-body);
+  transform: scaleX(1.1);
+  transform-origin: left;
+}
 
 /*
 Page transitions
