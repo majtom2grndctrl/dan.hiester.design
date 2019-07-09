@@ -35,6 +35,7 @@ export default SiteHeader
     <nav class="site-nav">
       <nuxt-link to="/portfolio">Portfolio</nuxt-link>
       <nuxt-link to="/blog">Blog</nuxt-link>
+      <!--<nuxt-link to="/" exact>About</nuxt-link>-->
     </nav>
   </header>
 </template>
@@ -104,15 +105,27 @@ export default SiteHeader
     line-height: var(--spatial-scale-0);
     margin: calc(var(--spatial-scale-1) * -1) calc(var(--spatial-scale-1) * -1) calc(var(--spatial-scale-1) * -1) var(--spatial-scale-1);
     padding: var(--spatial-scale-1);
+    position: relative;
     text-decoration: none;
-    transition: border-bottom-color .66s;
+    transition: color .66s;
     &:after {
-      background: red;
+      background: var(--bg-blue-600);
+      border-radius: 100%;
       content: '';
       display: block;
+      height: calc(3.5rem/16);
+      opacity: 0;
+      position: absolute;
+        top: 90%;
+        left: 49%;
+      transition: opacity .66s;
+      width: calc(3.5rem/16);
     }
     &.active {
-      border-bottom-color: rgba(3, 161, 213, .3);
+      color: var(--bg-blue-600);
+      &:after {
+        opacity: 1;
+      }
     }
     & > span {
       display: block;
@@ -120,8 +133,7 @@ export default SiteHeader
   }
 }
 @media (min-resolution: 1.25dppx) {
-  .site-nav > a.active {
-    border-bottom-width: calc(1.5rem/16);
+  .site-nav > a.active:after {
   }
 }
 @media(--viewport-small) {
