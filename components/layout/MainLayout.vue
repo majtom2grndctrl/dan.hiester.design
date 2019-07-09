@@ -63,7 +63,7 @@ export default MainLayout
     flex-direction: row;
     align-items: baseline;
     justify-content: space-between;
-  margin: var(--spatial-scale-5) var(--spatial-scale-2) var(--spatial-scale-3) var(--spatial-scale-2);
+  margin: var(--spatial-scale-3) var(--spatial-scale-2) var(--spatial-scale-2) var(--spatial-scale-2);
 }
 .title {
   color: var(--gray-600);

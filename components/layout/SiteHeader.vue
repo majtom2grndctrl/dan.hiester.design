@@ -46,7 +46,8 @@ export default SiteHeader
       align-items: stretch;
       justify-items: stretch;
       flex-direction: row;
-    margin: var(--spatial-scale-00) 0 0 0;
+    height: var(--spatial-scale-1);
+    margin: var(--spatial-scale-5) 0 0 0;
   }
   .logo-container {
     display: flex;
@@ -59,7 +60,8 @@ export default SiteHeader
   .logo-link {
     color: var(--gray-500);
     display: block;
-    padding: var(--spatial-scale-1);
+    margin: calc(var(--spatial-scale-1) * -1) 0;
+    padding: var(--spatial-scale-1) var(--spatial-scale-2);
     text-decoration: none;
   }
   .dan-hiester {
@@ -101,16 +103,20 @@ export default SiteHeader
     justify-content: flex-end;
   margin: 0;
   & > a {
-    border-bottom: calc(1rem/16) solid rgba(3, 161, 213, 0);
     color: #97A3A7;
     display: flex;
       align-items: center;
     font-size: var(--type-scale-0);
     line-height: var(--spatial-scale-0);
-    margin: 0 var(--type-scale-1) 0 0;
-    padding: 0 var(--spatial-scale-1) 0;
+    margin: calc(var(--spatial-scale-1) * -1) var(--spatial-scale-1) calc(var(--spatial-scale-1) * -1) 0;
+    padding: var(--spatial-scale-1);
     text-decoration: none;
     transition: border-bottom-color .66s;
+    &:after {
+      background: red;
+      content: '';
+      display: block;
+    }
     &.active {
       border-bottom-color: rgba(3, 161, 213, .3);
     }
