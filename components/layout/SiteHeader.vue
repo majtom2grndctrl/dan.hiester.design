@@ -1,7 +1,7 @@
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
 import DyLogo from '~/components/DyLogo.vue'
-//import MobileNavLauncher from '~/components/buttons/MobileNavLauncher.vue'
+import paths from '~/paths'
 
 @Component({
   components: {
@@ -11,13 +11,12 @@ import DyLogo from '~/components/DyLogo.vue'
 })
 
 class SiteHeader extends Vue {
-/*
+
   data() {
     return {
-      mobileNav: false
+      paths
     }
   }
-*/
 }
 
 
@@ -28,13 +27,13 @@ export default SiteHeader
 <template>
   <header class="SiteHeader">
     <div class="logo-container">
-      <nuxt-link to="/" class="logo-link">
+      <nuxt-link :to="paths.about" exact class="logo-link">
         <span class="dan-hiester">Dan Hiester</span>
       </nuxt-link>
     </div>
     <nav class="site-nav">
-      <nuxt-link to="/portfolio">Portfolio</nuxt-link>
-      <nuxt-link to="/blog">Blog</nuxt-link>
+      <nuxt-link :to="paths.portfolio">Portfolio</nuxt-link>
+      <nuxt-link :to="paths.blog">Blog</nuxt-link>
       <!--<nuxt-link to="/" exact>About</nuxt-link>-->
     </nav>
   </header>
