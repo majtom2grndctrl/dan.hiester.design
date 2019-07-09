@@ -70,7 +70,8 @@ export default MainLayout
   font-size: var(--type-scale-5);
   letter-spacing: -.0125em;
   line-height: var(--spatial-scale-5);
-  margin: 0 0 0 -.04em;
+  margin: 0 0 0 -.02em;
+  pointer-events: none;
 }
 .title-prefix {
   font-size: calc(12rem/16);
@@ -86,7 +87,7 @@ export default MainLayout
   .title {
     font-size: var(--type-scale-6);
     line-height: var(--spatial-scale-6);
-    margin: 0 0 0 -.07em;
+    margin-left: -.03em;
   }
   .title-prefix {
     font-size: calc(20rem/16);
@@ -120,6 +121,9 @@ export default MainLayout
   }
   .header {
     margin: var(--spatial-scale-2) 0 var(--spatial-scale-5) 0;
+  }
+  .title {
+    margin-left: -.04em;
   }
 }
 @media (min-resolution: 1.25dppx) {
