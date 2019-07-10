@@ -1,7 +1,7 @@
 <template>
   <style-guide-page title="Typography">
     <div class="type-scale">
-      <div v-for="(item, index) in textHeadings" :key="index" :class="`type-scale-${item}`">Type Scale {{ item }}</div>
+      <div v-for="(item, index) in textHeadings" :key="`heading-${index}`" :class="`type-scale-${item}`">Type Scale {{ item }}</div>
     </div>
   </style-guide-page>
 </template>
