@@ -121,7 +121,7 @@ export default SiteHeader
       position: absolute;
         top: 90%;
         left: 49%;
-      transition: opacity .66s;
+      transition: opacity .66s, background-color .4s;
       width: calc(3.5rem/16);
     }
     &.active {
@@ -130,8 +130,8 @@ export default SiteHeader
         opacity: 1;
       }
     }
-    &:active, &:focus {
-      animation: navClick .4s linear;
+    &:active {
+      background-color: rgba(0, 10, 20, .5));
     }
   }
 }
@@ -153,18 +153,4 @@ export default SiteHeader
   }
 }
 
-@keyframes navClick {
-  0% {
-    background-color: rgba(0, 10, 20, 0);
-  }
-  5% {
-    background-color: rgba(0, 10, 20, .05);
-  }
-  15% {
-    background-color: rgba(0, 10, 20, .5));
-  }
-  100% {
-    background-color: rgba(0, 10, 20, 0);
-  }
-}
 </style>
