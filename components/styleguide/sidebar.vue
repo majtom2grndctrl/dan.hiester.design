@@ -65,6 +65,7 @@ export default StyleGuideSidebar
       display: block;
       color: var(--gray-500);
       padding: var(--spatial-scale-00);
+      margin: 0 calc(var(--spatial-scale-00) * -1);
       text-decoration: none;
       transition: background-color .25s, color .25s;
       &:focus {
