@@ -130,7 +130,7 @@ export default SiteHeader
         opacity: 1;
       }
     }
-    &:focus {
+    &:active, &:focus {
       animation: navClick .4s linear;
     }
   }
