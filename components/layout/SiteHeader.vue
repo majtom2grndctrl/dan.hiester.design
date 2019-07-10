@@ -72,6 +72,9 @@ export default SiteHeader
     transform: scaleX(1.1);
     transform-origin: left;
   }
+  @media (--viewport-xs) {
+    
+  }
   @media (--viewport-small) {
     .logo-link {
       padding-left: var(--spatial-scale-4);

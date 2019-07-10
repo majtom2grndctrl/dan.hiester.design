@@ -63,7 +63,7 @@ export default MainLayout
     flex-direction: row;
     align-items: baseline;
     justify-content: space-between;
-  margin: var(--spatial-scale-3) var(--spatial-scale-2) var(--spatial-scale-2) var(--spatial-scale-2);
+  margin: var(--spatial-scale-3) var(--spatial-scale-2) var(--spatial-scale-5) var(--spatial-scale-2);
 }
 .title {
   color: var(--gray-600);
@@ -78,16 +78,18 @@ export default MainLayout
   line-height: 1.5em;
   margin-left: .15em;
 }
+@media (--viewport-xs) {
+  .title {
+    font-size: var(--type-scale-6);
+    line-height: var(--spatial-scale-6);
+    margin-left: -.03em;
+  }
+}
 @media (--viewport-small) {
   .header {
     justify-content: flex-start;
     margin-right: var(--spatial-scale-4);
     margin-left: var(--spatial-scale-4);
-  }
-  .title {
-    font-size: var(--type-scale-6);
-    line-height: var(--spatial-scale-6);
-    margin-left: -.03em;
   }
   .title-prefix {
     font-size: calc(20rem/16);
