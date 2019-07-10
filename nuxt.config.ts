@@ -9,13 +9,13 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Distantly Yours',
-    titleTemplate: '%s • Distantly Yours: UX Consulting by Dan Hiester in Seattle, WA',
+    title: 'Dan Hiester • Design Technologist • UI/UX and Design Systems Specialist',
+    titleTemplate: '%s • UI/UX and Design Systems Specialist • Dan Hiester',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Product Design, UX Design, and Design Consulting in Seattle, WA' },
-      { name: 'application-name', content: 'Distantly Yours' },
+      { hid: 'description', name: 'description', content: 'Product Design, UX Design, and Design Consulting' },
+      { name: 'application-name', content: 'Dan Hiester' },
       { name: 'theme-color', content: '#197FA1' },
       { name: 'msapplication-navbutton-color', content: '#03a1d5'},
       { name: 'apple-mobile-web-app-status-bar-style', content: '#197FA1'},
@@ -24,7 +24,7 @@ module.exports = {
       { hid: 'og:url', property: 'og:url', content: 'https://www.distantlyyours.com/portfolio' },
       { property: 'og:site_name', content: 'Distantly Yours' },
       { hid: 'og:title', property: 'og:title', content: 'Distantly Yours' },
-      { hid: 'og:description', property: 'og:description', content: 'UI/UX Design by Dan Hiester in Seattle, WA' },
+      { hid: 'og:description', property: 'og:description', content: 'UI/UX Design by Dan Hiester' },
       { hid: 'og:image', property: 'og:image', content: 'https://www.distantlyyours.com/img/fb-ogp-default.jpg' },
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
       { hid: 'twitter:image', name: 'twitter:image', content: 'https://www.distantlyyours.com/img/twitter-card-default.jpg' },
