@@ -1,9 +1,7 @@
 <template>
   <div class="StyleGuideLayout">
     <style-guide-sidebar />
-    <div class="content">
-      <nuxt />
-    </div>
+    <nuxt class="content" />
   </div>
 </template>
 
@@ -34,6 +32,9 @@ export const StyleGuideRoutes = {
 <style lang="postcss" scoped>
   .StyleGuideLayout {
 
+  }
+  .content {
+    margin: 0 var(--spatial-scale-2);
   }
   @media (--viewport-medium) {
     .StyleGuideLayout {
