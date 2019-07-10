@@ -73,7 +73,7 @@ export default SiteHeader
     transform-origin: left;
   }
   @media (--viewport-xs) {
-    
+
   }
   @media (--viewport-small) {
     .logo-link {
@@ -100,6 +100,7 @@ export default SiteHeader
     justify-content: flex-end;
   margin: 0 var(--spatial-scale-2) 0 0;
   & > a {
+    border-radius: var(--spatial-scale-00);
     color: #97A3A7;
     display: flex;
       align-items: center;
@@ -129,8 +130,8 @@ export default SiteHeader
         opacity: 1;
       }
     }
-    & > span {
-      display: block;
+    &:focus {
+      animation: navClick .4s linear;
     }
   }
 }
@@ -152,4 +153,18 @@ export default SiteHeader
   }
 }
 
+@keyframes navClick {
+  0% {
+    background-color: rgba(0, 10, 20, 0);
+  }
+  5% {
+    background-color: rgba(0, 10, 20, .05);
+  }
+  15% {
+    background-color: rgba(0, 10, 20, .5));
+  }
+  100% {
+    background-color: rgba(0, 10, 20, 0);
+  }
+}
 </style>
