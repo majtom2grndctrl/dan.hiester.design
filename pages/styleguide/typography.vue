@@ -1,5 +1,11 @@
 <template>
   <style-guide-page title="Typography">
+    <div class="headings-intro">
+      <h2>Headings<br />are&nbsp;in<br />Poppins</h2>
+      <specimen class="heading">
+        Aa Ee Dd
+      </specimen>
+    </div>
     <div class="type-scale">
       <div v-for="(item, index) in textHeadings" :key="`heading-${index}`" :class="`type-scale-${item}`">Type Scale {{ item }}</div>
     </div>
@@ -9,11 +15,13 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import StyleGuidePage from '~/components/layout/StyleGuidePage.vue'
+import Specimen from '~/components/styleguide/typography/specimen.vue'
 
 @Component({
   layout: 'styleguide',
   components: {
-    StyleGuidePage
+    StyleGuidePage,
+    Specimen,
   },
 })
 class TypographyPage extends Vue {
@@ -29,6 +37,20 @@ export default TypographyPage
 
 
 <style lang="postcss" scoped>
+  .headings-intro {
+  }
+  .Specimen.heading {
+    font-family: var(--font-heading);
+  }
+  @media(--viewport-small) {
+    .headings-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: var(--spatial-scale-2);
+    }
+  }
+
+
   .type-scale {
     & div {
       background-color: rgb(236, 248, 255);
