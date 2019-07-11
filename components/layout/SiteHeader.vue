@@ -34,7 +34,7 @@ export default SiteHeader
     <nav class="site-nav">
       <nuxt-link :to="paths.portfolio">Portfolio</nuxt-link>
       <nuxt-link :to="paths.blog">Blog</nuxt-link>
-      <!--<nuxt-link to="/" exact>About</nuxt-link>-->
+      <nuxt-link to="/" exact>About</nuxt-link>
     </nav>
   </header>
 </template>
@@ -133,6 +133,9 @@ export default SiteHeader
     &:active {
       background-color: rgba(0, 10, 20, .5));
     }
+    &[href="/"] {
+      display: none;
+    }
   }
 }
 @media (min-resolution: 1.25dppx) {
@@ -142,6 +145,9 @@ export default SiteHeader
 @media(--viewport-small) {
   .site-nav {
     margin-right: var(--spatial-scale-4);
+  }
+  .site-nav a[href="/"] {
+    display: inherit;
   }
 }
 @media (--viewport-medium) {
