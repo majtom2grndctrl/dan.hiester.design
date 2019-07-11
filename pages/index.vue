@@ -1,16 +1,20 @@
 <template>
   <main class="About">
     <div class="container">
-      <h1 class="intro">
-        <span class="name">Dan Hiester</span>
-        <span class="title">Design Technologist</span>
-      </h1>
-      <nav class="nav">
-        <nuxt-link :to="paths.portfolio">Portfolio</nuxt-link>
-        <nuxt-link :to="paths.blog">Blog</nuxt-link>
-      </nav>
-      <div class="overview">
-        <p>I’m a Senior UI/UX Designer whose range of deliverables includes production code.</p>
+      <div>
+        <h1 class="intro">
+          <span class="name">Dan Hiester</span>
+          <span class="title">Design Technologist</span>
+        </h1>
+        <nav class="nav">
+          <nuxt-link :to="paths.portfolio">Portfolio</nuxt-link>
+          <nuxt-link :to="paths.blog">Blog</nuxt-link>
+        </nav>
+        <div class="overview">
+          <p>I’m a Senior UI/UX Designer whose range of deliverables includes production code.</p>
+          <p>As a “big D” Designer and “little d” developer, I’m excited to re-imagine how deliverables can set up developers for success in implementing the UX team’s designs.</p>
+          <p>:cough: #designsystems</p>
+        </div>
       </div>
     </div>
   </main>
@@ -49,6 +53,9 @@ export default AboutPage;
   min-height: 100vh;
 }
 .container {
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
   grid-area: 1 / 2 / 2 / 6;
 }
 @media(--viewport-small) {
@@ -69,7 +76,9 @@ export default AboutPage;
 }
 .name {
   display: block;
-  font-size: var(--type-scale-6);
+  font-size: var(--type-scale-5);
+  line-height: var(--spatial-scale-5);
+  margin: 0 0 var(--spatial-scale-0) -.055em;
   transform: scaleX(1.1);
   transform-origin: left;
 }
@@ -77,23 +86,9 @@ export default AboutPage;
   display: block;
   font-size: var(--type-scale-2);
 }
-
-/*
-Page transitions
-****************************/
-
-.splash-nav-enter-active, .splash-nav-leave-active {
-  transition: background-color var(--mobile-nav-transition-duration); /* background-color is just there to trigger the transition timing. */
-  & .modal-overlay, & .mobile-nav-links {
-    transition: opacity calc(var(--mobile-nav-transition-duration) * 2/3) ease-in-out, transform calc(var(--mobile-nav-transition-duration) * 2/3);
-  }
+.overview {
+  font-size: var(--type-scale-1);
+  line-height: var(--spatial-scale-5);
 }
-.splash-nav-enter, .splash-nav-leave-to {
-  & > .modal-overlay, & > .mobile-nav-links {
-    opacity: 0;
-  }
-  & > .mobile-nav-links {
-    transform: perspective(10em) translate3d(-70%, 20%, -5em);
-  }
-}
+
 </style>
