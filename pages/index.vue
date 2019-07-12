@@ -12,8 +12,7 @@
         </nav>
         <div class="overview">
           <p>I’m a Senior UI/UX Designer whose range of deliverables includes production code.</p>
-          <p>As a “big D” Designer and “little d” developer, I’m excited to re-imagine how deliverables can set up developers for success in implementing the UX team’s designs.</p>
-          <p>:cough: #designsystems</p>
+          <p>As a “big D” Designer and “little d” developer, I’m <em>thrilled</em> to see design systems revolutionize the way teammates with disperate skillsets communicate with each other about their shared work.</p>
         </div>
       </div>
     </div>
