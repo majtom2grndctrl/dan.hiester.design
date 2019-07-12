@@ -70,7 +70,7 @@ export default MainLayout
   font-size: var(--type-scale-5);
   letter-spacing: -.0125em;
   line-height: var(--spatial-scale-5);
-  margin: 0 0 0 -.02em;
+  margin: 0 0 0 -.03em;
   pointer-events: none;
 }
 .title-prefix {
@@ -82,7 +82,7 @@ export default MainLayout
   .title {
     font-size: var(--type-scale-6);
     line-height: var(--spatial-scale-6);
-    margin-left: -.03em;
+    margin-left: -.045em;
   }
 }
 @media (--viewport-small) {
