@@ -41,7 +41,7 @@ module.exports = {
       { rel: 'shortcut icon', href:'/favicon.ico?v=KmnymqdX7K', color: '#5bbad5' },
       {
         rel: 'stylesheet',
-        href: 'https://use.typekit.net/czd3cnh.css'
+        href: 'https://use.typekit.net/hpz2tnd.css'
       }
     ]
   },
