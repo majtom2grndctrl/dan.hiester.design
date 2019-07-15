@@ -16,8 +16,8 @@
 
   --white: #fff;
 
-  --font-heading: 'Poppins', sans-serif;
-  --font-body: 'Libre Franklin', sans-serif;
+  --font-heading: poppins, sans-serif;
+  --font-body: libre-franklin, sans-serif;
   --mobile-nav-transition-duration: .3s;
 
   --type-scale-base: calc(18rem/16);
