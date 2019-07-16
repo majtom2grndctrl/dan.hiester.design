@@ -77,7 +77,7 @@ class Index extends Vue {
     type: 'Featured Blog Post',
     title: 'I Googled font ramps, and it opened my eyes to so much more',
     ctaLabel: 'Put that ruler&nbsp;away',
-    ctaHref: '/blog/i-googled-font-ramps-and-it-opened-my-eyes-to-so-much-more',
+    ctaHref: '/blog/i-googled-font-ramp-and-it-opened-my-eyes-to-so-much-more',
     altCta: {
       label: 'See more posts',
       href: '/blog',
