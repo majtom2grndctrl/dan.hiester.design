@@ -25,9 +25,15 @@ import CtaLink from '~/components/buttons/CtaLink.vue'
 
 class ContactCta extends Vue {
   ctaTarget = ' ';
+  oblada = {
+    la: 'attle@hies',
+    ob: 'coffee-in-se',
+    di: 'ter.design',
+  }
   created() {
+    const { ob, la, di } = this.oblada
     window.setTimeout(() => {
-      this.ctaTarget = 'mailto: seattle-coffee@hiester.design'
+      this.ctaTarget = `mailto: ${() => ob + la + di}`;
     }, 2500);
   }
 }
