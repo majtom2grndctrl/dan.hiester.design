@@ -1,6 +1,6 @@
-# distantlyyours.com
+# dan.hiester.design
 
-> Version 8.
+> Version 1.
 
 * [Design Inspiration](#design-inspiration)
 * [Design and Development Process](#design-and-development-process)

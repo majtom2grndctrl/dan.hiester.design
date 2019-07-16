@@ -63,30 +63,33 @@ export default MainLayout
     flex-direction: row;
     align-items: baseline;
     justify-content: space-between;
-  margin: var(--spatial-scale-5) var(--spatial-scale-2) var(--spatial-scale-3) var(--spatial-scale-2);
+  margin: var(--spatial-scale-3) var(--spatial-scale-2) var(--spatial-scale-5) var(--spatial-scale-2);
 }
 .title {
   color: var(--gray-600);
   font-size: var(--type-scale-5);
   letter-spacing: -.0125em;
   line-height: var(--spatial-scale-5);
-  margin: 0 0 0 -.075em;
+  margin: 0 0 0 -.03em;
+  pointer-events: none;
 }
 .title-prefix {
   font-size: calc(12rem/16);
   line-height: 1.5em;
   margin-left: .15em;
 }
+@media (--viewport-xs) {
+  .title {
+    font-size: var(--type-scale-6);
+    line-height: var(--spatial-scale-6);
+    margin-left: -.045em;
+  }
+}
 @media (--viewport-small) {
   .header {
     justify-content: flex-start;
     margin-right: var(--spatial-scale-4);
     margin-left: var(--spatial-scale-4);
-  }
-  .title {
-    font-size: var(--type-scale-6);
-    line-height: var(--spatial-scale-6);
-    margin: 0 0 0 -.07em;
   }
   .title-prefix {
     font-size: calc(20rem/16);
@@ -119,7 +122,10 @@ export default MainLayout
     width: calc(100% * 12 / 14);
   }
   .header {
-    margin: var(--spatial-scale-6) 0 var(--spatial-scale-5) 0;
+    margin: var(--spatial-scale-2) 0 var(--spatial-scale-5) 0;
+  }
+  .title {
+    margin-left: -.04em;
   }
 }
 @media (min-resolution: 1.25dppx) {

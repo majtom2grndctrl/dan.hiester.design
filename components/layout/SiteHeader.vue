@@ -1,7 +1,7 @@
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
 import DyLogo from '~/components/DyLogo.vue'
-//import MobileNavLauncher from '~/components/buttons/MobileNavLauncher.vue'
+import paths from '~/paths'
 
 @Component({
   components: {
@@ -11,13 +11,12 @@ import DyLogo from '~/components/DyLogo.vue'
 })
 
 class SiteHeader extends Vue {
-/*
+
   data() {
     return {
-      mobileNav: false
+      paths
     }
   }
-*/
 }
 
 
@@ -28,16 +27,15 @@ export default SiteHeader
 <template>
   <header class="SiteHeader">
     <div class="logo-container">
-      <nuxt-link to="/" class="logo-link">
-        <dy-logo class="logo" width="" height="" />
-        <span class="distantly-yours">Distantly Yours</span>
+      <nuxt-link :to="paths.about" exact class="logo-link">
+        <span class="dan-hiester">Dan Hiester</span>
       </nuxt-link>
     </div>
     <nav class="site-nav">
-      <nuxt-link to="/portfolio">Portfolio</nuxt-link>
-      <nuxt-link to="/blog">Blog</nuxt-link>
+      <nuxt-link :to="paths.portfolio">Portfolio</nuxt-link>
+      <nuxt-link :to="paths.blog">Blog</nuxt-link>
+      <nuxt-link to="/" exact>About</nuxt-link>
     </nav>
-    <div class="push-farther">Push Farther</div>
   </header>
 </template>
 
@@ -46,123 +44,51 @@ export default SiteHeader
   .SiteHeader {
     display: flex;
       align-items: stretch;
+      justify-items: stretch;
       flex-direction: row;
-    margin: var(--spatial-scale-2) var(--spatial-scale-2) 0 var(--spatial-scale-2);
+    height: var(--spatial-scale-1);
+    margin: var(--spatial-scale-5) 0 0 0;
   }
   .logo-container {
     display: flex;
       flex-direction: row;
       justify-content: flex-start;
       align-content: center;
-    margin-right: var(--spatial-scale-2);
-    &:hover {
-      & .distantly-yours {
-        opacity: 1;
-        filter: blur(0);
-        transform: translate(0, -50%) rotate3d(0, 0, 0, 45deg);
-      }
-      & + .site-nav {
-        opacity: 0;
-        transform: translate3d(3em, 0, 0);
-        & + .push-farther {
-          opacity: 0;
-          filter: blur(.25em);
-          transform: translate3d(3em, 0, 0);
-        }
-      }
-    }
+      flex-basis: 100%;
   }
   .logo-link {
-    display: block;
-    position: relative;
-  }
-  .logo {
-    display: block;
-    height: var(--spatial-scale-6);
-  }
-  .distantly-yours {
     color: var(--gray-500);
-    filter: blur(.66em);
-    font-family: var(--font-heading);
+    display: block;
+    margin: calc(var(--spatial-scale-1) * -1) 0;
+    padding: var(--spatial-scale-1) var(--spatial-scale-2);
+    text-decoration: none;
+  }
+  .dan-hiester {
+    display: block;
     font-weight: 600;
-    font-size: var(--type-scale-0);
-    letter-spacing: .166ex;
-    line-height: var(--spatial-scale-0);
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-      top: 52%;
-      left: 142%;
-    width: 12em;
-    text-transform: uppercase;
-    transform: translate(0, -50%) rotate3d(-1, 2, 0, 55deg);
-    transition: opacity .4s, filter .6s ease, transform .6s;
+    font-size: var(--type-scale-1);
+/*    letter-spacing: .166ex; */
+    line-height: var(--spatial-scale-1);
+    transform: scaleX(1.1);
+    transform-origin: left;
+  }
+  @media (--viewport-xs) {
+
   }
   @media (--viewport-small) {
-    .SiteHeader {
-      margin-right: var(--spatial-scale-4);
-      margin-left: var(--spatial-scale-4);
+    .logo-link {
+      padding-left: var(--spatial-scale-4);
     }
   }
   @media (--viewport-medium) {
     .SiteHeader {
-      display: grid;
-        grid-column-gap: var(--spatial-scale-2);
-        grid-template-columns: 1fr 7fr 4fr;
       margin: var(--spatial-scale-4) auto 0 auto;
       width: calc(100% * 12 / 14);
     }
-    .logo-container {
-      grid-area: 1 / 1 / 2 / 2;
-      width: auto;
-      margin-right: 0;
-    }
-    .logo {
-      height: var(--spatial-scale-5);
+    .logo-link {
+      padding-left: 0;
     }
   }
-
-
-/* Push Farther */
-.push-farther {
-  display: none;
-}
-@media (--viewport-small) {
-  .push-farther {
-    color: #797979;
-    display: block;
-    font-weight: 300;
-    font-size: var(--type-scale-0);
-    letter-spacing: .05ex;
-    opacity: .6;
-    padding: 0;
-    position: absolute;
-      top: calc(32rem/16);
-      right: var(--spatial-scale-4);
-    text-transform: uppercase;
-    transition: transform .5s ease, opacity .5s, filter .5s;
-    &:before {
-      color: #076381;
-      content: '//';
-      font-size: calc(26em/15);
-      font-weight: bold;
-      font-style: italic;
-      mix-blend-mode: color-burn;
-      padding: 0 .125em;
-      position: absolute;
-        left: calc(-20em/15);
-        top: 45%;
-      transform: translate(0, -50%);
-    }
-  }
-}
-@media (--viewport-medium) {
-  .push-farther{
-    top: calc(var(--spatial-scale-5) + .4em);
-    right: calc(100% * 1/14);
-  }
-}
-
 
 /* 
    Navigation
@@ -170,38 +96,63 @@ export default SiteHeader
 .site-nav {
   display: flex;
     flex-direction: row;
-  margin: 0;
-  position: relative;
-    top: calc(var(--spatial-scale-1) * .1875);
-  transition: transform .5s ease, opacity .5s;
+    flex-basis: 100%;
+    justify-content: flex-end;
+  margin: 0 var(--spatial-scale-2) 0 0;
   & > a {
-    border-bottom: calc(1rem/16) solid rgba(3, 161, 213, 0);
+    border-radius: var(--spatial-scale-00);
     color: #97A3A7;
     display: flex;
       align-items: center;
     font-size: var(--type-scale-0);
     line-height: var(--spatial-scale-0);
-    margin: 0 var(--type-scale-1) 0 0;
-    padding: 0 var(--spatial-scale-1) 0;
+    margin: calc(var(--spatial-scale-1) * -1) calc(var(--spatial-scale-1) * -1) calc(var(--spatial-scale-1) * -1) var(--spatial-scale-1);
+    padding: var(--spatial-scale-1);
+    position: relative;
     text-decoration: none;
-    transition: border-bottom-color .66s;
-    &.active {
-      border-bottom-color: rgba(3, 161, 213, .3);
-    }
-    & > span {
+    transition: color .66s;
+    &:after {
+      background: var(--bg-blue-600);
+      border-radius: 100%;
+      content: '';
       display: block;
+      height: calc(3.5rem/16);
+      opacity: 0;
+      position: absolute;
+        top: 90%;
+        left: 49%;
+      transition: opacity .66s, background-color .4s;
+      width: calc(3.5rem/16);
+    }
+    &.active {
+      color: var(--bg-blue-600);
+      &:after {
+        opacity: 1;
+      }
+    }
+    &:active {
+      background-color: rgba(0, 10, 20, .5));
+    }
+    &[href="/"] {
+      display: none;
     }
   }
 }
 @media (min-resolution: 1.25dppx) {
-  .site-nav > a.active {
-    border-bottom-width: calc(1.5rem/16);
+  .site-nav > a.active:after {
+  }
+}
+@media(--viewport-small) {
+  .site-nav {
+    margin-right: var(--spatial-scale-4);
+  }
+  .site-nav a[href="/"] {
+    display: inherit;
   }
 }
 @media (--viewport-medium) {
   .site-nav {
-    grid-area: 1 / 2 / 2 / 3;
-    margin-left: calc(var(--spatial-scale-1) * -1);
+    margin-right: 0;
     & > a {
       font-size: var(--type-scale-0);
     }

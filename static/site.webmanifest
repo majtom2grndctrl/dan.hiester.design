@@ -1,6 +1,6 @@
 {
-    "name": "Distantly Yours",
-    "short_name": "Distantly Yours",
+    "name": "Dan Hiester: Design Technologist",
+    "short_name": "Dan Hiester",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,7 +13,5 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#197FA1",
-    "background_color": "#197FA1",
     "display": "standalone"
 }

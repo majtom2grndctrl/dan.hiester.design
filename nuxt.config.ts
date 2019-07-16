@@ -1,4 +1,5 @@
 import { blogDataMock } from './dataMocks'
+import paths from './paths'
 const Prismic = require('prismic-javascript')
 const PrismicDOM = require('prismic-dom')
 require('dotenv').config()
@@ -8,39 +9,39 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Distantly Yours',
-    titleTemplate: '%s • Distantly Yours: UX Consulting by Dan Hiester in Seattle, WA',
+    title: 'Dan Hiester • Design Technologist • UI/UX and Design Systems Specialist',
+    titleTemplate: '%s • Dan Hiester • UI/UX and Design Systems Specialist',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Product Design, UX Design, and Design Consulting in Seattle, WA' },
-      { name: 'application-name', content: 'Distantly Yours' },
-      { name: 'theme-color', content: '#197FA1' },
+      { hid: 'description', name: 'description', content: 'Product Design, UX Design, and Design Consulting' },
+      { name: 'application-name', content: 'Dan Hiester' },
+//      { name: 'theme-color', content: '#197FA1' },
       { name: 'msapplication-navbutton-color', content: '#03a1d5'},
       { name: 'apple-mobile-web-app-status-bar-style', content: '#197FA1'},
       { property: 'og:locale', content: 'en_US' },
       { property: 'og:type', content: 'website' },
-      { hid: 'og:url', property: 'og:url', content: 'https://www.distantlyyours.com/portfolio' },
-      { property: 'og:site_name', content: 'Distantly Yours' },
-      { hid: 'og:title', property: 'og:title', content: 'Distantly Yours' },
-      { hid: 'og:description', property: 'og:description', content: 'UI/UX Design by Dan Hiester in Seattle, WA' },
-      { hid: 'og:image', property: 'og:image', content: 'https://www.distantlyyours.com/img/fb-ogp-default.jpg' },
+      { hid: 'og:url', property: 'og:url', content: 'https://dan.hiester.design/portfolio' },
+      { property: 'og:site_name', content: 'Dan Hiester' },
+      { hid: 'og:title', property: 'og:title', content: 'Dan Hiester' },
+      { hid: 'og:description', property: 'og:description', content: 'UI/UX Design by Dan Hiester' },
+      { hid: 'og:image', property: 'og:image', content: 'https://dan.hiester.design/img/fb-ogp-default.jpg' },
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
-      { hid: 'twitter:image', name: 'twitter:image', content: 'https://www.distantlyyours.com/img/twitter-card-default.jpg' },
-      { hid: 'twitter:image:alt', name: 'twiter:image:alt', content: 'Distantly Yours Logo' },
-      { hid: 'twitter:site', name: 'twitter:site', content: '@distantlyyours' },
+      { hid: 'twitter:image', name: 'twitter:image', content: 'https://dan.hiester.design/img/twitter-card-default.jpg' },
+      { hid: 'twitter:image:alt', name: 'twiter:image:alt', content: 'Dan Hiester’s Portfolio Site' },
+      { hid: 'twitter:site', name: 'twitter:site', content: '@majtom2grndctrl' },
       { hid: 'twitter:creator', name: 'twitter:creator', content: '@majtom2grndctrl' },
     ],
     link: [
-      { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png?v=wAO9R4Y0rn' },
-      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png?v=wAO9R4Y0rn' },
-      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png?v=wAO9R4Y0rn' },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png?v=KmnymqdX7K' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png?v=KmnymqdX7K' },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png?v=KmnymqdX7K' },
       { rel: 'manifest', href:'/site.webmanifest?v=YAmWaLEo7o' },
-      { rel: 'mask-icon', href:'/safari-pinned-tab.svg?v=wAO9R4Y0rn', color: '#5bbad5' },
-      { rel: 'shortcut icon', href:'/favicon.ico?v=wAO9R4Y0rn', color: '#5bbad5' },
+      { rel: 'mask-icon', href:'/safari-pinned-tab.svg?v=KmnymqdX7K', color: '#5bbad5' },
+      { rel: 'shortcut icon', href:'/favicon.ico?v=KmnymqdX7K', color: '#5bbad5' },
       {
         rel: 'stylesheet',
-        href: 'https://use.typekit.net/czd3cnh.css'
+        href: 'https://use.typekit.net/hpz2tnd.css'
       }
     ]
   },
@@ -71,15 +72,6 @@ module.exports = {
   css: ['~/assets/html.css'],
   generate: {
     routes: async function () {
-      const paths = Object.freeze ({
-        blog: '/blog',
-        blog_item: (slug: string) => '/blog/' + slug,
-        portfolio: '/portfolio',
-        portfolio_item: (slug: string) => '/portfolio/' + slug,
-        portfolio_all: '/portfolio/all-projects',
-        portfolio_all_item: (slug: string) => '/portfolio/all-projects/' + slug,
-        styleguide: '/styleguide',
-      })
       const apiUrl = 'https://distantly-yours-blog.cdn.prismic.io/api/v2'
       const blogQuery = await Prismic.getApi(apiUrl)
         .then( api =>  {

@@ -1,6 +1,6 @@
 <template>
   <main-layout>
-    <template slot="section-title">Notes <span class="subtitle">From the other side of the fog</span></template>
+    <template slot="section-title">Blog</template>
     <nuxt-child/>
   </main-layout>
 </template>

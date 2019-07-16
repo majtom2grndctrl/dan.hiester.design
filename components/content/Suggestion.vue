@@ -3,7 +3,7 @@
     <div class="content">
       <div class="type">{{ data.type }}</div>
       <h2 class="title">{{ data.title }}</h2>
-      <cta-link :to="data.ctaHref" class="cta">{{ data.ctaLabel }}</cta-link>
+      <cta-link :to="data.ctaHref" class="cta" v-html="data.ctaLabel" />
       <div v-if="data.altCta" class="altCta-container">
         <nuxt-link :to="data.altCta.href" class="altCta">{{ data.altCta.label }}</nuxt-link>
       </div>

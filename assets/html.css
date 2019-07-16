@@ -16,8 +16,8 @@
 
   --white: #fff;
 
-  --font-heading: 'Poppins', sans-serif;
-  --font-body: 'Arimo', sans-serif;
+  --font-heading: poppins, sans-serif;
+  --font-body: libre-franklin, 'Libre Franklin', sans-serif;
   --mobile-nav-transition-duration: .3s;
 
   --type-scale-base: calc(18rem/16);
@@ -102,13 +102,13 @@ h1, h2, h3, h4, h5, h6 {
   transform: perspective(100vh) translate3d(0, 0, 0);
 }
 .home-leave-active {
-  transition: transform .666s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform .666s cubic-bezier(0.165, 0.84, 0.44, 1), background-color .66s;
 }
 .home-leave {
   transform: perspective(100vh) translate3d(0, 0, 0);
 }
 .home-leave-to {
-  transform: perspective(100vh) translate3d(0, -60%, 0);
+  transform: perspective(100vh) translate3d(0, -15vh, -60vh);
 }
 
 .swipe-enter-active, .swipe-leave-active {
@@ -123,4 +123,3 @@ h1, h2, h3, h4, h5, h6 {
 .swipe-leave-to {
   transform: translate3d(-2rem, 0, 0);
 }
-
