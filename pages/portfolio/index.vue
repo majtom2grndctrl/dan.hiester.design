@@ -75,9 +75,9 @@ class Index extends Vue {
   }
   blogSuggestion: SuggestionProps = {
     type: 'Featured Blog Post',
-    title: 'In defense of brutalist web design',
-    ctaLabel: 'Read on. Brutal',
-    ctaHref: '/blog/in-defense-of-brutalist-web-design',
+    title: 'I Googled font ramps, and it opened my eyes to so much more',
+    ctaLabel: 'Put that ruler&nbsp;away',
+    ctaHref: '/blog/i-googled-font-ramps-and-it-opened-my-eyes-to-so-much-more',
     altCta: {
       label: 'See more posts',
       href: '/blog',
