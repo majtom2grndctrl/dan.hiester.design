@@ -7,7 +7,7 @@
     <div class="content">
       <h1 class="title">There’s so much more to talk&nbsp;about!</h1>
       <p>I’ve worked on many different teams and challenges. Some of that work hasn’t been published here yet&mdash;<strong>much of it can’t be</strong>. The&nbsp;best way to get to know what I have to offer is to talk shop over&nbsp;coffee.</p>
-      <cta-link class="cta" href="https://www.linkedin.com/in/danhiester" variant="white">Contact me on LinkedIn</cta-link>
+      <cta-link class="cta" :href="ctaTarget" variant="white">Email me</cta-link>
     </div>
   </section>
 </template>
@@ -23,7 +23,14 @@ import CtaLink from '~/components/buttons/CtaLink.vue'
   }
 })
 
-class ContactCta extends Vue {}
+class ContactCta extends Vue {
+  ctaTarget = ' ';
+  created() {
+    window.setTimeout(() => {
+      this.ctaTarget = 'mailto: coffee-seattle@hiester.design'
+    }, 2500);
+  }
+}
 
 export default ContactCta
 </script>

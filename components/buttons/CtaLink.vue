@@ -15,6 +15,10 @@
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
+    transition: opacity .33s;
+    &[href=" "] {
+      opacity: .5;
+    }
   }
   .CtaLink--white {
     background: #fff;
