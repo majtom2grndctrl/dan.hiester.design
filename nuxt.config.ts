@@ -10,7 +10,7 @@ module.exports = {
   */
   head: {
     title: 'Dan Hiester • Design Technologist • UI/UX and Design Systems Specialist',
-    titleTemplate: '%s • UI/UX and Design Systems Specialist • Dan Hiester',
+    titleTemplate: '%s • Dan Hiester • UI/UX and Design Systems Specialist',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
