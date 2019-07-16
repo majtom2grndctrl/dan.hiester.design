@@ -27,7 +27,7 @@ class ContactCta extends Vue {
   ctaTarget = ' ';
   created() {
     window.setTimeout(() => {
-      this.ctaTarget = 'mailto: coffee-seattle@hiester.design'
+      this.ctaTarget = 'mailto: seattle-coffee@hiester.design'
     }, 2500);
   }
 }
