@@ -46,6 +46,7 @@ export default AboutPage;
 <style lang="postcss" scoped>
 
 .About {
+  color: var(--gray-400);
   display: grid;
   grid-gap: var(--spatial-scale-1);
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -75,14 +76,17 @@ export default AboutPage;
 }
 .name {
   display: block;
-  font-size: var(--type-scale-5);
-  line-height: var(--spatial-scale-5);
+  font-size: var(--type-scale-4);
+  font-weight: 600;
+  line-height: var(--spatial-scale-4);
   margin: 0 0 var(--spatial-scale-0) -.055em;
   transform: scaleX(1.1);
   transform-origin: left;
 }
 .title {
+  color: var(--gray-500);
   display: block;
+  font-family: var(--font-heading);
   font-size: var(--type-scale-2);
 }
 .overview {

@@ -65,7 +65,7 @@ export default SiteHeader
   }
   .dan-hiester {
     display: block;
-    font-weight: 400;
+    font-weight: 600;
     font-size: var(--type-scale-1);
 /*    letter-spacing: .166ex; */
     line-height: var(--spatial-scale-1);
