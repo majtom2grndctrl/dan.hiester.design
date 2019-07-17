@@ -32,7 +32,7 @@ class ContactCta extends Vue {
   }
   created() {
     const { ob, la, di } = this.oblada
-    window.setTimeout(() => {
+    setTimeout(() => {
       this.ctaTarget = `mailto: ${ob + la + di}`;
     }, 2500);
   }
