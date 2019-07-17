@@ -24,12 +24,12 @@ import CtaLink from '~/components/buttons/CtaLink.vue'
 })
 
 class ContactCta extends Vue {
-  ctaTarget = ' ';
+  ctaTarget: string | null = null;
   oblada = {
     la: 'attle@hies',
     ob: 'coffee-in-se',
     di: 'ter.design',
-  }
+  };
   created() {
     // This helps me hide things from bots
     const { ob, la, di } = this.oblada // Life goes on 🎶

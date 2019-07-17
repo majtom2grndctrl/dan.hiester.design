@@ -16,7 +16,7 @@
     text-decoration: none;
     text-transform: uppercase;
     transition: opacity .33s;
-    &[href=" "] {
+    &:not([href]) {
       opacity: .5;
     }
   }
