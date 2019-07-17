@@ -62,6 +62,9 @@ export default AboutPage;
   .About {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   }
+  .container {
+    grid-area: 1 / 3 / 2 / 7;
+  }
 }
 @media(--viewport-medium) {
   .About {
