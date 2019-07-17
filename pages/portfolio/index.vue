@@ -5,12 +5,12 @@
       <anthology-item v-for="(data, index) in inRoadsData.items" :data="data" :key="'key-' + index" />
     </anthology>
 
-    <div class="grid-8-3" v-if="showAll">
+    <div class="grid-8-3 defer-for-transition">
       <stand-alone :story="fn1Data" class="fn1 grid-child-8" />
       <suggestion :data="blogSuggestion" class="featured-blog grid-child-3" />
     </div>
 
-    <contact-cta v-if="showAll" />
+    <contact-cta class="defer-for-transition" />
   </div>
 </template>
 
@@ -82,13 +82,6 @@ class Index extends Vue {
       label: 'See more posts',
       href: '/blog',
     }
-  }
-  showAll = false
-  created () {
-    /* The transition from the index page to here got janky
-       after I kept adding more content. This hides content
-       below the fold until after the transition ends. */
-    setTimeout(() => this.showAll = true, 1000)
   }
 }
 

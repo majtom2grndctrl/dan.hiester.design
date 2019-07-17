@@ -34,7 +34,7 @@ class ContactCta extends Vue {
     const { ob, la, di } = this.oblada // Life goes on 🎶
     setTimeout(() => {
       this.ctaTarget = `mailto: ${ob + la + di}`;
-    }, 2500);
+    }, 3500);
   }
 }
 
