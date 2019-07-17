@@ -112,7 +112,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .swipe-enter-active, .swipe-leave-active {
-  transition: opacity .33s, transform .33s ease;
+  transition: opacity .33s, transform .33s ease, background-color .5s;
 }
 .swipe-enter, .swipe-leave-to {
   opacity: 0;
