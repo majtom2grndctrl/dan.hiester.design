@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .home-enter-active {
   background: var(--white);
-  transition: opacity .444s, transform .666s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity .444s, transform .666s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 1s;
   position: absolute;
     top: 0;
     bottom: 0;
@@ -102,7 +102,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: perspective(100vh) translate3d(0, 0, 0);
 }
 .home-leave-active {
-  transition: transform .666s cubic-bezier(0.165, 0.84, 0.44, 1), background-color .66s;
+  transition: transform .666s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 1s;
 }
 .home-leave {
   transform: perspective(100vh) translate3d(0, 0, 0);
