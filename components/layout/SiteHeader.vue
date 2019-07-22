@@ -110,7 +110,7 @@ export default SiteHeader
     padding: var(--spatial-scale-1);
     position: relative;
     text-decoration: none;
-    transition: color .66s;
+    transition: color .66s, background-color .66s;
     &:after {
       background: var(--bg-blue-600);
       border-radius: 100%;
@@ -131,7 +131,7 @@ export default SiteHeader
       }
     }
     &:active {
-      background-color: rgba(0, 10, 20, .5));
+      background-color: #e5ecef;
     }
     &[href="/"] {
       display: none;
