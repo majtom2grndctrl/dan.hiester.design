@@ -34,7 +34,7 @@ export default SiteHeader
     <nav class="nav1">
       <nuxt-link :to="paths.portfolio">Portfolio</nuxt-link>
       <nuxt-link :to="paths.blog">Blog</nuxt-link>
-      <nuxt-link to="/" exact>About</nuxt-link>
+      <nuxt-link :to="paths.about" exact>About</nuxt-link>
     </nav>
   </header>
 </template>
