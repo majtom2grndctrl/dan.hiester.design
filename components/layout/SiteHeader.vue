@@ -31,7 +31,7 @@ export default SiteHeader
         <span class="dan-hiester">Dan Hiester</span>
       </nuxt-link>
     </div>
-    <nav class="site-nav">
+    <nav class="nav1">
       <nuxt-link :to="paths.portfolio">Portfolio</nuxt-link>
       <nuxt-link :to="paths.blog">Blog</nuxt-link>
       <nuxt-link to="/" exact>About</nuxt-link>
@@ -93,7 +93,7 @@ export default SiteHeader
 /* 
    Navigation
 ******************************/
-.site-nav {
+.nav1 {
   display: flex;
     flex-direction: row;
     flex-basis: 100%;
@@ -139,19 +139,19 @@ export default SiteHeader
   }
 }
 @media (min-resolution: 1.25dppx) {
-  .site-nav > a.active:after {
+  .nav1 > a.active:after {
   }
 }
 @media(--viewport-small) {
-  .site-nav {
+  .nav1 {
     margin-right: var(--spatial-scale-4);
   }
-  .site-nav a[href="/"] {
+  .nav1 a[href="/"] {
     display: inherit;
   }
 }
 @media (--viewport-medium) {
-  .site-nav {
+  .nav1 {
     margin-right: 0;
     & > a {
       font-size: var(--type-scale-0);
