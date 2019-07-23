@@ -100,6 +100,7 @@ export default SiteHeader
     justify-content: flex-end;
   margin: 0 var(--spatial-scale-2) 0 0;
   & > a {
+    background-color: rgba(229, 239, 239, 0);
     border-radius: var(--spatial-scale-00);
     color: #97A3A7;
     display: flex;
@@ -130,8 +131,11 @@ export default SiteHeader
         opacity: 1;
       }
     }
-    &:active {
-      background-color: #e5ecef;
+    &:focus {
+      background-color: rgba(229, 239, 239, 1);
+      &.active {
+        background-color: rgba(229, 239, 239, 0);
+      }
     }
     &[href="/"] {
       display: none;
