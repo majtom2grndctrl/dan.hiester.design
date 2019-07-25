@@ -8,6 +8,7 @@
       <img class="image" v-if="post.heroImage" :src="post.heroImage.url" :alt="post.heroImage.alt" />
     </header>
     <prismic-slices :prismicDocument="post.prismicDocument" />
+    <contact-cta />
   </div>
 </template>
 
@@ -18,9 +19,11 @@ import Prismic from 'prismic-javascript'
 import { apiEndpoint, parseResponse, BlogPostData } from './index.vue'
 import PrismicSlices from '~/components/content/PrismicSlices.vue'
 import { blogPostMock } from '~/dataMocks';
+import ContactCta from '~/components/ContactCta.vue';
 
 @Component({
   components: {
+    ContactCta,
     PrismicSlices
   },
   scrollToTop: true,

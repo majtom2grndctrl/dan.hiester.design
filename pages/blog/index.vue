@@ -1,11 +1,14 @@
 <template>
-  <section class="BlogIndex" v-if="blog_posts">
-    <blog-post v-for="(post, index) in blog_posts" :post="post" :key="index" />
-  </section>
-  <section v-else>
-    <h1>Signal disrupted</h1>
-    <p>Your browser tried to download this blog post, but something went wrong. Try checking your internet connection and <button onClick="window.location.reload()" class="btn-link">refreshing this page</button>.</p>
-  </section>
+  <div>
+    <section class="BlogIndex" v-if="blog_posts">
+      <blog-post v-for="(post, index) in blog_posts" :post="post" :key="index" />
+    </section>
+    <section v-else>
+      <h1>Signal disrupted</h1>
+      <p>Your browser tried to download this blog post, but something went wrong. Try checking your internet connection and <button onClick="window.location.reload()" class="btn-link">refreshing this page</button>.</p>
+    </section>
+    <contact-cta v-if="blog_posts" />
+  </div>
 </template>
 
 
@@ -15,6 +18,7 @@ import { swipeTransition } from '~/components/layout/MainLayout.vue'
 import Prismic from 'prismic-javascript'
 import PrismicDOM from 'prismic-dom'
 import ApiSearchResponse from 'prismic-javascript/d.ts/ApiSearchResponse'
+import ContactCta from '~/components/ContactCta.vue';
 import { Document } from 'prismic-javascript/d.ts/documents'
 import BlogPost from '~/components/content/BlogPost.vue'
 import { blogDataMock } from '~/dataMocks'
@@ -70,7 +74,8 @@ export function parseResponse (response: ApiSearchResponse) {
 
 @Component({
   components: {
-    BlogPost
+    BlogPost,
+    ContactCta,
   },
   scrollToTop: true,
 })
