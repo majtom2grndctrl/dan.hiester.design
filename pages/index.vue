@@ -11,9 +11,10 @@
           <nuxt-link :to="paths.blog">Blog</nuxt-link>
         </nav>
         <div class="overview">
-          <p>I’m a Senior UI/UX Designer whose range of deliverables includes production code.</p>
-          <p>As a “big D” Designer and “little d” developer, I’m <em>thrilled</em> to see design systems revolutionize the way teammates with disperate skillsets communicate with each other about their shared work.</p>
+          <p>A Senior UI/UX Designer who specializes in code and design systems.</p>
+          <p>Think of me as a Designer with an uppercase D, and a developer with a lowercase d. I spend enough time on both sides of the designer-developer hand-off, I see lots of opportunity to make it more productive, fun, and focused on delivering great products!</p>
         </div>
+        <p>Next: <nuxt-link :to="paths.portfolio">Portfolio</nuxt-link></p>
       </div>
     </div>
   </main>
@@ -57,6 +58,12 @@ export default AboutPage;
     flex-direction: column;
     justify-content: center;
   grid-area: 1 / 2 / 2 / 6;
+}
+.overview {
+  & p:not(:first-child) {
+    font-size: var(--type-scale-0);
+    line-height: var(--spatial-scale-4);
+  }
 }
 @media(--viewport-small) {
   .About {
