@@ -18,7 +18,7 @@ import { swipeTransition } from '~/components/layout/MainLayout.vue'
 import Prismic from 'prismic-javascript'
 import PrismicDOM from 'prismic-dom'
 import ApiSearchResponse from 'prismic-javascript/d.ts/ApiSearchResponse'
-import ContactCta from '~/components/ContactCta.vue';
+import ContactCta from '~/components/contact/ContactCta.vue';
 import { Document } from 'prismic-javascript/d.ts/documents'
 import BlogPost from '~/components/content/BlogPost.vue'
 import { blogDataMock } from '~/dataMocks'

@@ -19,7 +19,7 @@ import Prismic from 'prismic-javascript'
 import { apiEndpoint, parseResponse, BlogPostData } from './index.vue'
 import PrismicSlices from '~/components/content/PrismicSlices.vue'
 import { blogPostMock } from '~/dataMocks';
-import ContactCta from '~/components/ContactCta.vue';
+import ContactCta from '~/components/contact/ContactCta.vue';
 
 @Component({
   components: {

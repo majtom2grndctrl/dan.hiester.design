@@ -20,7 +20,7 @@ import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import { swipeTransition } from "~/components/layout/MainLayout.vue"
 import Anthology from '~/components/content/Anthology.vue'
 import CtaLink from '~/components/buttons/CtaLink.vue'
-import ContactCta from '~/components/ContactCta.vue';
+import ContactCta from '~/components/contact/ContactCta.vue';
 import AnthologyHero, { AnthologyHeroData } from '~/components/content/AnthologyHero.vue'
 import AnthologyItem, { AnthologyItemData } from '~/components/content/AnthologyItem.vue'
 import StandAlone, { StandAloneProps } from '~/components/content/StandAlone.vue'
