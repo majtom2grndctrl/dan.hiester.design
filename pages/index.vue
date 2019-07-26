@@ -3,7 +3,7 @@
     <div class="container">
       <div>
         <h1 class="intro">
-          <span class="name">Dan Hiester</span>
+          <span class="dan-hiester">Dan Hiester</span>
           <span class="title">Design Technologist</span>
         </h1>
         <nav class="nav">
@@ -84,14 +84,10 @@ export default AboutPage;
 .intro {
   font-family: var(--font-body);
 }
-.name {
-  display: block;
+.dan-hiester {
   font-size: var(--type-scale-4);
-  font-weight: 600;
   line-height: var(--spatial-scale-4);
   margin: 0 0 var(--spatial-scale-0) -.055em;
-  transform: scaleX(1.1);
-  transform-origin: left;
 }
 .title {
   color: var(--gray-500);

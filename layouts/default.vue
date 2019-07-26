@@ -12,7 +12,7 @@
         <div>
           <site-header />
           <nuxt/>
-          <footer class="footer"></footer>
+          <site-footer />
         </div>
       </template>
     </transition>
@@ -23,10 +23,12 @@
 <script lang="ts">
 import { Vue } from 'nuxt-property-decorator'
 import SiteHeader from '~/components/layout/SiteHeader.vue'
+import SiteFooter from '~/components/layout/SiteFooter.vue';
 
 export default Vue.extend ({
   components: {
-    SiteHeader
+    SiteHeader,
+    SiteFooter,
   }
 })
 </script>
@@ -230,4 +232,5 @@ export default Vue.extend ({
     }
   }
 }
+
 </style>
