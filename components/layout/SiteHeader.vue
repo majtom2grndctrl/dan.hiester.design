@@ -11,12 +11,7 @@ import paths from '~/paths'
 })
 
 class SiteHeader extends Vue {
-
-  data() {
-    return {
-      paths
-    }
-  }
+  paths = paths;
 }
 
 
@@ -64,29 +59,32 @@ export default SiteHeader
     text-decoration: none;
   }
   .dan-hiester {
-    display: block;
-    font-weight: 600;
     font-size: var(--type-scale-1);
-/*    letter-spacing: .166ex; */
     line-height: var(--spatial-scale-1);
-    transform: scaleX(1.1);
-    transform-origin: left;
   }
   @media (--viewport-xs) {
 
   }
   @media (--viewport-small) {
+    .SiteHeader {
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 30rem;
+    }
     .logo-link {
       padding-left: var(--spatial-scale-4);
+      margin-left: calc(var(--spatial-scale-4) * -1);
     }
   }
   @media (--viewport-medium) {
     .SiteHeader {
       margin: var(--spatial-scale-4) auto 0 auto;
+      max-width: unset;
       width: calc(100% * 12 / 14);
     }
     .logo-link {
       padding-left: 0;
+      margin-left: inherit;
     }
   }
 
@@ -100,7 +98,7 @@ export default SiteHeader
     justify-content: flex-end;
   margin: 0 var(--spatial-scale-2) 0 0;
   & > a {
-    background-color: rgba(229, 239, 239, 0);
+    background-color: var(--link-bg-inactive);
     border-radius: var(--spatial-scale-00);
     color: #97A3A7;
     display: flex;
@@ -132,9 +130,9 @@ export default SiteHeader
       }
     }
     &:focus {
-      background-color: rgba(229, 239, 239, 1);
+      background-color: var(--link-bg-active);
       &.active {
-        background-color: rgba(229, 239, 239, 0);
+        background-color: var(--link-bg-inactive);
       }
     }
     &[href="/"] {
@@ -142,13 +140,9 @@ export default SiteHeader
     }
   }
 }
-@media (min-resolution: 1.25dppx) {
-  .nav1 > a.active:after {
-  }
-}
 @media(--viewport-small) {
   .nav1 {
-    margin-right: var(--spatial-scale-4);
+    margin-right: unset;
   }
   .nav1 a[href="/"] {
     display: inherit;

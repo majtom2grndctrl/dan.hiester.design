@@ -9,7 +9,7 @@
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import Prismic from 'prismic-javascript'
 import CaseStudy, { ICaseStudyData, parseCaseStudy } from '~/components/content/CaseStudy.vue'
-import ContactCta from '~/components/ContactCta.vue';
+import ContactCta from '~/components/contact/ContactCta.vue';
 import { Document } from 'prismic-javascript/d.ts/documents';
 
 @Component({

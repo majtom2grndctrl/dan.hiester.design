@@ -91,7 +91,7 @@ export default ContactCta
       flex-direction: row;
       align-items: center;
       justify-items: center;
-    margin: calc(1 / 12 * 100%) 0;
+    margin: calc(1 / 12 * 100%) 0 var(--spatial-scale-5) 0;
     padding: 1rem 0;
   }
   .content {
