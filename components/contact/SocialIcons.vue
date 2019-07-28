@@ -91,4 +91,7 @@ export default SocialIcons;
       background-color: var(--link-bg-active);
     }
   }
+  svg {
+    height: var(--spatial-scale-3);
+  }
 </style>

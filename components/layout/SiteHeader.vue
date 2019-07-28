@@ -11,12 +11,7 @@ import paths from '~/paths'
 })
 
 class SiteHeader extends Vue {
-
-  data() {
-    return {
-      paths
-    }
-  }
+  paths = paths;
 }
 
 
@@ -71,17 +66,25 @@ export default SiteHeader
 
   }
   @media (--viewport-small) {
+    .SiteHeader {
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 30rem;
+    }
     .logo-link {
       padding-left: var(--spatial-scale-4);
+      margin-left: calc(var(--spatial-scale-4) * -1);
     }
   }
   @media (--viewport-medium) {
     .SiteHeader {
       margin: var(--spatial-scale-4) auto 0 auto;
+      max-width: unset;
       width: calc(100% * 12 / 14);
     }
     .logo-link {
       padding-left: 0;
+      margin-left: inherit;
     }
   }
 

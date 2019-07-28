@@ -88,8 +88,9 @@ export default MainLayout
 @media (--viewport-small) {
   .header {
     justify-content: flex-start;
-    margin-right: var(--spatial-scale-4);
-    margin-left: var(--spatial-scale-4);
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 30rem;
   }
   .title-prefix {
     font-size: calc(20rem/16);
