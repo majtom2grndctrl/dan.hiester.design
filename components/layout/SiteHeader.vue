@@ -140,10 +140,6 @@ export default SiteHeader
     }
   }
 }
-@media (min-resolution: 1.25dppx) {
-  .nav1 > a.active:after {
-  }
-}
 @media(--viewport-small) {
   .nav1 {
     margin-right: var(--spatial-scale-4);
