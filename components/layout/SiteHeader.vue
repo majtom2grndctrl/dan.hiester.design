@@ -142,7 +142,7 @@ export default SiteHeader
 }
 @media(--viewport-small) {
   .nav1 {
-    margin-right: var(--spatial-scale-4);
+    margin-right: unset;
   }
   .nav1 a[href="/"] {
     display: inherit;
