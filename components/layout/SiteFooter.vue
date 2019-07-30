@@ -7,9 +7,15 @@
     </div>
     <div class="end">
       <nav class="nav">
-        <nuxt-link :to="paths.portfolio" class="footer-link">Portfolio</nuxt-link>
-        <nuxt-link :to="paths.blog" class="footer-link">Blog</nuxt-link>
-        <nuxt-link :to="paths.about" class="footer-link">About</nuxt-link>
+        <div class="item">
+          <nuxt-link :to="paths.portfolio" class="footer-link">Portfolio</nuxt-link>
+        </div>
+        <div class="item">
+          <nuxt-link :to="paths.blog" class="footer-link">Blog</nuxt-link>
+        </div>
+        <div class="item">
+          <nuxt-link :to="paths.about" class="footer-link">About</nuxt-link>
+        </div>
       </nav>
       <div class="copyright">&copy; {{ year }} Dan Hiester</div>
     </div>
@@ -150,7 +156,7 @@ export default SiteFooter;
   @media(--viewport-medium) {
     .end {
       display: block;
-      grid-area: 1 / 9 / 2 / 13;
+      grid-area: 1 / 11 / 2 / 13;
       margin: 0;
       max-width: unset;
       text-align: right;
@@ -158,6 +164,12 @@ export default SiteFooter;
     .nav {
       display: block;
       margin: var(--spatial-scale-5) 0 var(--spatial-scale-3) 0;
+    }
+    .nav > .item {
+      overflow: hidden;
+    }
+    .footer-link {
+      float: right;
     }
   }
 
