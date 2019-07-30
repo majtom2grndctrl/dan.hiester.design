@@ -2,7 +2,7 @@
   <footer class="SiteFooter">
     <div class="meta">
       <h2 class="title"><span class="dan-hiester">Dan Hiester</span></h2>
-      <p class="description">A Senior UI/UX Designer who specializes in code and design systems.</p>
+      <p class="description">A Senior Product Designer specializing in code and design systems.</p>
       <social-icons class="icons" />
     </div>
     <div class="end">
