@@ -37,7 +37,7 @@ export default SiteFooter;
 <style lang="postcss" scoped>
   .SiteFooter {
     box-sizing: border-box;
-    padding: var(--spatial-scale-6) var(--spatial-scale-3) var(--spatial-scale-3) var(--spatial-scale-3);
+    padding: var(--spatial-scale-6) var(--spatial-scale-3) 0 var(--spatial-scale-3);
   }
   @media(--viewport-small) {
 
@@ -47,7 +47,7 @@ export default SiteFooter;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
       column-gap: var(--spatial-scale-1);
-      margin: 0 auto;
+      margin: 0 auto var(--spatial-scale-3);
       padding: 0;
       width: calc(100% * 12 / 14);
     }
@@ -57,7 +57,7 @@ export default SiteFooter;
     Footer Meta - Info and links about me
   **************************/
   .meta {
-    margin-bottom: var(--spatial-scale-8);
+    margin-bottom: var(--spatial-scale-5);
   }
   .title {
     margin: 0 0 0 0;
@@ -109,7 +109,7 @@ export default SiteFooter;
   **************************/
   .end {
     color: var(--gray-400);
-    margin: var(--spatial-scale-3) 0;
+    margin: 0;
   }
   .nav {
     display: flex;
@@ -121,6 +121,8 @@ export default SiteFooter;
     border-radius: var(--spatial-scale-00);
     color: var(--gray-400);
     display: block;
+    font-size: var(--type-scale-0);
+    line-height: var(--spatial-scale-0);
     padding: var(--spatial-scale-00);
     text-decoration: none;
     transition: background-color .44s;
@@ -129,14 +131,16 @@ export default SiteFooter;
     }
   }
   .copyright {
-    margin: var(--spatial-scale-1) 0;
+    font-size: var(--type-scale-0);
+    line-height: var(--spatial-scale-0);
+    margin: var(--spatial-scale-3) 0;
   }
   @media (--viewport-small) {
     .end {
       display: flex;
         flex-direction: row;
         justify-content: space-between;
-      margin: var(--spatial-scale-6) auto 0;
+      margin: var(--spatial-scale-6) auto var(--spatial-scale-3);
       max-width: 30rem;
     }
     .copyright {
@@ -153,7 +157,7 @@ export default SiteFooter;
     }
     .nav {
       display: block;
-      margin: 0 0 var(--spatial-scale-4) 0;
+      margin: var(--spatial-scale-5) 0 var(--spatial-scale-3) 0;
     }
   }
 
