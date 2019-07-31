@@ -1,14 +1,14 @@
 <template>
   <div>
-    <transition :name="this.$route.path === '/' ? '' : 'home'">
+    <transition :name="transitionName">
 
       <!-- Display splash when path is '/' -->
-      <template v-if="this.$route.path === '/'">
+      <template v-if="isRootPath">
         <nuxt/>
       </template>
 
       <!-- Display main site template when path isn't '/' -->
-      <template v-if="this.$route.path !== '/'">
+      <template v-if="!isRootPath">
         <div>
           <site-header />
           <nuxt/>
@@ -21,16 +21,26 @@
 
 
 <script lang="ts">
-import { Vue } from 'nuxt-property-decorator'
+import { Vue, Component } from 'nuxt-property-decorator'
 import SiteHeader from '~/components/layout/SiteHeader.vue'
 import SiteFooter from '~/components/layout/SiteFooter.vue';
 
-export default Vue.extend ({
+@Component( {
   components: {
     SiteHeader,
     SiteFooter,
   }
 })
+class DefaultLayout extends Vue {
+  get transitionName() {
+    return this.$route.path === '/' ? '' : 'home';
+  };
+  get isRootPath() {
+    return this.$route.path === '/';
+  }
+}
+
+export default DefaultLayout
 </script>
 
 <style lang="postcss">
