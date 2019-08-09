@@ -26,11 +26,7 @@ import paths from '~/paths';
 
 @Component({})
 class AboutPage extends Vue {
-  data() {
-    return {
-      paths
-    }
-  }
+  paths = paths;
 }
 
 export default AboutPage;
