@@ -1,7 +1,7 @@
 <template>
   <section class="Suggestion">
     <div class="content">
-      <div class="type">{{ data.type }}</div>
+      <block-type class="type">{{ data.type }}</block-type>
       <h2 class="title">{{ data.title }}</h2>
       <cta-link :to="data.ctaHref" class="cta" v-html="data.ctaLabel" />
       <div v-if="data.altCta" class="altCta-container">
@@ -14,6 +14,7 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import CtaLink from '~/components/buttons/CtaLink.vue';
+import BlockType from '~/components/text/BlockType.vue';
 
 export interface SuggestionProps {
   type: string
@@ -28,6 +29,7 @@ export interface SuggestionProps {
 
 @Component({
   components: {
+    BlockType,
     CtaLink
   }
 })
@@ -48,13 +50,6 @@ export default Suggestion
     max-width: 30rem;
     margin: 0 auto;
     padding: var(--spatial-scale-4) var(--spatial-scale-2);
-  }
-  .type {
-    font-size: calc(14rem/16);
-    font-weight: 500;
-    line-height: 1em;
-    margin: 0 0 calc(5rem/16) 0;
-    text-transform: uppercase;
   }
   .title {
     font-size: var(--type-scale-3);
@@ -86,9 +81,6 @@ export default Suggestion
       display: flex;
       flex-direction: row;
       align-items: center;
-    }
-    .type {
-      font-size: var(--type-scale-00);
     }
     .content {
       padding: calc(30rem/16);
