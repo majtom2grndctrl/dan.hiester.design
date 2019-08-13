@@ -11,8 +11,8 @@
           <nuxt-link :to="paths.blog">Blog</nuxt-link>
         </nav>
         <div class="overview">
-          <p>A Senior Product Designer specializing in code and design systems.</p>
-          <p>Think of me as a Designer with an uppercase D, and a developer with a lowercase d. I spend enough time on both sides of the designer-developer hand-off, I see lots of opportunity to make it more productive, fun, and focused on delivering great products!</p>
+          <p>A Senior Product Designer specializing in&nbsp;code and design&nbsp;systems.</p>
+          <p>Think of me as a Designer with an uppercase D, and a developer with a lowercase d. I spend enough time on both sides of the designer-developer hand-off, I see lots of opportunity to make it more productive, fun, and focused on delivering great&nbsp;products!</p>
         </div>
         <p>Next: <nuxt-link :to="paths.portfolio">Portfolio</nuxt-link></p>
       </div>
