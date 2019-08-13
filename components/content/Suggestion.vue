@@ -49,7 +49,7 @@ export default Suggestion
   .content {
     max-width: 30rem;
     margin: 0 auto;
-    padding: var(--spatial-scale-4) var(--spatial-scale-2);
+    padding: var(--spatial-scale-7) var(--spatial-scale-2) var(--spatial-scale-4);
   }
   .title {
     font-size: var(--type-scale-3);

@@ -78,7 +78,7 @@ export default StandAlone
     }
   }
   .cta {
-    margin: 1rem auto 2rem;
+    margin: var(--spatial-scale-3) auto var(--spatial-scale-7);
     max-width: 20rem;
   }
   @media (--viewport-small) {
