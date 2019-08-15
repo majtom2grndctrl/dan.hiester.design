@@ -11,7 +11,33 @@ import paths from '~/paths'
 })
 
 class SiteHeader extends Vue {
+  showNav = true;
+  lastScrollPosition = 0;
   paths = paths;
+
+  get mobileNavClass(): string {
+    return !this.showNav ? 'nav1--hidden-mobile' : '';
+  }
+
+  onScroll() {
+    const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    if (currentScrollPosition < 0) return;
+    
+    this.showNav = currentScrollPosition < this.lastScrollPosition;
+    this.lastScrollPosition = currentScrollPosition;
+
+    if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) return;
+    this.showNav = currentScrollPosition < this.lastScrollPosition;
+    this.lastScrollPosition = currentScrollPosition;
+  }
+
+  mounted() {
+    window.addEventListener('scroll', this.onScroll);
+  }
+
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.onScroll);
+  }
 }
 
 
@@ -26,7 +52,7 @@ export default SiteHeader
         <span class="dan-hiester">Dan Hiester</span>
       </nuxt-link>
     </div>
-    <nav class="nav1">
+    <nav class="nav1" :class="mobileNavClass">
       <nuxt-link :to="paths.portfolio">Portfolio</nuxt-link>
       <nuxt-link :to="paths.blog">Blog</nuxt-link>
       <nuxt-link :to="paths.about" exact>About</nuxt-link>
@@ -92,11 +118,22 @@ export default SiteHeader
    Navigation
 ******************************/
 .nav1 {
+  background: var(--white);
   display: flex;
     flex-direction: row;
     flex-basis: 100%;
-    justify-content: flex-end;
-  margin: 0 var(--spatial-scale-2) 0 0;
+    justify-content: center;
+  padding: var(--spatial-scale-4);
+  position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+  transition: transform .2s ease-out;
+    transform: translate3d(0, 100%, 0);
+  &.nav1--hidden-mobile {
+    transform: translate3d(0, 0, 0);
+  }
   & > a {
     background-color: var(--link-bg-inactive);
     border-radius: var(--spatial-scale-00);
@@ -105,7 +142,7 @@ export default SiteHeader
       align-items: center;
     font-size: var(--type-scale-0);
     line-height: var(--spatial-scale-0);
-    margin: calc(var(--spatial-scale-1) * -1) calc(var(--spatial-scale-1) * -1) calc(var(--spatial-scale-1) * -1) var(--spatial-scale-1);
+    margin: calc(var(--spatial-scale-1) * -1) var(--spatial-scale-00);
     padding: var(--spatial-scale-1);
     position: relative;
     text-decoration: none;
@@ -135,17 +172,20 @@ export default SiteHeader
         background-color: var(--link-bg-inactive);
       }
     }
-    &[href="/"] {
-      display: none;
-    }
   }
 }
 @media(--viewport-small) {
   .nav1 {
-    margin-right: unset;
-  }
-  .nav1 a[href="/"] {
-    display: inherit;
+    position: static;
+    justify-content: flex-end;
+    padding: 0;
+    &.nav1--hidden-mobile {
+      transition: none;
+      transform: none;
+    }
+    & > a {
+      margin: calc(var(--spatial-scale-1) * -1) calc(var(--spatial-scale-1) * -1) calc(var(--spatial-scale-1) * -1) var(--spatial-scale-1);
+    }
   }
 }
 @media (--viewport-medium) {
