@@ -21,14 +21,16 @@ class SiteHeader extends Vue {
 
   onScroll() {
     const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    const updateVariables = () => {
+      this.showNav = currentScrollPosition < this.lastScrollPosition;
+      this.lastScrollPosition = currentScrollPosition;
+    }
+
     if (currentScrollPosition < 0) return;
-    
-    this.showNav = currentScrollPosition < this.lastScrollPosition;
-    this.lastScrollPosition = currentScrollPosition;
+    updateVariables();
 
     if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) return;
-    this.showNav = currentScrollPosition < this.lastScrollPosition;
-    this.lastScrollPosition = currentScrollPosition;
+    updateVariables();
   }
 
   mounted() {
