@@ -179,8 +179,9 @@ export default SiteHeader
     position: static;
     justify-content: flex-end;
     padding: 0;
+    transition: none;
+    transform: none;
     &.nav1--hidden-mobile {
-      transition: none;
       transform: none;
     }
     & > a {
