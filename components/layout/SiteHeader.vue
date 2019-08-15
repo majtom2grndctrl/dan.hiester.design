@@ -143,11 +143,12 @@ export default SiteHeader
     display: flex;
       align-items: center;
       justify-content: center;
-    flex-basis: 25%;
+    flex-basis: 20%;
     font-size: var(--type-scale-0);
     font-weight: 500;
     font-family: var(--font-heading);
     line-height: var(--spatial-scale-0);
+    min-width: 20%;
     margin: calc(var(--spatial-scale-1) * -1) var(--spatial-scale-00);
     padding: var(--spatial-scale-1);
     position: relative;
