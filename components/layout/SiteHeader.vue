@@ -141,6 +141,8 @@ export default SiteHeader
     display: flex;
       align-items: center;
     font-size: var(--type-scale-0);
+    font-weight: 500;
+    font-family: var(--font-heading);
     line-height: var(--spatial-scale-0);
     margin: calc(var(--spatial-scale-1) * -1) var(--spatial-scale-00);
     padding: var(--spatial-scale-1);
@@ -185,6 +187,8 @@ export default SiteHeader
       transform: none;
     }
     & > a {
+      font-weight: 400;
+      font-family: var(--font-body);
       margin: calc(var(--spatial-scale-1) * -1) calc(var(--spatial-scale-1) * -1) calc(var(--spatial-scale-1) * -1) var(--spatial-scale-1);
     }
   }
