@@ -140,6 +140,8 @@ export default SiteHeader
     color: #97A3A7;
     display: flex;
       align-items: center;
+      justify-content: center;
+    flex-basis: 25%;
     font-size: var(--type-scale-0);
     font-weight: 500;
     font-family: var(--font-heading);
@@ -187,8 +189,10 @@ export default SiteHeader
       transform: none;
     }
     & > a {
+      flex-basis: unset;
       font-weight: 400;
       font-family: var(--font-body);
+      justify-content: unset;
       margin: calc(var(--spatial-scale-1) * -1) calc(var(--spatial-scale-1) * -1) calc(var(--spatial-scale-1) * -1) var(--spatial-scale-1);
     }
   }
