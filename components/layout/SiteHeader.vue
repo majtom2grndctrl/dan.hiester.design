@@ -196,6 +196,7 @@ export default SiteHeader
       font-weight: 400;
       font-family: var(--font-body);
       justify-content: unset;
+      min-width: unset;
       margin: calc(var(--spatial-scale-1) * -1) calc(var(--spatial-scale-1) * -1) calc(var(--spatial-scale-1) * -1) var(--spatial-scale-1);
     }
   }
