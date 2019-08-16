@@ -133,7 +133,7 @@ export default SiteFooter;
     padding: var(--spatial-scale-00);
     text-decoration: none;
     transition: background-color .44s;
-    &:focus {
+    &:focus, &:hover {
       background-color: var(--link-bg-active);
     }
   }

@@ -86,8 +86,8 @@ export default SocialIcons;
     border-radius: 100%;
     display: block;
     padding: var(--spatial-scale-3);
-    transition: background-color .44s;
-    &:focus {
+    transition: background-color .66s;
+    &:focus, &:hover {
       background-color: var(--link-bg-active);
     }
   }
