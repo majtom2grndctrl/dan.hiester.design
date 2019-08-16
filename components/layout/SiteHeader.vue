@@ -121,6 +121,7 @@ export default SiteHeader
 ******************************/
 .nav1 {
   background: var(--white);
+  box-shadow: rgba(0, 0, 0, .3) 0 0 10px;
   display: flex;
     flex-direction: row;
     flex-basis: 100%;
@@ -173,16 +174,15 @@ export default SiteHeader
         opacity: 1;
       }
     }
-    &:focus {
+    &:focus, &:hover {
       background-color: var(--link-bg-active);
-      &.active {
-        background-color: var(--link-bg-inactive);
-      }
+      color: var(--gray-400);
     }
   }
 }
 @media(--viewport-small) {
   .nav1 {
+    box-shadow: none;
     position: static;
     justify-content: flex-end;
     padding: 0;
@@ -196,6 +196,7 @@ export default SiteHeader
       font-weight: 400;
       font-family: var(--font-body);
       justify-content: unset;
+      min-width: unset;
       margin: calc(var(--spatial-scale-1) * -1) calc(var(--spatial-scale-1) * -1) calc(var(--spatial-scale-1) * -1) var(--spatial-scale-1);
     }
   }
