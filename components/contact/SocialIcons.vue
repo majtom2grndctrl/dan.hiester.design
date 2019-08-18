@@ -74,6 +74,7 @@ export default SocialIcons;
 
 <style lang="postcss" scoped>
   .SocialIcons {
+    box-sizing: content-box;
     display: flex;
       align-items: center;
       flex-direction: row;

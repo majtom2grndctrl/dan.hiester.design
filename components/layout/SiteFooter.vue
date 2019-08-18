@@ -84,8 +84,7 @@ export default SiteFooter;
     line-height: var(--spatial-scale-6);
     margin: var(--spatial-scale-3) 0;
   }
-  .icons {
-    box-sizing: content-box;
+  .icons.SocialIcons { /* Increase specificity to override component default */
     justify-content: flex-start;
   }
   @media (--viewport-small) {
@@ -107,7 +106,7 @@ export default SiteFooter;
       line-height: var(--spatial-scale-5);
       margin-right: -1em; /* Kinda hacky, but this prevents "specializes" from wrapping */
     }
-    .icons {
+    .icons.SocialIcons { /* Increase specificity to override component default */
       width: calc(100% * 8/12 + (var(--spatial-scale-3) * 2));
       justify-content: space-between;
     }
