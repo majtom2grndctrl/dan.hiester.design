@@ -11,35 +11,7 @@ import paths from '~/paths'
 })
 
 class SiteHeader extends Vue {
-  showNav = true;
-  lastScrollPosition = 0;
   paths = paths;
-
-  get mobileNavClass(): string {
-    return !this.showNav ? 'nav1--hidden-mobile' : '';
-  }
-
-  onScroll() {
-    const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-    const updateVariables = () => {
-      this.showNav = currentScrollPosition < this.lastScrollPosition;
-      this.lastScrollPosition = currentScrollPosition;
-    }
-
-    if (currentScrollPosition < 0) return;
-    updateVariables();
-
-    if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) return;
-    updateVariables();
-  }
-
-  mounted() {
-    window.addEventListener('scroll', this.onScroll);
-  }
-
-  beforeDestroy() {
-    window.removeEventListener('scroll', this.onScroll);
-  }
 }
 
 
@@ -54,7 +26,7 @@ export default SiteHeader
         <span class="dan-hiester">Dan Hiester</span>
       </nuxt-link>
     </div>
-    <nav class="nav1" :class="mobileNavClass">
+    <nav class="nav1">
       <nuxt-link :to="paths.portfolio">Portfolio</nuxt-link>
       <nuxt-link :to="paths.blog">Blog</nuxt-link>
       <nuxt-link :to="paths.about" exact>About</nuxt-link>
@@ -132,11 +104,6 @@ export default SiteHeader
     bottom: 0;
     left: 0;
     z-index: 20;
-  transition: transform .2s ease-out;
-    transform: translate3d(0, 100%, 0);
-  &.nav1--hidden-mobile {
-    transform: translate3d(0, 0, 0);
-  }
   & > a {
     background-color: var(--link-bg-inactive);
     border-radius: var(--spatial-scale-00);
@@ -188,9 +155,6 @@ export default SiteHeader
     padding: 0;
     transition: none;
     transform: none;
-    &.nav1--hidden-mobile {
-      transform: none;
-    }
     & > a {
       flex-basis: unset;
       font-weight: 400;

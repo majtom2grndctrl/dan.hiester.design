@@ -86,7 +86,7 @@ export default SiteFooter;
   }
   .icons {
     box-sizing: content-box;
-    width: calc(75% + (var(--spatial-scale-3) * 2));
+    justify-content: flex-start;
   }
   @media (--viewport-small) {
     .meta {
@@ -94,7 +94,7 @@ export default SiteFooter;
       max-width: 30rem;
     }
     .icons {
-      width: 66%;
+      width: calc(66% + (var(--spatial-scale-3) * 2));
     }
   }
   @media (--viewport-medium) {
@@ -108,7 +108,8 @@ export default SiteFooter;
       margin-right: -1em; /* Kinda hacky, but this prevents "specializes" from wrapping */
     }
     .icons {
-      width: calc(75% + (var(--spatial-scale-3) * 2));
+      width: calc(100% * 8/12 + (var(--spatial-scale-3) * 2));
+      justify-content: space-between;
     }
   }
 
