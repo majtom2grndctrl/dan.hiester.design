@@ -107,7 +107,9 @@ export default SiteFooter;
       margin-right: -1em; /* Kinda hacky, but this prevents "specializes" from wrapping */
     }
     .icons.SocialIcons { /* Increase specificity to override component default */
-      width: calc(100% * 8/12 + (var(--spatial-scale-3) * 2));
+      /* The width here assumes a parent container is using 4 columns in the grid,
+         and this block should occupy 3 of the parent container’s 4 columns. */
+      width: calc(100% * 3/4 + (var(--spatial-scale-3) * 2));
       justify-content: space-between;
     }
   }
