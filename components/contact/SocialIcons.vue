@@ -94,5 +94,6 @@ export default SocialIcons;
   }
   svg {
     height: var(--spatial-scale-3);
+    width: var(--spatial-scale-3);
   }
 </style>
