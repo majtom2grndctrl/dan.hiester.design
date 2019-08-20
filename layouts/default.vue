@@ -144,7 +144,7 @@ export default DefaultLayout
     }
     & .lede p {
       font-size: var(--type-scale-3);
-      line-height: var(--spatial-scale-6);
+      line-height: var(--spatial-scale-7);
     }
     & > pre {
       margin: var(--spatial-scale-2);
