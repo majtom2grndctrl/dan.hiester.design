@@ -85,8 +85,8 @@ module.exports = {
           console.warn('Heeeyyyy, something happened to the network.', err)
           isDevProcess && console.log('Using datamocks for blog posts: ', blogDataMock)
           // If we’re in dev mode, return a data mock. Otherwise, return null and force an error.
-          return isDevProcess ? { blogDataMock } : { results: [] }
-        })
+          return isDevProcess ? { blogDataMock } : { results: [] };
+        });
       console.log('blogQuery = ', blogQuery)
       const portfolioQuery = await Prismic.getApi(apiUrl)
         .then( api => { 
@@ -97,8 +97,8 @@ module.exports = {
           console.warn('Heeeyyyy, something happened to the network.', err)
           isDevProcess && console.log('Using datamocks for case study: ', caseStudyMock);
           // If we’re in dev mode, return a data mock. Otherwise, return null and force an error.
-          return isDevProcess ? { caseStudyMock } : null
-        })
+          return isDevProcess ? { caseStudyMock } : { results: [] };
+        });
       console.log('portfolioQuery = ', portfolioQuery)
       const routesList = [
         {

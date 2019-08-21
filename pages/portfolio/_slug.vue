@@ -10,6 +10,7 @@ import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import Prismic from 'prismic-javascript'
 import CaseStudy, { ICaseStudyData, parseCaseStudy } from '~/components/content/CaseStudy.vue'
 import ContactCta from '~/components/contact/ContactCta.vue';
+import { caseStudyMock } from '~/dataMocks';
 import { Document } from 'prismic-javascript/d.ts/documents';
 
 @Component({
@@ -24,7 +25,7 @@ class CaseStudyPage extends Vue {
   async asyncData (ctx) {
 //    console.log ('ctx.params.slug = ', ctx.params.slug)
     if (ctx.payload) {
-//      console.log('payload = ', ctx.payload)
+      console.log('ctx.payload = ', ctx.payload)
       const payload = ctx.payload as Document
       return {
         caseStudy: parseCaseStudy(payload)
@@ -33,13 +34,20 @@ class CaseStudyPage extends Vue {
       return api.query(
         Prismic.Predicates.at('my.case_study.uid', ctx.params.slug),
         { lang: '*'}
-      ).then( function (response) {
+      ).then( response => {
         const payload = response.results[0] as Document
         return {caseStudy: parseCaseStudy(payload)}
       }, (err) => {
         console.error('Something went wrong: ', err)
         return { title: err }
       })
+    }).catch( err => {
+      console.warn('Error downloading posts (/pages/portfolio/_slug.vue)', err);
+      console.log('Using data mock: ', { caseStudy: parseCaseStudy(caseStudyMock.results[0]) });
+      const caseStudy = parseCaseStudy(caseStudyMock.results[0]);
+      return {
+        caseStudy: caseStudy,
+      }
     })
   }
   head () {
