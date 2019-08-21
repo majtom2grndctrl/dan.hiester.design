@@ -1,8 +1,10 @@
-import { blogDataMock } from './dataMocks'
+import { blogDataMock, caseStudyMock } from './dataMocks'
 import paths from './paths'
 const Prismic = require('prismic-javascript')
 const PrismicDOM = require('prismic-dom')
 require('dotenv').config()
+
+const isDevProcess = process.env.NODE_ENV === 'development';
 
 module.exports = {
   /*
@@ -80,11 +82,11 @@ module.exports = {
           )
         })
         .catch(err => {
-          console.warn('Hey, something happened to the network.', err)
-          console.log('Using datamocks for blog posts: ', blogDataMock)
+          console.warn('Heeeyyyy, something happened to the network.', err)
+          isDevProcess && console.log('Using datamocks for blog posts: ', blogDataMock)
           // If we’re in dev mode, return a data mock. Otherwise, return null and force an error.
-          return process.env.NODE_ENV === 'development' ? { blogDataMock } : { results: [] }
-        })
+          return isDevProcess ? { blogDataMock } : { results: [] };
+        });
       console.log('blogQuery = ', blogQuery)
       const portfolioQuery = await Prismic.getApi(apiUrl)
         .then( api => { 
@@ -92,10 +94,11 @@ module.exports = {
             Prismic.Predicates.at('document.type', 'case_study'), null 
           )
         }).catch(err => {
-          console.warn('Hey, something happened to the network.', err)
+          console.warn('Heeeyyyy, something happened to the network.', err)
+          isDevProcess && console.log('Using datamocks for case study: ', caseStudyMock);
           // If we’re in dev mode, return a data mock. Otherwise, return null and force an error.
-          return process.env.NODE_ENV === 'development' ? { results: [] } : null
-        })
+          return isDevProcess ? { caseStudyMock } : { results: [] };
+        });
       console.log('portfolioQuery = ', portfolioQuery)
       const routesList = [
         {
