@@ -44,7 +44,7 @@ class PrismicSlices extends Vue {
   prismicDocument!: Document
 
   data() {
-    console.log('Document is: ', this.$props.prismicDocument)
+    // console.log('Document is: ', this.$props.prismicDocument)
     return {
       parsedContent: parseSliceContent(this.$props.prismicDocument)
     }
