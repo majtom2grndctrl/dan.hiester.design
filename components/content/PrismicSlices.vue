@@ -19,7 +19,7 @@ const parsers = {
   image (block) {
 //    console.log('Current image block is: ', block)
     return `
-      <figure class="${block.image.display_size || 'cover-image'}">
+      <figure class="${block.display_size || 'cover-image'}">
         <img src="${block.image.url}" alt="${block.image.alt}" />
         <figcaption>${PrismicDOM.RichText.asHtml(block.caption)}</figcaption>
       </figure>
