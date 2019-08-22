@@ -54,6 +54,7 @@ module.exports = {
   modules: [
     ['@nuxtjs/google-tag-manager', { id: process.env.NUXT_ENV_GTM_ID }],
   ],
+  plugins: ['~/plugins/function-api'],
   /*
   ** Build configuration
   */
