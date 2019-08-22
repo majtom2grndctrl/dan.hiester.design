@@ -1,5 +1,10 @@
 <template>
+  <div class="prismic-content">
+  <template v-for="(slice, i) in prismicDocument.data.body">
+    <ImageSlice v-if="slice.slice_type == 'image_block'" :block="slice" :key="'image-' + i" />
+  </template>
   <div class="prismic-content" v-html="parsedContent" />
+  </div>
 </template>
 
 
@@ -7,6 +12,7 @@
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import PrismicDOM from 'prismic-dom'
 import { Document } from 'prismic-javascript/d.ts/documents';
+import ImageSlice from '~/components/content/ImageSlice.vue';
 
 const parsers = {
   content (block) {
@@ -15,15 +21,6 @@ const parsers = {
     !!block.lede && (contentString += `<div class="lede">${PrismicDOM.RichText.asHtml(block.lede)}</div>`)
     !!block.content && (contentString += PrismicDOM.RichText.asHtml(block.content))
     return contentString
-  },
-  image (block) {
-//    console.log('Current image block is: ', block)
-    return `
-      <figure class="${block.display_size || 'cover-image'}">
-        <img src="${block.image.url}" alt="${block.image.alt}" />
-        <figcaption>${PrismicDOM.RichText.asHtml(block.caption)}</figcaption>
-      </figure>
-    `
   }
 }
 
@@ -32,13 +29,16 @@ function parseSliceContent(prismicDocument: Document) {
   prismicDocument && prismicDocument.data.body.map( slice => {
     switch(slice.slice_type) {
       case 'content_block': return parsedContent = parsedContent + parsers.content(slice.primary)
-      case 'image_block': return parsedContent = parsedContent + parsers.image(slice.primary)
     }
   })
   return parsedContent
 }
 
-@Component({})
+@Component({
+  components: {
+    ImageSlice,
+  },
+})
 class PrismicSlices extends Vue {
   @Prop()
   prismicDocument!: Document
@@ -46,7 +46,7 @@ class PrismicSlices extends Vue {
   data() {
     // console.log('Document is: ', this.$props.prismicDocument)
     return {
-      parsedContent: parseSliceContent(this.$props.prismicDocument)
+      parsedContent: parseSliceContent(this.prismicDocument)
     }
   }
 
