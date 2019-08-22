@@ -203,11 +203,9 @@ export default DefaultLayout
     }
     & figure {
       font-size: var(--type-scale-0);
-      margin-right: 0;
-      margin-left: 0;
-      &.large {
+        margin-right: auto;
+        margin-left: auto;
         max-width: calc(100% * 8 / 12);
-      }
       &.aside {
         max-width: calc(100% * 5 / 12);
         margin-right: calc(100% * 1 / 12);
