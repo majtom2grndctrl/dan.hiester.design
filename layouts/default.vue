@@ -153,16 +153,14 @@ export default DefaultLayout
       line-height: var(--spatial-scale-7);
     }
     & figure {
+        margin-right: auto;
+        margin-left: auto;
       & p {
         margin-right: auto;
         margin-left: auto;
       }
       &.cover-image {
         max-width: unset;
-      }
-      &.large {
-        margin-right: auto;
-        margin-left: auto;
       }
       &.aside {
         float: right;
