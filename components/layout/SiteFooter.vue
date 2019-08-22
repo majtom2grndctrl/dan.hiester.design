@@ -56,7 +56,7 @@ export default SiteFooter;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
       column-gap: var(--spatial-scale-1);
-      margin: 0 auto var(--spatial-scale-3);
+      margin: 0 auto 7vh;
       padding: 0;
       width: calc(100% * 12 / 14);
     }
