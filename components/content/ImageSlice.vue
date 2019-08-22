@@ -12,18 +12,16 @@
   export default createComponent({
     props: {
       block: {
-        primary: {
-          caption: String,
-          display_size: String,
-          image: {
-            url: String,
-            alt: String,
-          },
+        caption: String,
+        display_size: String,
+        image: {
+          url: String,
+          alt: String,
         },
       },
     },
     setup (props) {
-      const item = props.block!.primary;
+      const item = props.block!;
       const display_size = value(item.display_size);
       const url = value(item.image.url);
       const alt = value(item.image.alt);

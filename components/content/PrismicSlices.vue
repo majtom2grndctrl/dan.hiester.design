@@ -1,7 +1,7 @@
 <template>
   <div class="prismic-content">
   <template v-for="(slice, i) in prismicDocument.data.body">
-    <ImageSlice v-if="slice.slice_type == 'image_block'" :block="slice" :key="'image-' + i" />
+    <ImageSlice v-if="slice.slice_type == 'image_block'" :block="slice.primary" :key="'image-' + i" />
   </template>
   <div class="prismic-content" v-html="parsedContent" />
   </div>
@@ -46,7 +46,8 @@ class PrismicSlices extends Vue {
   data() {
     // console.log('Document is: ', this.$props.prismicDocument)
     return {
-      parsedContent: parseSliceContent(this.prismicDocument)
+      slices: this.prismicDocument.data.body,
+      parsedContent: parseSliceContent(this.prismicDocument),
     }
   }
 
