@@ -1,5 +1,7 @@
 <template>
   <div>
+    <BlockType v-if="blockType" v-html="blockType" class="block-type" />
+    <BlockType class="block-type">Sample block type</BlockType>
     <div v-if="title1" v-html="title1" />
     <div class="lede" v-if="lede" v-html="lede" />
     <div v-if="content" v-html="content" />
@@ -35,6 +37,10 @@ const ContentSlice = createComponent({
     };
   },
 });
+
+ContentSlice.components = {
+  BlockType,
+};
 
 export default ContentSlice;
 </script>
