@@ -1,5 +1,5 @@
 <template>
-  <div class="prismic-content">
+  <div>
     <div v-if="title1" v-html="title1" />
     <div class="lede" v-if="lede" v-html="lede" />
     <div v-if="content" v-html="content" />
