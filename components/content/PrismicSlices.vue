@@ -1,9 +1,9 @@
 <template>
   <div class="prismic-content">
-  <template v-for="(slice, i) in prismicDocument.data.body">
-    <ImageSlice v-if="slice.slice_type == 'image_block'" :block="slice.primary" :key="'image-' + i" />
-    <ContentSlice v-if="slice.slice_type == 'content_block'" :block="slice.primary" :key="'content-' + i" />
-  </template>
+    <template v-for="(slice, i) in prismicDocument.data.body">
+      <ImageSlice v-if="slice.slice_type == 'image_block'" :block="slice.primary" :key="'image-' + i" />
+      <ContentSlice v-if="slice.slice_type == 'content_block'" :block="slice.primary" :key="'content-' + i" />
+    </template>
   </div>
 </template>
 
