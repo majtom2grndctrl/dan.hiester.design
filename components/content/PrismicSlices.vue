@@ -4,7 +4,6 @@
     <ImageSlice v-if="slice.slice_type == 'image_block'" :block="slice.primary" :key="'image-' + i" />
     <ContentSlice v-if="slice.slice_type == 'content_block'" :block="slice.primary" :key="'content-' + i" />
   </template>
-  <div class="prismic-content" v-html="parsedContent" />
   </div>
 </template>
 
