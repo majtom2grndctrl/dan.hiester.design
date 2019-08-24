@@ -1,8 +1,7 @@
 <template>
-  <div>
+  <div class="prismic-content">
     <BlockType v-if="blockType" v-html="blockType" class="block-type" />
-    <BlockType class="block-type">Sample block type</BlockType>
-    <div v-if="title1" v-html="title1" />
+    <div v-if="title1" v-html="title1" class="block-title" />
     <div class="lede" v-if="lede" v-html="lede" />
     <div v-if="content" v-html="content" />
   </div>
@@ -46,9 +45,12 @@ export default ContentSlice;
 </script>
 
 <style lang="postcss" scoped>
-.block-type {
+.BlockType.block-type {
   color: var(--gray-600);
 }
+</style>
+
+<style lang="postcss">
 
 /*
   Styles for content retrieved from the cloud CMS
@@ -69,20 +71,20 @@ export default ContentSlice;
     margin-top: var(--spatial-scale-1);
     margin-bottom: var(--spatial-scale-2);
   }
-  & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6 {
+  & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6, & .block-type {
     box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
     max-width: 40rem;
     padding-right: var(--spatial-scale-2);
   }
-  & p, & h2, & h3, & h4, & h5, & h6 {
+  & p, & h2, & h3, & h4, & h5, & h6, & .block-type {
     padding-left: var(--spatial-scale-2);
   }
   & ol, & ul {
     padding-left: var(--spatial-scale-8);
   }
-  & h1, & h2, & h3, & h4, & h5, & h6 {
+  & h3, & h4, & h5, & h6 {
     color: var(--gray-600);
     margin-top: 1.5em;
     margin-bottom: .75em;
@@ -90,8 +92,19 @@ export default ContentSlice;
   & h2 {
     font-size: var(--type-scale-3);
     line-height: var(--spatial-scale-7);
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  & .block-title {
     margin-top: var(--spatial-scale-7);
     margin-bottom: var(--spatial-scale-1);
+  }
+  & .block-type {
+    margin-top: var(--spatial-scale-7);
+    margin-bottom: var(--spatial-scale-00);
+    & + .block-title {
+      margin-top: 0;
+    }
   }
   & > pre {
     background: var(--gray-800);
@@ -113,10 +126,10 @@ export default ContentSlice;
       font-size: var(--type-scale-4);
       line-height: var(--spatial-scale-8);
     }
-    & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6 {
+    & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6, & .block-type {
       padding-right: var(--spatial-scale-5);
     }
-    & p, & h2, & h3, & h4, & h5, & h6 {
+    & p, & h2, & h3, & h4, & h5, & h6, & .block-type {
       padding-left: var(--spatial-scale-5);
     }
     & .lede p {
@@ -139,11 +152,11 @@ export default ContentSlice;
     & li {
       margin-bottom: var(--spatial-scale-2);
     }
-    & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6 {
+    & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6, & .block-type {
       max-width: unset;
       width: calc(100% * 8 / 12);
     }
-    & p, & h2, & h3, & h4, & h5, & h6 {
+    & p, & h2, & h3, & h4, & h5, & h6, & .block-type {
       padding: unset;
     }
     & ul, & ol {
@@ -157,7 +170,15 @@ export default ContentSlice;
     & h2 {
       font-size: var(--type-scale-4);
       line-height: var(--spatial-scale-7);
+    }
+    & .block-title {
       margin: var(--spatial-scale-7) auto var(--spatial-scale-3);
+    }
+    & .block-type {
+      margin: var(--spatial-scale-7) auto var(--spatial-scale-00);
+      & + .block-title {
+        margin-top: 0;
+      }
     }
     & h3 {
       font-size: var(--type-scale-3);
