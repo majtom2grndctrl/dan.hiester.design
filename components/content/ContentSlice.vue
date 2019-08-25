@@ -129,8 +129,11 @@ export default ContentSlice;
     & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6, & .block-type {
       padding-right: var(--spatial-scale-5);
     }
-    & p, & h2, & h3, & h4, & h5, & h6, & .block-type {
+    & p, & h2, & h3, & h4, & h5, & h6 {
       padding-left: var(--spatial-scale-5);
+    }
+    & .block-type {
+      padding-left: calc(var(--spatial-scale-5) + .1ch);
     }
     & .lede p {
       font-size: var(--type-scale-3);
@@ -175,7 +178,10 @@ export default ContentSlice;
       margin: var(--spatial-scale-7) auto var(--spatial-scale-3);
     }
     & .block-type {
+      font-size: var(--type-scale-0);
+      line-height: var(--spatial-scale-0);
       margin: var(--spatial-scale-7) auto var(--spatial-scale-00);
+      padding-left: .1ch;
       & + .block-title {
         margin-top: 0;
       }
