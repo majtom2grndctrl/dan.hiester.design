@@ -71,14 +71,14 @@ export default ContentSlice;
     margin-top: var(--spatial-scale-1);
     margin-bottom: var(--spatial-scale-2);
   }
-  & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6, & .block-type {
+  & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6, & .BlockType.block-type {
     box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
     max-width: 40rem;
     padding-right: var(--spatial-scale-2);
   }
-  & p, & h2, & h3, & h4, & h5, & h6, & .block-type {
+  & p, & h2, & h3, & h4, & h5, & h6, & .BlockType.block-type {
     padding-left: var(--spatial-scale-2);
   }
   & ol, & ul {
@@ -99,7 +99,7 @@ export default ContentSlice;
     margin-top: var(--spatial-scale-7);
     margin-bottom: var(--spatial-scale-1);
   }
-  & .block-type {
+  & .BlockType.block-type {
     margin-top: var(--spatial-scale-7);
     margin-bottom: var(--spatial-scale-00);
     & + .block-title {
@@ -126,13 +126,13 @@ export default ContentSlice;
       font-size: var(--type-scale-4);
       line-height: var(--spatial-scale-8);
     }
-    & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6, & .block-type {
+    & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6, & .BlockType.block-type {
       padding-right: var(--spatial-scale-5);
     }
     & p, & h2, & h3, & h4, & h5, & h6 {
       padding-left: var(--spatial-scale-5);
     }
-    & .block-type {
+    & .BlockType.block-type {
       padding-left: calc(var(--spatial-scale-5) + .1ch);
     }
     & .lede p {
@@ -155,11 +155,11 @@ export default ContentSlice;
     & li {
       margin-bottom: var(--spatial-scale-2);
     }
-    & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6, & .block-type {
+    & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6, & .BlockType.block-type {
       max-width: unset;
       width: calc(100% * 8 / 12);
     }
-    & p, & h2, & h3, & h4, & h5, & h6, & .block-type {
+    & p, & h2, & h3, & h4, & h5, & h6, & .BlockType.block-type {
       padding: unset;
     }
     & ul, & ol {
@@ -177,7 +177,7 @@ export default ContentSlice;
     & .block-title {
       margin: var(--spatial-scale-7) auto var(--spatial-scale-3);
     }
-    & .block-type {
+    & .BlockType.block-type {
       font-size: var(--type-scale-0);
       line-height: var(--spatial-scale-0);
       margin: var(--spatial-scale-7) auto var(--spatial-scale-00);
