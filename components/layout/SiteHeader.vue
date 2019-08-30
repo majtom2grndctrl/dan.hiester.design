@@ -1,28 +1,25 @@
 <script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator'
-import DyLogo from '~/components/DyLogo.vue'
-import paths from '~/paths'
+import { createComponent, value } from 'vue-function-api';
+import * as pathsImport from '~/paths'
 
-@Component({
-  components: {
-    DyLogo,
-//    MobileNavLauncher
-  }
-})
+const SiteHeader = createComponent({
+  setup() {
+    const paths = value(pathsImport.default);
 
-class SiteHeader extends Vue {
-  paths = paths;
-}
+    return {
+      paths
+    };
+  },
+});
 
-
-export default SiteHeader
+export default SiteHeader;
 </script>
 
 
 <template>
   <header class="SiteHeader">
     <div class="logo-container">
-      <nuxt-link :to="paths.about" exact class="logo-link">
+      <nuxt-link to="paths.about" exact class="logo-link">
         <span class="dan-hiester">Dan Hiester</span>
       </nuxt-link>
     </div>
@@ -30,6 +27,9 @@ export default SiteHeader
       <nuxt-link :to="paths.portfolio">Portfolio</nuxt-link>
       <nuxt-link :to="paths.blog">Blog</nuxt-link>
       <nuxt-link :to="paths.about" exact>About</nuxt-link>
+    </nav>
+    <nav class="nav2">
+      <nuxt-link :to="paths.portfolio" v-if="true">Back to Portfolio</nuxt-link>
     </nav>
   </header>
 </template>
