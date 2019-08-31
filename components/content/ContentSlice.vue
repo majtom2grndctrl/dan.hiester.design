@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import PrismicDOM from 'prismic-dom';
-import { createComponent, value, onMounted } from 'vue-function-api';
+import { createComponent, ref, onMounted } from '@vue/composition-api';
 import BlockType from '~/components/text/BlockType.vue';
 
 const ContentSlice = createComponent({
@@ -23,10 +23,10 @@ const ContentSlice = createComponent({
   },
   setup(props) {
     const block = props.block!;
-    const blockType = value(block.block_type);
-    const title1 = value(PrismicDOM.RichText.asHtml(block.title1));
-    const lede = value(PrismicDOM.RichText.asHtml(block.lede));
-    const content = value(PrismicDOM.RichText.asHtml(block.content));
+    const blockType = ref(block.block_type);
+    const title1 = ref(PrismicDOM.RichText.asHtml(block.title1));
+    const lede = ref(PrismicDOM.RichText.asHtml(block.lede));
+    const content = ref(PrismicDOM.RichText.asHtml(block.content));
 
     return {
       blockType,
