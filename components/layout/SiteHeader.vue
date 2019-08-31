@@ -1,10 +1,10 @@
 <script lang="ts">
-import { createComponent, value } from 'vue-function-api';
+import { createComponent, ref } from '@vue/composition-api';
 import * as pathsImport from '~/paths'
 
 const SiteHeader = createComponent({
   setup() {
-    const paths = value(pathsImport.default);
+    const paths = ref(pathsImport.default);
 
     return {
       paths
