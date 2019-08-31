@@ -52,7 +52,7 @@ export default Vue.extend({
     }
   },
   computed: {
-    className: function() {
+    className: function(): string {
       return 'CtaLink ' + ctaStyles[this.ctaStyle]
     }
   }

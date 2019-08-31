@@ -52,6 +52,7 @@ module.exports = {
   */
   loading: { color: 'rgba(3, 161, 213, .3)' },
   modules: [
+    ['@nuxt/typescript-build'],
     ['@nuxtjs/google-tag-manager', { id: process.env.NUXT_ENV_GTM_ID }],
   ],
   plugins: ['~/plugins/function-api'],

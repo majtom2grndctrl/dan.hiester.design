@@ -7,7 +7,7 @@
 
 <script lang="ts">
   import PrismicDOM from 'prismic-dom';
-  import { createComponent, value, onMounted } from 'vue-function-api';
+  import { createComponent, ref, onMounted } from '@vue/composition-api';
 
   export default createComponent({
     props: {
@@ -22,10 +22,10 @@
     },
     setup (props) {
       const item = props.block!;
-      const display_size = value(item.display_size);
-      const url = value(item.image.url);
-      const alt = value(item.image.alt);
-      const caption = value(PrismicDOM.RichText.asHtml(item.caption));
+      const display_size = ref(item.display_size);
+      const url = ref(item.image.url);
+      const alt = ref(item.image.alt);
+      const caption = ref(PrismicDOM.RichText.asHtml(item.caption));
 
       return {
         display_size,
