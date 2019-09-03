@@ -1,13 +1,13 @@
 <template>
   <div>
     <section class="BlogIndex" v-if="blog_posts">
-      <blog-post v-for="(post, index) in blog_posts" :post="post" :key="index" />
+      <BlogPost v-for="(post, index) in blog_posts" :post="post" :key="index" />
     </section>
     <section v-else>
       <h1>Signal disrupted</h1>
       <p>Your browser tried to download this blog post, but something went wrong. Try checking your internet connection and <button onClick="window.location.reload()" class="btn-link">refreshing this page</button>.</p>
     </section>
-    <contact-cta v-if="blog_posts" />
+    <ContactCta v-if="blog_posts" />
   </div>
 </template>
 

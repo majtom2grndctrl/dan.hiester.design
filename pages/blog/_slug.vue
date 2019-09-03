@@ -7,8 +7,8 @@
       </div>
       <img class="image" v-if="post.heroImage" :src="post.heroImage.url" :alt="post.heroImage.alt" />
     </header>
-    <prismic-slices :prismicDocument="post.prismicDocument" />
-    <contact-cta />
+    <PrismicSlices :prismicDocument="post.prismicDocument" />
+    <ContactCta />
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <case-study v-if="caseStudy" :data="caseStudy" />
-    <contact-cta />
+    <ContactCta />
   </div>
 </template>
 

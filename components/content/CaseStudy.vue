@@ -44,7 +44,7 @@
         </div>
       </div>
     </div>
-    <prismic-slices v-if="data.document" :prismicDocument="data.document" />
+    <PrismicSlices v-if="data.document" :prismicDocument="data.document" />
   </article>
 </template>
 
