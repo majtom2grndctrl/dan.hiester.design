@@ -12,16 +12,20 @@ import PrismicDOM from 'prismic-dom';
 import { createComponent, ref, onMounted } from '@vue/composition-api';
 import BlockType from '~/components/text/BlockType.vue';
 
-const ContentSlice = createComponent({
-  props: {
-    block: {
-      block_type: String,
-      title1: String,
-      lede: String,
-      content: String,
-    }
-  },
-  setup(props) {
+interface ContentSliceProps {
+  block: ContentBlock;
+};
+
+interface ContentBlock {
+  block_type: string;
+  title1?: string;
+  lede?: string;
+  content?: string;
+};
+
+const ContentSlice = createComponent<ContentSliceProps>({
+  props: ['block'],
+  setup(props: ContentSliceProps) {
     const block = props.block!;
     const blockType = ref(block.block_type);
     const title1 = ref(PrismicDOM.RichText.asHtml(block.title1));
