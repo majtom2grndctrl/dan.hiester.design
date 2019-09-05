@@ -91,6 +91,7 @@ export default ContentSlice;
   }
   & h2 {
     font-size: var(--type-scale-3);
+    font-weight: 500;
     line-height: var(--spatial-scale-7);
     margin-top: 0;
     margin-bottom: 0;
