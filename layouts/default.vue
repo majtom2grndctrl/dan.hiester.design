@@ -24,6 +24,7 @@
 import { Vue, Component } from 'nuxt-property-decorator'
 import SiteHeader from '~/components/layout/SiteHeader.vue'
 import SiteFooter from '~/components/layout/SiteFooter.vue';
+import './webfonts.css';
 
 @Component( {
   components: {
@@ -44,7 +45,6 @@ export default DefaultLayout
 </script>
 
 <style lang="postcss">
-
 @media (--viewport-small) {
   :root {
     --type-scale-base: calc(20rem/16);
