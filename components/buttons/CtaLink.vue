@@ -8,7 +8,7 @@
     box-sizing: border-box;
     border-radius: .5em;
     display: block;
-    font-weight: 600;
+    font-weight: 500;
     font-family: var(--font-heading);
     font-size: 1rem;
     padding: .5em 3em;

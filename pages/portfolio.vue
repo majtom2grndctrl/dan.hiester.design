@@ -1,6 +1,6 @@
 <template>
   <main-layout>
-    <template slot="section-title">Portfolio</template>
+    <template slot="section-title"><span class="p">P</span><span class="o">o</span>rt<span class="f">f</span><span class="o">o</span>li<span class="o">o</span></template>
     <!--<template slot="section-navigation"><nuxt-link to="/portfolio">All Projects</nuxt-link><nuxt-link to="/portfolio/ux">UX</nuxt-link></template>-->
     <nuxt-child/>
   </main-layout>

@@ -147,7 +147,6 @@ export default CaseStudy
   }
   .title {
     color: var(--white);
-    font-weight: 400;
     font-size: var(--type-scale-3);
     line-height: var(--spatial-scale-7);
     margin: 0 0 var(--spatial-scale-2) 0;
@@ -181,7 +180,6 @@ export default CaseStudy
     & h2 {
       color: var(--gray-600);
       font-size: var(--type-scale-00);
-      font-weight: 500;
       line-height: var(--spatial-scale-0);
       margin: var(--spatial-scale-4) 0 var(--spatial-scale-1);
       text-transform: uppercase;
