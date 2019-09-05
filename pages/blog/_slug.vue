@@ -92,6 +92,7 @@ export default BlogView
   }
   .title {
     font-size: var(--type-scale-3);
+    font-weight: 400;
     line-height: var(--spatial-scale-7);
     margin: var(--spatial-scale-3) 0 var(--spatial-scale-0);
   }
