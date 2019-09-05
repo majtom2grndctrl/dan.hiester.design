@@ -81,15 +81,17 @@ export default AboutPage;
   font-family: var(--font-body);
 }
 .dan-hiester {
+  font-family: var(--font-heading);
   font-size: var(--type-scale-4);
+  font-weight: 400;
   line-height: var(--spatial-scale-4);
   margin: 0 0 var(--spatial-scale-0) -.055em;
 }
 .title {
   color: var(--gray-500);
   display: block;
-  font-family: var(--font-heading);
-  font-size: var(--type-scale-2);
+  font-size: var(--type-scale-1);
+  font-weight: 600;
 }
 .overview {
   font-size: var(--type-scale-1);

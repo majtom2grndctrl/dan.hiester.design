@@ -74,6 +74,7 @@ export default SiteFooter;
   .dan-hiester {
     color: var(--gray-600);
     font-size: var(--type-scale-3);
+    font-weight: 500;
     line-height: var(--spatial-scale-3);
     margin-left: -.04em;
     width: 6em;
