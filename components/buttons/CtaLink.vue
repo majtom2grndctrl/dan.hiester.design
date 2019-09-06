@@ -8,13 +8,12 @@
     box-sizing: border-box;
     border-radius: .5em;
     display: block;
-    font-weight: 600;
-    font-family: var(--font-heading);
+    font-weight: 500;
+    font-family: var(--font-body);
     font-size: 1rem;
     padding: .5em 3em;
     text-align: center;
     text-decoration: none;
-    text-transform: uppercase;
     transition: opacity .33s;
     background: #fff;
     color: #406A79;
