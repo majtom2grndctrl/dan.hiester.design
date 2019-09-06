@@ -4,7 +4,7 @@
       <h2 class="title">{{story.title}}</h2>
       <block-type class="type">{{story.type}}</block-type>
       <div class="description block-preview">{{story.description}}</div>
-      <cta-link class="cta" :to="story.href">{{story.ctaLabel}}</cta-link>
+      <cta-link class="cta" :to="story.href" v-html="story.ctaLabel" />
     </div>
     <div class="image">
       <img :src="story.imgSrc" :alt="story.imgAlt" />

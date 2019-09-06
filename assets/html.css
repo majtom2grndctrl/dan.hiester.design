@@ -19,7 +19,7 @@
 
   --white: #fff;
 
-  --font-heading: poppins, sans-serif;
+  --font-heading: gilmer, poppins, sans-serif;
   --font-body: libre-franklin, 'Libre Franklin', sans-serif;
   --mobile-nav-transition-duration: .3s;
 
@@ -36,7 +36,7 @@
   --type-scale-0: calc(var(--type-scale-base) / var(--scale-multiplier));
   --type-scale-00: calc(var(--type-scale-0) / var(--scale-multiplier));
 
-  --spatial-scale-base: calc(var(--type-scale-base) * .705);
+  --spatial-scale-base: calc(var(--type-scale-base) * .71);
   --spatial-scale-1: var(--spatial-scale-base);
   --spatial-scale-2: calc(var(--spatial-scale-1) * var(--scale-multiplier));
   --spatial-scale-3: calc(var(--spatial-scale-2) * var(--scale-multiplier));
@@ -80,11 +80,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dan-hiester {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   display: block;
   font-weight: 600;
-  transform: scaleX(1.1);
-  transform-origin: left;
 }
 
 /*

@@ -1,16 +1,16 @@
 <template>
   <div>
-    <anthology class="Anthology--inroads">
-      <template v-slot:hero><anthology-hero :data="inRoadsData.hero" /></template>
-      <anthology-item v-for="(data, index) in inRoadsData.items" :data="data" :key="'key-' + index" />
-    </anthology>
+    <Anthology class="Anthology--inroads">
+      <template v-slot:hero><AnthologyHero :data="inRoadsData.hero" /></template>
+      <AnthologyItem v-for="(data, index) in inRoadsData.items" :data="data" :key="'key-' + index" />
+    </Anthology>
 
     <div class="grid-8-3 defer-for-transition">
-      <stand-alone :story="fn1Data" class="fn1 grid-child-8" />
-      <suggestion :data="blogSuggestion" class="featured-blog grid-child-3" />
+      <StandAlone :story="fn1Data" class="fn1 grid-child-8" />
+      <Suggestion :data="blogSuggestion" class="featured-blog grid-child-3" />
     </div>
 
-    <contact-cta class="defer-for-transition" />
+    <ContactCta class="defer-for-transition" />
   </div>
 </template>
 

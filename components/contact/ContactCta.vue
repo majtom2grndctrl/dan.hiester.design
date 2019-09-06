@@ -7,7 +7,7 @@
     <div class="content">
       <h1 class="title">There’s so much more to talk&nbsp;about!</h1>
       <p>I’ve worked on many different teams and challenges. Some of that work hasn’t been published here yet&mdash;<strong>much of it can’t be</strong>. The&nbsp;best way to get to know what I have to offer is to talk shop over&nbsp;coffee.</p>
-      <cta-link class="cta" :href="ctaTarget" variant="white">Let’s get in touch</cta-link>
+      <cta-link class="cta" :href="ctaTarget">Let’s get in touch</cta-link>
     </div>
   </section>
 </template>

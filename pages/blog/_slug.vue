@@ -7,8 +7,8 @@
       </div>
       <img class="image" v-if="post.heroImage" :src="post.heroImage.url" :alt="post.heroImage.alt" />
     </header>
-    <prismic-slices :prismicDocument="post.prismicDocument" />
-    <contact-cta />
+    <PrismicSlices :prismicDocument="post.prismicDocument" />
+    <ContactCta />
   </div>
 </template>
 
@@ -92,6 +92,7 @@ export default BlogView
   }
   .title {
     font-size: var(--type-scale-3);
+    font-weight: 400;
     line-height: var(--spatial-scale-7);
     margin: var(--spatial-scale-3) 0 var(--spatial-scale-0);
   }

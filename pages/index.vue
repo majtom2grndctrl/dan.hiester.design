@@ -11,7 +11,7 @@
           <nuxt-link :to="paths.blog">Blog</nuxt-link>
         </nav>
         <div class="overview">
-          <p>A UX Product Designer specializing in&nbsp;code and design&nbsp;systems.</p>
+          <p>A Product Designer specializing in&nbsp;code and design&nbsp;systems.</p>
           <p>Think of me as a Designer with an uppercase D, and a developer with a lowercase d. I spend enough time on both sides of the designer-developer hand-off, I see lots of opportunity to make it more productive, fun, and focused on delivering great&nbsp;products!</p>
         </div>
         <p>Next: <nuxt-link :to="paths.portfolio">Portfolio</nuxt-link></p>
@@ -81,15 +81,17 @@ export default AboutPage;
   font-family: var(--font-body);
 }
 .dan-hiester {
+  font-family: var(--font-heading);
   font-size: var(--type-scale-4);
+  font-weight: 400;
   line-height: var(--spatial-scale-4);
   margin: 0 0 var(--spatial-scale-0) -.055em;
 }
 .title {
   color: var(--gray-500);
   display: block;
-  font-family: var(--font-heading);
-  font-size: var(--type-scale-2);
+  font-size: var(--type-scale-1);
+  font-weight: 600;
 }
 .overview {
   font-size: var(--type-scale-1);

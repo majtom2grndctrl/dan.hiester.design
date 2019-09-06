@@ -36,7 +36,7 @@ export default AnthologyHero
 .title {
   color: var(--white);
   font-size: var(--type-scale-4);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.375em;
   margin: var(--spatial-scale-5) 0 var(--spatial-scale-1);
   text-align: center;

@@ -2,7 +2,7 @@
   <footer class="SiteFooter">
     <div class="meta">
       <h2 class="title"><span class="dan-hiester">Dan Hiester</span></h2>
-      <p class="description">A UX Product Designer specializing in&nbsp;code and design&nbsp;systems.</p>
+      <p class="description">A Product Designer specializing in&nbsp;code and design&nbsp;systems.</p>
       <social-icons class="icons" />
     </div>
     <div class="end">
@@ -74,6 +74,7 @@ export default SiteFooter;
   .dan-hiester {
     color: var(--gray-600);
     font-size: var(--type-scale-3);
+    font-weight: 500;
     line-height: var(--spatial-scale-3);
     margin-left: -.04em;
     width: 6em;
