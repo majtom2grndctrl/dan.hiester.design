@@ -2,11 +2,10 @@
 import { Vue } from 'nuxt-property-decorator';
 import { createComponent, ref, computed } from '@vue/composition-api';
 import { Route } from 'vue-router';
-import pathsImport from '~/paths'
+import paths from '~/paths'
 
 const SiteHeader = createComponent({
   setup(props, context) {
-    const paths = ref(pathsImport);
     const navMode = computed(() => {
       const routeName = context.root.$route.name;
       if (routeName === 'portfolio' || routeName === 'blog') {
