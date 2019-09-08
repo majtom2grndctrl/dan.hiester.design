@@ -1,26 +1,24 @@
 <script lang="ts">
 import { Vue } from 'nuxt-property-decorator';
-import { createComponent, ref, watch, SetupContext, reactive } from '@vue/composition-api';
+import { createComponent, ref, computed } from '@vue/composition-api';
 import { Route } from 'vue-router';
 import pathsImport from '~/paths'
 
 const SiteHeader = createComponent({
-  setup(props, context: SetupContext) {
+  setup(props, context) {
     const paths = ref(pathsImport);
-    const currentPath = reactive(context.root.$route.name);
-    let navMode = currentPath === ('portfolio' || 'blog') ? ref('tier-1') : ref('other');
-    console.log('currentPath = ', currentPath);
-    watch(() => context.root.$route.name, (nextPath, prevPath) => {
-      console.log('Hello! ', { nextPath, prevPath });
-      navMode = nextPath === ('portfolio' || 'blog') ? ref('tier-1') : ref('other');
+    const navMode = computed(() => {
+      if (context.root.$route.name === ('portfolio' || 'blog')) {
+        return 'tier-1';
+      } else {
+        return 'other';
+      };
     });
-    
-    console.log('route = ', context.root.$route);
+
     return {
       paths,
-      currentPath,
       navMode,
-    }
+    };
   },
 });
 
