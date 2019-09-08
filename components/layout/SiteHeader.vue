@@ -8,7 +8,8 @@ const SiteHeader = createComponent({
   setup(props, context) {
     const paths = ref(pathsImport);
     const navMode = computed(() => {
-      if (context.root.$route.name === ('portfolio' || 'blog')) {
+      const routeName = context.root.$route.name;
+      if (routeName === 'portfolio' || routeName === 'blog') {
         return 'tier-1';
       } else {
         return 'other';
