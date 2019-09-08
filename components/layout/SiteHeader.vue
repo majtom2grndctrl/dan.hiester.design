@@ -1,14 +1,26 @@
 <script lang="ts">
-import { createComponent, ref } from '@vue/composition-api';
+import { Vue } from 'nuxt-property-decorator';
+import { createComponent, ref, watch, SetupContext, reactive } from '@vue/composition-api';
+import { Route } from 'vue-router';
 import pathsImport from '~/paths'
 
 const SiteHeader = createComponent({
-  setup() {
+  setup(props, context: SetupContext) {
     const paths = ref(pathsImport);
-
+    const currentPath = reactive(context.root.$route.name);
+    let navMode = currentPath === ('portfolio' || 'blog') ? ref('tier-1') : ref('other');
+    console.log('currentPath = ', currentPath);
+    watch(() => context.root.$route.name, (nextPath, prevPath) => {
+      console.log('Hello! ', { nextPath, prevPath });
+      navMode = nextPath === ('portfolio' || 'blog') ? ref('tier-1') : ref('other');
+    });
+    
+    console.log('route = ', context.root.$route);
     return {
-      paths
-    };
+      paths,
+      currentPath,
+      navMode,
+    }
   },
 });
 
@@ -19,11 +31,11 @@ export default SiteHeader;
 <template>
   <header class="SiteHeader">
     <div class="logo-container">
-      <nuxt-link to="paths.about" exact class="logo-link">
+      <nuxt-link :to="paths.about" exact class="logo-link">
         <span class="dan-hiester">Dan Hiester</span>
       </nuxt-link>
     </div>
-    <nav class="nav1">
+    <nav class="nav1" :class="navMode">
       <nuxt-link :to="paths.portfolio">Portfolio</nuxt-link>
       <nuxt-link :to="paths.blog">Blog</nuxt-link>
       <nuxt-link :to="paths.about" exact>About</nuxt-link>
