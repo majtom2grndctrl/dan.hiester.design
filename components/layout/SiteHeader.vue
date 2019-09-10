@@ -6,6 +6,9 @@ import paths from '~/paths'
 
 const SiteHeader = createComponent({
   setup(props, context) {
+    const pathBase = computed(() => (
+      context.root.$route.matched[0].path
+    ));
     const navMode = computed(() => {
       const routeName = context.root.$route.name;
       if (routeName === 'portfolio' || routeName === 'blog') {
@@ -18,6 +21,7 @@ const SiteHeader = createComponent({
     return {
       paths,
       navMode,
+      pathBase,
     };
   },
 });
@@ -38,8 +42,9 @@ export default SiteHeader;
       <nuxt-link :to="paths.blog">Blog</nuxt-link>
       <nuxt-link :to="paths.about" exact>About</nuxt-link>
     </nav>
-    <nav class="nav2">
-      <nuxt-link :to="paths.portfolio" v-if="true">Back to Portfolio</nuxt-link>
+    <nav v-if="navMode !== 'tier-1'" class="nav2">
+      <nuxt-link :to="paths.portfolio" v-if="pathBase === '/portfolio'">Back to Portfolio</nuxt-link>
+      <nuxt-link :to="paths.blog" v-if="pathBase === '/blog'">More blog posts</nuxt-link>
     </nav>
   </header>
 </template>
@@ -108,12 +113,19 @@ export default SiteHeader;
     flex-direction: row;
     flex-basis: 100%;
     justify-content: center;
+  opacity: 1;
   padding: var(--spatial-scale-4);
   position: fixed;
     right: 0;
     bottom: 0;
     left: 0;
     z-index: 20;
+  transform: translate3d(0, 0, 0);
+  transition: transform .2s ease-in, opacity .175s linear;
+  &:not(.tier-1) {
+    opacity: .25;
+    transform: translate3d(0, 100%, 0);
+  }
   & > a {
     background-color: var(--link-bg-inactive);
     border-radius: var(--spatial-scale-00);
@@ -165,6 +177,12 @@ export default SiteHeader;
     padding: 0;
     transition: none;
     transform: none;
+    &:not(.teir-1) {
+      display: inherit;
+      opacity: 1;
+      transition: none;
+      transform: none;
+    }
     & > a {
       flex-basis: unset;
       font-weight: 400;
