@@ -44,11 +44,16 @@ export default SiteFooter;
   .SiteFooter {
     box-sizing: border-box;
     padding: var(--spatial-scale-6) var(--spatial-scale-3) 0 var(--spatial-scale-3);
-    margin: 0 0 calc(var(--spatial-scale-7) * 2) 0;
+    &.tier-1 {
+      margin: 0 0 calc(var(--spatial-scale-7) * 2) 0;
+    }
   }
   @media(--viewport-small) {
     .SiteFooter {
       margin: unset;
+      &.tier-1 {
+        margin: 0 auto calc(100% * 1/14);
+      }
     }
   }
   @media(--viewport-medium) {

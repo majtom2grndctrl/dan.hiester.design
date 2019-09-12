@@ -2,7 +2,8 @@
 import { Vue } from 'nuxt-property-decorator';
 import { createComponent, ref, computed } from '@vue/composition-api';
 import { Route } from 'vue-router';
-import paths from '~/paths'
+import CtaLink from '~/components/buttons/CtaLink.vue';
+import paths from '~/paths';
 
 const SiteHeader = createComponent({
   setup(props, context) {
@@ -17,12 +18,14 @@ const SiteHeader = createComponent({
         return 'other';
       };
     });
-
     return {
       paths,
       navMode,
       pathBase,
     };
+  },
+  components: {
+    CtaLink,
   },
 });
 
@@ -33,19 +36,21 @@ export default SiteHeader;
 <template>
   <header class="SiteHeader">
     <div class="logo-container">
-      <nuxt-link :to="paths.about" exact class="logo-link">
+      <NuxtLink :to="paths.about" exact class="logo-link">
         <span class="dan-hiester">Dan Hiester</span>
-      </nuxt-link>
+      </NuxtLink>
     </div>
     <nav class="nav1" :class="navMode">
-      <nuxt-link :to="paths.portfolio">Portfolio</nuxt-link>
-      <nuxt-link :to="paths.blog">Blog</nuxt-link>
-      <nuxt-link :to="paths.about" exact>About</nuxt-link>
+      <NuxtLink :to="paths.portfolio">Portfolio</NuxtLink>
+      <NuxtLink :to="paths.blog">Blog</NuxtLink>
+      <NuxtLink :to="paths.about" exact>About</NuxtLink>
     </nav>
-    <nav v-if="navMode !== 'tier-1'" class="nav2">
-      <nuxt-link :to="paths.portfolio" v-if="pathBase === '/portfolio'">Back to Portfolio</nuxt-link>
-      <nuxt-link :to="paths.blog" v-if="pathBase === '/blog'">More blog posts</nuxt-link>
-    </nav>
+    <div v-if="navMode !== 'tier-1'" class="nav2-container">
+      <nav class="nav2">
+        <CtaLink :to="paths.portfolio" v-if="pathBase === '/portfolio'" class="nav-link">❮ Back to Portfolio</CtaLink>
+        <CtaLink :to="paths.blog" v-if="pathBase === '/blog'" class="nav-link">❮ More blog posts</CtaLink>
+      </nav>
+    </div>
   </header>
 </template>
 
@@ -104,7 +109,7 @@ export default SiteHeader;
   }
 
 /* 
-   Navigation
+   Primary Navigation
 ******************************/
 .nav1 {
   background: var(--white);
@@ -199,6 +204,24 @@ export default SiteHeader;
     & > a {
       font-size: var(--type-scale-0);
     }
+  }
+}
+
+/* 
+   Primary Navigation
+******************************/
+
+.nav2-container {
+  background: rgba(255, 255, 255, .8);
+  display: flex;
+  position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  & .CtaLink.nav-link {
+    background: rgba(255, 255, 255, 0);
+    font-family: var(--font-heading);
+    padding: var(--spatial-scale-2);
   }
 }
 

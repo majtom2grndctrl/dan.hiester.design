@@ -10,9 +10,9 @@
       <!-- Display main site template when path isn't '/' -->
       <template v-if="!isRootPath">
         <div>
-          <site-header />
+          <SiteHeader :navMode="navMode" />
           <nuxt/>
-          <site-footer />
+          <SiteFooter :class="navMode" />
         </div>
       </template>
     </transition>
@@ -21,25 +21,44 @@
 
 
 <script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator'
+import { Vue } from 'nuxt-property-decorator'
+import { createComponent, ref, computed } from '@vue/composition-api';
 import SiteHeader from '~/components/layout/SiteHeader.vue'
 import SiteFooter from '~/components/layout/SiteFooter.vue';
 import './webfonts.css';
 
-@Component( {
+const DefaultLayout =  createComponent({
   components: {
     SiteHeader,
     SiteFooter,
-  }
-})
-class DefaultLayout extends Vue {
-  get transitionName() {
-    return this.$route.path === '/' ? '' : 'home';
-  };
-  get isRootPath() {
-    return this.$route.path === '/';
-  }
-}
+  },
+  setup(props, context) {
+    const transitionName = computed(() => {
+      return context.root.$route.path === '/' ? '' : 'home';
+    });
+    const isRootPath = computed(() => {
+      return context.root.$route.path === '/';
+    });
+    const pathBase = computed(() => (
+      context.root.$route.matched[0].path
+    ));
+    const navMode = computed(() => {
+      const routeName = context.root.$route.name;
+      if (routeName === 'portfolio' || routeName === 'blog') {
+        return 'tier-1';
+      } else {
+        return 'other';
+      };
+    });
+
+    return {
+      transitionName,
+      isRootPath,
+      navMode,
+      pathBase,
+    };
+  },
+});
 
 export default DefaultLayout
 </script>
