@@ -104,6 +104,15 @@ export default ContentSlice;
     margin-top: 0;
     margin-bottom: 0;
   }
+  & pre {
+    background: var(--gray-800);
+    box-sizing: border-box;
+    color: var(--bg-blue-200);
+    overflow-x: auto;
+    margin-top: var(--spatial-scale-2);
+    margin-bottom: var(--spatial-scale-2);
+    padding: var(--spatial-scale-2) var(--spatial-scale-2);
+  }
   & .block-title {
     margin-top: var(--spatial-scale-7);
     margin-bottom: var(--spatial-scale-1);
@@ -114,15 +123,6 @@ export default ContentSlice;
     & + .block-title {
       margin-top: 0;
     }
-  }
-  & > pre {
-    background: var(--gray-800);
-    box-sizing: border-box;
-    color: var(--bg-blue-200);
-    overflow-x: auto;
-    margin-top: var(--spatial-scale-2);
-    margin-bottom: var(--spatial-scale-2);
-    padding: var(--spatial-scale-2) var(--spatial-scale-2);
   }
 }
 @media (--viewport-small) {
@@ -148,7 +148,7 @@ export default ContentSlice;
       font-size: var(--type-scale-3);
       line-height: var(--spatial-scale-7);
     }
-    & > pre {
+    & pre {
       margin: var(--spatial-scale-2);
     }
   }
@@ -198,7 +198,7 @@ export default ContentSlice;
     & h3 {
       font-size: var(--type-scale-3);
     }
-    & > pre {
+    & pre {
       font-size: var(--type-scale-0);
       line-height: var(--spatial-scale-4);
       margin-right: 0;
