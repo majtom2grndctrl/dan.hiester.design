@@ -77,4 +77,9 @@ export default Vue.extend({
       padding: var(--spatial-scale-2);
     }
   }
+  @media(--viewport-small) {
+    .Nav2 {
+      display: none;
+    }
+  }
 </style>
