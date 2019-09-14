@@ -1,15 +1,17 @@
 <script lang="ts">
 import { Vue } from 'nuxt-property-decorator';
-import { createComponent, ref, computed } from '@vue/composition-api';
+import { createComponent, ref, computed, onMounted, onBeforeUnmount } from '@vue/composition-api';
 import { Route } from 'vue-router';
-import CtaLink from '~/components/buttons/CtaLink.vue';
+import BackButton from '~/components/buttons/BackButton.vue';
+import Nav2 from '~/components/layout/Nav2.vue';
 import paths from '~/paths';
 
 const SiteHeader = createComponent({
+  components: {
+    BackButton,
+    Nav2,
+  },
   setup(props, context) {
-    const pathBase = computed(() => (
-      context.root.$route.matched[0].path
-    ));
     const navMode = computed(() => {
       const routeName = context.root.$route.name;
       if (routeName === 'portfolio' || routeName === 'blog') {
@@ -18,14 +20,11 @@ const SiteHeader = createComponent({
         return 'other';
       };
     });
+
     return {
       paths,
       navMode,
-      pathBase,
     };
-  },
-  components: {
-    CtaLink,
   },
 });
 
@@ -45,12 +44,7 @@ export default SiteHeader;
       <NuxtLink :to="paths.blog">Blog</NuxtLink>
       <NuxtLink :to="paths.about" exact>About</NuxtLink>
     </nav>
-    <div v-if="navMode !== 'tier-1'" class="nav2-container">
-      <nav class="nav2">
-        <CtaLink :to="paths.portfolio" v-if="pathBase === '/portfolio'" class="nav-link">❮ Back to Portfolio</CtaLink>
-        <CtaLink :to="paths.blog" v-if="pathBase === '/blog'" class="nav-link">❮ More blog posts</CtaLink>
-      </nav>
-    </div>
+    <Nav2 v-if="navMode !== 'tier-1'" />
   </header>
 </template>
 
@@ -204,24 +198,6 @@ export default SiteHeader;
     & > a {
       font-size: var(--type-scale-0);
     }
-  }
-}
-
-/* 
-   Primary Navigation
-******************************/
-
-.nav2-container {
-  background: rgba(255, 255, 255, .8);
-  display: flex;
-  position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  & .CtaLink.nav-link {
-    background: rgba(255, 255, 255, 0);
-    font-family: var(--font-heading);
-    padding: var(--spatial-scale-2);
   }
 }
 
