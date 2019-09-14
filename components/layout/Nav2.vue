@@ -30,7 +30,7 @@ export default Vue.extend({
   },
   computed: {
     mobileNavClass: function() {
-      return this.showNav ? 'Nav2--visible' : '';
+      return this.$data.showNav ? 'Nav2--visible' : '';
     }
   },
   methods: {
@@ -42,7 +42,7 @@ export default Vue.extend({
       
       this.showNav = currentScrollPosition < this.lastScrollPosition;
       this.lastScrollPosition = currentScrollPosition;
-      console.log('showNav = ', this.showNav);
+      // console.log('showNav = ', this.showNav);
 
       if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) return;
       this.showNav = currentScrollPosition < this.lastScrollPosition;
