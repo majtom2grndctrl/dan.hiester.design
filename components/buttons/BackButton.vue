@@ -30,13 +30,14 @@ export default BackButton;
 
 <style lang="postcss" scoped>
   .BackButton {
-    box-sizing: border-box;
+    box-sizing: content-box;
     border-radius: .5em;
     display: flex;
       align-items: center;
     font-weight: 500;
     font-family: var(--font-body);
     font-size: 1rem;
+    height: var(--spatial-scale-1);
     padding: var(--spatial-scale-00);
     text-align: center;
     text-decoration: none;
@@ -45,10 +46,12 @@ export default BackButton;
   }
   .icon {
     display: block;
-    margin: 0 var(--spatial-scale-00) 0 0;
-    width: var(--spatial-scale-00);
+    margin: .125em var(--spatial-scale-00) 0 0;
+    height: var(--spatial-scale-1);
   }
   .label {
     display: block;
+    font-size: var(--type-scale-1);
+    line-height: var(--spatial-scale-1);
   }
 </style>
