@@ -52,7 +52,7 @@ export default SiteFooter;
     .SiteFooter {
       margin: unset;
       &.tier-1 {
-        margin: 0 auto calc(100% * 1/14);
+        margin: 0 auto var(--spatial-scale-7);
       }
     }
   }
