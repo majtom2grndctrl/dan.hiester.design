@@ -21,6 +21,7 @@ import ApiSearchResponse from 'prismic-javascript/d.ts/ApiSearchResponse'
 import ContactCta from '~/components/contact/ContactCta.vue';
 import { Document } from 'prismic-javascript/d.ts/documents'
 import BlogPost from '~/components/content/BlogPost.vue'
+import { scrollToContentTop } from '~/layouts/default.vue';
 import { blogDataMock } from '~/dataMocks'
 
 export const apiEndpoint = 'https://distantly-yours-blog.cdn.prismic.io/api/v2'
@@ -99,6 +100,9 @@ class BlogIndex extends Vue {
   }
   transition (to, from) {
     return swipeTransition(to, from)
+  }
+  mounted() {
+    scrollToContentTop();
   }
 }
 
