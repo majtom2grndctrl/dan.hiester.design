@@ -20,6 +20,7 @@ import { apiEndpoint, parseResponse, BlogPostData } from './index.vue'
 import PrismicSlices from '~/components/content/PrismicSlices.vue'
 import { blogPostMock } from '~/dataMocks';
 import ContactCta from '~/components/contact/ContactCta.vue';
+import { scrollToContentTop } from '~/layouts/default.vue';
 
 @Component({
   components: {
@@ -72,6 +73,10 @@ class BlogView extends Vue {
         { hid: 'twitter:image:alt', name: 'twiter:image:alt', content: post.heroImage.alt },
       ]
     }
+  }
+
+  mounted() {
+    scrollToContentTop();
   }
 }
 

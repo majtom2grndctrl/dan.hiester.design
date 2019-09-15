@@ -25,6 +25,7 @@ import AnthologyHero, { AnthologyHeroData } from '~/components/content/Anthology
 import AnthologyItem, { AnthologyItemData } from '~/components/content/AnthologyItem.vue'
 import StandAlone, { StandAloneProps } from '~/components/content/StandAlone.vue'
 import Suggestion, { SuggestionProps } from '~/components/content/Suggestion.vue'
+import { scrollToContentTop } from '~/layouts/default.vue';
 
 @Component({
   components: {
@@ -82,6 +83,10 @@ class Index extends Vue {
       label: 'See more posts',
       href: '/blog',
     }
+  }
+
+  mounted() {
+    scrollToContentTop();
   }
 }
 

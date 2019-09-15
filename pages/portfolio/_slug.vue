@@ -12,6 +12,7 @@ import CaseStudy, { ICaseStudyData, parseCaseStudy } from '~/components/content/
 import ContactCta from '~/components/contact/ContactCta.vue';
 import { caseStudyMock } from '~/dataMocks';
 import { Document } from 'prismic-javascript/d.ts/documents';
+import { scrollToContentTop } from '~/layouts/default.vue';
 
 @Component({
   components: {
@@ -64,6 +65,10 @@ class CaseStudyPage extends Vue {
         { hid: 'twitter:image:alt', name: 'twiter:image:alt', content: caseStudy.hero_image.alt },
       ]
     }
+  }
+
+  mounted() {
+    scrollToContentTop();
   }
 }
 
