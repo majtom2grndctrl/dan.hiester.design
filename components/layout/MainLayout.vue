@@ -17,7 +17,7 @@
 
 
 <script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator'
+import { Vue, Component } from 'nuxt-property-decorator';
 
 @Component({})
 class MainLayout extends Vue {
@@ -72,7 +72,6 @@ export default MainLayout
   letter-spacing: -.0125em;
   line-height: var(--spatial-scale-5);
   margin: 0 0 0 -.03em;
-  pointer-events: none;
 }
 .title-prefix {
   font-size: calc(12rem/16);
