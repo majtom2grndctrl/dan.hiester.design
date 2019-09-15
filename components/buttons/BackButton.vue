@@ -45,7 +45,7 @@ export default BackButton;
   }
   .icon {
     display: block;
-    margin: .125em var(--spatial-scale-00) 0 0;
+    margin: .11em var(--spatial-scale-00) 0 0;
     height: var(--spatial-scale-0);
   }
   .label {
