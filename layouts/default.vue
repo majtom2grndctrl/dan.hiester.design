@@ -69,6 +69,12 @@ export default DefaultLayout
       bottom: 0;
     overflow: auto;
   }
+  @media (--viewport-small) {
+    .ContentLayout {
+      position: static;
+      overflow: visible;
+    }
+  }
 </style>
 
 <style lang="postcss">
