@@ -1,6 +1,8 @@
 <template>
   <main-layout>
-    <template slot="section-title">Portfolio</template>
+    <template slot="section-title">
+      <SectionTitleLink to="/portfolio">Portfolio</SectionTitleLink>
+    </template>
     <!--<template slot="section-navigation"><nuxt-link to="/portfolio">All Projects</nuxt-link><nuxt-link to="/portfolio/ux">UX</nuxt-link></template>-->
     <nuxt-child/>
   </main-layout>
@@ -10,10 +12,12 @@
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
 import MainLayout, { swipeTransition } from '~/components/layout/MainLayout.vue'
+import SectionTitleLink from '~/components/buttons/SectionTitleLink.vue';
 
 @Component({
   components: {
-    MainLayout
+    MainLayout,
+    SectionTitleLink,
   }
 })
 

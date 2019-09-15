@@ -1,17 +1,23 @@
 <template>
   <main-layout>
-    <template slot="section-title">Blog</template>
+    <template slot="section-title">
+      <SectionTitleLink to="/blog">
+        Blog
+      </SectionTitleLink>
+    </template>
     <nuxt-child/>
   </main-layout>
 </template>
 
 
 <script>
-import MainLayout, { swipeTransition } from '~/components/layout/MainLayout.vue'
+import MainLayout, { swipeTransition } from '~/components/layout/MainLayout.vue';
+import SectionTitleLink from '~/components/buttons/SectionTitleLink.vue';
 
 export default {
   components: {
-    MainLayout
+    MainLayout,
+    SectionTitleLink,
   },
   transition (to, from) {
     return swipeTransition(to, from)
