@@ -1,22 +1,19 @@
 <template>
-  <div>
-    <transition :name="transitionName">
-
-      <!-- Display splash when path is '/' -->
-      <template v-if="isRootPath">
+  <transition :name="transitionName">
+    <!-- Display main site template when path isn't '/' -->
+    <template v-if="!isRootPath">
+      <div class="ContentLayout" id="ContentLayout">
+        <SiteHeader :navMode="navMode" />
         <nuxt/>
-      </template>
+        <SiteFooter :class="navMode" />
+      </div>
+    </template>
 
-      <!-- Display main site template when path isn't '/' -->
-      <template v-if="!isRootPath">
-        <div>
-          <SiteHeader :navMode="navMode" />
-          <nuxt/>
-          <SiteFooter :class="navMode" />
-        </div>
-      </template>
-    </transition>
-  </div>
+    <!-- Display splash when path is '/' -->
+    <template v-if="isRootPath">
+      <nuxt/>
+    </template>
+  </transition>
 </template>
 
 
@@ -62,6 +59,17 @@ const DefaultLayout =  createComponent({
 
 export default DefaultLayout
 </script>
+
+<style lang="postcss" scoped>
+  .ContentLayout {
+    position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+    overflow: auto;
+  }
+</style>
 
 <style lang="postcss">
 @media (--viewport-small) {
