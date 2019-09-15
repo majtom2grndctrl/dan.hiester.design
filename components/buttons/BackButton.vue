@@ -37,7 +37,6 @@ export default BackButton;
     font-weight: 500;
     font-family: var(--font-body);
     font-size: 1rem;
-    height: var(--spatial-scale-1);
     padding: var(--spatial-scale-00);
     text-align: center;
     text-decoration: none;
@@ -47,11 +46,11 @@ export default BackButton;
   .icon {
     display: block;
     margin: .125em var(--spatial-scale-00) 0 0;
-    height: var(--spatial-scale-1);
+    height: var(--spatial-scale-0);
   }
   .label {
     display: block;
-    font-size: var(--type-scale-1);
-    line-height: var(--spatial-scale-1);
+    font-size: var(--type-scale-0);
+    line-height: var(--spatial-scale-0);
   }
 </style>

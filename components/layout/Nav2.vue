@@ -74,7 +74,7 @@ export default Vue.extend({
     }
     & .BackButton.nav-link {
       font-family: var(--font-heading);
-      padding: var(--spatial-scale-2);
+      padding: var(--spatial-scale-3);
     }
   }
   @media(--viewport-small) {
