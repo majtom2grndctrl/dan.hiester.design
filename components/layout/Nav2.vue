@@ -12,8 +12,6 @@ import Vue from 'vue'
 import BackButton from '~/components/buttons/BackButton.vue';
 import paths from '../../paths';
 
-const rootContainer = document.getElementById('ContentLayout')!;
-
 export default Vue.extend({
   components: {
     BackButton,
@@ -37,7 +35,10 @@ export default Vue.extend({
   },
   methods: {
     handleScroll: function() {
+      if (!document) return;
+      const rootContainer = document.getElementById('ContentLayout')!;
       const currentScrollPosition = rootContainer.scrollTop;
+
       if (currentScrollPosition < 100) return (
         this.showNav = false
       );
@@ -52,10 +53,14 @@ export default Vue.extend({
     }
   },
   mounted() {
-    rootContainer.addEventListener('scroll', this.handleScroll);
+    if (document) {
+      document.getElementById('ContentLayout')!.addEventListener('scroll', this.handleScroll);
+    }
   },
   beforeDestroy() {
-      rootContainer.removeEventListener('scroll', this.handleScroll);
+    if (document) {
+      document.getElementById('ContentLayout')!.removeEventListener('scroll', this.handleScroll);
+    }
   }
 })
 </script>
