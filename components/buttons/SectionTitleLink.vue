@@ -1,10 +1,11 @@
 <template>
   <NuxtLink class="SectionTitleLink" :to="to">
     <span v-if="!isExactPath">
-      <svg class="icon" viewBox="0 0 7 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <svg class="icon" viewBox="0 0 7 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <title>back-chevron-medium</title>
         <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-          <g id="Mobile-Back-Comp-Copy" transform="translate(-19.000000, -14.000000)" fill="currentColor" fill-rule="nonzero">
-            <polygon id="back-chevron-bold" points="23.0384151 23 19 18.5 22.9668445 14 25.5149832 14 21.5070309 18.5 25.5149832 23"></polygon>
+          <g id="Mobile-Back-Comp-Copy" transform="translate(-287.000000, -72.000000)" fill="currentColor" fill-rule="nonzero">
+            <polygon id="back-chevron-medium" points="291.062646 81.054 287 76.527 290.990646 72 293.222646 72 289.190646 76.527 293.222646 81.054"></polygon>
           </g>
         </g>
       </svg>
@@ -35,6 +36,11 @@ export default Vue.extend({
     text-decoration: none;
   }
   .icon {
-    height: var(--spatial-scale-6);
+    height: var(--spatial-scale-5);
+  }
+  @media(--viewport-small) {
+    .icon {
+      display: none;
+    }
   }
 </style>
