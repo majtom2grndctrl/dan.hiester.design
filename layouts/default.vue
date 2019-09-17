@@ -74,6 +74,7 @@ export default DefaultLayout
       left: 0;
       bottom: 0;
     overflow: auto;
+    -webkit-overflow-scrolling: touch;
   }
   @media (--viewport-small) {
     .ContentLayout {
