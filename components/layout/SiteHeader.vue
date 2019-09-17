@@ -4,14 +4,12 @@ import { createComponent, ref, computed, onMounted, onBeforeUnmount } from '@vue
 import { Route } from 'vue-router';
 import BackButton from '~/components/buttons/BackButton.vue';
 import Nav1 from '~/components/layout/Nav1.vue';
-import Nav2 from '~/components/layout/Nav2.vue';
 import paths from '~/paths';
 
 const SiteHeader = createComponent({
   components: {
     BackButton,
     Nav1,
-    Nav2,
   },
   setup(props, context) {
     const navMode = computed(() => {
@@ -42,7 +40,6 @@ export default SiteHeader;
       </NuxtLink>
     </div>
     <Nav1 :class="navMode" />
-    <Nav2 v-if="navMode !== 'tier-1'" />
   </header>
 </template>
 
@@ -74,6 +71,9 @@ export default SiteHeader;
     font-size: var(--type-scale-1);
     line-height: var(--spatial-scale-1);
   }
+  .Nav1 {
+    display: none;
+  }
   @media (--viewport-xs) {
 
   }
@@ -86,6 +86,9 @@ export default SiteHeader;
     .logo-link {
       padding-left: var(--spatial-scale-4);
       margin-left: calc(var(--spatial-scale-4) * -1);
+    }
+    .Nav1 {
+      display: inherit;
     }
   }
   @media (--viewport-medium) {

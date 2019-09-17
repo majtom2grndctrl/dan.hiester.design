@@ -2,10 +2,14 @@
   <transition :name="transitionName">
     <!-- Display main site template when path isn't '/' -->
     <template v-if="!isRootPath">
-      <div class="ContentLayout" id="ContentLayout">
-        <SiteHeader :navMode="navMode" />
-        <nuxt/>
-        <SiteFooter :class="navMode" />
+      <div>
+        <div class="ContentLayout" id="ContentLayout">
+          <SiteHeader :navMode="navMode" />
+          <nuxt/>
+          <SiteFooter :class="navMode" />
+        </div>
+        <Nav1 :class="navMode" />
+        <Nav2 v-if="navMode !== 'tier-1'" />
       </div>
     </template>
 
@@ -22,12 +26,16 @@ import { Vue } from 'nuxt-property-decorator'
 import { createComponent, ref, computed } from '@vue/composition-api';
 import SiteHeader from '~/components/layout/SiteHeader.vue'
 import SiteFooter from '~/components/layout/SiteFooter.vue';
+import Nav1 from '~/components/layout/Nav1.vue';
+import Nav2 from '~/components/layout/Nav2.vue';
 import './webfonts.css';
 
 const DefaultLayout =  createComponent({
   components: {
     SiteHeader,
     SiteFooter,
+    Nav1,
+    Nav2,
   },
   setup(props, context) {
     const transitionName = computed(() => {
@@ -80,6 +88,9 @@ export default DefaultLayout
     .ContentLayout {
       position: static;
       overflow: visible;
+    }
+    .ContentLayout + .Nav1, .Nav2 {
+      display: none;
     }
   }
 </style>
