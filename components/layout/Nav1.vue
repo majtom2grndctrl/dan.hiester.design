@@ -79,7 +79,7 @@ export default Nav1;
         opacity: 1;
       }
     }
-    &:focus, &:hover {
+    &:hover {
       background-color: var(--link-bg-active);
       color: var(--gray-400);
     }
