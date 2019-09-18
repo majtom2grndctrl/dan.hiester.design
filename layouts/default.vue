@@ -8,8 +8,8 @@
           <nuxt/>
           <SiteFooter :class="navMode" />
         </div>
-        <Nav1 :class="navMode" />
-        <Nav2 v-if="navMode !== 'tier-1'" />
+        <Nav1 :class="navMode" class="nav1" />
+        <Nav2 v-if="navMode !== 'tier-1'" class="nav2" />
       </div>
     </template>
 
@@ -89,7 +89,7 @@ export default DefaultLayout
       position: static;
       overflow: visible;
     }
-    .ContentLayout + .Nav1, .Nav2 {
+    .ContentLayout + .Nav1.nav1, .Nav2.nav2 {
       display: none;
     }
   }
