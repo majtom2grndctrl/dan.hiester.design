@@ -22,8 +22,8 @@
     "prismic-javascript": "2.1.1"
   },
   "devDependencies": {
+    "@nuxt/types": "0.2.14",
     "@nuxt/typescript-build": "0.2.0",
-    "@types/node": "12.7.3",
-    "@types/vue": "^2.0.0"
+    "@types/node": "12.7.5"
   }
 }
