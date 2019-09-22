@@ -26,7 +26,7 @@ class CaseStudyPage extends Vue {
   async asyncData (ctx) {
 //    console.log ('ctx.params.slug = ', ctx.params.slug)
     if (ctx.payload) {
-      console.log('ctx.payload = ', ctx.payload)
+//      console.log('ctx.payload = ', ctx.payload)
       const payload = ctx.payload as Document
       return {
         caseStudy: parseCaseStudy(payload)
@@ -39,7 +39,7 @@ class CaseStudyPage extends Vue {
         const payload = response.results[0] as Document
         return {caseStudy: parseCaseStudy(payload)}
       }, (err) => {
-        console.error('Something went wrong: ', err)
+//        console.error('Something went wrong: ', err)
         return { title: err }
       })
     }).catch( err => {

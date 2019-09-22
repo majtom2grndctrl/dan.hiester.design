@@ -90,11 +90,11 @@ class BlogIndex extends Vue {
       ).then( function (response) {
         return { blog_posts: parseResponse(response) }
       }, (err) => {
-        console.log('Something went wrong: ', err)
+//        console.log('Something went wrong: ', err)
         return { title: err }
       })
     }).catch( err => {
-      console.warn("Error downloading posts (pages/blog/index)")
+//      console.warn("Error downloading posts (pages/blog/index)")
       return process.env.NODE_ENV === 'development' ? { blog_posts: parseResponse(blogDataMock) } : { blog_posts: undefined }
     })
   }

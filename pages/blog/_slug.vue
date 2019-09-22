@@ -41,15 +41,15 @@ class BlogView extends Vue {
         {}
       ).then( response => {
 //        console.log('Response = ', response)
-        console.log('parsed post: ', parseResponse(response))
+//        console.log('parsed post: ', parseResponse(response))
         return { post: parseResponse(response) as BlogPostData }
       }, err => {
-        console.log('Something went wrong: ', err)
+//        console.log('Something went wrong: ', err)
         return { title: err }
       })
     }).catch( err => {
-      console.warn('Error downloading posts (/pages/blog/_slug.vue)', err)
-      console.log('Using data mock: ', { post: parseResponse(blogPostMock)})
+//      console.warn('Error downloading posts (/pages/blog/_slug.vue)', err)
+//      console.log('Using data mock: ', { post: parseResponse(blogPostMock)})
       const returnPost = parseResponse(blogPostMock) as BlogPostData
       returnPost.heroImage = { url: '', alt: ''}
       returnPost.heroBackground = { url: '' }
