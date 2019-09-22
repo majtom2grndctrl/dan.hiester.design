@@ -67,7 +67,6 @@ const DefaultLayout =  createComponent({
 
 export const scrollToContentTop = () => {
   if (!document) return;
-  console.log('Hello from scrollToContentTop!');
   document.getElementById('ContentLayout')!.scrollTo(0, 0);
 };
 
