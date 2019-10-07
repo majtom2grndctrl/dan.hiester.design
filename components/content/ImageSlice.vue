@@ -19,7 +19,7 @@
           alt: String,
         },
       },
-    },
+    } as const,
     setup (props) {
       const item = props.block!;
       const display_size = ref(item.display_size);
