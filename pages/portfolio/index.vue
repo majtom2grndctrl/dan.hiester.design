@@ -53,7 +53,7 @@ class Index extends Vue {
     items: [
       {
         type: 'UI Case Study',
-        description: 'My team thought a responsive map app was impossible—until we were tweet-shamed for not doing&nbsp;it.',
+        description: 'My team thought a responsive map app was impossible—until a tweet asked why we hadn’t done&nbsp;it.',
         ctaText: 'How I made it possible',
         href: '/portfolio/inroads-ui'
       },
