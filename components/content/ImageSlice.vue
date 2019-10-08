@@ -12,11 +12,25 @@
   export default createComponent({
     props: {
       block: {
-        caption: String,
-        display_size: String,
+        required: true,
+        type: Object,
+        caption: {
+          type: String,
+          required: false,
+        },
+        display_size: {
+          type: String,
+          required: false,
+        },
         image: {
-          url: String,
-          alt: String,
+          url: {
+            type: String,
+            required: true,
+          },
+          alt: {
+            type: String,
+            required: true,
+          },
         },
       },
     } as const,
