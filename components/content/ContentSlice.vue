@@ -26,7 +26,7 @@ interface ContentBlock {
 const ContentSlice = createComponent<ContentSliceProps>({
   props: {
     block: {
-      type: Object as () => ContentBlock,
+      type: Object,
     },
   },
   setup(props: ContentSliceProps) {
