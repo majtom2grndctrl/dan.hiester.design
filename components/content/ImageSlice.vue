@@ -9,33 +9,23 @@
   import PrismicDOM from 'prismic-dom';
   import { createComponent, ref, onMounted } from '@vue/composition-api';
 
-  export default createComponent({
+  interface ImageSliceProps {
+    block: {
+      caption: string;
+      display_size: string;
+      image: {
+        alt: string;
+        url: string;
+      }
+    }
+  }
+
+  export default createComponent<ImageSliceProps>({
     props: {
-      block: {
-        required: true,
-        type: Object,
-        caption: {
-          type: String,
-          required: false,
-        },
-        display_size: {
-          type: String,
-          required: false,
-        },
-        image: {
-          url: {
-            type: String,
-            required: true,
-          },
-          alt: {
-            type: String,
-            required: true,
-          },
-        },
-      },
+      block: Object,
     } as const,
     setup (props) {
-      const item = props.block!;
+      const item = props.block;
       const display_size = ref(item.display_size);
       const url = ref(item.image.url);
       const alt = ref(item.image.alt);
