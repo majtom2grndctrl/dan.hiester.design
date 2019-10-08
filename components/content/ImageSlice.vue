@@ -23,7 +23,7 @@
   export default createComponent<ImageSliceProps>({
     props: {
       block: Object,
-    } as const,
+    },
     setup (props) {
       const item = props.block;
       const display_size = ref(item.display_size);
