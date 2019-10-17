@@ -16,7 +16,7 @@
     "@nuxtjs/google-tag-manager": "2.2.1",
     "@vue/composition-api": "0.3.2",
     "dotenv": "8.1.0",
-    "nuxt": "2.10.0",
+    "nuxt": "^2.10.1",
     "nuxt-property-decorator": "2.4.0",
     "prismic-dom": "2.1.0",
     "prismic-javascript": "2.1.1"
