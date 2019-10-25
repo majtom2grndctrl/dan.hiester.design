@@ -24,7 +24,9 @@ import CtaLink from '~/components/buttons/CtaLink.vue'
 })
 
 class ContactCta extends Vue {
-  ctaTarget: string | null = null;
+  get ctaTarget (): string | null {
+    return null;
+  };
   oblada = {
     la: 'ille@hies',
     ob: 'coffee-in-cv',
