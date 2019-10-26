@@ -34,7 +34,7 @@ class ContactCta extends Vue {
     // This helps me hide things from bots
     const { ob, la, di } = this.oblada // Life goes on 🎶
     setTimeout(() => {
-      this.ctaTarget = `mailto: ${ob + la + di}`;
+      this.ctaTarget = `mailto:${ob + la + di}`;
     }, 3500);
   }
 }
