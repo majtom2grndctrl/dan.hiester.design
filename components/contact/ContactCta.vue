@@ -30,7 +30,7 @@ class ContactCta extends Vue {
     ob: 'coffee-in-cv',
     di: 'ter.design',
   };
-  created() {
+  mounted() {
     // This helps me hide things from bots
     const { ob, la, di } = this.oblada // Life goes on 🎶
     setTimeout(() => {
