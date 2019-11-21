@@ -35,6 +35,7 @@ const ContactCta = Vue.extend({
   mounted () {
     // This helps me hide things from bots
     setTimeout(() => {
+      console.log('Beep beep!');
       const { ob, la, di } = oblada // Life goes on 🎶
       this.$data.ctaTarget = `mailto:${ob + la + di}`;
     }, 3500);
