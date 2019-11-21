@@ -32,7 +32,7 @@ const ContactCta = Vue.extend({
       ctaTarget: null,
     };
   },
-  mounted () {
+  created () {
     // This helps me hide things from bots
     setTimeout(() => {
       console.log('Beep beep!');
