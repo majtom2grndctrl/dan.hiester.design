@@ -7,7 +7,7 @@ require('dotenv').config()
 const isDevProcess = process.env.NODE_ENV === 'development';
 
 module.exports = {
-  mode: 'spa',
+  mode: 'universal',
   /*
   ** Headers of the page
   */
