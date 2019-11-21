@@ -17,23 +17,23 @@
 import { Vue, Component } from 'nuxt-property-decorator'
 import CtaLink from '~/components/buttons/CtaLink.vue'
 
+const oblada = {
+  la: 'ille@hies',
+  ob: 'coffee-in-cv',
+  di: 'ter.design',
+};
+
 @Component({
   components: {
     CtaLink
   }
 })
-
 class ContactCta extends Vue {
   ctaTarget: string | null = null;
-  oblada = {
-    la: 'ille@hies',
-    ob: 'coffee-in-cv',
-    di: 'ter.design',
-  };
   mounted() {
     // This helps me hide things from bots
-    const { ob, la, di } = this.oblada // Life goes on 🎶
     setTimeout(() => {
+      const { ob, la, di } = oblada // Life goes on 🎶
       this.ctaTarget = `mailto:${ob + la + di}`;
     }, 3500);
   }
