@@ -1,30 +1,28 @@
 <script lang="ts">
 import { Vue } from 'nuxt-property-decorator';
-import { createComponent, ref, computed, onMounted, onBeforeUnmount } from '@vue/composition-api';
-import { Route } from 'vue-router';
 import BackButton from '~/components/buttons/BackButton.vue';
 import Nav1 from '~/components/layout/Nav1.vue';
 import paths from '~/paths';
 
-const SiteHeader = createComponent({
+const SiteHeader = Vue.extend({
   components: {
     BackButton,
     Nav1,
   },
-  setup(props, context) {
-    const navMode = computed(() => {
-      const routeName = context.root.$route.name;
+  data () {
+    return {
+      paths,
+    }
+  },
+  computed: {
+    routeName () {
+      const routeName = this.$route.name;
       if (routeName === 'portfolio' || routeName === 'blog') {
         return 'tier-1';
       } else {
         return 'other';
       };
-    });
-
-    return {
-      paths,
-      navMode,
-    };
+    }
   },
 });
 
