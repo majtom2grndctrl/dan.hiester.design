@@ -23,21 +23,23 @@ const oblada = {
   di: 'ter.design',
 };
 
-@Component({
+const ContactCta = Vue.extend({
   components: {
     CtaLink
-  }
-})
-class ContactCta extends Vue {
-  ctaTarget: string | null = null;
-  mounted() {
+  },
+  data: function() {
+    return {
+      ctaTarget: null,
+    };
+  },
+  mounted () {
     // This helps me hide things from bots
     setTimeout(() => {
       const { ob, la, di } = oblada // Life goes on 🎶
-      this.ctaTarget = `mailto:${ob + la + di}`;
+      this.$data.ctaTarget = `mailto:${ob + la + di}`;
     }, 3500);
   }
-}
+});
 
 export default ContactCta
 </script>
