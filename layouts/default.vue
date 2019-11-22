@@ -60,8 +60,11 @@ const DefaultLayout =  Vue.extend({
 });
 
 export const scrollToContentTop = () => {
-  if (!document) return;
-  document.getElementById('ContentLayout')!.scrollTo(0, 0);
+  if (!!document) {
+    document.getElementById('ContentLayout')!.scrollTo(0, 0);
+  } else {
+    console.warn('Potential SSR issue, check default.vue');
+  }
 };
 
 export default DefaultLayout
