@@ -2,12 +2,12 @@
   <main class="MainLayout">
     <header class="header">
       <h1 class="title">
-        <div class="title-prefix" v-if="this.$slots['section-title-prefix']">
+        <div class="title-prefix" v-if="showSectionTitlePrefix">
           <slot name="section-title-prefix"/>
         </div>
         <slot name="section-title"/>
       </h1>
-      <nav class="nav" v-if="this.$slots['section-navigation']">
+      <nav class="nav" v-if="showSectionNavigation">
         <slot name="section-navigation"/>
       </nav>
     </header>
@@ -17,12 +17,18 @@
 
 
 <script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator';
+import Vue from 'vue';
 
-@Component({})
-class MainLayout extends Vue {
-
-}
+const MainLayout = Vue.extend({
+  computed: {
+    showSectionTitlePrefix () {
+      return !!this.$slots['section-title-prefix'];
+    },
+    showSectionNavigation () {
+      return !!this.$slots['section-navigation'];
+    },
+  },
+});
 
 interface TransitionReturn {
     name?: String
