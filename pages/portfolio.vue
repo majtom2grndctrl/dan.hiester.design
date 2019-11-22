@@ -1,4 +1,5 @@
 <template>
+  <client-only>
   <main-layout>
     <template slot="section-title">
       <SectionTitleLink to="/portfolio">Portfolio</SectionTitleLink>
@@ -6,6 +7,7 @@
     <!--<template slot="section-navigation"><nuxt-link to="/portfolio">All Projects</nuxt-link><nuxt-link to="/portfolio/ux">UX</nuxt-link></template>-->
     <nuxt-child/>
   </main-layout>
+  </client-only>
 </template>
 
 
