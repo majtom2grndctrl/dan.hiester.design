@@ -1,7 +1,7 @@
 <template>
   <main-layout>
     <template slot="SectionTitle">
-      <SectionTitleLink to="/portfolio">Portfolio</SectionTitleLink>
+      Portfolio
     </template>
     <!--<template slot="section-navigation"><nuxt-link to="/portfolio">All Projects</nuxt-link><nuxt-link to="/portfolio/ux">UX</nuxt-link></template>-->
     <nuxt-child/>
