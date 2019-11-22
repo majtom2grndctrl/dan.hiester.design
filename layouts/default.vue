@@ -9,7 +9,9 @@
           <SiteFooter :class="navMode" />
         </div>
         <Nav1 :class="navMode" class="nav1" />
-        <Nav2 v-if="navMode !== 'tier-1'" class="nav2" />
+        <client-only>
+          <Nav2 v-if="navMode !== 'tier-1'" class="nav2" />
+        </client-only>
       </div>
     </template>
 
