@@ -1,6 +1,6 @@
 <template>
   <main-layout>
-    <template slot="section-title">
+    <template slot="SectionTitle">
       <SectionTitleLink to="/blog">
         Blog
       </SectionTitleLink>

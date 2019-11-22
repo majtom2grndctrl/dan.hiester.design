@@ -2,10 +2,10 @@
   <main class="MainLayout">
     <header class="header">
       <h1 class="title">
-        <slot name="section-title"/>
+        <slot name="SectionTitle"/>
       </h1>
       <nav class="nav" v-if="showSectionNavigation">
-        <slot name="section-navigation"/>
+        <slot name="SectionNavigation"/>
       </nav>
     </header>
     <slot/>
@@ -19,7 +19,7 @@ import Vue from 'vue';
 const MainLayout = Vue.extend({
   computed: {
     showSectionNavigation () {
-      return !!this.$slots['section-navigation'];
+      return !!this.$slots['SectionNavigation'];
     },
   },
 });
