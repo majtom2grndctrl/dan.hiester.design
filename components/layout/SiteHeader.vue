@@ -1,5 +1,5 @@
 <script lang="ts">
-import Vue from 'vue';
+import { Vue } from 'nuxt-property-decorator';
 import BackButton from '~/components/buttons/BackButton.vue';
 import Nav1 from '~/components/layout/Nav1.vue';
 import paths from '~/paths';
@@ -14,16 +14,14 @@ const SiteHeader = Vue.extend({
       paths,
     }
   },
-  async asyncData (context) {
-    const routeName = context.route.name;
-    let navMode;
-    if (routeName === 'portfolio' || routeName === 'blog') {
-      navMode = 'tier-1';
-    } else {
-      navMode = 'other';
-    };
-    return {
-      navMode,
+  computed: {
+    routeName () {
+      const routeName = this.$route.name;
+      if (routeName === 'portfolio' || routeName === 'blog') {
+        return 'tier-1';
+      } else {
+        return 'other';
+      };
     }
   },
 });
