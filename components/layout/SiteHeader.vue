@@ -42,7 +42,9 @@ export default SiteHeader;
         <span class="dan-hiester">Dan Hiester</span>
       </NuxtLink>
     </div>
-    <Nav1 :class="navMode" />
+    <client-only>
+      <Nav1 :class="navMode" />
+    </client-only>
   </header>
 </template>
 
