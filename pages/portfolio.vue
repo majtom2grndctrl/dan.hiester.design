@@ -1,13 +1,13 @@
 <template>
-  <client-only>
   <main-layout>
+    <client-only>
     <template slot="section-title">
       <SectionTitleLink to="/portfolio">Portfolio</SectionTitleLink>
     </template>
     <!--<template slot="section-navigation"><nuxt-link to="/portfolio">All Projects</nuxt-link><nuxt-link to="/portfolio/ux">UX</nuxt-link></template>-->
     <nuxt-child/>
+    </client-only>
   </main-layout>
-  </client-only>
 </template>
 
 
