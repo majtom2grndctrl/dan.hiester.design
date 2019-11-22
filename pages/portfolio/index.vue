@@ -1,4 +1,5 @@
 <template>
+  <client-only>
   <div>
     <Anthology class="Anthology--inroads">
       <template v-slot:hero><AnthologyHero :data="inRoadsData.hero" /></template>
@@ -12,6 +13,7 @@
 
     <ContactCta class="defer-for-transition" />
   </div>
+  </client-only>
 </template>
 
 
