@@ -2,9 +2,6 @@
   <main class="MainLayout">
     <header class="header">
       <h1 class="title">
-        <div class="title-prefix" v-if="showSectionTitlePrefix">
-          <slot name="section-title-prefix"/>
-        </div>
         <slot name="section-title"/>
       </h1>
       <nav class="nav" v-if="showSectionNavigation">
@@ -21,9 +18,6 @@ import Vue from 'vue';
 
 const MainLayout = Vue.extend({
   computed: {
-    showSectionTitlePrefix () {
-      return !!this.$slots['section-title-prefix'];
-    },
     showSectionNavigation () {
       return !!this.$slots['section-navigation'];
     },
