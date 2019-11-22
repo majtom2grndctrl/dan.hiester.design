@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Vue } from 'nuxt-property-decorator';
+import Vue from 'vue';
 import BackButton from '~/components/buttons/BackButton.vue';
 import Nav1 from '~/components/layout/Nav1.vue';
 import paths from '~/paths';
