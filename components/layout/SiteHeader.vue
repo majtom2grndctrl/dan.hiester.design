@@ -9,6 +9,11 @@ const SiteHeader = Vue.extend({
     BackButton,
     Nav1,
   },
+  props: {
+    navMode: {
+      type: String,
+    },
+  },
   data () {
     return {
       paths,
