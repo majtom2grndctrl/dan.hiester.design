@@ -22,47 +22,39 @@
 
 
 <script lang="ts">
-import { Vue } from 'nuxt-property-decorator'
-import { createComponent, ref, computed } from '@vue/composition-api';
+import Vue from 'vue'
 import SiteHeader from '~/components/layout/SiteHeader.vue'
 import SiteFooter from '~/components/layout/SiteFooter.vue';
 import Nav1 from '~/components/layout/Nav1.vue';
 import Nav2 from '~/components/layout/Nav2.vue';
 import './webfonts.css';
 
-const DefaultLayout =  createComponent({
+const DefaultLayout =  Vue.extend({
   components: {
     SiteHeader,
     SiteFooter,
     Nav1,
     Nav2,
   },
-  setup(props, context) {
-    const transitionName = computed(() => {
-      return context.root.$route.path === '/' ? '' : 'home';
-    });
-    const isRootPath = computed(() => {
-      return context.root.$route.path === '/';
-    });
-    const pathBase = computed(() => (
-      context.root.$route.matched[0].path
-    ));
-    const navMode = computed(() => {
-      const routeName = context.root.$route.name;
+  computed: {
+    transitionName: function () {
+      return this.$route.path === '/' ? '' : 'home';
+    },
+    isRootPath: function () {
+      return this.$route.path === '/';
+    },
+    pathBase: function () {
+      return this.$route.matched[0].path;
+    },
+    navMode: function () {
+      const routeName = this.$route.name;
       if (routeName === 'portfolio' || routeName === 'blog') {
         return 'tier-1';
       } else {
         return 'other';
       };
-    });
-
-    return {
-      transitionName,
-      isRootPath,
-      navMode,
-      pathBase,
-    };
-  },
+    },
+  }
 });
 
 export const scrollToContentTop = () => {
