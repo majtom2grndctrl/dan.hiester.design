@@ -1,6 +1,7 @@
 <template>
   <NuxtLink class="SectionTitleLink" :to="to">
     <span v-if="!isExactPath">
+      <client-only>
       <svg class="icon" viewBox="0 0 7 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <title>back-chevron-medium</title>
         <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -9,6 +10,7 @@
           </g>
         </g>
       </svg>
+      </client-only>
     </span>
     <slot />
   </NuxtLink>
