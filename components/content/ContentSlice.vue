@@ -9,30 +9,28 @@
 
 <script lang="ts">
 import PrismicDOM from 'prismic-dom';
-import { createComponent, ref, onMounted } from '@vue/composition-api';
+import { createComponent, ref, PropType } from '@vue/composition-api';
 import BlockType from '~/components/text/BlockType.vue';
 
-interface ContentSliceProps {
-  block: ContentBlock;
-};
-
-interface ContentBlock {
+interface ContentSliceBlock {
   block_type: string;
   title1?: string;
   lede?: string;
   content?: string;
 };
 
-const ContentSlice = createComponent<ContentSliceProps>({
-  props: {
-    block: Object,
+const ContentSlice = createComponent({
+  components: {
+    BlockType,
   },
-  setup(props: ContentSliceProps) {
-    const block = props.block!;
-    const blockType = ref(block.block_type);
-    const title1 = ref(PrismicDOM.RichText.asHtml(block.title1));
-    const lede = ref(PrismicDOM.RichText.asHtml(block.lede));
-    const content = ref(PrismicDOM.RichText.asHtml(block.content));
+  props: {
+    block: Object as PropType<ContentSliceBlock>,
+  },
+  setup({ block }) {
+    const blockType = ref(block!.block_type);
+    const title1 = ref(PrismicDOM.RichText.asHtml(block!.title1));
+    const lede = ref(PrismicDOM.RichText.asHtml(block!.lede));
+    const content = ref(PrismicDOM.RichText.asHtml(block!.content));
 
     return {
       blockType,
@@ -42,10 +40,6 @@ const ContentSlice = createComponent<ContentSliceProps>({
     };
   },
 });
-
-ContentSlice.components = {
-  BlockType,
-};
 
 export default ContentSlice;
 </script>
