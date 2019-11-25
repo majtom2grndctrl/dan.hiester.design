@@ -1,7 +1,7 @@
 <template>
   <NuxtLink class="SectionTitleLink" :to="to">
     <span v-if="showBackArrow">
-      <svg class="icon" viewBox="0 0 7 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <svg class="icon" viewBox="0 0 7 10" xmlns="http://www.w3.org/2000/svg">
         <title>back-chevron-medium</title>
         <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
           <g id="Mobile-Back-Comp-Copy" transform="translate(-287.000000, -72.000000)" fill="currentColor" fill-rule="nonzero">
