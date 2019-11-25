@@ -19,7 +19,7 @@
 <script lang="ts">
 import Vue, { PropType } from 'vue';
 
-export default Vue.extend({
+const SectionTitleLink = Vue.extend({
   props: {
     to: String as PropType<String>,
   },
@@ -30,6 +30,8 @@ export default Vue.extend({
     }
   },
 });
+
+export default SectionTitleLink;
 </script>
 
 <style lang="postcss" scoped>
