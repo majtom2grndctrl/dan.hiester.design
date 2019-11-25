@@ -119,14 +119,6 @@ module.exports = {
             }
           })
         },
-        {
-          route: '/portfolio/',
-          redirect: paths.portfolio,
-        },
-        {
-          route: '/blog/',
-          redirect: paths.blog,
-        },
         /*
         {
           route: paths.portfolio_all,
