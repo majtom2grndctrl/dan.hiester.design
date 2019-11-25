@@ -1,6 +1,6 @@
 <template>
   <NuxtLink class="SectionTitleLink" :to="to">
-    <span v-if="!isExactPath">
+    <span v-if="showBackArrow">
       <svg class="icon" viewBox="0 0 7 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <title>back-chevron-medium</title>
         <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -15,17 +15,16 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue, { PropType } from 'vue';
 
 export default Vue.extend({
   props: {
-    to: String,
+    to: String as PropType<String>,
   },
-  async asyncData (context) {
-    const currentPath = context.route.path;
-    const isExactPath = this.to === currentPath;
-    return {
-      isExactPath,
+  computed: {
+    showBackArrow (): boolean {
+      const currentPath = this.$route.path;
+      return this.to !== currentPath;
     }
   },
 });
