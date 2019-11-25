@@ -1,15 +1,15 @@
 <template>
   <NuxtLink class="SectionTitleLink" :to="to">
-    <span v-if="showBackArrow">
-      <svg class="icon" viewBox="0 0 7 10" xmlns="http://www.w3.org/2000/svg">
-        <title>back-chevron-medium</title>
-        <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-          <g id="Mobile-Back-Comp-Copy" transform="translate(-287.000000, -72.000000)" fill="currentColor" fill-rule="nonzero">
-            <polygon id="back-chevron-medium" points="291.062646 81.054 287 76.527 290.990646 72 293.222646 72 289.190646 76.527 293.222646 81.054"></polygon>
+      <span>
+        <svg v-if="showBackArrow" class="icon" viewBox="0 0 7 10" xmlns="http://www.w3.org/2000/svg">
+          <title>back-chevron-medium</title>
+          <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="Mobile-Back-Comp-Copy" transform="translate(-287.000000, -72.000000)" fill="currentColor" fill-rule="nonzero">
+              <polygon id="back-chevron-medium" points="291.062646 81.054 287 76.527 290.990646 72 293.222646 72 289.190646 76.527 293.222646 81.054"></polygon>
+            </g>
           </g>
-        </g>
-      </svg>
-    </span>
+        </svg>
+      </span>
     <span><slot /></span>
   </NuxtLink>
 </template>
