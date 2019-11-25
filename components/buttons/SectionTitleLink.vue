@@ -26,6 +26,7 @@ const SectionTitleLink = Vue.extend({
   computed: {
     showBackArrow (): boolean {
       const currentPath = this.$route.path;
+      console.log('Current Path = ', currentPath);
       return this.to !== currentPath;
     }
   },
