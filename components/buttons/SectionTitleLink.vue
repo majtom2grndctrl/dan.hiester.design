@@ -10,7 +10,7 @@
         </g>
       </svg>
     </span>
-    <slot />
+    <span><slot /></span>
   </NuxtLink>
 </template>
 
