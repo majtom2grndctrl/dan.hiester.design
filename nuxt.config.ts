@@ -178,7 +178,6 @@ module.exports = {
   },
   router: {
     linkActiveClass: 'active',
-    linkExactActiveClass: 'exact-active',
-    trailingSlashes: false,
+    linkExactActiveClass: 'exact-active'
   }
 }
