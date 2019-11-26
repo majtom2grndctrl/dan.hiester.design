@@ -25,9 +25,10 @@ const SectionTitleLink = Vue.extend({
   },
   computed: {
     showBackArrow (): boolean {
-      const currentPath = this.$route.path;
-      console.log('Current Path = ', currentPath);
-      return this.to !== currentPath;
+      // If a slug is returned, it means we’re
+      // looking at a content page, and we want
+      // a back arrow to imply a button back to the index.
+      return !!this.$route.params.slug;
     }
   },
 });
