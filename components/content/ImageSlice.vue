@@ -6,36 +6,36 @@
 </template>
 
 <script lang="ts">
-  import PrismicDOM from 'prismic-dom';
-  import { createComponent, ref, PropType } from '@vue/composition-api';
+import PrismicDOM from 'prismic-dom';
+import { createComponent, ref, PropType } from '@vue/composition-api';
 
-  interface ImageSliceBlock {
-    caption: string;
-    display_size: string;
-    image: {
-      alt: string;
-      url: string;
-    };
+interface ImageSliceBlock {
+  caption: string;
+  display_size: string;
+  image: {
+    alt: string;
+    url: string;
   };
+};
 
-  export default createComponent({
-    props: {
-      block: Object as PropType<ImageSliceBlock>,
-    },
-    setup ({ block }) {
-      const display_size = ref(block!.display_size);
-      const url = ref(block!.image.url);
-      const alt = ref(block!.image.alt);
-      const caption = ref(PrismicDOM.RichText.asHtml(block!.caption));
+export default createComponent({
+  props: {
+    block: Object as PropType<ImageSliceBlock>,
+  },
+  setup({ block }) {
+    const display_size = ref(block!.display_size);
+    const url = ref(block!.image.url);
+    const alt = ref(block!.image.alt);
+    const caption = ref(PrismicDOM.RichText.asHtml(block!.caption));
 
-      return {
-        display_size,
-        url,
-        alt,
-        caption,
-      };
-    },
-  });
+    return {
+      display_size,
+      url,
+      alt,
+      caption,
+    };
+  },
+});
 </script>
 
 <style lang="postcss" scoped>
