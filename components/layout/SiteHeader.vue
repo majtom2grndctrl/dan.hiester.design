@@ -3,11 +3,13 @@ import Vue from 'vue';
 import BackButton from '~/components/buttons/BackButton.vue';
 import Nav1 from '~/components/layout/Nav1.vue';
 import paths from '~/paths';
+import DhLogo from '~/components/DhLogo.vue';
 
 const SiteHeader = Vue.extend({
   components: {
     BackButton,
     Nav1,
+    DhLogo,
   },
   props: {
     navMode: {
@@ -39,6 +41,7 @@ export default SiteHeader;
   <header class="SiteHeader">
     <div class="logo-container">
       <NuxtLink :to="paths.about" exact class="logo-link">
+        <dh-logo class="dh-logo" />
         <span class="dan-hiester">Dan Hiester</span>
       </NuxtLink>
     </div>
@@ -65,10 +68,18 @@ export default SiteHeader;
   }
   .logo-link {
     color: var(--gray-500);
-    display: block;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    line-height: var(--spatial-scale-1);
     margin: calc(var(--spatial-scale-1) * -1) 0;
     padding: var(--spatial-scale-1) var(--spatial-scale-2);
     text-decoration: none;
+  }
+  .dh-logo {
+    height: var(--spatial-scale-4);
+    width: var(--spatial-scale-4);
+    margin: 0 var(--spatial-scale-00) 0 0;
   }
   .dan-hiester {
     font-size: var(--type-scale-1);

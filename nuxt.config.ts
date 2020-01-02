@@ -36,12 +36,12 @@ module.exports = {
       { hid: 'twitter:creator', name: 'twitter:creator', content: '@majtom2grndctrl' },
     ],
     link: [
-      { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png?v=KmnymqdX7K' },
-      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png?v=KmnymqdX7K' },
-      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png?v=KmnymqdX7K' },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png?v=Lbza6x4knM' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png?v=Lbza6x4knM' },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png?v=Lbza6x4knM' },
       { rel: 'manifest', href:'/site.webmanifest?v=YAmWaLEo7o' },
-      { rel: 'mask-icon', href:'/safari-pinned-tab.svg?v=KmnymqdX7K', color: '#5bbad5' },
-      { rel: 'shortcut icon', href:'/favicon.ico?v=KmnymqdX7K', color: '#5bbad5' },
+      { rel: 'mask-icon', href:'/safari-pinned-tab.svg?v=Lbza6x4knM', color: '#5bbad5' },
+      { rel: 'shortcut icon', href:'/favicon.ico?v=Lbza6x4knM', color: '#5bbad5' },
       {
         rel: 'stylesheet',
         href: 'https://use.typekit.net/hpz2tnd.css'
