@@ -77,8 +77,8 @@ export default SiteHeader;
     text-decoration: none;
   }
   .dh-logo {
-    height: var(--spatial-scale-4);
-    width: var(--spatial-scale-4);
+    height: var(--spatial-scale-3);
+    width: var(--spatial-scale-3);
     margin: 0 var(--spatial-scale-00) 0 0;
   }
   .dan-hiester {
