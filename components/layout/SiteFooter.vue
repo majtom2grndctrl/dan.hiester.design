@@ -2,7 +2,7 @@
   <footer class="SiteFooter">
     <div class="meta">
       <h2 class="title"><span class="dan-hiester">Dan Hiester</span></h2>
-      <p class="description">A Product Designer specializing in&nbsp;code and design&nbsp;systems.</p>
+      <p class="description">A Product Designer specializing in code and design systems.</p>
       <social-icons class="icons" />
     </div>
     <div class="end">
@@ -89,6 +89,7 @@ export default SiteFooter;
     font-size: var(--type-scale-1);
     line-height: var(--spatial-scale-6);
     margin: var(--spatial-scale-3) 0;
+    max-width: 15em;
   }
   .icons.SocialIcons { /* Increase specificity to override component default */
     justify-content: flex-start;
@@ -110,7 +111,6 @@ export default SiteFooter;
     }
     .description {
       line-height: var(--spatial-scale-5);
-      margin-right: -1em; /* Kinda hacky, but this prevents "specializes" from wrapping */
     }
     .icons.SocialIcons { /* Increase specificity to override component default */
       /* The width here assumes a parent container is using 4 columns in the grid,
