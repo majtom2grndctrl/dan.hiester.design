@@ -36,7 +36,7 @@
   --type-scale-0: calc(var(--type-scale-base) / var(--scale-multiplier));
   --type-scale-00: calc(var(--type-scale-0) / var(--scale-multiplier));
 
-  --spatial-scale-base: calc(var(--type-scale-base) * .71);
+  --spatial-scale-base: calc(var(--type-scale-base) * .73);
   --spatial-scale-1: var(--spatial-scale-base);
   --spatial-scale-2: calc(var(--spatial-scale-1) * var(--scale-multiplier));
   --spatial-scale-3: calc(var(--spatial-scale-2) * var(--scale-multiplier));
