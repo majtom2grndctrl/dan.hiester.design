@@ -63,7 +63,7 @@ export default MainLayout
     flex-direction: row;
     align-items: baseline;
     justify-content: space-between;
-  margin: var(--spatial-scale-5) var(--spatial-scale-2) var(--spatial-scale-5) var(--spatial-scale-2);
+  margin: var(--spatial-scale-5) var(--spatial-scale-2) var(--spatial-scale-4) var(--spatial-scale-2);
 }
 .title {
   color: var(--gray-600);
@@ -123,7 +123,7 @@ export default MainLayout
     width: calc(100% * 12 / 14);
   }
   .header {
-    margin: var(--spatial-scale-5) 0 var(--spatial-scale-5) 0;
+    margin: var(--spatial-scale-6) 0 var(--spatial-scale-5) 0;
   }
   .title {
     margin-left: -.04em;
