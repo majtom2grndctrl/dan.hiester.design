@@ -107,7 +107,7 @@ export default SiteHeader;
   }
   @media (--viewport-medium) {
     .SiteHeader {
-      margin: var(--spatial-scale-4) auto 0 auto;
+      margin: var(--spatial-scale-5) auto 0 auto;
       max-width: unset;
       width: calc(100% * 12 / 14);
     }
