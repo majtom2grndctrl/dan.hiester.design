@@ -1,5 +1,5 @@
 <template>
-  <svg width="180px" height="180px" viewBox="0 0 180 180" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <svg viewBox="0 0 180 180" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Dan Hiester Logo</title>
     <g id="dan-hiester-logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <rect fill="#55768C" x="0" y="0" width="180" height="180"></rect>
@@ -16,5 +16,5 @@
 
 <script lang="ts">
 import Vue from 'vue';
-export default Vue.extend({})
+export default Vue.extend({});
 </script>
