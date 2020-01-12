@@ -4,11 +4,10 @@
     <g id="dan-hiester-logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <rect fill="#55768C" x="0" y="0" width="180" height="180"></rect>
         <g id="Group">
-            <rect id="Rectangle" fill="#B6C9D4" x="0" y="0" width="67.5" height="36"></rect>
-            <rect id="Rectangle-Copy-3" fill="#88A1B2" x="0" y="36" width="67.5" height="36"></rect>
-            <rect id="Rectangle-Copy-7" fill="#55768C" x="0" y="72" width="67.5" height="36"></rect>
-            <rect id="Rectangle-Copy-5" fill="#365366" x="0" y="108" width="67.5" height="36"></rect>
-            <rect id="Rectangle-Copy-8" fill="#183142" x="0" y="144" width="67.5" height="36"></rect>
+            <rect id="Rectangle" fill="#B6C9D4" x="0" y="0" width="67.0036765" height="45"></rect>
+            <rect id="Rectangle-Copy-7" fill="#7490A3" x="4.26325641e-14" y="45" width="67.0036765" height="45"></rect>
+            <rect id="Rectangle-Copy-8" fill="#183142" x="4.26325641e-14" y="135" width="67.0036765" height="45"></rect>
+            <rect id="Rectangle-Copy-9" fill="#3B586C" x="4.26325641e-14" y="90" width="67.0036765" height="45"></rect>
         </g>
     </g>
   </svg>

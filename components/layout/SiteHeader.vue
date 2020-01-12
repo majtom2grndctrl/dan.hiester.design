@@ -79,7 +79,7 @@ export default SiteHeader;
   .dh-logo {
     height: var(--spatial-scale-3);
     width: var(--spatial-scale-3);
-    margin: 0 var(--spatial-scale-00) 0 0;
+    margin: 0 var(--spatial-scale-1) 0 0;
   }
   .dan-hiester {
     font-size: var(--type-scale-1);
@@ -114,6 +114,11 @@ export default SiteHeader;
     .logo-link {
       padding-left: 0;
       margin-left: inherit;
+    }
+    .dh-logo {
+      height: var(--spatial-scale-5);
+      width: var(--spatial-scale-5);
+      margin: 0 var(--spatial-scale-3) 0 0;
     }
   }
 
