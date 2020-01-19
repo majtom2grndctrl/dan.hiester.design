@@ -12,7 +12,7 @@
     "test": "echo \"No test configured\" && exit 0"
   },
   "dependencies": {
-    "@nuxt/typescript-runtime": "0.3.6",
+    "@nuxt/typescript-runtime": "0.3.8",
     "@nuxtjs/google-tag-manager": "2.3.1",
     "@vue/composition-api": "0.3.4",
     "dotenv": "8.2.0",
@@ -22,8 +22,8 @@
     "prismic-javascript": "2.1.5"
   },
   "devDependencies": {
-    "@nuxt/types": "0.6.0",
-    "@nuxt/typescript-build": "0.5.5",
-    "@types/node": "13.1.6"
+    "@nuxt/types": "0.6.1",
+    "@nuxt/typescript-build": "0.5.6",
+    "@types/node": "13.1.8"
   }
 }
