@@ -96,6 +96,10 @@ export default ContentSlice;
     margin-top: 0;
     margin-bottom: 0;
   }
+  & h3 {
+    font-size: var(--type-scale-2);
+    line-height: var(--spatial-scale-6);
+  }
   & pre {
     background: var(--gray-800);
     box-sizing: border-box;
@@ -189,6 +193,7 @@ export default ContentSlice;
     }
     & h3 {
       font-size: var(--type-scale-3);
+      line-height: var(--spatial-scale-6);
     }
     & pre {
       font-size: var(--type-scale-0);
