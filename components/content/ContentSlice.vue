@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import PrismicDOM from 'prismic-dom';
-import { createComponent, ref, PropType } from '@vue/composition-api';
+import { defineComponent, ref, PropType } from '@vue/composition-api';
 import BlockType from '~/components/text/BlockType.vue';
 
 interface ContentSliceBlock {
@@ -19,7 +19,11 @@ interface ContentSliceBlock {
   content?: string;
 };
 
-const ContentSlice = createComponent({
+interface ContentSliceProps {
+  block: ContentSliceBlock;
+};
+
+const ContentSlice = defineComponent<ContentSliceProps>({
   components: {
     BlockType,
   },

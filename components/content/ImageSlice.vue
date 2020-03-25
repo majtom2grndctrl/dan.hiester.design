@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import PrismicDOM from 'prismic-dom';
-import { createComponent, ref, PropType } from '@vue/composition-api';
+import { defineComponent, ref, PropType } from '@vue/composition-api';
 
 interface ImageSliceBlock {
   caption: string;
@@ -18,7 +18,11 @@ interface ImageSliceBlock {
   };
 };
 
-export default createComponent({
+interface ImageSliceProps {
+  block: ImageSliceBlock;
+};
+
+export default defineComponent<ImageSliceProps>({
   props: {
     block: Object as PropType<ImageSliceBlock>,
   },
