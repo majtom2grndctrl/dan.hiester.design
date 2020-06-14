@@ -12,9 +12,9 @@
     "test": "echo \"No test configured\" && exit 0"
   },
   "dependencies": {
-    "@nuxt/typescript-runtime": "0.4.8",
+    "@nuxt/typescript-runtime": "0.4.10",
     "@nuxtjs/google-tag-manager": "2.3.2",
-    "@vue/composition-api": "0.5.0",
+    "@vue/composition-api": "0.6.3",
     "dotenv": "8.2.0",
     "nuxt": "2.12.2",
     "nuxt-property-decorator": "2.7.2",
@@ -22,8 +22,8 @@
     "prismic-javascript": "2.7.1"
   },
   "devDependencies": {
-    "@nuxt/types": "0.7.7",
-    "@nuxt/typescript-build": "1.0.1",
-    "@types/node": "14.0.5"
+    "@nuxt/types": "0.7.9",
+    "@nuxt/typescript-build": "1.0.3",
+    "@types/node": "14.0.13"
   }
 }
