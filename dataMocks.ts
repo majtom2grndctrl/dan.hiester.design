@@ -1,6 +1,6 @@
 import Prismic from 'prismic-javascript'
-import ApiSearchResponse from 'prismic-javascript/d.ts/ApiSearchResponse'
-import { Document } from 'prismic-javascript/d.ts/documents'
+import ApiSearchResponse from 'prismic-javascript/types/ApiSearchResponse'
+import { Document } from 'prismic-javascript/types/documents'
 
 export const parsedBlogDataMock = [
   {

@@ -17,9 +17,9 @@ import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import { swipeTransition } from '~/components/layout/MainLayout.vue'
 import Prismic from 'prismic-javascript'
 import PrismicDOM from 'prismic-dom'
-import ApiSearchResponse from 'prismic-javascript/d.ts/ApiSearchResponse'
+import ApiSearchResponse from 'prismic-javascript/types/ApiSearchResponse'
 import ContactCta from '~/components/contact/ContactCta.vue';
-import { Document } from 'prismic-javascript/d.ts/documents'
+import { Document } from 'prismic-javascript/types/documents'
 import BlogPost from '~/components/content/BlogPost.vue'
 import { scrollToContentTop } from '~/layouts/default.vue';
 import { blogDataMock } from '~/dataMocks'

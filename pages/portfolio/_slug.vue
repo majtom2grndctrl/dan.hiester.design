@@ -11,7 +11,7 @@ import Prismic from 'prismic-javascript'
 import CaseStudy, { ICaseStudyData, parseCaseStudy } from '~/components/content/CaseStudy.vue'
 import ContactCta from '~/components/contact/ContactCta.vue';
 import { caseStudyMock } from '~/dataMocks';
-import { Document } from 'prismic-javascript/d.ts/documents';
+import { Document } from 'prismic-javascript/types/documents';
 import { scrollToContentTop } from '~/layouts/default.vue';
 
 @Component({

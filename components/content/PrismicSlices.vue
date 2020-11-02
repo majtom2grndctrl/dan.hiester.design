@@ -11,7 +11,7 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import PrismicDOM from 'prismic-dom'
-import { Document } from 'prismic-javascript/d.ts/documents';
+import { Document } from 'prismic-javascript/types/documents';
 import ImageSlice from '~/components/content/ImageSlice.vue';
 import ContentSlice from '~/components/content/ContentSlice.vue';
 
