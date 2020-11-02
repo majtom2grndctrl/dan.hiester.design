@@ -1,5 +1,5 @@
 <template>
-  <section :class="sectionClass">
+  <section class="anthology">
     <slot name="hero" />
     <div class="anthology-list">
       <slot />
@@ -12,10 +12,6 @@ import { Vue, Component, Prop } from 'nuxt-property-decorator'
 
 @Component({})
 class Anthology extends Vue {
-  @Prop()
-  modClass?: string
-
-  sectionClass = this.modClass ? `anthology ${this.modClass}` : 'anthology'
 }
 
 export default Anthology
