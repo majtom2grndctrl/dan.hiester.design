@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import PrismicDOM from 'prismic-dom';
-import { defineComponent, ref, PropType } from '@vue/composition-api';
+import { defineComponent, ref, PropType } from '@nuxtjs/composition-api';
 
 interface ImageSliceBlock {
   caption: string;
