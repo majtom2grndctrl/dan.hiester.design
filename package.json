@@ -13,17 +13,17 @@
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "2.1.0",
-    "@nuxtjs/composition-api": "^0.24.0",
+    "@nuxtjs/composition-api": "^0.24.4",
     "@nuxtjs/google-tag-manager": "2.3.2",
     "dotenv": "10.0.0",
-    "nuxt": "2.15.6",
+    "nuxt": "2.15.7",
     "nuxt-property-decorator": "2.9.1",
     "prismic-dom": "2.2.5",
     "prismic-javascript": "3.0.2"
   },
   "devDependencies": {
-    "@nuxt/types": "2.15.6",
+    "@nuxt/types": "2.15.7",
     "@nuxt/typescript-build": "2.1.0",
-    "@types/node": "15.6.0"
+    "@types/node": "15.12.2"
   }
 }
