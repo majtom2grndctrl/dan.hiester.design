@@ -18,8 +18,8 @@ import { Vue, Component } from 'nuxt-property-decorator'
 import CtaLink from '~/components/buttons/CtaLink.vue'
 
 const oblada = {
-  la: 'ille@hies',
-  ob: 'coffee-in-cv',
+  la: 'attle@hies',
+  ob: 'coffee-in-se',
   di: 'ter.design',
 };
 
