@@ -23,21 +23,6 @@ When I work on this project, I listen to the [Distantly Yours v8 Moodboard](http
 ### Relevant Cultural Artifacts
 * [Lessons from Swiss Style Graphic Design (Smashing Magazine, August 2009)](https://www.smashingmagazine.com/2009/07/lessons-from-swiss-style-graphic-design/)
 
-## Design and development process
-
-Shipping an ambitious website on the first release is hard and risky. In order to ship fast, and collect data to inform course corrections, it helps to launch a Minimum Viable Product as early in the process as possible.
-
-This site has three planned phases for launch, with potential for a fourth "stretch-goal" release:
-
-1. Landing page
-   * **Scope** One page with art and CTA to request portfolio by email.
-2. Portfolio only
-   * **Scope** Portfolio index, case study layout, frequent content updates.
-3. Portfolio and blog
-   * **Scope** Blog index, repurpose layout code from case study, frequent content updates.
-4. Stretch goal
-   * **Scope** Add metadata to case studies and apply the metadata to new website routes, to allow custom user journeys for recruiters and clients with different interests.
-
 ## Build Setup
 
 Install dependencies
