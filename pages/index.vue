@@ -32,14 +32,6 @@ class AboutPage extends Vue {
 export default AboutPage;
 </script>
 
-<style lang="postcss">
-  @custom-media --viewport-xs (min-width: 20.1rem); /* 321.6 / 16 */
-  @custom-media --viewport-small (min-width: 31.25rem); /* 500 / 16 */
-  @custom-media --viewport-medium (min-width: 51.25rem); /* 820 / 16 */
-  @custom-media --viewport-large (min-width: 81.25rem); /* 1300 / 16 */
-</style>
-
-
 <style lang="postcss" scoped>
 
 .About {
