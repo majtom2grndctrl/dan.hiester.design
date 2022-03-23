@@ -77,7 +77,7 @@ module.exports = {
       }
     }
   },
-  css: ['~/assets/html.css'],
+  css: ['~/assets/html.css', '~/assets/vars'],
   generate: {
     routes: async function () {
       const apiUrl = 'https://distantly-yours-blog.cdn.prismic.io/api/v2'
