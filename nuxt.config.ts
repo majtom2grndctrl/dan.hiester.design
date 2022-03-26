@@ -79,7 +79,7 @@ module.exports = {
   },
   css: ['~/assets/html.css', '~/assets/vars'],
   generate: {
-    routes: async function () {
+    routes: async () => {
       const apiUrl = 'https://distantly-yours-blog.cdn.prismic.io/api/v2'
       const blogQuery = await Prismic.getApi(apiUrl)
         .then( api =>  {

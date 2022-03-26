@@ -83,11 +83,11 @@ export function parseResponse (response: ApiSearchResponse) {
 class BlogIndex extends Vue {
   async asyncData (ctx) {
     if (ctx.payload) return { blog_posts: ctx.payload }
-    else return Prismic.getApi(apiEndpoint).then( function (api) {
+    else return Prismic.getApi(apiEndpoint).then( (api) => {
       return api.query(
         Prismic.Predicates.at('document.type', 'blog_post'),
         { orderings : '[my.blog_post.date desc]'}
-      ).then( function (response) {
+      ).then( (response) => {
         return { blog_posts: parseResponse(response) }
       }, (err) => {
 //        console.log('Something went wrong: ', err)
