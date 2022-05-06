@@ -1,1 +1,1 @@
-environment = {}
+environment = { NODE_VERSION = "stable", YARN_VERSION = "3.2.0" }
