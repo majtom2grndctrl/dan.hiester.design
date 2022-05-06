@@ -1,6 +1,7 @@
 # dependencies
 node_modules
-.yarn
+.yarn/cache
+.pnp.*
 
 # logs
 npm-debug.log
