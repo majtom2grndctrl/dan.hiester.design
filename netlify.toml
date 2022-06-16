@@ -1,1 +1,2 @@
-environment = { NODE_VERSION = "16.14.2", YARN_VERSION = "1.22.18" }
+[build]
+environment = { NODE_VERSION = "LTS", YARN_VERSION = "stable" }
