@@ -1,6 +1,7 @@
 # dependencies
 node_modules
-.yarn/
+.yarn/cache
+.yarn/install-state.gz
 
 # logs
 npm-debug.log
