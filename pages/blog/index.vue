@@ -115,6 +115,7 @@ export default BlogIndex
     .BlogIndex {
       --right-side: calc(100% * 5 / 12);
       background-color: var(--gray-600);
+      border-radius: var(--block-border-radius);
       margin: 0 0 calc(100% * 1 / 14);
       position: relative;
       overflow: hidden;

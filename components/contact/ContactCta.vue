@@ -89,11 +89,13 @@ export default ContactCta
 }
 @media (--viewport-medium) {
   .ContactCta {
+    border-radius: var(--block-border-radius);
     display: flex;
       flex-direction: row;
       align-items: center;
       justify-items: center;
     margin: calc(1 / 12 * 100%) 0 var(--spatial-scale-5) 0;
+    overflow: hidden;
     padding: 1rem 0;
   }
   .content {

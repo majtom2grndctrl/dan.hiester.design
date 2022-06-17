@@ -90,6 +90,8 @@ export default StandAlone
     .StandAlone {
       flex-direction: row;
       align-items: center;
+      border-radius: var(--block-border-radius);
+      overflow: hidden;
       padding-top: calc(100% * 1 / 14);
       padding-bottom: calc(100% * 1 / 14);
     }

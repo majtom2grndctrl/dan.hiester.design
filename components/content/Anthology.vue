@@ -29,7 +29,9 @@ export default Anthology
 }
 @media (--viewport-medium) {
   .anthology {
+    border-radius: var(--block-border-radius);
     margin: 2rem 0;
+    overflow: hidden;
     padding: 0;
     &:first-child {
       margin-top: 0;

@@ -78,9 +78,11 @@ export default Suggestion
   }
   @media (--viewport-medium) {
     .Suggestion {
+      align-items: center;
+      border-radius: var(--block-border-radius);
       display: flex;
       flex-direction: row;
-      align-items: center;
+      overflow: hidden;
     }
     .content {
       padding: calc(30rem/16);

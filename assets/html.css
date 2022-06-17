@@ -48,6 +48,8 @@
   --spatial-scale-0: calc(var(--spatial-scale-base) / var(--scale-multiplier));
   --spatial-scale-00: calc(var(--spatial-scale-0) / var(--scale-multiplier));
 
+  --block-border-radius: var(--spatial-scale-5);
+
 }
 
 /* Lessons were learned here: */
