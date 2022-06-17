@@ -31,7 +31,7 @@ import Nav1 from '~/components/layout/Nav1.vue';
 import Nav2 from '~/components/layout/Nav2.vue';
 import './webfonts.css';
 
-const DefaultLayout =  Vue.extend({
+const DefaultLayout = Vue.extend({
   components: {
     SiteHeader,
     SiteFooter,

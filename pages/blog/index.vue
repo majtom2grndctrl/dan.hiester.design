@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="BlogIndex" v-if="blog_posts">
+    <section class="BlogIndex fade-after-transition" v-if="blog_posts">
       <BlogPost v-for="(post, index) in blog_posts" :post="post" :key="index" />
     </section>
     <section v-else>
@@ -83,11 +83,11 @@ export function parseResponse (response: ApiSearchResponse) {
 class BlogIndex extends Vue {
   async asyncData (ctx) {
     if (ctx.payload) return { blog_posts: ctx.payload }
-    else return Prismic.getApi(apiEndpoint).then( function (api) {
+    else return Prismic.getApi(apiEndpoint).then( (api) => {
       return api.query(
         Prismic.Predicates.at('document.type', 'blog_post'),
         { orderings : '[my.blog_post.date desc]'}
-      ).then( function (response) {
+      ).then( (response) => {
         return { blog_posts: parseResponse(response) }
       }, (err) => {
 //        console.log('Something went wrong: ', err)
@@ -114,22 +114,30 @@ export default BlogIndex
   @media (--viewport-medium) {
     .BlogIndex {
       --right-side: calc(100% * 5 / 12);
-      background-color: var(--gray-600);
       border-radius: var(--block-border-radius);
       margin: 0 0 calc(100% * 1 / 14);
       position: relative;
       overflow: hidden;
       padding-right: var(--right-side);
       &::before {
-        background: var(--gray-400) url('/img/blog-index-photo.jpg') fixed no-repeat 89% 50% / 37%;
+        background: var(--bg-blue-600) url('/img/blog-index-photo.jpg') fixed no-repeat 89% 50% / 37%;
         content: '';
         display: block;
+        opacity: 1;
         position: absolute;
           top: 0;
           right: 0;
           bottom: 0;
+        transition: opacity .3s ease-in-out .3s;
         width: var(--right-side);
       }
+    }
+    .swipe-enter .BlogIndex::before {
+      opacity: 0;
+    }
+    .swipe-leave-enter .BlogIndex::before {
+      transition: opacity .3s ease-in-out 0;
+      opacity: 0;
     }
   }
 </style>

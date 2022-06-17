@@ -4,17 +4,18 @@
       <div>
         <h1 class="intro">
           <span class="dan-hiester">Dan Hiester</span>
-          <span class="title">Design Technologist</span>
+          <span class="title">A Product Designer with a mixed background in design and front-end engineering.</span>
         </h1>
         <nav class="nav">
           <nuxt-link :to="paths.portfolio">Portfolio</nuxt-link>
           <nuxt-link :to="paths.blog">Blog</nuxt-link>
         </nav>
+        <!--
         <div class="overview">
-          <p>A Product Designer specializing in&nbsp;code and design&nbsp;systems.</p>
-          <p>Think of me as a Designer with an uppercase D, and a developer with a lowercase d. I spend enough time on both sides of the designer-developer hand-off, I see lots of opportunity to make it more productive, fun, and focused on delivering great&nbsp;products!</p>
+          <p>I’m an experienced UI and UX generalist who loves to practice design thinking and product strategy both at the office, and at community events.</p>
         </div>
         <p>Next: <nuxt-link :to="paths.portfolio">Portfolio</nuxt-link></p>
+        -->
       </div>
     </div>
   </main>
@@ -47,6 +48,12 @@ export default AboutPage;
     justify-content: center;
   grid-area: 1 / 2 / 2 / 6;
 }
+.nav {
+  & a {
+    display: inline-block;
+    margin-right: var(--spatial-scale-3);
+  }
+}
 .overview {
   & p:not(:first-child) {
     font-size: var(--type-scale-0);
@@ -66,7 +73,7 @@ export default AboutPage;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   }
   .container {
-    grid-area: 1 / 5 / 2 / 11;
+    grid-area: 1 / 5 / 2 / 10;
   }
 }
 .intro {
@@ -75,19 +82,21 @@ export default AboutPage;
 .dan-hiester {
   font-family: var(--font-heading);
   font-size: var(--type-scale-4);
-  font-weight: 400;
+  font-weight: 500;
   line-height: var(--spatial-scale-4);
   margin: 0 0 var(--spatial-scale-0) -.055em;
 }
 .title {
-  color: var(--gray-500);
+  color: var(--gray-400);
   display: block;
-  font-size: var(--type-scale-1);
-  font-weight: 600;
+  font-size: var(--type-scale-0);
+  font-weight: 400;
+  line-height: var(--spatial-scale-4);
+  max-width: 21em;
 }
 .overview {
-  font-size: var(--type-scale-1);
-  line-height: var(--spatial-scale-5);
+  font-size: var(--type-scale-0);
+  line-height: var(--spatial-scale-4);
 }
 
 </style>

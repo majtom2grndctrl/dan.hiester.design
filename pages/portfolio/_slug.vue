@@ -31,8 +31,8 @@ class CaseStudyPage extends Vue {
       return {
         caseStudy: parseCaseStudy(payload)
       }
-    } else return Prismic.getApi('https://distantly-yours-blog.cdn.prismic.io/api/v2').then( function (api) {
-      return api.query(
+    } else return Prismic.getApi('https://distantly-yours-blog.cdn.prismic.io/api/v2').then( (api) =>
+      api.query(
         Prismic.Predicates.at('my.case_study.uid', ctx.params.slug),
         { lang: '*'}
       ).then( response => {
@@ -42,14 +42,14 @@ class CaseStudyPage extends Vue {
 //        console.error('Something went wrong: ', err)
         return { title: err }
       })
-    }).catch( err => {
+    ).catch( err => {
       console.warn('Error downloading posts (/pages/portfolio/_slug.vue)', err);
       console.log('Using data mock: ', { caseStudy: parseCaseStudy(caseStudyMock.results[0]) });
       const caseStudy = parseCaseStudy(caseStudyMock.results[0]);
       return {
         caseStudy: caseStudy,
       }
-    })
+    });
   }
   head () {
     const caseStudy = this.$data.caseStudy as ICaseStudyData
