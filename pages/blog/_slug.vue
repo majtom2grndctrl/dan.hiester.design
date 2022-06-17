@@ -129,11 +129,13 @@ export default BlogView
   }
   @media (--viewport-medium) {
     .hero {
+      border-radius: var(--block-border-radius);
       display: grid;
       grid-template-columns: 1fr 5fr 1fr 4fr 1fr;
       justify-items: center;
       column-gap: var(--spatial-scale-1);
       padding: calc(100% * 1 / 12) 0;
+      overflow: hidden;
     }
     .meta {
       display: flex;

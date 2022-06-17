@@ -221,11 +221,13 @@ export default CaseStudy
   }
   @media (--viewport-medium) {
     .header {
+      border-radius: var(--block-border-radius);
       display: grid;
       grid-template-columns: 1fr 4fr 1fr 5fr 1fr;
       align-items: center;
       flex-direction: row;
       min-height: 25rem;
+      overflow: hidden;
     }
     .title {
       font-size: var(--type-scale-4);
@@ -251,9 +253,11 @@ export default CaseStudy
       font-size: calc(18rem/16);
     }
     .hero {
+      border-radius: var(--block-border-radius);
       box-sizing: border-box;
       grid-area: 1 / 4 / 2 / 5;
       margin: 0;
+      overflow: hidden;
       padding: var(--spatial-scale-5) 0;
       width: 100%;
     }
