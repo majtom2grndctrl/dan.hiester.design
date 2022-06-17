@@ -82,7 +82,6 @@ export default Suggestion
       border-radius: var(--block-border-radius);
       display: flex;
       flex-direction: row;
-      overflow: hidden;
     }
     .content {
       padding: calc(30rem/16);

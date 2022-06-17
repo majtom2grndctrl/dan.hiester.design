@@ -81,7 +81,6 @@ export default SiteHeader;
     height: var(--spatial-scale-3);
     width: var(--spatial-scale-3);
     margin: 0 var(--spatial-scale-1) 0 0;
-    overflow: hidden;
   }
   .dan-hiester {
     font-size: var(--type-scale-1);

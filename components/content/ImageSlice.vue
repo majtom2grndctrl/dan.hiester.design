@@ -94,12 +94,10 @@ export default defineComponent<ImageSliceProps>({
         max-width: calc(100% * 8 / 12);
       &.cover-image {
         border-radius: var(--block-border-radius);
-        overflow: hidden;
         padding: var(--block-border-radius);
       }
       &.large {
         border-radius: var(--block-border-radius);
-        overflow: hidden;
         padding: var(--block-border-radius);
       }
       &.aside {

@@ -205,7 +205,6 @@ export default ContentSlice;
       line-height: var(--spatial-scale-4);
       margin-right: 0;
       margin-left: 0;
-      overflow: hidden;
     }
   }
 }

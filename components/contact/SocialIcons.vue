@@ -80,7 +80,6 @@ export default SocialIcons;
       flex-direction: row;
       justify-content: space-between;
     margin: calc(var(--spatial-scale-3) * -1);
-    overflow: hidden;
   }
   .icon {
     background-color: var(--link-bg-inactive);

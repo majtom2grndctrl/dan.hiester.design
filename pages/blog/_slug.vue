@@ -135,7 +135,6 @@ export default BlogView
       justify-items: center;
       column-gap: var(--spatial-scale-1);
       padding: calc(100% * 1 / 12) 0;
-      overflow: hidden;
     }
     .meta {
       display: flex;
