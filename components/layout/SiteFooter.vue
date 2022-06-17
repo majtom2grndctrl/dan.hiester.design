@@ -2,7 +2,7 @@
   <footer class="SiteFooter">
     <div class="meta">
       <h2 class="title"><span class="dan-hiester">Dan Hiester</span></h2>
-      <p class="description">A Product Designer specializing in code and design systems.</p>
+      <p class="description">A Product Designer with a mixed background in design and front-end engineering.</p>
       <social-icons class="icons" />
     </div>
     <div class="end">
@@ -89,7 +89,7 @@ export default SiteFooter;
     font-size: var(--type-scale-1);
     line-height: var(--spatial-scale-6);
     margin: var(--spatial-scale-3) 0;
-    max-width: 15em;
+    max-width: 40em;
   }
   .icons.SocialIcons { /* Increase specificity to override component default */
     justify-content: flex-start;
@@ -97,7 +97,7 @@ export default SiteFooter;
   @media (--viewport-small) {
     .meta {
       margin: 0 auto;
-      max-width: 30rem;
+      max-width: 30em;
     }
     .icons {
       width: calc(66% + (var(--spatial-scale-3) * 2));
@@ -105,9 +105,8 @@ export default SiteFooter;
   }
   @media (--viewport-medium) {
     .meta {
-      grid-area: 1 / 1 / 2 / 5;
+      grid-area: 1 / 1 / 2 / 6;
       margin: 0;
-      max-width: unset;
     }
     .description {
       line-height: var(--spatial-scale-5);
