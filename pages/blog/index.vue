@@ -14,7 +14,6 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
-import { swipeTransition } from '~/components/layout/MainLayout.vue'
 import Prismic from 'prismic-javascript'
 import PrismicDOM from 'prismic-dom'
 import ApiSearchResponse from 'prismic-javascript/types/ApiSearchResponse'
@@ -97,9 +96,6 @@ class BlogIndex extends Vue {
 //      console.warn("Error downloading posts (pages/blog/index)")
       return process.env.NODE_ENV === 'development' ? { blog_posts: parseResponse(blogDataMock) } : { blog_posts: undefined }
     })
-  }
-  transition (to, from) {
-    return swipeTransition(to, from)
   }
   mounted() {
     scrollToContentTop();
