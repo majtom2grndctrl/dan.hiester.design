@@ -48,7 +48,10 @@
   --spatial-scale-0: calc(var(--spatial-scale-base) / var(--scale-multiplier));
   --spatial-scale-00: calc(var(--spatial-scale-0) / var(--scale-multiplier));
 
-  --block-border-radius: var(--spatial-scale-5);
+  --block-border-radius--mobile: var(--spatial-scale-2);
+  --block-border-radius--desktop: var(--spatial-scale-5);
+  --mobile-block-margin: var(--spatial-scale-2);
+  --mobile-max-width: 30rem;
 
 }
 
