@@ -49,7 +49,6 @@ const Index = defineComponent({
       );
       return results.map(item => {
         const { data } = item
-        console.log({ data: data });
         const mappedItem: StoryData = {
           backgroundColor: data.index_background,
           ctaText: getCmsText(data.index_cta),
