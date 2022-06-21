@@ -1,15 +1,17 @@
 <template>
-  <section class="ContactCta">
-    <div class="image-container">
-      <img class="image-mobile" src="/img/project-collage-tablet.jpg" alt="" />
-      <img class="image-desktop" src="/img/project-collage-desktop.jpg" alt="" />
-    </div>
-    <div class="content">
-      <h1 class="title">There’s so much more to talk&nbsp;about!</h1>
-      <p>I’ve worked on many different teams and challenges. Some of that work hasn’t been published here yet&mdash;<strong>much of it can’t be</strong>. The&nbsp;best way to get to know what I have to offer is to talk shop over&nbsp;coffee.</p>
-      <CtaLink class="cta" :href="ctaTarget">Let’s get in touch</CtaLink>
-    </div>
-  </section>
+  <div class="ContactCta-wrapper">
+    <section class="ContactCta">
+      <div class="image-container">
+        <img class="image-mobile" src="/img/project-collage-tablet.jpg" alt="" />
+        <img class="image-desktop" src="/img/project-collage-desktop.jpg" alt="" />
+      </div>
+      <div class="content">
+        <h1 class="title">There’s so much more to talk&nbsp;about!</h1>
+        <p>I’ve worked on many different teams and challenges. Some of that work hasn’t been published here yet&mdash;<strong>much of it can’t be</strong>. The&nbsp;best way to get to know what I have to offer is to talk shop over&nbsp;coffee.</p>
+        <CtaLink class="cta" :href="ctaTarget">Let’s get in touch</CtaLink>
+      </div>
+    </section>
+  </div>
 </template>
 
 
@@ -46,10 +48,18 @@ export default ContactCta
 
 
 <style lang="postcss" scoped>
+.ContactCta--wrapper {
+  padding: 0 var(--mobile-block-margin);
+}
 .ContactCta {
   background: #486172;
+  border-radius: var(--block-border-radius);
+  box-sizing: border-box;
   color: var(--white);
-  padding: 0 0 var(--spatial-scale-3) 0;
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 30rem;
+  padding: 0 var(--spatial-scale-3) var(--spatial-scale-3)  var(--spatial-scale-3);
 }
 .image-mobile {
   width: 100%;
@@ -75,7 +85,7 @@ export default ContactCta
 }
 .cta {
   max-width: 20rem;
-  margin: var(--spatial-scale-4) auto;
+  margin: var(--spatial-scale-4) auto 0;
 }
 
 @media (--viewport-small) {
@@ -89,12 +99,12 @@ export default ContactCta
 }
 @media (--viewport-medium) {
   .ContactCta {
-    border-radius: var(--block-border-radius);
     display: flex;
       flex-direction: row;
       align-items: center;
       justify-items: center;
-    margin: calc(1 / 12 * 100%) 0 var(--spatial-scale-5) 0;
+    margin: calc(1 / 12 * 100%) 0 var(--spatial-scale-6) 0;
+    max-width: unset;
     overflow: hidden;
     padding: 1rem 0;
   }

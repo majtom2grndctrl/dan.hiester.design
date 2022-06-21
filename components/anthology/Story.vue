@@ -36,6 +36,10 @@
     font-size: var(--type-scale-1);
     line-height: var(--spatial-scale-5);
   }
+  .CtaLink {
+    margin: 0 auto;
+    max-width: 20rem;
+  }
   @media (--viewport-medium) {
     .Story {
       display: flex;
@@ -62,7 +66,6 @@
     .cta-wrapper {
     }
     .CtaLink {
-      margin: 0 auto;
       max-width: 66%;
     }
   }
