@@ -1,5 +1,5 @@
 <template>
-  <article class="Story" ref="storyWrapper">
+  <article class="Story" ref="storyWrapper" :style="`--story-background:${backgroundColor}`">
     <div class="image-wrapper"><img :src="image.url" :alt="image.alt" class="image" /></div>
     <div class="content-wrapper">
       <BlockType v-html="overline" />
@@ -72,7 +72,7 @@
 </style>
 
 <script lang="ts">
-import { defineComponent, onMounted, PropType, ref } from '@nuxtjs/composition-api'
+import { defineComponent, PropType } from '@nuxtjs/composition-api'
 import paths from '~/paths'
 import BlockType from '~/components/text/BlockType.vue'
 import CtaLink from '~/components/buttons/CtaLink.vue'
@@ -112,18 +112,14 @@ export default defineComponent<StoryProps>({
       title,
       url
     } = data
-    console.log(title);
-    const storyWrapper = ref<HTMLElement>()
-    onMounted(() => {
-      storyWrapper.value?.style.setProperty('--story-background', backgroundColor)
-    })
-    return {
+
+  return {
+      backgroundColor,
       ctaText,
       image,
       teaser,
       overline,
       paths,
-      storyWrapper,
       title,
       url
     }

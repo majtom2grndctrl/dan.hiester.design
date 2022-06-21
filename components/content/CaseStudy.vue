@@ -90,7 +90,6 @@ export interface ICaseStudyData {
 
 export function parseCaseStudy (payload: Document): ICaseStudyData {
   const { data } = payload
-  console.log({ caseStudyData: data });
   function parseDate(date) {
     const months = Object.freeze({
       '01': 'Jan',
