@@ -200,6 +200,7 @@ export default ContentSlice;
       line-height: var(--spatial-scale-6);
     }
     & pre {
+      border-radius: var(--block-border-radius);
       font-size: var(--type-scale-0);
       line-height: var(--spatial-scale-4);
       margin-right: 0;

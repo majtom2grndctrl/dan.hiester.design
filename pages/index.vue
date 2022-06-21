@@ -22,13 +22,17 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator';
-import paths from '~/paths';
+import { defineComponent, ref } from '@nuxtjs/composition-api';
+import pathsImport from '~/paths';
 
-@Component({})
-class AboutPage extends Vue {
-  paths = paths;
-}
+const AboutPage = defineComponent({
+  setup() {
+    const paths = ref(pathsImport);
+    return {
+      paths,
+    };
+  }
+});
 
 export default AboutPage;
 </script>

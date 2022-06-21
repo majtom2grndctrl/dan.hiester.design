@@ -2,11 +2,8 @@
   <article>
     <header class="header">
       <div class="meta">
+        <span class="type">{{ data.meta.case_study_type }}</span>
         <h1 v-html="data.headline" class="title" />
-        <div>
-          <span class="projectName">{{ data.meta.project_name }}</span><span class="type">{{ data.meta.case_study_type }}</span>
-        </div>
-        <div class="projectDates">{{ data.meta.start_date }}&ndash;{{ data.meta.end_date }}</div>
       </div>
       <div class="hero">
         <img :src="data.hero_image.url" class="heroImage" :alt="data.hero_image.alt" />
@@ -14,6 +11,18 @@
     </header>
     <div class="about" v-if="data.meta">
       <div class="team" v-if="data.meta.employer || data.meta.client || data.meta.team">
+        <div v-if="data.meta.start_date && data.meta.end_date">
+          <h2><span v-if="data.meta.remix_date">Original</span> Project Dates</h2>
+          <div>
+            {{data.meta.start_date}}—{{data.meta.end_date}}
+          </div>
+        </div>
+        <div v-if="data.meta.remix_date">
+          <h2>Project Remixed</h2>
+          <div>
+            {{data.meta.remix_date}}
+          </div>
+        </div>
         <div v-if="data.meta.employer">
           <h2>Employer</h2>
           <div v-html="data.meta.employer" />
@@ -81,6 +90,7 @@ export interface ICaseStudyData {
 
 export function parseCaseStudy (payload: Document): ICaseStudyData {
   const { data } = payload
+  console.log({ caseStudyData: data });
   function parseDate(date) {
     const months = Object.freeze({
       '01': 'Jan',
@@ -221,6 +231,8 @@ export default CaseStudy
   }
   @media (--viewport-medium) {
     .header {
+      background-clip: border-box;
+      border-radius: var(--block-border-radius);
       display: grid;
       grid-template-columns: 1fr 4fr 1fr 5fr 1fr;
       align-items: center;
@@ -251,6 +263,7 @@ export default CaseStudy
       font-size: calc(18rem/16);
     }
     .hero {
+      border-radius: var(--block-border-radius);
       box-sizing: border-box;
       grid-area: 1 / 4 / 2 / 5;
       margin: 0;

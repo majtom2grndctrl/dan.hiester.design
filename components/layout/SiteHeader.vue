@@ -77,6 +77,7 @@ export default SiteHeader;
     text-decoration: none;
   }
   .dh-logo {
+    border-radius: var(--spatial-scale-00);
     height: var(--spatial-scale-3);
     width: var(--spatial-scale-3);
     margin: 0 var(--spatial-scale-1) 0 0;

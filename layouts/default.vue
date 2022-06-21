@@ -67,6 +67,8 @@ export const scrollToContentTop = () => {
   }
 };
 
+export const apiEndpoint = 'https://distantly-yours-blog.cdn.prismic.io/api/v2';
+
 export default DefaultLayout
 </script>
 

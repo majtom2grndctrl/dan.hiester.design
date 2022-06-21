@@ -13,7 +13,7 @@ module.exports = {
   */
   head: {
     title: 'Dan Hiester • A Product Designer with a mixed background in design and front-end engineering.',
-    titleTemplate: '%s • Dan Hiester •  A Product Designer with a mixed background in design and front-end engineering.',
+    titleTemplate: '%s • Dan Hiester • A Product Designer with a mixed background in design and front-end engineering.',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

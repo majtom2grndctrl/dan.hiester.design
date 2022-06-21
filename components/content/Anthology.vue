@@ -1,9 +1,6 @@
 <template>
-  <section class="anthology">
-    <slot name="hero" />
-    <div class="anthology-list">
-      <slot />
-    </div>
+  <section class="Anthology">
+    <slot />
   </section>
 </template>
 
@@ -18,27 +15,31 @@ export default Anthology
 </script>
 
 <style lang="postcss" scoped>
-.anthology {
-  background: var(--bg-blue-400);
+.Anthology {
   box-sizing: border-box;
   color: var(--white);
-  padding: 0 calc(20rem/16);
+  margin: var(--spatial-scale-4) 0;
+  padding: 0 var(--mobile-block-margin);
+    & > .Story:first-child {
+      border-radius: var(--block-border-radius) var(--block-border-radius) 0 0;
+    }
+    & > .Story:last-child {
+      border-radius: 0 0 var(--block-border-radius) var(--block-border-radius);
+    }
 }
-.anthology-list {
-  padding-bottom: 1.5rem;
+@media (--viewport-xs) {
+  .Anthology {
+  }
 }
 @media (--viewport-medium) {
-  .anthology {
-    margin: 2rem 0;
+  .Anthology {
     padding: 0;
-    &:first-child {
-      margin-top: 0;
+    & > .Story:first-child {
+      border-radius: var(--block-border-radius) var(--block-border-radius) 0 0;
     }
-  }
-  .anthology-list {
-    display: flex;
-    flex-direction: row;
-    padding-bottom: 0;
+    & > .Story:last-child {
+      border-radius: 0 0 var(--block-border-radius) var(--block-border-radius);
+    }
   }
 }
 </style>

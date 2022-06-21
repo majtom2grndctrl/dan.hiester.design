@@ -14,17 +14,16 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
-import { swipeTransition } from '~/components/layout/MainLayout.vue'
 import Prismic from 'prismic-javascript'
 import PrismicDOM from 'prismic-dom'
 import ApiSearchResponse from 'prismic-javascript/types/ApiSearchResponse'
+import { apiEndpoint } from '~/layouts/default.vue';
 import ContactCta from '~/components/contact/ContactCta.vue';
 import { Document } from 'prismic-javascript/types/documents'
 import BlogPost from '~/components/content/BlogPost.vue'
 import { scrollToContentTop } from '~/layouts/default.vue';
+import { swipeTransition } from '~/components/layout/MainLayout.vue'
 import { blogDataMock } from '~/dataMocks'
-
-export const apiEndpoint = 'https://distantly-yours-blog.cdn.prismic.io/api/v2'
 
 export interface BlogPostData {
   uid?: string;
@@ -98,11 +97,11 @@ class BlogIndex extends Vue {
       return process.env.NODE_ENV === 'development' ? { blog_posts: parseResponse(blogDataMock) } : { blog_posts: undefined }
     })
   }
-  transition (to, from) {
-    return swipeTransition(to, from)
-  }
   mounted() {
     scrollToContentTop();
+  }
+  transition (to, from) {
+    return swipeTransition(to, from)
   }
 }
 
@@ -114,6 +113,7 @@ export default BlogIndex
   @media (--viewport-medium) {
     .BlogIndex {
       --right-side: calc(100% * 5 / 12);
+      border-radius: var(--block-border-radius);
       margin: 0 0 calc(100% * 1 / 14);
       position: relative;
       overflow: hidden;

@@ -15,6 +15,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { Transition } from '@nuxt/types'
 
 const MainLayout = Vue.extend({
   computed: {
@@ -24,15 +25,7 @@ const MainLayout = Vue.extend({
   },
 });
 
-interface TransitionReturn {
-    name?: String
-}
-
-interface TransitionPath {
-    path: String
-}
-
-export function swipeTransition(to: TransitionPath, from?: TransitionPath): TransitionReturn {
+export function swipeTransition(to, from): Transition {
   if (!from) {
     return {
       name: 'swipe'
