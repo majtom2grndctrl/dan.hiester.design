@@ -16,7 +16,8 @@
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
 import Prismic from 'prismic-javascript'
-import { apiEndpoint, parseResponse, BlogPostData } from './index.vue'
+import { apiEndpoint } from '~/layouts/default.vue'
+import { parseResponse, BlogPostData } from './index.vue'
 import PrismicSlices from '~/components/content/PrismicSlices.vue'
 import { blogPostMock } from '~/dataMocks';
 import ContactCta from '~/components/contact/ContactCta.vue';

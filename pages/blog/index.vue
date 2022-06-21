@@ -17,13 +17,13 @@ import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import Prismic from 'prismic-javascript'
 import PrismicDOM from 'prismic-dom'
 import ApiSearchResponse from 'prismic-javascript/types/ApiSearchResponse'
+import { apiEndpoint } from '~/layouts/default.vue';
 import ContactCta from '~/components/contact/ContactCta.vue';
 import { Document } from 'prismic-javascript/types/documents'
 import BlogPost from '~/components/content/BlogPost.vue'
 import { scrollToContentTop } from '~/layouts/default.vue';
+import { swipeTransition } from '~/components/layout/MainLayout.vue'
 import { blogDataMock } from '~/dataMocks'
-
-export const apiEndpoint = 'https://distantly-yours-blog.cdn.prismic.io/api/v2'
 
 export interface BlogPostData {
   uid?: string;
@@ -99,6 +99,9 @@ class BlogIndex extends Vue {
   }
   mounted() {
     scrollToContentTop();
+  }
+  transition (to, from) {
+    return swipeTransition(to, from)
   }
 }
 
