@@ -2,7 +2,7 @@
   <footer class="SiteFooter">
     <div class="meta">
       <h2 class="title"><span class="dan-hiester">Dan Hiester</span></h2>
-      <p class="description">A Product Designer with a mixed background in design and front-end engineering.</p>
+      <p class="description">A Product Designer with a mixed background in design and front-end&nbsp;engineering.</p>
       <social-icons class="icons" />
     </div>
     <div class="end">
@@ -17,25 +17,25 @@
           <nuxt-link :to="paths.about" class="footer-link">About</nuxt-link>
         </div>
       </nav>
-      <div class="copyright">&copy; {{ year }} Dan Hiester</div>
+      <div class="copyright">&copy; {{ thisYear }} Dan Hiester</div>
     </div>
   </footer>
 </template>
 
-<script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator';
+<script lang="ts" setup>
+import { defineComponent } from '@nuxtjs/composition-api';
 import SocialIcons from '~/components/contact/SocialIcons.vue';
 import paths from '~/paths';
 
-@Component({
+const SiteFooter = defineComponent({
   components: {
     SocialIcons
-  }
+  },
+  setup() {
+    const thisYear = new Date().getUTCFullYear()
+    return { thisYear, paths }
+  },
 })
-class SiteFooter extends Vue {
-  year = new Date().getUTCFullYear();
-  paths = paths;
-}
 
 export default SiteFooter;
 </script>
