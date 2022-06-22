@@ -22,7 +22,7 @@
   </footer>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api';
 import SocialIcons from '~/components/contact/SocialIcons.vue';
 import paths from '~/paths';
