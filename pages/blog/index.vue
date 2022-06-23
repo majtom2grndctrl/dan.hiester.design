@@ -1,12 +1,14 @@
 <template>
-  <div class="BlogIndex-wrapper">
-    <section class="BlogIndex fade-after-transition" v-if="blog_posts">
-      <BlogPost v-for="(post, index) in blog_posts" :post="post" :key="index" />
-    </section>
-    <section v-else>
-      <h1>Signal disrupted</h1>
-      <p>Your browser tried to download this blog post, but something went wrong. Try checking your internet connection and <button onClick="window.location.reload()" class="btn-link">refreshing this page</button>.</p>
-    </section>
+  <div>
+    <div class="BlogIndex-wrapper">
+      <section class="BlogIndex fade-after-transition" v-if="blog_posts">
+        <BlogPost v-for="(post, index) in blog_posts" :post="post" :key="index" />
+      </section>
+      <section v-else>
+        <h1>Signal disrupted</h1>
+        <p>Your browser tried to download this blog post, but something went wrong. Try checking your internet connection and <button onClick="window.location.reload()" class="btn-link">refreshing this page</button>.</p>
+      </section>
+    </div>
     <ContactCta v-if="blog_posts" />
   </div>
 </template>
