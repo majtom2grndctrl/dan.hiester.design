@@ -113,7 +113,7 @@ export default BlogIndex
 
 <style lang="postcss" scoped>
   .BlogIndex-wrapper {
-    padding: 0 var(--spatial-scale-3) var(--spatial-scale-7);
+    padding: 0 var(--spatial-scale-3);
   }
   .BlogIndex {
     border-radius: var(--block-border-radius);
