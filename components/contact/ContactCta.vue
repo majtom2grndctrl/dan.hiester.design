@@ -57,7 +57,7 @@ export default ContactCta
   box-sizing: border-box;
   color: var(--white);
   overflow: hidden;
-  margin: 0 auto;
+  margin: 0 auto var(--spatial-scale-3);
   max-width: 30rem;
   padding: 0 0 var(--spatial-scale-6) 0;
 }
@@ -97,7 +97,7 @@ export default ContactCta
       flex-direction: row;
       align-items: center;
       justify-items: center;
-    margin: calc(1 / 12 * 100%) 0 var(--spatial-scale-6) 0;
+    margin: calc(1 / 12 * 100%) 0;
     max-width: unset;
     overflow: hidden;
     padding: 1rem 0;
