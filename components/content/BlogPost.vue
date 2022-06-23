@@ -43,7 +43,7 @@ export default BlogPost
   .text {
     margin: 0 auto;
     max-width: 30rem;
-    padding: var(--spatial-scale-5) var(--spatial-scale-2);
+    padding: var(--spatial-scale-5) var(--spatial-scale-3);
   }
   .title {
     font-size: var(--type-scale-3);
@@ -57,8 +57,7 @@ export default BlogPost
   }
   @media (--viewport-medium) {
     .text {
-      padding-top: var(--spatial-scale-8);
-      padding-bottom: var(--spatial-scale-8);
+      padding: var(--spatial-scale-8) 0;
     }
     .title {
       line-height: var(--spatial-scale-6);
