@@ -70,7 +70,7 @@
       flex-grow: 1;
       margin: var(--block-border-radius) auto;
     }
-    .content-wrapper > .BlockType, .title, .teaser, .cta-wrapper {
+    div.content-wrapper > .BlockType, .title, .teaser, .cta-wrapper {
       max-width: 66%;
       margin-right: auto;
       margin-left: auto;
