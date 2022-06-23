@@ -103,10 +103,10 @@ export default ContactCta
     padding: 1rem 0;
   }
   .content {
-    flex-basis: 47%;
-    padding-right: 1.5rem;
+    flex-basis: 50%;
+    margin: 0;
     & > .title, & > p, & > .cta {
-      max-width: 22rem;
+      max-width: 66%;
       margin-right: auto;
       margin-left: auto;
     }
@@ -127,7 +127,7 @@ export default ContactCta
     margin-bottom: 0;
   }
   .image-container {
-    flex-basis: 53%;
+    flex-basis: 50%;
   }
   .image-mobile {
     display: none;
