@@ -68,15 +68,18 @@
       box-sizing: border-box;
       flex-basis: 50%;
       flex-grow: 1;
-      padding: var(--block-border-radius) calc(100% * 1 / 12);
+      margin: var(--block-border-radius) auto;
+    }
+    .content-wrapper > .BlockType, .title, .teaser, .cta-wrapper {
+      max-width: 66%;
+      margin-right: auto;
+      margin-left: auto;
     }
     .teaser {
       font-size: var(--type-scale-0);
       line-height: var(--spatial-scale-4);
-      padding-right: calc(100% / 12);
     }
     .cta-wrapper {
-      padding-right: calc(100% / 12);
     }
     .CtaLink {
       max-width: 100%;
