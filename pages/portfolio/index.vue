@@ -1,10 +1,15 @@
 <template>
   <div>
     <Anthology>
-      <Story v-for="(item, index) in caseStudies" :data="item" :key="'case_study_' + (index + 1)" />
+      <Story
+        v-for="(item, index) in caseStudies"
+        :class="index > 1 && 'render-after-transition'"
+        :data="item"
+        :key="'case_study_' + (index + 1)"
+      />
     </Anthology>
 
-    <ContactCta class="defer-for-transition" />
+    <ContactCta class="render-after-transition" />
   </div>
 </template>
 
@@ -69,6 +74,7 @@ const Index = defineComponent({
 });
 
 Index.transition = (to, from) => swipeTransition(to, from)
+Index.scrollToTop = true
 
 export default Index;
 </script>

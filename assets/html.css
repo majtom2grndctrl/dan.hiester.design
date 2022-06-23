@@ -118,7 +118,7 @@ h1, h2, h3, h4, h5, h6 {
 .home-enter-to {
   transform: perspective(100vh) translate3d(0, 0, 0);
 }
-.home-enter-to div .defer-for-transition {
+.home-enter-to div .render-after-transition {
   display: none;
 }
 .home-leave-active {

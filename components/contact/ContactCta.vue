@@ -48,7 +48,7 @@ export default ContactCta
 
 
 <style lang="postcss" scoped>
-.ContactCta--wrapper {
+.ContactCta-wrapper {
   padding: 0 var(--mobile-block-margin);
 }
 .ContactCta {
@@ -57,9 +57,9 @@ export default ContactCta
   box-sizing: border-box;
   color: var(--white);
   overflow: hidden;
-  margin: 0 auto;
+  margin: 0 auto var(--spatial-scale-3);
   max-width: 30rem;
-  padding: 0 var(--spatial-scale-3) var(--spatial-scale-3)  var(--spatial-scale-3);
+  padding: 0 0 var(--spatial-scale-6) 0;
 }
 .image-mobile {
   width: 100%;
@@ -88,22 +88,16 @@ export default ContactCta
   margin: var(--spatial-scale-4) auto 0;
 }
 
-@media (--viewport-small) {
-  .content {
-    margin: 0 auto;
-    max-width: 30rem;
-    & > .title {
-      text-align: center;
-    }
-  }
-}
 @media (--viewport-medium) {
+  .ContactCta-wrapper {
+    padding: unset;
+  }
   .ContactCta {
     display: flex;
       flex-direction: row;
       align-items: center;
       justify-items: center;
-    margin: calc(1 / 12 * 100%) 0 var(--spatial-scale-6) 0;
+    margin: calc(1 / 12 * 100%) 0;
     max-width: unset;
     overflow: hidden;
     padding: 1rem 0;

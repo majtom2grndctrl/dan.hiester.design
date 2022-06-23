@@ -1,12 +1,14 @@
 <template>
   <div>
-    <section class="BlogIndex fade-after-transition" v-if="blog_posts">
-      <BlogPost v-for="(post, index) in blog_posts" :post="post" :key="index" />
-    </section>
-    <section v-else>
-      <h1>Signal disrupted</h1>
-      <p>Your browser tried to download this blog post, but something went wrong. Try checking your internet connection and <button onClick="window.location.reload()" class="btn-link">refreshing this page</button>.</p>
-    </section>
+    <div class="BlogIndex-wrapper">
+      <section class="BlogIndex fade-after-transition" v-if="blog_posts">
+        <BlogPost v-for="(post, index) in blog_posts" :post="post" :key="index" />
+      </section>
+      <section v-else>
+        <h1>Signal disrupted</h1>
+        <p>Your browser tried to download this blog post, but something went wrong. Try checking your internet connection and <button onClick="window.location.reload()" class="btn-link">refreshing this page</button>.</p>
+      </section>
+    </div>
     <ContactCta v-if="blog_posts" />
   </div>
 </template>
@@ -110,11 +112,25 @@ export default BlogIndex
 
 
 <style lang="postcss" scoped>
+  .BlogIndex-wrapper {
+    padding: 0 var(--spatial-scale-3);
+  }
+  .BlogIndex {
+    border-radius: var(--block-border-radius);
+    margin: var(--spatial-scale-3) auto var(--spatial-scale-7);
+    max-width: var(--mobile-max-width);
+    overflow: hidden;
+  }
   @media (--viewport-medium) {
+    .BlogIndex-wrapper {
+      padding: unset;
+    }
     .BlogIndex {
       --right-side: calc(100% * 5 / 12);
       border-radius: var(--block-border-radius);
       margin: 0 0 calc(100% * 1 / 14);
+      max-width: unset;
+      padding: unset;
       position: relative;
       overflow: hidden;
       padding-right: var(--right-side);
