@@ -18,7 +18,7 @@ export default Anthology
 .Anthology {
   box-sizing: border-box;
   color: var(--white);
-  margin: var(--spatial-scale-4) 0;
+  margin: var(--spatial-scale-4) 0 var(--spatial-scale-7);
   padding: 0 var(--mobile-block-margin);
     & > .Story:first-child {
       border-radius: var(--block-border-radius) var(--block-border-radius) 0 0;
