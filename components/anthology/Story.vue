@@ -76,9 +76,6 @@
     .cta-wrapper {
       padding-right: calc(100% / 12);
     }
-    .CtaLink {
-      max-width: calc(100% / );
-    }
   }
 </style>
 
