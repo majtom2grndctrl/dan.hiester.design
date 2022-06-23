@@ -73,7 +73,7 @@ export default SiteHeader;
     align-items: center;
     line-height: var(--spatial-scale-1);
     margin: calc(var(--spatial-scale-1) * -1) 0;
-    padding: var(--spatial-scale-1) var(--spatial-scale-2);
+    padding: var(--spatial-scale-1) var(--spatial-scale-3);
     text-decoration: none;
   }
   .dh-logo {
