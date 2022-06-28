@@ -12,7 +12,7 @@
   </article>
 </template>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
   .Story {
     background: var(--story-background);
     box-sizing: border-box;
