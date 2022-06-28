@@ -72,7 +72,6 @@ export interface ICaseStudyData {
     project_name: string
     start_date: string
     end_date: string
-    remix_date: string
     employer: string
     client: string
     team_label: string
