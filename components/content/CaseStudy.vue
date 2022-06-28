@@ -2,8 +2,14 @@
   <article>
     <header class="header">
       <div class="meta">
-        <span class="type">{{ data.meta.case_study_type }}</span>
         <h1 v-html="data.headline" class="title" />
+        <div>
+          <span class="projectName">{{ data.meta.project_name }}</span><span class="type">{{ data.meta.case_study_type }}</span>
+        </div>
+        <div class="project-dates"><span v-if="data.meta.remix_date">Original timeline: </span>{{ data.meta.start_date }}&ndash;{{ data.meta.end_date }}</div>
+        <div v-if="data.meta.remix_date" class="remix-date">
+          Project Remixed: {{data.meta.remix_date}}
+        </div>
       </div>
       <div class="hero">
         <img :src="data.hero_image.url" class="heroImage" :alt="data.hero_image.alt" />
@@ -11,18 +17,6 @@
     </header>
     <div class="about" v-if="data.meta">
       <div class="team" v-if="data.meta.employer || data.meta.client || data.meta.team">
-        <div v-if="data.meta.start_date && data.meta.end_date">
-          <h2><span v-if="data.meta.remix_date">Original</span> Project Dates</h2>
-          <div>
-            {{data.meta.start_date}}—{{data.meta.end_date}}
-          </div>
-        </div>
-        <div v-if="data.meta.remix_date">
-          <h2>Project Remixed</h2>
-          <div>
-            {{data.meta.remix_date}}
-          </div>
-        </div>
         <div v-if="data.meta.employer">
           <h2>Employer</h2>
           <div v-html="data.meta.employer" />
@@ -68,23 +62,24 @@ import PrismicSlices from '~/components/content/PrismicSlices.vue'
 export interface ICaseStudyData {
   headline: string;
   meta: {
-    case_study_type: string;
-    project_name: string;
-    start_date: string;
-    end_date: string;
-    employer: string;
-    client: string;
-    team_label: string;
-    roles: string;
-    skills: string;
-    tools: string;
+    case_study_type: string
+    project_name: string
+    start_date: string
+    end_date: string
+    remix_date?: string
+    employer: string
+    client: string
+    team_label: string
+    roles: string
+    skills: string
+    tools: string
   };
   hero_image: {
-    url: string;
-    alt?: string;
+    url: string
+    alt?: string
   };
-  slug?: string;
-  document: Document;
+  slug?: string
+  document: Document
 }
 
 
@@ -115,6 +110,7 @@ export function parseCaseStudy (payload: Document): ICaseStudyData {
       project_name:  data.project_name,
       start_date: parseDate(data.start_date),
       end_date: parseDate(data.end_date),
+      remix_date: data.remix_date ? parseDate(data.remix_date) : undefined,
       employer: data.employer,
       client: data.client,
       team_label: data.team_label || 'Team',
@@ -206,6 +202,10 @@ export default CaseStudy
       padding: 0;
     }
   }
+  .remix-date {
+    margin: var(--spatial-scale-00) 0 0 0;
+  }
+
   @media (--viewport-small) {
     .title {
       margin-right: auto;
