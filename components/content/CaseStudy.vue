@@ -68,23 +68,24 @@ import PrismicSlices from '~/components/content/PrismicSlices.vue'
 export interface ICaseStudyData {
   headline: string;
   meta: {
-    case_study_type: string;
-    project_name: string;
-    start_date: string;
-    end_date: string;
-    employer: string;
-    client: string;
-    team_label: string;
-    roles: string;
-    skills: string;
-    tools: string;
+    case_study_type: string
+    project_name: string
+    start_date: string
+    end_date: string
+    remix_date: string
+    employer: string
+    client: string
+    team_label: string
+    roles: string
+    skills: string
+    tools: string
   };
   hero_image: {
-    url: string;
-    alt?: string;
+    url: string
+    alt?: string
   };
-  slug?: string;
-  document: Document;
+  slug?: string
+  document: Document
 }
 
 
