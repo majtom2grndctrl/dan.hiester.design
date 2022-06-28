@@ -68,7 +68,7 @@
       box-sizing: border-box;
       flex-basis: 50%;
       flex-grow: 1;
-      margin: var(--block-border-radius) auto;
+      margin: var(--spatial-scale-7) auto;
     }
     div.content-wrapper > .BlockType, .title, .teaser, .cta-wrapper {
       max-width: 66%;
