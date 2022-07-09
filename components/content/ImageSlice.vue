@@ -68,8 +68,8 @@ export default defineComponent<ImageSliceProps>({
 @media (--viewport-small) {
   .prismic-content {
     & figure {
-        margin-right: auto;
-        margin-left: auto;
+      margin-right: auto;
+      margin-left: auto;
       & p {
         margin-right: auto;
         margin-left: auto;
@@ -88,10 +88,11 @@ export default defineComponent<ImageSliceProps>({
 @media (--viewport-medium) {
   .prismic-content {
     & figure {
+      box-sizing: border-box;
       font-size: var(--type-scale-0);
-        margin-right: auto;
-        margin-left: auto;
-        max-width: calc(100% * 8 / 12);
+      margin-right: auto;
+      margin-left: auto;
+      max-width: calc(100% * 8 / 12);
       &.cover-image {
         border-radius: var(--block-border-radius);
         padding: var(--block-border-radius);

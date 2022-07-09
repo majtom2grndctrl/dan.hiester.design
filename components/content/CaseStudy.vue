@@ -56,7 +56,7 @@
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import Prismic from 'prismic-javascript'
 import PrismicDOM from 'prismic-dom'
-import { Document } from 'prismic-javascript/types/documents';
+import { Document } from 'prismic-javascript/types/documents'
 import PrismicSlices from '~/components/content/PrismicSlices.vue'
 
 export interface ICaseStudyData {
