@@ -56,13 +56,6 @@ export default defineComponent<ImageSliceProps>({
       margin-right: 0;
       margin-left: 0;
     }
-    & a {
-      color: var(--white);
-    }
-    & p {
-      line-height: var(--spatial-scale-4);
-      margin: var(--spatial-scale-0) var(--spatial-scale-2);
-    }
   }
 }
 @media (--viewport-small) {
@@ -106,12 +99,30 @@ export default defineComponent<ImageSliceProps>({
         margin-right: calc(100% * 1 / 12);
         margin-left: var(--spatial-scale-3);
       }
-      & p {
-        margin-right: auto;
-        margin-left: auto;
-        width: 68%;
-        line-height: var(--spatial-scale-4);
-      }
+    }
+  }
+}
+</style>
+
+<style lang="postcss">
+.prismic-content figure {
+    & a {
+      color: var(--white);
+    }
+    & p {
+      margin: var(--spatial-scale-0) var(--spatial-scale-2);
+    }
+}
+@media (--viewport-medium) {
+  .prismic-content figure {
+    & p {
+      margin-right: auto;
+      margin-left: auto;
+      width: auto;
+      line-height: var(--spatial-scale-4);
+    }
+    &.cover-image p {
+      width: 71%
     }
   }
 }
