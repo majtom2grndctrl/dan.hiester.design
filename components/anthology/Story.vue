@@ -40,6 +40,9 @@
       margin: var(--spatial-scale-00) 0 var(--spatial-scale-3) 0;
     }
   }
+  .cta-wrapper {
+    margin: var(--spatial-scale-4) 0 0;
+  }
   .CtaLink {
     margin: 0 auto;
     max-width: 20rem;
@@ -56,7 +59,6 @@
       box-sizing: border-box;
       justify-content: flex-end;
       flex-basis: 50%;
-      padding: var(--block-border-radius) var(--spatial-scale-3) 0;
     }
     .image {
       margin: 0 0 0 auto;
