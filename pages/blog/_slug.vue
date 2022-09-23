@@ -118,10 +118,11 @@ export default BlogView
       margin: 0 0 var(--spatial-scale-6) 0;
     }
     .title {
-      margin: 1em auto .5em;
+      margin: var(--spatial-scale-3) auto var(--spatial-scale-1);
       max-width: 30rem;
     }
     .subtitle {
+      margin: 0 auto var(--spatial-scale-6);
       max-width: 30rem;
     }
     .hero .image {
@@ -148,6 +149,7 @@ export default BlogView
       font-size: var(--type-scale-4);
       line-height: var(--spatial-scale-7);
       max-width: unset;
+      margin: var(--spatial-scale-1) 0 var(--spatial-scale-3) 0;
     }
     .subtitle {
       font-size: var(--type-scale-1);
