@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import PrismicDOM from 'prismic-dom';
-import { defineComponent, ref, PropType } from '@nuxtjs/composition-api';
+import Vue, { PropOptions } from 'vue'
 
 interface ImageSliceBlock {
   caption: string;
@@ -18,19 +18,18 @@ interface ImageSliceBlock {
   };
 };
 
-interface ImageSliceProps {
-  block: ImageSliceBlock;
-};
-
-export default defineComponent<ImageSliceProps>({
+const ImageSlice = Vue.extend({
   props: {
-    block: Object as PropType<ImageSliceBlock>,
+    block: {
+      type: Object,
+      required: true,
+    } as PropOptions<ImageSliceBlock>
   },
-  setup({ block }) {
-    const display_size = ref(block!.display_size);
-    const url = ref(block!.image.url);
-    const alt = ref(block!.image.alt);
-    const caption = ref(PrismicDOM.RichText.asHtml(block!.caption));
+  data () {
+    const display_size = this.block.display_size;
+    const url = this.block.image.url;
+    const alt = this.block.image.alt;
+    const caption = PrismicDOM.RichText.asHtml(this.block.caption);
 
     return {
       display_size,
@@ -39,7 +38,9 @@ export default defineComponent<ImageSliceProps>({
       caption,
     };
   },
-});
+})
+
+export default ImageSlice
 </script>
 
 <style lang="postcss" scoped>

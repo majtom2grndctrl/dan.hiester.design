@@ -15,7 +15,7 @@
 
 
 <script lang="ts">
-import { defineComponent, Ref, ref, useStatic, useAttrs } from '@nuxtjs/composition-api';
+import { Vue } from 'nuxt-property-decorator'
 import Prismic from 'prismic-javascript'
 import PrismicDOM from 'prismic-dom'
 import { apiEndpoint } from '~/layouts/default.vue'
@@ -34,7 +34,7 @@ import { scrollToContentTop } from '~/layouts/default.vue';
 const getCmsText = PrismicDOM.RichText.asText
 const getCmsHtml = PrismicDOM.RichText.asHtml
 
-const Index = defineComponent({
+const PortfolioIndex = Vue.extend({
   components: {
     Anthology,
     AnthologyHero,
@@ -45,38 +45,35 @@ const Index = defineComponent({
     Story,
     Suggestion,
   },
-  setup() {
-    const caseStudies = useStatic(async () => {
-      const api = await Prismic.getApi(apiEndpoint);
-      const { results } = await api.query(
-        Prismic.Predicates.at('document.type', 'case_study'),
-        { orderings: '[my.case_study.index_priority desc]'}
-      );
-      return results.map(item => {
-        const { data } = item
-        const mappedItem: StoryData = {
-          backgroundColor: data.index_background,
-          ctaText: getCmsText(data.index_cta),
-          image: data.index_image,
-          overline: getCmsText(data.overline),
-          teaser: getCmsHtml(data.teaser),
-          title: getCmsText(data.headline),
-          url: paths.portfolio_item(item.uid!),
-        }
-        return mappedItem
-      });
-    }, undefined, 'unUsed')
-
-    return {
-      caseStudies,
-    };
+  scrollToTop: true,
+  async asyncData () {
+    const api = await Prismic.getApi(apiEndpoint);
+    const { results } = await api.query(
+      Prismic.Predicates.at('document.type', 'case_study'),
+      { orderings: '[my.case_study.index_priority desc]'}
+    );
+    const caseStudies = results.map(item => {
+      const { data } = item
+      const mappedItem: StoryData = {
+        backgroundColor: data.index_background,
+        ctaText: getCmsText(data.index_cta),
+        image: data.index_image,
+        overline: getCmsText(data.overline),
+        teaser: getCmsHtml(data.teaser),
+        title: getCmsText(data.headline),
+        url: paths.portfolio_item(item.uid!),
+      }
+      return mappedItem
+    });
+    console.log({ caseStudies })
+    return { caseStudies }
   },
-});
+  transition (to, from) {
+    return swipeTransition(to, from)
+  }
+})
 
-Index.transition = (to, from) => swipeTransition(to, from)
-Index.scrollToTop = true
-
-export default Index;
+export default PortfolioIndex;
 </script>
 
 <style lang="postcss" scoped>
