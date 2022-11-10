@@ -65,7 +65,6 @@ const PortfolioIndex = Vue.extend({
       }
       return mappedItem
     });
-    console.log({ caseStudies })
     return { caseStudies }
   },
   transition (to, from) {

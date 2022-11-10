@@ -92,7 +92,7 @@
 </style>
 
 <script lang="ts">
-import { defineComponent, PropType } from '@nuxtjs/composition-api'
+import Vue, { PropOptions } from 'vue'
 import paths from '~/paths'
 import BlockType from '~/components/text/BlockType.vue'
 import CtaLink from '~/components/buttons/CtaLink.vue'
@@ -110,19 +110,18 @@ export interface StoryData {
   url: string
 }
 
-interface StoryProps {
-  data: StoryData
-}
-
-export default defineComponent<StoryProps>({
+const Story = Vue.extend({
   components: {
     BlockType,
     CtaLink
   },
   props: {
-    data: Object as PropType<StoryData>
+    data: {
+      type: Object,
+      required: true,
+    } as PropOptions<StoryData>
   },
-  setup({ data }) {
+  data () {
     const {
       backgroundColor,
       ctaText,
@@ -131,7 +130,7 @@ export default defineComponent<StoryProps>({
       overline,
       title,
       url
-    } = data
+    } = this.data
 
   return {
       backgroundColor,
@@ -145,4 +144,6 @@ export default defineComponent<StoryProps>({
     }
   },
 })
+
+export default Story
 </script>

@@ -23,15 +23,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
+import Vue from 'vue';
 import SocialIcons from '~/components/contact/SocialIcons.vue';
 import paths from '~/paths';
 
-const SiteFooter = defineComponent({
+const SiteFooter = Vue.extend({
   components: {
     SocialIcons
   },
-  setup() {
+  data () {
     const thisYear = new Date().getUTCFullYear()
     return { thisYear, paths }
   },

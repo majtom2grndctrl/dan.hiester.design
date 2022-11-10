@@ -85,7 +85,7 @@ export default Nav1;
     }
   }
 }
-@media(--viewport-small) {
+@media (--viewport-small) {
   .Nav1 {
     box-shadow: none;
     position: static;
