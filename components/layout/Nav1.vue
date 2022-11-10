@@ -108,6 +108,9 @@ export default Nav1;
       margin: calc(var(--spatial-scale-1) * -1) calc(var(--spatial-scale-1) * -1) calc(var(--spatial-scale-1) * -1) var(--spatial-scale-1);
     }
   }
+  .ContentLayout + .Nav1.nav1 {
+    display: none;
+  }
 }
 @media (--viewport-medium) {
   .Nav1 {
