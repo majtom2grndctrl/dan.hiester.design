@@ -87,7 +87,7 @@ export default DefaultLayout
       position: static;
       overflow: visible;
     }
-    .ContentLayout + .Nav1.nav1, .Nav2.nav2 {
+    .Nav2.nav2 {
       display: none;
     }
   }

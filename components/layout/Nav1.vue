@@ -85,7 +85,7 @@ export default Nav1;
     }
   }
 }
-@media(--viewport-small) {
+@media (--viewport-small) {
   .Nav1 {
     box-shadow: none;
     position: static;
@@ -107,6 +107,9 @@ export default Nav1;
       min-width: unset;
       margin: calc(var(--spatial-scale-1) * -1) calc(var(--spatial-scale-1) * -1) calc(var(--spatial-scale-1) * -1) var(--spatial-scale-1);
     }
+  }
+  .ContentLayout + .Nav1.nav1 {
+    display: none;
   }
 }
 @media (--viewport-medium) {

@@ -8,8 +8,8 @@
 </template>
 
 <script lang="ts">
+import Vue, { PropOptions } from 'vue';
 import PrismicDOM from 'prismic-dom';
-import { defineComponent, ref, PropType } from '@nuxtjs/composition-api';
 import BlockType from '~/components/text/BlockType.vue';
 
 interface ContentSliceBlock {
@@ -23,18 +23,21 @@ interface ContentSliceProps {
   block: ContentSliceBlock;
 };
 
-const ContentSlice = defineComponent<ContentSliceProps>({
+const ContentSlice = Vue.extend({
   components: {
     BlockType,
   },
   props: {
-    block: Object as PropType<ContentSliceBlock>,
+    block: {
+      type: Object,
+      required: true,
+    } as PropOptions<ContentSliceBlock>,
   },
-  setup({ block }) {
-    const blockType = ref(block!.block_type);
-    const title1 = ref(PrismicDOM.RichText.asHtml(block!.title1));
-    const lede = ref(PrismicDOM.RichText.asHtml(block!.lede));
-    const content = ref(PrismicDOM.RichText.asHtml(block!.content));
+  data () {
+    const blockType = this.block!.block_type;
+    const title1 = PrismicDOM.RichText.asHtml(this.block!.title1);
+    const lede = PrismicDOM.RichText.asHtml(this.block!.lede);
+    const content = PrismicDOM.RichText.asHtml(this.block!.content);
 
     return {
       blockType,

@@ -22,12 +22,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from '@nuxtjs/composition-api';
-import pathsImport from '~/paths';
+import Vue from 'vue';
+import paths from '~/paths';
 
-const AboutPage = defineComponent({
-  setup() {
-    const paths = ref(pathsImport);
+const AboutPage = Vue.extend({
+  data () {
     return {
       paths,
     };
