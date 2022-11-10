@@ -2,7 +2,7 @@
   <footer class="SiteFooter">
     <div class="meta">
       <h2 class="title"><span class="dan-hiester">Dan Hiester</span></h2>
-      <p class="description">A Product Designer with a mixed background in design and front-end&nbsp;engineering.</p>
+      <p class="description">A Product Designer who uses technical skills and product strategy to elevate design.</p>
       <social-icons class="icons" />
     </div>
     <div class="end">
