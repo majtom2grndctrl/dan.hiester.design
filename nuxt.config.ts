@@ -12,8 +12,8 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Dan Hiester • A Product Designer who uses technical skills and product strategy to elevate design.',
-    titleTemplate: '%s • Dan Hiester • A Product Designer who uses technical skills and product strategy to elevate design.',
+    title: 'Dan Hiester • A Product Designer who leverages technical skills and product strategy to elevate design.',
+    titleTemplate: '%s • Dan Hiester • A Product Designer who leverages technical skills and product strategy to elevate design.',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -27,11 +27,11 @@ module.exports = {
       { hid: 'og:url', property: 'og:url', content: 'https://dan.hiester.design/portfolio' },
       { property: 'og:site_name', content: 'Dan Hiester' },
       { hid: 'og:title', property: 'og:title', content: 'Dan Hiester' },
-      { hid: 'og:description', property: 'og:description', content: 'Dan Hiester • A Product Designer who uses technical skills and product strategy to elevate design.' },
+      { hid: 'og:description', property: 'og:description', content: 'Dan Hiester • A Product Designer who leverages technical skills and product strategy to elevate design.' },
       { hid: 'og:image', property: 'og:image', content: 'https://dan.hiester.design/img/fb-ogp-default.jpg' },
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
       { hid: 'twitter:image', name: 'twitter:image', content: 'https://dan.hiester.design/img/twitter-card-default.jpg' },
-      { hid: 'twitter:image:alt', name: 'twiter:image:alt', content: 'Dan Hiester • A Product Designer who uses technical skills and product strategy to elevate design.' },
+      { hid: 'twitter:image:alt', name: 'twiter:image:alt', content: 'Dan Hiester • A Product Designer who leverages technical skills and product strategy to elevate design.' },
       { hid: 'twitter:site', name: 'twitter:site', content: '@majtom2grndctrl' },
       { hid: 'twitter:creator', name: 'twitter:creator', content: '@majtom2grndctrl' },
     ],
