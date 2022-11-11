@@ -4,7 +4,7 @@
       <div>
         <h1 class="intro">
           <span class="dan-hiester">Dan Hiester</span>
-          <span class="title">A Product Designer who uses technical skills and product strategy to elevate design.</span>
+          <span class="title">A Product Designer who leverages technical skills and&nbsp;product strategy to elevate design.</span>
         </h1>
         <nav class="nav">
           <nuxt-link :to="paths.portfolio">Portfolio</nuxt-link>
