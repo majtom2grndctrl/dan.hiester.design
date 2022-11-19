@@ -147,13 +147,13 @@ export default BlogView
     }
     .title {
       font-size: var(--type-scale-4);
-      line-height: var(--spatial-scale-7);
+      line-height: var(--spatial-scale-8);
       max-width: unset;
       margin: var(--spatial-scale-1) 0 var(--spatial-scale-3) 0;
     }
     .subtitle {
       font-size: var(--type-scale-1);
-      line-height: var(--spatial-scale-5);
+      line-height: var(--spatial-scale-6);
       margin: unset;
     }
     .hero .image {
