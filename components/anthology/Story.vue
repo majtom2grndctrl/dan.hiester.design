@@ -30,7 +30,7 @@
   }
   .title {
     font-size: var(--type-scale-3);
-    line-height: var(--spatial-scale-6);
+    line-height: var(--spatial-scale-7);
     margin: 0;
   }
   .teaser {
@@ -79,7 +79,7 @@
     }
     .teaser {
       font-size: var(--type-scale-0);
-      line-height: var(--spatial-scale-4);
+      line-height: var(--spatial-scale-5);
     }
     .cta-wrapper {
     }
