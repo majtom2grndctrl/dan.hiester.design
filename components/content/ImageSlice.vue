@@ -58,6 +58,9 @@ export default ImageSlice
       margin-left: 0;
     }
   }
+  & img {
+    max-width: 100%;
+  }
 }
 @media (--viewport-small) {
   .prismic-content {
@@ -120,7 +123,6 @@ export default ImageSlice
       margin-right: auto;
       margin-left: auto;
       width: auto;
-      line-height: var(--spatial-scale-4);
     }
     &.cover-image p {
       width: 71%
