@@ -188,7 +188,7 @@ export default CaseStudy
       font-size: var(--type-scale-00);
       font-weight: 500;
       line-height: var(--spatial-scale-0);
-      margin: var(--spatial-scale-4) 0 var(--spatial-scale-1);
+      margin: var(--spatial-scale-6) 0 var(--spatial-scale-1);
       text-transform: uppercase;
     }
   }
