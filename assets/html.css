@@ -45,6 +45,8 @@
   --spatial-scale-6: calc(var(--spatial-scale-5) * var(--scale-multiplier));
   --spatial-scale-7: calc(var(--spatial-scale-6) * var(--scale-multiplier));
   --spatial-scale-8: calc(var(--spatial-scale-7) * var(--scale-multiplier));
+  --spatial-scale-9: calc(var(--spatial-scale-8) * var(--scale-multiplier));
+  --spatial-scale-10: calc(var(--spatial-scale-9) * var(--scale-multiplier));
   --spatial-scale-0: calc(var(--spatial-scale-base) / var(--scale-multiplier));
   --spatial-scale-00: calc(var(--spatial-scale-0) / var(--scale-multiplier));
 

@@ -58,6 +58,9 @@ export default ImageSlice
       margin-left: 0;
     }
   }
+  & img {
+    max-width: 100%;
+  }
 }
 @media (--viewport-small) {
   .prismic-content {
