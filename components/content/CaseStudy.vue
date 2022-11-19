@@ -240,7 +240,7 @@ export default CaseStudy
     }
     .title {
       font-size: var(--type-scale-4);
-      line-height: var(--spatial-scale-7);
+      line-height: var(--spatial-scale-8);
       margin: 0 0 var(--spatial-scale-4) 0;
       text-align: left;
     }
