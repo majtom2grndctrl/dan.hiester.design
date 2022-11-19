@@ -123,7 +123,6 @@ export default ImageSlice
       margin-right: auto;
       margin-left: auto;
       width: auto;
-      line-height: var(--spatial-scale-4);
     }
     &.cover-image p {
       width: 71%
