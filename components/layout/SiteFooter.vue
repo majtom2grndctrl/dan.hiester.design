@@ -99,6 +99,9 @@ export default SiteFooter;
       margin: 0 auto;
       max-width: 30em;
     }
+    .description {
+      line-height: var(--spatial-scale-6);
+    }
     .icons {
       width: calc(66% + (var(--spatial-scale-3) * 2));
     }
@@ -107,9 +110,6 @@ export default SiteFooter;
     .meta {
       grid-area: 1 / 1 / 2 / 6;
       margin: 0;
-    }
-    .description {
-      line-height: var(--spatial-scale-5);
     }
     .icons.SocialIcons { /* Increase specificity to override component default */
       /* The width here assumes a parent container is using 4 columns in the grid,
