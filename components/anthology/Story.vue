@@ -107,6 +107,7 @@ export interface StoryData {
   teaser: string
   overline: string
   title: string
+  uid?: string
   url: string
 }
 
@@ -129,6 +130,7 @@ const Story = defineComponent({
       teaser,
       overline,
       title,
+      uid,
       url
     } = this.data
 
@@ -140,6 +142,7 @@ const Story = defineComponent({
       overline,
       paths,
       title,
+      uid,
       url
     }
   },
