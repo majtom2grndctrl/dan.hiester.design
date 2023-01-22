@@ -17,9 +17,9 @@
 </template>
 
 <script lang="ts">
-import Vue, { PropType } from 'vue';
+import { defineComponent, PropType } from 'vue';
 
-const SectionTitleLink = Vue.extend({
+const SectionTitleLink = defineComponent({
   props: {
     to: String as PropType<String>,
   },

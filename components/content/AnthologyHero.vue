@@ -1,5 +1,5 @@
 <template>
-  <header class="AnthologyHero">
+  <header class="AnthologyHero" v-if="data">
     <h1 class="title">{{ data.title }}</h1>
     <div class="image">
       <img :src="data.image" alt="" />
@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from 'nuxt-property-decorator'
+import { defineComponent, PropType } from 'vue'
 
 export interface AnthologyHeroData {
   title: string
@@ -19,12 +19,12 @@ export interface AnthologyHeroData {
   subhead: string
 }
 
-@Component({})
 
-class AnthologyHero extends Vue {
-  @Prop()
-  data!: AnthologyHeroData
-}
+const AnthologyHero = defineComponent ({
+  props: {
+    data: Object as PropType<AnthologyHeroData>
+  }
+})
 
 export default AnthologyHero
 </script>

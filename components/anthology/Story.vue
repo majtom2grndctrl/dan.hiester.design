@@ -92,7 +92,7 @@
 </style>
 
 <script lang="ts">
-import Vue, { PropOptions } from 'vue'
+import { defineComponent, PropType } from 'vue'
 import paths from '~/paths'
 import BlockType from '~/components/text/BlockType.vue'
 import CtaLink from '~/components/buttons/CtaLink.vue'
@@ -110,16 +110,16 @@ export interface StoryData {
   url: string
 }
 
-const Story = Vue.extend({
+const Story = defineComponent({
   components: {
     BlockType,
     CtaLink
   },
   props: {
     data: {
-      type: Object,
+      type: Object as PropType<StoryData>,
       required: true,
-    } as PropOptions<StoryData>
+    }
   },
   data () {
     const {

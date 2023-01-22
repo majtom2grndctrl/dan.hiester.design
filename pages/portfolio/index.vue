@@ -15,7 +15,7 @@
 
 
 <script lang="ts">
-import { Vue } from 'nuxt-property-decorator'
+import { defineComponent } from 'vue'
 import Prismic from 'prismic-javascript'
 import PrismicDOM from 'prismic-dom'
 import { apiEndpoint } from '~/layouts/default.vue'
@@ -24,7 +24,6 @@ import Anthology from '~/components/content/Anthology.vue'
 import Story, { StoryData } from '~/components/anthology/Story.vue'
 import CtaLink from '~/components/buttons/CtaLink.vue'
 import ContactCta from '~/components/contact/ContactCta.vue';
-import AnthologyHero, { AnthologyHeroData } from '~/components/content/AnthologyHero.vue'
 import AnthologyItem, { AnthologyItemData } from '~/components/content/AnthologyItem.vue'
 import StandAlone, { StandAloneProps } from '~/components/content/StandAlone.vue'
 import Suggestion, { SuggestionProps } from '~/components/content/Suggestion.vue'
@@ -34,10 +33,9 @@ import { scrollToContentTop } from '~/layouts/default.vue';
 const getCmsText = PrismicDOM.RichText.asText
 const getCmsHtml = PrismicDOM.RichText.asHtml
 
-const PortfolioIndex = Vue.extend({
+const PortfolioIndex = defineComponent({
   components: {
     Anthology,
-    AnthologyHero,
     AnthologyItem,
     CtaLink,
     ContactCta,
@@ -69,6 +67,12 @@ const PortfolioIndex = Vue.extend({
   },
   transition (to, from) {
     return swipeTransition(to, from)
+  },
+  data () {
+    const caseStudies = [] as StoryData[];
+    return {
+      caseStudies
+    }
   }
 })
 

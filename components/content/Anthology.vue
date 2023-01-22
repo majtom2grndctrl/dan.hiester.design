@@ -5,11 +5,9 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from 'nuxt-property-decorator'
+import { defineComponent } from 'vue';
 
-@Component({})
-class Anthology extends Vue {
-}
+const Anthology = defineComponent({});
 
 export default Anthology
 </script>
@@ -26,10 +24,6 @@ export default Anthology
     & > .Story:last-child {
       border-radius: 0 0 var(--block-border-radius) var(--block-border-radius);
     }
-}
-@media (--viewport-xs) {
-  .Anthology {
-  }
 }
 @media (--viewport-medium) {
   .Anthology {
