@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import Vue, { PropOptions } from 'vue';
+import { defineComponent, PropType } from 'vue';
 import PrismicDOM from 'prismic-dom';
 import BlockType from '~/components/text/BlockType.vue';
 
@@ -23,15 +23,12 @@ interface ContentSliceProps {
   block: ContentSliceBlock;
 };
 
-const ContentSlice = Vue.extend({
+const ContentSlice = defineComponent({
   components: {
     BlockType,
   },
   props: {
-    block: {
-      type: Object,
-      required: true,
-    } as PropOptions<ContentSliceBlock>,
+    block: Object as PropType<ContentSliceBlock>,
   },
   data () {
     const blockType = this.block!.block_type;
@@ -69,7 +66,7 @@ export default ContentSlice;
   color: var(--gray-400);
   & .lede p {
     font-size: var(--type-scale-1);
-    line-height: var(--type-scale-3);
+    line-height: var(--type-scale-4);
   }
   & img {
     max-width: 100%;
@@ -117,11 +114,11 @@ export default ContentSlice;
     padding: var(--spatial-scale-2) var(--spatial-scale-2);
   }
   & .block-title {
-    margin-top: var(--spatial-scale-7);
+    margin-top: var(--spatial-scale-10);
     margin-bottom: var(--spatial-scale-1);
   }
   & .BlockType.block-type {
-    margin-top: var(--spatial-scale-7);
+    margin-top: var(--spatial-scale-10);
     margin-bottom: var(--spatial-scale-00);
     & + .block-title {
       margin-top: 0;
@@ -144,8 +141,12 @@ export default ContentSlice;
     & p, & h2, & h3, & h4, & h5, & h6 {
       padding-left: var(--spatial-scale-5);
     }
+    & .block-title {
+      margin: var(--spatial-scale-12) auto var(--spatial-scale-3);
+    }
     & .BlockType.block-type {
       padding-left: calc(var(--spatial-scale-5) + .1ch);
+      margin: var(--spatial-scale-12) auto var(--spatial-scale-00);
     }
     & .lede p {
       font-size: var(--type-scale-2);
@@ -186,13 +187,9 @@ export default ContentSlice;
       font-size: var(--type-scale-4);
       line-height: var(--spatial-scale-8);
     }
-    & .block-title {
-      margin: var(--spatial-scale-9) auto var(--spatial-scale-3);
-    }
     & .BlockType.block-type {
       font-size: var(--type-scale-0);
       line-height: var(--spatial-scale-0);
-      margin: var(--spatial-scale-10) auto var(--spatial-scale-00);
       padding-left: .1ch;
       & + .block-title {
         margin-top: 0;

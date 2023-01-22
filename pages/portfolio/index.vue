@@ -5,7 +5,7 @@
         v-for="(item, index) in caseStudies"
         :class="index > 1 && 'render-after-transition'"
         :data="item"
-        :key="'case_study_' + (index + 1)"
+        :key="'case_study_' + item.uid"
       />
     </Anthology>
 
@@ -59,6 +59,7 @@ const PortfolioIndex = defineComponent({
         overline: getCmsText(data.overline),
         teaser: getCmsHtml(data.teaser),
         title: getCmsText(data.headline),
+        uid: item.uid,
         url: paths.portfolio_item(item.uid!),
       }
       return mappedItem

@@ -49,8 +49,7 @@ export default ImageSlice
     background: var(--bg-blue-400);
     color: var(--white);
     font-size: var(--type-scale-0);
-    margin-right: var(--spatial-scale-2);
-    margin-left: var(--spatial-scale-2);
+    margin: var(--spatial-scale-6) var(--spatial-scale-2) var(--spatial-scale-10);
     max-width: calc(40rem - var(--spatial-scale-4) * 2);
     padding: calc(1rem/16) calc(1rem/16) 1.5em calc(1rem/16);
     &.cover-image {
