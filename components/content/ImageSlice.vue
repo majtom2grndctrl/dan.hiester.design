@@ -1,13 +1,13 @@
 <template>
   <figure :class="display_size || 'cover-image'">
-    <img :src="url" :alt="alt" />
-    <figcaption v-html="caption" />
+    <img :src="image.url" :alt="image.alt" />
+    <figcaption v-html="captionHtml" />
   </figure>
 </template>
 
 <script lang="ts">
 import PrismicDOM from 'prismic-dom';
-import Vue, { PropOptions } from 'vue'
+import { defineComponent, PropType } from 'vue'
 
 interface ImageSliceBlock {
   caption: string;
@@ -18,24 +18,19 @@ interface ImageSliceBlock {
   };
 };
 
-const ImageSlice = Vue.extend({
+const ImageSlice = defineComponent({
   props: {
-    block: {
-      type: Object,
-      required: true,
-    } as PropOptions<ImageSliceBlock>
+    block: Object as PropType<ImageSliceBlock>
   },
-  data () {
-    const display_size = this.block.display_size;
-    const url = this.block.image.url;
-    const alt = this.block.image.alt;
-    const caption = PrismicDOM.RichText.asHtml(this.block.caption);
+  data (props) {
+    const { display_size, image, caption } = props.block!
+
+    const captionHtml = PrismicDOM.RichText.asHtml(caption);
 
     return {
       display_size,
-      url,
-      alt,
-      caption,
+      image,
+      captionHtml,
     };
   },
 })
