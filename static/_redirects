@@ -2,5 +2,5 @@
 https://www.distantlyyours.com/*  https://dan.hiester.design/:splat  301!
 
 # Redirect the old inRoads case studies to the new, merged Road Closures Tracker case study
-/portfolio/inroads-ui/  /portfolio/road-closures-tracker/  301
-/portfolio/inroads-ux/  /portfolio/road-closures-tracker/  301
+/portfolio/inroads-ui  /portfolio/road-closures-tracker/  301
+/portfolio/inroads-ux  /portfolio/road-closures-tracker/  301
