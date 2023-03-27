@@ -74,7 +74,7 @@ export default ContactCta
   & > .title {
     font-weight: 400;
     font-size: var(--type-scale-3);
-    line-height: var(--spatial-scale-8);
+    line-height: var(--spatial-scale-7);
     margin: 1em 0 var(--spatial-scale-1);
   }
   & > p {
@@ -112,14 +112,14 @@ export default ContactCta
     }
     & > .title {
       font-size: var(--type-scale-3);
-      line-height: var(--spatial-scale-7);
+      line-height: var(--spatial-scale-6);
       margin-top: 0;
       margin-bottom: var(--spatial-scale-1);
       text-align: left;
     }
     & > p {
       font-size: var(--type-scale-0);
-      line-height: var(--spatial-scale-5);
+      line-height: var(--spatial-scale-4);
       margin-bottom: var(--spatial-scale-2);
     }
   }

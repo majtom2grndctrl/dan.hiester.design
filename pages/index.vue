@@ -94,7 +94,7 @@ export default AboutPage;
   display: block;
   font-size: var(--type-scale-0);
   font-weight: 400;
-  line-height: var(--spatial-scale-5);
+  line-height: var(--spatial-scale-4);
   max-width: 21em;
 }
 .overview {

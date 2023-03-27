@@ -129,7 +129,7 @@ export default ContentSlice;
   .prismic-content {
     font-size: var(--font-scale-1);
     & p, & ol, & ul {
-      line-height: var(--spatial-scale-6);
+      line-height: var(--spatial-scale-5);
     }
     & h2 {
       font-size: var(--type-scale-4);
@@ -149,7 +149,7 @@ export default ContentSlice;
       margin: var(--spatial-scale-12) auto var(--spatial-scale-00);
     }
     & .lede p {
-      font-size: var(--type-scale-2);
+      font-size: var(--type-scale-3);
       line-height: var(--spatial-scale-7);
     }
     & pre {
@@ -161,7 +161,7 @@ export default ContentSlice;
   .prismic-content {
     font-size: var(--type-scale-1);
     & p, & ol, & ul {
-      line-height: var(--spatial-scale-6);
+      line-height: var(--spatial-scale-5);
       margin-top: var(--spatial-scale-3);
       margin-bottom: var(--spatial-scale-3);
     }
@@ -180,16 +180,20 @@ export default ContentSlice;
     }
     & .lede p {
       font-size: var(--type-scale-2);
-      line-height: var(--spatial-scale-7);
+      line-height: var(--spatial-scale-6);
       margin-bottom: var(--spatial-scale-5);
     }
     & h2 {
       font-size: var(--type-scale-4);
-      line-height: var(--spatial-scale-8);
+      line-height: var(--spatial-scale-7);
+    }
+    & .block-title {
+      margin: var(--spatial-scale-7) auto var(--spatial-scale-3);
     }
     & .BlockType.block-type {
       font-size: var(--type-scale-0);
       line-height: var(--spatial-scale-0);
+      margin: var(--spatial-scale-7) auto var(--spatial-scale-00);
       padding-left: .1ch;
       & + .block-title {
         margin-top: 0;
