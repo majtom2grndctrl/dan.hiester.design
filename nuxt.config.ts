@@ -57,7 +57,6 @@ module.exports = {
   ],
   buildModules: [
     '@nuxt/typescript-build',
-    '@nuxt/postcss8',
   ],
   plugins: [],
   /*
@@ -71,13 +70,20 @@ module.exports = {
       ]
     },
     postcss: {
-      plugins: {
-        'postcss-custom-media': {},
-        'postcss-nesting': {},
+      postcssOptions: {
+        plugins: {
+          '@csstools/postcss-global-data': {
+            files: [
+              './assets/vars.pcss'
+            ]
+          },
+          'postcss-custom-media': {},
+          'postcss-nesting': {},
+        }
       }
     }
   },
-  css: ['~/assets/html.css', '~/assets/vars'],
+  css: ['~/assets/html.css', '~/assets/vars.pcss'],
   generate: {
     routes: async () => {
       const apiUrl = 'https://distantly-yours-blog.cdn.prismic.io/api/v2'
