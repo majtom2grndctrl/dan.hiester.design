@@ -26,5 +26,5 @@
     "@nuxt/typescript-build": "2.1.0",
     "@types/node": "18.0.0"
   },
-  "packageManager": "yarn@3.2.4"
+  "packageManager": "yarn@3.5.0"
 }
