@@ -12,8 +12,8 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Dan Hiester • A Product Designer who leverages technical skills and product strategy to elevate design.',
-    titleTemplate: '%s • Dan Hiester • A Product Designer who leverages technical skills and product strategy to elevate design.',
+    title: 'Dan Hiester • A Product Designer who leverages technical skills and strategic thinking to elevate design.',
+    titleTemplate: '%s • Dan Hiester • A Product Designer who leverages technical skills and strategic thinking to elevate design.',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
