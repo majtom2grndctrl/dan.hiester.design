@@ -120,11 +120,12 @@ export default ContentSlice;
   & .BlockType.block-type {
     margin-top: var(--spatial-scale-10);
     margin-bottom: var(--spatial-scale-00);
-    & + .block-title {
-      margin-top: 0;
-    }
   }
 }
+.prismic-content > .BlockType.block-type + .block-title {
+      margin-top: 0;
+    }
+
 @media (--viewport-small) {
   .prismic-content {
     font-size: var(--font-scale-1);
@@ -195,9 +196,6 @@ export default ContentSlice;
       line-height: var(--spatial-scale-0);
       margin: var(--spatial-scale-7) auto var(--spatial-scale-00);
       padding-left: .1ch;
-      & + .block-title {
-        margin-top: 0;
-      }
     }
     & h3 {
       font-size: var(--type-scale-3);
@@ -211,6 +209,9 @@ export default ContentSlice;
       margin-left: 0;
     }
   }
+  .prismic-content > .BlockType.block-type + .block-title {
+        margin-top: 0;
+      }
 }
 @media (--viewport-large) {
   .prismic-content {
