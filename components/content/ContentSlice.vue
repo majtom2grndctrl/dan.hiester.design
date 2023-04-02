@@ -120,11 +120,12 @@ export default ContentSlice;
   & .BlockType.block-type {
     margin-top: var(--spatial-scale-10);
     margin-bottom: var(--spatial-scale-00);
-    & + .block-title {
-      margin-top: 0;
-    }
   }
 }
+.prismic-content > .BlockType.block-type + .block-title {
+      margin-top: 0;
+    }
+
 @media (--viewport-small) {
   .prismic-content {
     font-size: var(--font-scale-1);
@@ -142,12 +143,11 @@ export default ContentSlice;
       padding-left: var(--spatial-scale-5);
     }
     & .block-title {
-      margin: var(--spatial-scale-11) auto var(--spatial-scale-3);
+      margin: var(--spatial-scale-12) auto var(--spatial-scale-3);
     }
     & .BlockType.block-type {
       padding-left: calc(var(--spatial-scale-5) + .1ch);
-      margin-top: var(--spatial-scale-11);
-      margin-bottom: var(--spatial-scale-1);
+      margin: var(--spatial-scale-12) auto var(--spatial-scale-00);
     }
     & .lede p {
       font-size: var(--type-scale-3);
@@ -189,17 +189,13 @@ export default ContentSlice;
       line-height: var(--spatial-scale-7);
     }
     & .block-title {
-      margin: var(--spatial-scale-11) auto var(--spatial-scale-3);
+      margin: var(--spatial-scale-7) auto var(--spatial-scale-3);
     }
     & .BlockType.block-type {
       font-size: var(--type-scale-0);
       line-height: var(--spatial-scale-0);
-      margin-top: var(--spatial-scale-11);
-      margin-bottom: var(--spatial-scale-1);
+      margin: var(--spatial-scale-7) auto var(--spatial-scale-00);
       padding-left: .1ch;
-      & + .block-title {
-        margin-top: 0;
-      }
     }
     & h3 {
       font-size: var(--type-scale-3);
@@ -213,6 +209,9 @@ export default ContentSlice;
       margin-left: 0;
     }
   }
+  .prismic-content > .BlockType.block-type + .block-title {
+        margin-top: 0;
+      }
 }
 @media (--viewport-large) {
   .prismic-content {
