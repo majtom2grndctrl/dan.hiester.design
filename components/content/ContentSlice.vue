@@ -196,7 +196,6 @@ export default ContentSlice;
       font-size: var(--type-scale-0);
       line-height: var(--spatial-scale-0);
       margin-top: var(--spatial-scale-9);
-      margin-bottom: var(--spatial-scale-00);
       padding-left: .1ch;
     }
     & h3 {
@@ -215,8 +214,11 @@ export default ContentSlice;
 @media (--viewport-large) {
   .prismic-content {
     /*font-size: calc(74rem/16);*/
-    & p, & ol, & ul {
-      /*line-height: calc(53em/24);*/
+    /*& p, & ol, & ul {
+      line-height: calc(53em/24);
+    }*/
+    .BlockType.block-type {
+      margin-top: var(--spatial-scale-11);
     }
   }
 }
