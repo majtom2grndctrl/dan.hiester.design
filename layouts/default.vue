@@ -103,7 +103,6 @@ export default DefaultLayout
 @media (--viewport-medium) {
   :root {
     --scale-multiplier: 1.25;
-    --type-scale-base: calc(22rem/16);
   }
 }
 
