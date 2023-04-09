@@ -2203,10 +2203,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxtjs/google-tag-manager@npm:2.3.2":
-  version: 2.3.2
-  resolution: "@nuxtjs/google-tag-manager@npm:2.3.2"
-  checksum: 8536c97c04f07a45a1ad0b17fc4fe44c0cba0320d827cb82eb795950e6a7c4cfc7573fb5f2857ba332c712b50273f4b040107a7602ffea589b2f80777da31f1e
+"@nuxtjs/gtm@npm:^2.4.0":
+  version: 2.4.0
+  resolution: "@nuxtjs/gtm@npm:2.4.0"
+  dependencies:
+    chalk: ^4.1.0
+    semver: ^7.3.2
+  checksum: 5bdca23517e992ab3f4caeb8c861c8e02c7205a80bdbde1df76adbfd9d50973de2d5dd6ea24f8105da707f5be6f9db6e6d99e432cec9076bedf5b4ff3c844eab
   languageName: node
   linkType: hard
 
@@ -4673,7 +4676,7 @@ __metadata:
     "@nuxt/types": 2.15.8
     "@nuxt/typescript-build": 2.1.0
     "@nuxt/typescript-runtime": 2.1.0
-    "@nuxtjs/google-tag-manager": 2.3.2
+    "@nuxtjs/gtm": ^2.4.0
     "@types/node": 18.0.0
     dotenv: 16.0.1
     nuxt: 2.16.3

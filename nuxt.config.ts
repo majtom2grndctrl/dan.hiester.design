@@ -52,9 +52,10 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: { color: 'rgba(3, 161, 213, .3)' },
-  modules: [
-    ['@nuxtjs/google-tag-manager', { id: process.env.NUXT_ENV_GTM_ID }],
-  ],
+  modules: ['@nuxtjs/gtm'],
+  publicRuntimeConfig: {
+    gtm: { id: process.env.NUXT_ENV_GTM_ID },
+  },
   buildModules: [
     '@nuxt/typescript-build',
   ],
