@@ -61,7 +61,7 @@ module.exports = {
   ],
   plugins: [],
   /*
-  ** Build configuration
+  **  Build configuration
   */
   build: {
     babel: {
