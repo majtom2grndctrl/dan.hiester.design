@@ -1,6 +1,6 @@
 <template>
   <figure :class="display_size || 'cover-image'">
-    <block-type v-if="overline" class="overline">{{ overline }}</block-type>
+    <div v-if="overline" class="overline">{{ overline }}</div>
     <img :src="url" :alt="alt" />
     <figcaption v-html="caption" />
   </figure>
@@ -9,7 +9,6 @@
 <script lang="ts">
 import PrismicDOM from 'prismic-dom';
 import Vue, { PropOptions } from 'vue'
-import BlockType from '~/components/text/BlockType.vue';
 
 interface ImageSliceBlock {
   caption: string;
@@ -22,9 +21,6 @@ interface ImageSliceBlock {
 };
 
 const ImageSlice = Vue.extend({
-  components: {
-    BlockType
-  },
   props: {
     block: {
       type: Object,
@@ -67,7 +63,12 @@ export default ImageSlice
   }
 }
 .overline {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: var(--type-scale-0);
+  line-height: var(--spatial-scale-0);
   margin: 0 0 var(--spatial-scale-3);
+  text-transform: uppercase;
 }
 @media (--viewport-small) {
   .prismic-content {
