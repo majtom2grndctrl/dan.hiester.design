@@ -8,7 +8,7 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import Prismic from 'prismic-javascript'
-import CaseStudy, { ICaseStudyData, parseCaseStudy } from '~/components/content/CaseStudy.vue'
+import CaseStudy, { CaseStudyData, parseCaseStudy } from '~/components/content/CaseStudy.vue'
 import ContactCta from '~/components/contact/ContactCta.vue';
 import { caseStudyMock } from '~/dataMocks';
 import { Document } from 'prismic-javascript/types/documents';
@@ -52,7 +52,7 @@ class CaseStudyPage extends Vue {
     });
   }
   head () {
-    const caseStudy = this.$data.caseStudy as ICaseStudyData
+    const caseStudy = this.$data.caseStudy as CaseStudyData
     return {
       title: caseStudy ? `${caseStudy.meta.project_name} ${caseStudy.meta.case_study_type}` : '…Loading',
       meta: [

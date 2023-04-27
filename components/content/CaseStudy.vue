@@ -6,7 +6,13 @@
         <div>
           <span class="projectName">{{ data.meta.project_name }}</span><span class="type">{{ data.meta.case_study_type }}</span>
         </div>
-        <div class="project-dates"><span v-if="data.meta.remix_date">Original timeline: </span>{{ data.meta.start_date }}&ndash;{{ data.meta.end_date }}</div>
+        <div v-if="data.meta.project_name" class="project-timeline">
+          Timeline: {{ data.meta.project_timeline }}
+        </div>
+        <div v-if="showDates" class="project-dates">
+          <span v-if="data.meta.remix_date">Original timeline: </span>
+          {{ data.meta.start_date }}&ndash;{{ data.meta.end_date }}
+        </div>
         <div v-if="data.meta.remix_date" class="remix-date">
           Project Remixed: {{data.meta.remix_date}}
         </div>
@@ -16,7 +22,7 @@
       </div>
     </header>
     <div class="about" v-if="data.meta">
-      <div class="team" v-if="data.meta.employer || data.meta.client || data.meta.team">
+      <div class="team" v-if="data.meta.employer || data.meta.client">
         <div v-if="data.meta.employer">
           <h2>Employer</h2>
           <div v-html="data.meta.employer" />
@@ -53,19 +59,21 @@
 
 
 <script lang="ts">
-import { Vue, Component, Prop } from 'nuxt-property-decorator'
+// import { Vue, Component, Prop } from 'nuxt-property-decorator'
+import { defineComponent, PropType, ref } from 'vue';
 import Prismic from 'prismic-javascript'
 import PrismicDOM from 'prismic-dom'
 import { Document } from 'prismic-javascript/types/documents'
 import PrismicSlices from '~/components/content/PrismicSlices.vue'
 
-export interface ICaseStudyData {
+export interface CaseStudyData {
   headline: string;
   meta: {
     case_study_type: string
     project_name: string
-    start_date: string
-    end_date: string
+    start_date?: string
+    end_date?: string
+    project_timeline?: string
     remix_date?: string
     employer: string
     client: string
@@ -83,7 +91,7 @@ export interface ICaseStudyData {
 }
 
 
-export function parseCaseStudy (payload: Document): ICaseStudyData {
+export function parseCaseStudy (payload: Document): CaseStudyData {
   const { data } = payload
   function parseDate(date) {
     const months = Object.freeze({
@@ -108,6 +116,7 @@ export function parseCaseStudy (payload: Document): ICaseStudyData {
     meta: {
       case_study_type: data.case_study_type,
       project_name:  data.project_name,
+      project_timeline: PrismicDOM.RichText.asText(data.project_timeline),
       start_date: parseDate(data.start_date),
       end_date: parseDate(data.end_date),
       remix_date: data.remix_date ? parseDate(data.remix_date) : undefined,
@@ -127,15 +136,26 @@ export function parseCaseStudy (payload: Document): ICaseStudyData {
   }
 }
 
-@Component({
+const CaseStudy = defineComponent({
   components: {
     PrismicSlices
+  },
+  props: {
+    data: {
+      type: Object as PropType<CaseStudyData>,
+      required: true,
+    }
+  },
+  data () {
+    const { start_date, end_date } = this.data.meta
+    const showDates = Boolean(start_date && end_date)
+    console.log({ data: this.data })
+    return {
+      showDates
+    }
   }
 })
-class CaseStudy extends Vue {
-  @Prop()
-  data!: ICaseStudyData
-}
+
 
 export default CaseStudy
 </script>
@@ -170,6 +190,9 @@ export default CaseStudy
     margin-bottom: var(--spatial-scale-00);
     opacity: .7;
   }
+  .project-timeline, .project-dates {
+    margin-bottom: var(--spatial-scale-00);
+  }
   .hero {
     text-align: center;
     margin: var(--spatial-scale-2);
@@ -201,9 +224,6 @@ export default CaseStudy
       margin: .5em 0;
       padding: 0;
     }
-  }
-  .remix-date {
-    margin: var(--spatial-scale-00) 0 0 0;
   }
 
   @media (--viewport-small) {
