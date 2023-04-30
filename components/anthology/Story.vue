@@ -45,6 +45,7 @@
   }
   .title-link {
     color: var(--white);
+    display: inline-block;
     text-decoration: underline;
     text-decoration-thickness: calc(1em/16);
     text-decoration-color: rgba(255, 255, 255, 0);
