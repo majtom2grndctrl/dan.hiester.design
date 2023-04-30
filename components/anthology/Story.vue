@@ -1,12 +1,16 @@
 <template>
   <article class="Story" ref="storyWrapper" :style="`--story-background:${backgroundColor}`">
-    <div class="image-wrapper"><img :src="image.url" :alt="image.alt" class="image" /></div>
+    <div class="image-wrapper">
+      <a :href="caseStudyUrl" class="image-link"><img :src="image.url" :alt="image.alt" class="image" /></a>
+    </div>
     <div class="content-wrapper">
       <BlockType v-html="overline" />
-      <h2 class="title" v-html="title" />
+      <h2 class="title">
+        <a :href="caseStudyUrl" class="title-link" v-html="title" />
+      </h2>
       <div class="teaser" v-html="teaser" />
       <div class="cta-wrapper">
-        <CtaLink :to="url" v-html="ctaText" />
+        <CtaLink :to="caseStudyUrl" v-html="ctaText" />
       </div>
     </div>
   </article>
@@ -20,18 +24,33 @@
     max-width: var(--mobile-max-width);
     padding: var(--spatial-scale-00) var(--spatial-scale-3) var(--spatial-scale-6) var(--spatial-scale-3);
   }
+  .image-link {
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+    cursor: pointer;
+  }
   .image-wrapper {
     padding: var(--block-border-radius);
   }
   .image {
     display: block;
-    margin: 0 auto;;
-    max-width: 80%;
+    width: 100%; /* 100% of parent, which is the hyperlink */
+    margin: 0 auto;
   }
   .title {
     font-size: var(--type-scale-3);
     line-height: var(--spatial-scale-6);
     margin: 0;
+  }
+  .title-link {
+    color: var(--white);
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0);
+    transition: text-decoration-color 0.2s ease-in-out;
+    &:hover {
+      text-decoration-color: var(--white);
+    }
   }
   .teaser {
     font-size: var(--type-scale-1);
@@ -60,9 +79,11 @@
       justify-content: flex-end;
       flex-basis: 50%;
     }
-    .image {
+    .image-link {
       margin: 0 0 0 auto;
       max-width: calc(100% * 5 / 6);
+    }
+    .image {
       object-fit: fill;
       object-position: bottom;
     }
@@ -99,6 +120,7 @@ import CtaLink from '~/components/buttons/CtaLink.vue'
 
 export interface StoryData {
   backgroundColor: string
+  caseStudyUrl: string
   ctaText: string
   image: {
     alt: string
@@ -108,7 +130,6 @@ export interface StoryData {
   overline: string
   title: string
   uid?: string
-  url: string
 }
 
 const Story = defineComponent({
@@ -131,19 +152,19 @@ const Story = defineComponent({
       overline,
       title,
       uid,
-      url
+      caseStudyUrl
     } = this.data
 
   return {
       backgroundColor,
+      caseStudyUrl,
       ctaText,
       image,
       teaser,
       overline,
       paths,
       title,
-      uid,
-      url
+      uid
     }
   },
 })
