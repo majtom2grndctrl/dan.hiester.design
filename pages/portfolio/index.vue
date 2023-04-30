@@ -20,11 +20,10 @@ import Prismic from 'prismic-javascript'
 import PrismicDOM from 'prismic-dom'
 import { apiEndpoint } from '~/layouts/default.vue'
 import paths from '~/paths'
-import Anthology from '~/components/content/Anthology.vue'
+import Anthology from '~/components/anthology/Anthology.vue'
 import Story, { StoryData } from '~/components/anthology/Story.vue'
 import CtaLink from '~/components/buttons/CtaLink.vue'
 import ContactCta from '~/components/contact/ContactCta.vue';
-import AnthologyItem, { AnthologyItemData } from '~/components/content/AnthologyItem.vue'
 import StandAlone, { StandAloneProps } from '~/components/content/StandAlone.vue'
 import Suggestion, { SuggestionProps } from '~/components/content/Suggestion.vue'
 import { swipeTransition } from '~/components/layout/MainLayout.vue'
@@ -36,7 +35,6 @@ const getCmsHtml = PrismicDOM.RichText.asHtml
 const PortfolioIndex = defineComponent({
   components: {
     Anthology,
-    AnthologyItem,
     CtaLink,
     ContactCta,
     StandAlone,
@@ -54,13 +52,13 @@ const PortfolioIndex = defineComponent({
       const { data } = item
       const mappedItem: StoryData = {
         backgroundColor: data.index_background,
+        caseStudyUrl: paths.portfolio_item(item.uid!),
         ctaText: getCmsText(data.index_cta),
         image: data.index_image,
         overline: getCmsText(data.overline),
         teaser: getCmsHtml(data.teaser),
         title: getCmsText(data.headline),
         uid: item.uid,
-        url: paths.portfolio_item(item.uid!),
       }
       return mappedItem
     });
