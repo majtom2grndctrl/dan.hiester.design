@@ -40,19 +40,13 @@
   }
   .title {
     font-size: var(--type-scale-3);
-    line-height: var(--spatial-scale-6);
+    line-height: var(--spatial-scale-7);
     margin: 0;
   }
   .title-link {
     color: var(--white);
+    text-decoration: none;
     display: inline-block;
-    text-decoration: underline;
-    text-decoration-thickness: calc(1em/16);
-    text-decoration-color: rgba(255, 255, 255, 0);
-    transition: text-decoration-color 0.2s ease-in-out;
-    &:hover {
-      text-decoration-color: var(--white);
-    }
   }
   .teaser {
     font-size: var(--type-scale-1);
@@ -100,11 +94,21 @@
       margin-right: auto;
       margin-left: auto;
     }
+    .title {
+      line-height: var(--spatial-scale-6);
+    }
+    .title-link {
+      text-decoration-style: underline;
+      text-decoration-thickness: calc(1em/16);
+      text-decoration-color: rgba(255, 255, 255, 0);
+      transition: text-decoration-color 0.2s ease-in-out;
+    &:hover {
+      text-decoration-color: var(--white);
+    }
+    }
     .teaser {
       font-size: var(--type-scale-0);
       line-height: var(--spatial-scale-4);
-    }
-    .cta-wrapper {
     }
     .CtaLink {
       max-width: 100%;
