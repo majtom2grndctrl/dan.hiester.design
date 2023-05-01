@@ -29,7 +29,7 @@ import { blogDataMock } from '~/dataMocks'
 
 export interface BlogPostData {
   uid?: string;
-  url: string;
+  blogPostUrl: string;
   title: string;
   subhead?: string;
   preview?: string;
@@ -49,7 +49,7 @@ export function parseResponse (response: ApiSearchResponse) {
   function parseOne(result: Document) {
     const { data } = result
     const output: BlogPostData = {
-      url: '/blog/' + result.uid,
+      blogPostUrl: '/blog/' + result.uid,
       title: PrismicDOM.RichText.asText(data.title),
       heroImage: data.hero_image,
       heroBackground: data.hero_background,
