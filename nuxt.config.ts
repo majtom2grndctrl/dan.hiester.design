@@ -123,23 +123,29 @@ module.exports = {
 //              content: PrismicDOM.RichText.asHtml(data.body),
               preview: PrismicDOM.RichText.asHtml(data.preview),
               slug: result.uid,
-              url: paths.blog_item(result.uid),
+              blogPostUrl: paths.blog_item(result.uid),
               cta: data.cta,
               indexBgColor: data.index_page_background_color,
             }
           })
         },
-        /*
-        {
-          route: paths.portfolio_all,
-          payload: portfolioQuery.results.map(result => {
+        /* {
+          route: paths.portfolio,
+          payload: {} *portfolioQuery.results.map(result => {
+            const { data } = result
+            console.log({ data })
             return {
-              data: result.data,
+              backgroundColor: data.index_background,
+              caseStudyUrl: paths.portfolio_item(result.uid),
+              ctaText: PrismicDOM.RichText.asText(data.index_cta),
+              image: data.index_image,
+              teaser: PrismicDOM.RichText.asHtml(data.teaser),
+              title: PrismicDOM.RichText.asText(data.headline),
               slug: result.uid,
-              url: paths.portfolio_all_item(result.uid)
             }
           })
-        },
+        },*/
+        /*
         {
           route: '/work',
           redirect: paths.portfolio_all
@@ -159,7 +165,7 @@ module.exports = {
             heroBackground: data.hero_background,
             prismicDocument: result,
             slug: result.uid,
-            url: paths.blog_item(result.uid),
+            blogPostUrl: paths.blog_item(result.uid),
           }
         })
       })
