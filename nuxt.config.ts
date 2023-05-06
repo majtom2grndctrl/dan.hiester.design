@@ -6,6 +6,11 @@ require('dotenv').config()
 
 const isDevProcess = process.env.NODE_ENV === 'development';
 
+interface Route {
+  route: string,
+  payload: object,
+}
+
 module.exports = {
   target: 'static',
   /*
@@ -113,7 +118,8 @@ module.exports = {
           return isDevProcess ? { caseStudyMock } : { results: [] };
         });
       console.log('portfolioQuery = ', portfolioQuery)
-      const routesList = [
+      const routesList: Route[] = [
+/*
         {
           route: paths.blog,
           payload: blogQuery.results.map((result) => {
@@ -128,7 +134,7 @@ module.exports = {
               indexBgColor: data.index_page_background_color,
             }
           })
-        },
+        },*/
         /* {
           route: paths.portfolio,
           payload: {} *portfolioQuery.results.map(result => {
