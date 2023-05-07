@@ -15,7 +15,8 @@
 
 
 <script lang="ts">
-import { Vue, Component, Prop } from 'nuxt-property-decorator'
+import { defineComponent } from 'vue'
+import { Context } from '@nuxt/types'
 import Prismic from 'prismic-javascript'
 import PrismicDOM from 'prismic-dom'
 import ApiSearchResponse from 'prismic-javascript/types/ApiSearchResponse'
@@ -43,6 +44,10 @@ export interface BlogPostData {
     url: string;
   };
   prismicDocument: Document;
+}
+
+interface ComponentData {
+  blog_posts: BlogPostData[]
 }
 
 export function parseResponse (response: ApiSearchResponse): BlogPostData | BlogPostData[] {
@@ -74,15 +79,13 @@ export function parseResponse (response: ApiSearchResponse): BlogPostData | Blog
   }
 }
 
-@Component({
+const BlogIndex = defineComponent<{}, ComponentData>({
   components: {
     BlogPost,
     ContactCta,
   },
   scrollToTop: true,
-})
-class BlogIndex extends Vue {
-  async asyncData (ctx) {
+  async asyncData (ctx: Context) {
     return Prismic.getApi(apiEndpoint).then( (api) => {
       return api.query(
         Prismic.Predicates.at('document.type', 'blog_post'),
@@ -97,14 +100,14 @@ class BlogIndex extends Vue {
 //      console.warn("Error downloading posts (pages/blog/index)")
       return process.env.NODE_ENV === 'development' ? { blog_posts: parseResponse(blogDataMock) } : { blog_posts: undefined }
     })
-  }
+  },
   mounted() {
     scrollToContentTop();
-  }
+  },
   transition (to, from) {
     return swipeTransition(to, from)
-  }
-}
+  },
+})
 
 export default BlogIndex
 </script>
