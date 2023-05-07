@@ -6,7 +6,7 @@
       </section>
       <section v-else>
         <h1>Signal disrupted</h1>
-        <p>Your browser tried to download this blog post, but something went wrong. Try checking your internet connection and <button onClick="window.location.reload()" class="btn-link">refreshing this page</button>.</p>
+        <p>Your browser tried to download this blog post, but something went wrong. Try checking your internet connection and <button :onClick="reloadWindow()" class="btn-link">refreshing this page</button>.</p>
       </section>
     </div>
     <ContactCta v-if="blog_posts" />
@@ -46,8 +46,9 @@ export interface BlogPostData {
   prismicDocument: Document;
 }
 
-interface ComponentData {
-  blog_posts: BlogPostData[]
+interface ComponentEmits {
+  blog_posts: BlogPostData[],
+  reloadWindow: Function,
 }
 
 export function parseResponse (response: ApiSearchResponse): BlogPostData | BlogPostData[] {
@@ -79,7 +80,7 @@ export function parseResponse (response: ApiSearchResponse): BlogPostData | Blog
   }
 }
 
-const BlogIndex = defineComponent<{}, ComponentData>({
+const BlogIndex = defineComponent<{}, ComponentEmits>({
   components: {
     BlogPost,
     ContactCta,
@@ -100,6 +101,11 @@ const BlogIndex = defineComponent<{}, ComponentData>({
 //      console.warn("Error downloading posts (pages/blog/index)")
       return process.env.NODE_ENV === 'development' ? { blog_posts: parseResponse(blogDataMock) } : { blog_posts: undefined }
     })
+  },
+  methods: {
+    reloadWindow() {
+      window.location.reload()
+    }
   },
   mounted() {
     scrollToContentTop();
