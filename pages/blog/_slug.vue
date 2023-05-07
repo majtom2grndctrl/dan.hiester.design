@@ -14,7 +14,8 @@
 
 
 <script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator'
+import { defineComponent } from 'vue'
+import { Context, NuxtAppOptions } from '@nuxt/types'
 import Prismic from 'prismic-javascript'
 import { apiEndpoint } from '~/layouts/default.vue'
 import { parseResponse, BlogPostData } from './index.vue'
@@ -23,15 +24,18 @@ import { blogPostMock } from '~/dataMocks';
 import ContactCta from '~/components/contact/ContactCta.vue';
 import { scrollToContentTop } from '~/layouts/default.vue';
 
-@Component({
+interface BlogViewData {
+  post: BlogPostData,
+}
+
+const BlogView = defineComponent<{}, BlogViewData, NuxtAppOptions>({
   components: {
     ContactCta,
     PrismicSlices
   },
   scrollToTop: true,
-})
-class BlogView extends Vue {
-  async asyncData (ctx) {
+
+  async asyncData (ctx: Context) {
 //    console.log ('ctx.params.slug = ', ctx.params.slug)
     if (ctx.payload) {
 //      console.log('payload = ', ctx.payload)
@@ -57,13 +61,18 @@ class BlogView extends Vue {
 
       return { post: returnPost }
     })
-  }
-  head () {
+  },
+
+  head() {
     const post = this.$data.post as BlogPostData
     post.title = post.title.replace('&nbsp;', ' ')
     return {
       title: post ? post.title : '…Loading',
-      meta: [
+    }
+  },
+  meta() {
+    const post = this.$data.post as BlogPostData
+    return [
         { hid: 'description', name: 'description', content: post.preview },
         { hid: 'og:url', property: 'og:url', content: post.blogPostUrl },
         { hid: 'og:title', property: 'og:title', content: post.title },
@@ -73,13 +82,11 @@ class BlogView extends Vue {
         { hid: 'twitter:image', name: 'twitter:image', content: post.heroImage.url },
         { hid: 'twitter:image:alt', name: 'twiter:image:alt', content: post.heroImage.alt },
       ]
-    }
-  }
-
+  },
   mounted() {
     scrollToContentTop();
-  }
-}
+  },
+})
 
 export default BlogView
 </script>
