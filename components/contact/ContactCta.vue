@@ -16,8 +16,12 @@
 
 
 <script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator'
+import { defineComponent } from 'vue'
 import CtaLink from '~/components/buttons/CtaLink.vue'
+
+interface ComponentData {
+  ctaTarget: null | string
+}
 
 const oblada = {
   la: 'attle@hies',
@@ -25,7 +29,7 @@ const oblada = {
   di: 'ter.design',
 };
 
-const ContactCta = Vue.extend({
+const ContactCta = defineComponent<{}, ComponentData>({
   components: {
     CtaLink
   },
