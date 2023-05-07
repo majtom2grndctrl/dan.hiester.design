@@ -24,8 +24,6 @@ import Anthology from '~/components/anthology/Anthology.vue'
 import Story, { StoryData } from '~/components/anthology/Story.vue'
 import CtaLink from '~/components/buttons/CtaLink.vue'
 import ContactCta from '~/components/contact/ContactCta.vue';
-import StandAlone, { StandAloneProps } from '~/components/content/StandAlone.vue'
-import Suggestion, { SuggestionProps } from '~/components/content/Suggestion.vue'
 import { swipeTransition } from '~/components/layout/MainLayout.vue'
 import { scrollToContentTop } from '~/layouts/default.vue';
 
@@ -37,9 +35,7 @@ const PortfolioIndex = defineComponent({
     Anthology,
     CtaLink,
     ContactCta,
-    StandAlone,
     Story,
-    Suggestion,
   },
   scrollToTop: true,
   async asyncData () {

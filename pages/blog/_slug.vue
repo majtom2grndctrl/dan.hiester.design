@@ -14,7 +14,8 @@
 
 
 <script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator'
+import { defineComponent } from 'vue'
+import { Context } from '@nuxt/types'
 import Prismic from 'prismic-javascript'
 import { apiEndpoint } from '~/layouts/default.vue'
 import { parseResponse, BlogPostData } from './index.vue'
@@ -23,15 +24,18 @@ import { blogPostMock } from '~/dataMocks';
 import ContactCta from '~/components/contact/ContactCta.vue';
 import { scrollToContentTop } from '~/layouts/default.vue';
 
-@Component({
+interface BlogViewData {
+  post: BlogPostData,
+}
+
+const BlogView = defineComponent<{}, BlogViewData>({
   components: {
     ContactCta,
     PrismicSlices
   },
   scrollToTop: true,
-})
-class BlogView extends Vue {
-  async asyncData (ctx) {
+
+  async asyncData (ctx: Context) {
 //    console.log ('ctx.params.slug = ', ctx.params.slug)
     if (ctx.payload) {
 //      console.log('payload = ', ctx.payload)
@@ -57,29 +61,29 @@ class BlogView extends Vue {
 
       return { post: returnPost }
     })
-  }
-  head () {
+  },
+
+  head() {
     const post = this.$data.post as BlogPostData
     post.title = post.title.replace('&nbsp;', ' ')
     return {
       title: post ? post.title : '…Loading',
       meta: [
-        { hid: 'description', name: 'description', content: post.preview },
-        { hid: 'og:url', property: 'og:url', content: post.blogPostUrl },
-        { hid: 'og:title', property: 'og:title', content: post.title },
-        { hid: 'og:description', property: 'og:description', content: post.preview },
-        { hid: 'og:image', property: 'og:image', content: post.heroImage.url },
-        { hid: 'og:image:alt', property: 'og:image:alt', content: post.heroImage.alt },
-        { hid: 'twitter:image', name: 'twitter:image', content: post.heroImage.url },
-        { hid: 'twitter:image:alt', name: 'twiter:image:alt', content: post.heroImage.alt },
+        { hid: 'description', name: 'description', content: post.preview || '' },
+        { hid: 'og:url', property: 'og:url', content: post.blogPostUrl || '' },
+        { hid: 'og:title', property: 'og:title', content: post.title || '' },
+        { hid: 'og:description', property: 'og:description', content: post.preview || '' },
+        { hid: 'og:image', property: 'og:image', content: post.heroImage.url || '' },
+        { hid: 'og:image:alt', property: 'og:image:alt', content: post.heroImage.alt || '' },
+        { hid: 'twitter:image', name: 'twitter:image', content: post.heroImage.url || '' },
+        { hid: 'twitter:image:alt', name: 'twiter:image:alt', content: post.heroImage.alt || '' },
       ]
     }
-  }
-
+  },
   mounted() {
     scrollToContentTop();
-  }
-}
+  },
+})
 
 export default BlogView
 </script>
@@ -93,8 +97,6 @@ export default BlogView
     flex-direction: column-reverse;
     margin: 0 0 2rem 0;
     padding: 0 var(--spatial-scale-2);
-  }
-  .meta {
   }
   .title {
     font-size: var(--type-scale-3);

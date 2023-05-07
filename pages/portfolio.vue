@@ -10,27 +10,24 @@
 
 
 <script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator'
+import { defineComponent } from 'vue'
 import MainLayout, { swipeTransition } from '~/components/layout/MainLayout.vue'
 import SectionTitleLink from '~/components/buttons/SectionTitleLink.vue';
 
-@Component({
+const Portfolio = defineComponent({
   components: {
     MainLayout,
     SectionTitleLink,
-  }
-})
-
-class Portfolio extends Vue {
+  },
   transition (to, from) {
     return swipeTransition(to, from)
-  }
+  },
   head () {
     return {
       title: 'Portfolio'
     }
   }
-}
+})
 
 export default Portfolio
 

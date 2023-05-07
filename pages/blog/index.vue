@@ -6,7 +6,7 @@
       </section>
       <section v-else>
         <h1>Signal disrupted</h1>
-        <p>Your browser tried to download this blog post, but something went wrong. Try checking your internet connection and <button onClick="window.location.reload()" class="btn-link">refreshing this page</button>.</p>
+        <p>Your browser tried to download this blog post, but something went wrong. Try checking your internet connection and <button :onClick="reloadWindow()" class="btn-link">refreshing this page</button>.</p>
       </section>
     </div>
     <ContactCta v-if="blog_posts" />
@@ -15,7 +15,8 @@
 
 
 <script lang="ts">
-import { Vue, Component, Prop } from 'nuxt-property-decorator'
+import { defineComponent } from 'vue'
+import { Context } from '@nuxt/types'
 import Prismic from 'prismic-javascript'
 import PrismicDOM from 'prismic-dom'
 import ApiSearchResponse from 'prismic-javascript/types/ApiSearchResponse'
@@ -45,7 +46,12 @@ export interface BlogPostData {
   prismicDocument: Document;
 }
 
-export function parseResponse (response: ApiSearchResponse) {
+interface ComponentEmits {
+  blog_posts: BlogPostData[],
+  reloadWindow: Function,
+}
+
+export function parseResponse (response: ApiSearchResponse): BlogPostData | BlogPostData[] {
   function parseOne(result: Document) {
     const { data } = result
     const output: BlogPostData = {
@@ -74,15 +80,13 @@ export function parseResponse (response: ApiSearchResponse) {
   }
 }
 
-@Component({
+const BlogIndex = defineComponent<{}, ComponentEmits>({
   components: {
     BlogPost,
     ContactCta,
   },
   scrollToTop: true,
-})
-class BlogIndex extends Vue {
-  async asyncData (ctx) {
+  async asyncData (ctx: Context) {
     return Prismic.getApi(apiEndpoint).then( (api) => {
       return api.query(
         Prismic.Predicates.at('document.type', 'blog_post'),
@@ -97,14 +101,19 @@ class BlogIndex extends Vue {
 //      console.warn("Error downloading posts (pages/blog/index)")
       return process.env.NODE_ENV === 'development' ? { blog_posts: parseResponse(blogDataMock) } : { blog_posts: undefined }
     })
-  }
+  },
+  methods: {
+    reloadWindow() {
+      window.location.reload()
+    }
+  },
   mounted() {
     scrollToContentTop();
-  }
+  },
   transition (to, from) {
     return swipeTransition(to, from)
-  }
-}
+  },
+})
 
 export default BlogIndex
 </script>

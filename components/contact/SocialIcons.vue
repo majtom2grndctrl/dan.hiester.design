@@ -63,15 +63,6 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator'
-
-@Component({})
-class SocialIcons extends Vue{}
-
-export default SocialIcons;
-</script>
-
 <style lang="postcss" scoped>
   .SocialIcons {
     box-sizing: content-box;

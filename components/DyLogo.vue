@@ -1,5 +1,5 @@
 <template>
-  <svg :style="computedStyle" viewBox="0 0 46 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <svg :style="logoStyle" viewBox="0 0 46 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title></title>
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <path class="shape-overlap" d="M18.7088333,30.7511815 L18.7088333,16.7680431 L26.5261291,12.049282 C27.0189929,13.5441235 27.2837153,15.1280699 27.2837153,16.7679992 C27.2837153,22.6676203 23.8577049,27.8427163 18.7088333,30.7511815 Z" :fill="overlapFill"></path>
@@ -9,36 +9,18 @@
   </svg>
 </template>
 
-<script lang="ts">
-import { Vue, Component, Prop } from "nuxt-property-decorator"
+<script setup lang="ts">
 
-@Component({})
-class DyLogo extends Vue {
-  @Prop({ type: String, default: `${46/16}rem` })
-  width!: string
+const props = defineProps({
+  width: String,
+  height: String,
+  dFill: String,
+  dStyle: String,
+  overlapFill: String,
+  yFill: String,
+  yStyle: String
+});
 
-  @Prop({ type: String, default: `${34/16}rem` })
-  height!: string
+const logoStyle = `width: ${props.width}; height: ${props.height};`
 
-  @Prop({ type: String, default: 'rgba(3, 161, 213, .3)' })
-  dFill!: string
-
-  @Prop({ type: String })
-  dStyle!: string
-
-  @Prop({ type: String, default: 'rgba(174, 200, 209, .6)' })
-  overlapFill!: string
-
-  @Prop({ type: String, default: 'rgba(3, 161, 213, .17)' })
-  yFill!: string
-
-  @Prop({ type: String })
-  yStyle!: string
-
-  get computedStyle (): string {
-    return `width: ${this.width}; height: ${this.height};`
-  }
-
-}
-export default DyLogo
 </script>

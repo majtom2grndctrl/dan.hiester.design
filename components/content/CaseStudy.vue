@@ -1,67 +1,65 @@
 <template>
-  <article>
+  <article v-if="content">
     <header class="header">
       <div class="meta">
-        <h1 v-html="data.headline" class="title" />
+        <h1 v-html="content.headline" class="title" />
         <div>
-          <span class="projectName">{{ data.meta.project_name }}</span><span class="type">{{ data.meta.case_study_type }}</span>
+          <span class="projectName">{{ content.meta.project_name }}</span><span class="type">{{ content.meta.case_study_type }}</span>
         </div>
-        <div v-if="data.meta.project_name" class="project-timeline">
-          Timeline: {{ data.meta.project_timeline }}
+        <div v-if="content.meta.project_name" class="project-timeline">
+          Timeline: {{ content.meta.project_timeline }}
         </div>
         <div v-if="showDates" class="project-dates">
-          <span v-if="data.meta.remix_date">Original timeline: </span>
-          {{ data.meta.start_date }}&ndash;{{ data.meta.end_date }}
+          <span v-if="content.meta.remix_date">Original timeline: </span>
+          {{ content.meta.start_date }}&ndash;{{ content.meta.end_date }}
         </div>
-        <div v-if="data.meta.remix_date" class="remix-date">
-          Project Remixed: {{data.meta.remix_date}}
+        <div v-if="content.meta.remix_date" class="remix-date">
+          Project Remixed: {{content.meta.remix_date}}
         </div>
       </div>
       <div class="hero">
-        <img :src="data.hero_image.url" class="heroImage" :alt="data.hero_image.alt" />
+        <img :src="content.hero_image.url" class="heroImage" :alt="content.hero_image.alt" />
       </div>
     </header>
-    <div class="about" v-if="data.meta">
-      <div class="team" v-if="data.meta.employer || data.meta.client">
-        <div v-if="data.meta.employer">
+    <div class="about" v-if="content.meta">
+      <div class="team" v-if="content.meta.employer || content.meta.client">
+        <div v-if="content.meta.employer">
           <h2>Employer</h2>
-          <div v-html="data.meta.employer" />
+          <div v-html="content.meta.employer" />
         </div>
-        <div v-if="data.meta.client">
+        <div v-if="content.meta.client">
           <h2>Client</h2>
-          <div v-html="data.meta.client" />
+          <div v-html="content.meta.client" />
         </div>
-        <div v-if="data.meta.roles">
-          <h2>{{ data.meta.team_label }}</h2>
+        <div v-if="content.meta.roles">
+          <h2>{{ content.meta.team_label }}</h2>
           <ul class="about-list">
-            <li v-for="(role, index) in data.meta.roles" :key="index" v-html="role.title" />
+            <li v-for="(role, index) in content.meta.roles" :key="index" v-html="role.title" />
           </ul>
         </div>
       </div>
-      <div class="skills" v-if="data.meta.skills || data.meta.tools">
-        <div v-if="data.meta.skills">
+      <div class="skills" v-if="content.meta.skills || content.meta.tools">
+        <div v-if="content.meta.skills">
           <h2>What I did</h2>
           <ul class="about-list">
-            <li v-for="(skill, index) in data.meta.skills" v-html="skill.name" :key="index" />
+            <li v-for="(skill, index) in content.meta.skills" v-html="skill.name" :key="index" />
           </ul>
         </div>
-        <div v-if="data.meta.tools">
+        <div v-if="content.meta.tools">
           <h2>What I used</h2>
           <ul class="about-list">
-            <li v-for="(tool, index) in data.meta.tools" v-html="tool.name" :key="index" />
+            <li v-for="(tool, index) in content.meta.tools" v-html="tool.name" :key="index" />
           </ul>
         </div>
       </div>
     </div>
-    <PrismicSlices v-if="data.document" :prismicDocument="data.document" />
+    <PrismicSlices v-if="content.document" :prismicDocument="content.document" />
   </article>
 </template>
 
 
 <script lang="ts">
-// import { Vue, Component, Prop } from 'nuxt-property-decorator'
-import { defineComponent, PropType, ref } from 'vue';
-import Prismic from 'prismic-javascript'
+import { defineComponent, PropType } from 'vue';
 import PrismicDOM from 'prismic-dom'
 import { Document } from 'prismic-javascript/types/documents'
 import PrismicSlices from '~/components/content/PrismicSlices.vue'
@@ -78,9 +76,15 @@ export interface CaseStudyData {
     employer: string
     client: string
     team_label: string
-    roles: string
-    skills: string
-    tools: string
+    roles: {
+      title: string
+    }[]
+    skills: {
+      name: string
+    }[]
+    tools: {
+      name: string
+    }[]
   };
   hero_image: {
     url: string
@@ -89,7 +93,6 @@ export interface CaseStudyData {
   slug?: string
   document: Document
 }
-
 
 export function parseCaseStudy (payload: Document): CaseStudyData {
   const { data } = payload
@@ -117,9 +120,9 @@ export function parseCaseStudy (payload: Document): CaseStudyData {
       case_study_type: data.case_study_type,
       project_name:  data.project_name,
       project_timeline: PrismicDOM.RichText.asText(data.project_timeline),
-      start_date: !!data.start_date ? parseDate(data.start_date) : undefined,
-      end_date: !!data.end_date ? parseDate(data.end_date) : undefined,
-      remix_date: data.remix_date ? parseDate(data.remix_date) : undefined,
+      start_date: Boolean(data.start_date) ? parseDate(data.start_date) : undefined,
+      end_date: Boolean(data.end_date) ? parseDate(data.end_date) : undefined,
+      remix_date: Boolean(data.remix_date) ? parseDate(data.remix_date) : undefined,
       employer: data.employer,
       client: data.client,
       team_label: data.team_label || 'Team',
@@ -141,15 +144,15 @@ const CaseStudy = defineComponent({
     PrismicSlices
   },
   props: {
-    data: {
-      type: Object as PropType<CaseStudyData>,
+    content: {
+      type: Object as PropType<CaseStudyData> || undefined,
       required: true,
     }
   },
   data () {
-    const { start_date, end_date } = this.data.meta
+    if(!this.content) return {}
+    const { start_date, end_date } = this.content.meta
     const showDates = Boolean(start_date && end_date)
-    console.log({ data: this.data })
     return {
       showDates
     }
