@@ -15,7 +15,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { Context, NuxtAppOptions } from '@nuxt/types'
+import { Context } from '@nuxt/types'
 import Prismic from 'prismic-javascript'
 import { apiEndpoint } from '~/layouts/default.vue'
 import { parseResponse, BlogPostData } from './index.vue'
@@ -28,7 +28,7 @@ interface BlogViewData {
   post: BlogPostData,
 }
 
-const BlogView = defineComponent<{}, BlogViewData, NuxtAppOptions>({
+const BlogView = defineComponent<{}, BlogViewData>({
   components: {
     ContactCta,
     PrismicSlices
@@ -68,20 +68,17 @@ const BlogView = defineComponent<{}, BlogViewData, NuxtAppOptions>({
     post.title = post.title.replace('&nbsp;', ' ')
     return {
       title: post ? post.title : '…Loading',
-    }
-  },
-  meta() {
-    const post = this.$data.post as BlogPostData
-    return [
-        { hid: 'description', name: 'description', content: post.preview },
-        { hid: 'og:url', property: 'og:url', content: post.blogPostUrl },
-        { hid: 'og:title', property: 'og:title', content: post.title },
-        { hid: 'og:description', property: 'og:description', content: post.preview },
-        { hid: 'og:image', property: 'og:image', content: post.heroImage.url },
-        { hid: 'og:image:alt', property: 'og:image:alt', content: post.heroImage.alt },
-        { hid: 'twitter:image', name: 'twitter:image', content: post.heroImage.url },
-        { hid: 'twitter:image:alt', name: 'twiter:image:alt', content: post.heroImage.alt },
+      meta: [
+        { hid: 'description', name: 'description', content: post.preview || '' },
+        { hid: 'og:url', property: 'og:url', content: post.blogPostUrl || '' },
+        { hid: 'og:title', property: 'og:title', content: post.title || '' },
+        { hid: 'og:description', property: 'og:description', content: post.preview || '' },
+        { hid: 'og:image', property: 'og:image', content: post.heroImage.url || '' },
+        { hid: 'og:image:alt', property: 'og:image:alt', content: post.heroImage.alt || '' },
+        { hid: 'twitter:image', name: 'twitter:image', content: post.heroImage.url || '' },
+        { hid: 'twitter:image:alt', name: 'twiter:image:alt', content: post.heroImage.alt || '' },
       ]
+    }
   },
   mounted() {
     scrollToContentTop();
@@ -100,8 +97,6 @@ export default BlogView
     flex-direction: column-reverse;
     margin: 0 0 2rem 0;
     padding: 0 var(--spatial-scale-2);
-  }
-  .meta {
   }
   .title {
     font-size: var(--type-scale-3);
