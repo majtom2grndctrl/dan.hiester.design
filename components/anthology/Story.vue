@@ -98,7 +98,7 @@
       line-height: var(--spatial-scale-6);
     }
     .title-link {
-      text-decoration-style: underline;
+      text-decoration-line: underline;
       text-decoration-thickness: calc(1em/16);
       text-decoration-color: rgba(255, 255, 255, 0);
       transition: text-decoration-color 0.2s ease-in-out;
