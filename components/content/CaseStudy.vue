@@ -120,9 +120,9 @@ export function parseCaseStudy (payload: Document): CaseStudyData {
       case_study_type: data.case_study_type,
       project_name:  data.project_name,
       project_timeline: PrismicDOM.RichText.asText(data.project_timeline),
-      start_date: !!data.start_date ? parseDate(data.start_date) : undefined,
-      end_date: !!data.end_date ? parseDate(data.end_date) : undefined,
-      remix_date: data.remix_date ? parseDate(data.remix_date) : undefined,
+      start_date: Boolean(data.start_date) ? parseDate(data.start_date) : undefined,
+      end_date: Boolean(data.end_date) ? parseDate(data.end_date) : undefined,
+      remix_date: Boolean(data.remix_date) ? parseDate(data.remix_date) : undefined,
       employer: data.employer,
       client: data.client,
       team_label: data.team_label || 'Team',
@@ -145,7 +145,8 @@ const CaseStudy = defineComponent({
   },
   props: {
     content: {
-      type: Object as PropType<CaseStudyData>,
+      type: Object as PropType<CaseStudyData> || undefined,
+      required: true,
     }
   },
   data () {
