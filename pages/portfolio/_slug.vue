@@ -1,12 +1,13 @@
 <template>
   <div>
-    <case-study v-if="caseStudy" :data="caseStudy" />
+    <case-study v-if="caseStudy" :content="caseStudy" />
     <ContactCta />
   </div>
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from 'nuxt-property-decorator'
+import { defineComponent } from 'vue'
+import { Context } from '@nuxt/types';
 import Prismic from 'prismic-javascript'
 import CaseStudy, { CaseStudyData, parseCaseStudy } from '~/components/content/CaseStudy.vue'
 import ContactCta from '~/components/contact/ContactCta.vue';
@@ -14,16 +15,17 @@ import { caseStudyMock } from '~/dataMocks';
 import { Document } from 'prismic-javascript/types/documents';
 import { scrollToContentTop } from '~/layouts/default.vue';
 
-@Component({
+interface ComponentData {
+  caseStudy?: CaseStudyData
+}
+
+const CaseStudyPage = defineComponent<{}, ComponentData>({
   components: {
     CaseStudy,
     ContactCta,
   },
   scrollToTop: true,
-})
-
-class CaseStudyPage extends Vue {
-  async asyncData (ctx) {
+  async asyncData (ctx: Context) {
 //    console.log ('ctx.params.slug = ', ctx.params.slug)
     if (ctx.payload) {
 //      console.log('ctx.payload = ', ctx.payload)
@@ -50,27 +52,33 @@ class CaseStudyPage extends Vue {
         caseStudy: caseStudy,
       }
     });
-  }
+  },
   head () {
-    const caseStudy = this.$data.caseStudy as CaseStudyData
+    if(!this.$data.caseStudy) return {}
+    const caseStudy = this.$data.caseStudy
+    console.log({ caseStudy });
+    const meta = [
+      { hid: 'og:title', property: 'og:title', content: `${caseStudy.meta.project_name} ${caseStudy.meta.case_study_type}`},
+      { hid: 'og:description', property: 'og:description', content: `${caseStudy.headline}`},
+      { hid: 'og:url', property: 'og:url', content: `https://dan.hiester.design/portfolio/${caseStudy.slug}` },
+      { hid: 'og:image', property: 'og:image', content: caseStudy.hero_image.url },
+      { hid: 'twitter:image', name: 'twitter:image', content: caseStudy.hero_image.url },
+    ]
+    if(caseStudy.hero_image.alt) {
+      meta.push(
+        { hid: 'og:image:alt', property: 'og:image:alt', content: caseStudy.hero_image.alt},
+        { hid: 'twitter:image:alt', name: 'twiter:image:alt', content: caseStudy.hero_image.alt }
+      )
+    }
     return {
       title: caseStudy ? `${caseStudy.meta.project_name} ${caseStudy.meta.case_study_type}` : '…Loading',
-      meta: [
-        { hid: 'og:title', property: 'og:title', content: caseStudy ? `${caseStudy.meta.project_name} ${caseStudy.meta.case_study_type}` : '…Loading'},
-        { hid: 'og:description', property: 'og:description', content: caseStudy ? `${caseStudy.headline}` : '…Loading'},
-        { hid: 'og:url', property: 'og:url', content: `https://dan.hiester.design/portfolio/${caseStudy.slug}` },
-        { hid: 'og:image', property: 'og:image', content: caseStudy.hero_image.url },
-        { hid: 'og:image:alt', property: 'og:image:alt', content: caseStudy.hero_image.alt },
-        { hid: 'twitter:image', name: 'twitter:image', content: caseStudy.hero_image.url },
-        { hid: 'twitter:image:alt', name: 'twiter:image:alt', content: caseStudy.hero_image.alt },
-      ]
+      meta
     }
-  }
-
+  },
   mounted() {
     scrollToContentTop();
   }
-}
+})
 
 export default CaseStudyPage
 </script>
