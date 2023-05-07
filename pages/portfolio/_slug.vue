@@ -1,6 +1,6 @@
 <template>
   <div>
-    <case-study v-if="caseStudy" :content="caseStudy" />
+    <CaseStudy v-if="caseStudy" :content="caseStudy" />
     <ContactCta />
   </div>
 </template>
@@ -39,7 +39,7 @@ const CaseStudyPage = defineComponent<{}, ComponentData>({
         { lang: '*'}
       ).then( response => {
         const payload = response.results[0] as Document
-        return {caseStudy: parseCaseStudy(payload)}
+        return { caseStudy: parseCaseStudy(payload) }
       }, (err) => {
 //        console.error('Something went wrong: ', err)
         return { title: err }
@@ -49,14 +49,13 @@ const CaseStudyPage = defineComponent<{}, ComponentData>({
       console.log('Using data mock: ', { caseStudy: parseCaseStudy(caseStudyMock.results[0]) });
       const caseStudy = parseCaseStudy(caseStudyMock.results[0]);
       return {
-        caseStudy: caseStudy,
+        caseStudy
       }
     });
   },
   head () {
     if(!this.$data.caseStudy) return {}
     const caseStudy = this.$data.caseStudy
-    console.log({ caseStudy });
     const meta = [
       { hid: 'og:title', property: 'og:title', content: `${caseStudy.meta.project_name} ${caseStudy.meta.case_study_type}`},
       { hid: 'og:description', property: 'og:description', content: `${caseStudy.headline}`},
