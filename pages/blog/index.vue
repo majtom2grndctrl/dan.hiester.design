@@ -45,7 +45,7 @@ export interface BlogPostData {
   prismicDocument: Document;
 }
 
-export function parseResponse (response: ApiSearchResponse) {
+export function parseResponse (response: ApiSearchResponse): BlogPostData | BlogPostData[] {
   function parseOne(result: Document) {
     const { data } = result
     const output: BlogPostData = {
