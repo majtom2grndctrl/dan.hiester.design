@@ -1,5 +1,5 @@
 export default {
-  about: '/',
+  about: '/about',
   blog: '/blog',
   blog_item: (slug: string) => `/blog/${slug}`,
   portfolio: '/portfolio',
