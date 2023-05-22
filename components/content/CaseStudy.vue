@@ -261,6 +261,8 @@ export default CaseStudy
     padding: 0;
     & > li {
       display: block;
+      font-size: var(--spacial-scale-1);
+      line-height: var(--spatial-scale-4);
       margin: var(--spatial-scale-1) 0;
       padding: 0;
     }
