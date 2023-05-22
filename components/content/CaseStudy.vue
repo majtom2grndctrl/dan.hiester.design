@@ -24,11 +24,12 @@
 
     <div class="prismic-content project-overview" v-if="showProjectOverview">
       <BlockType class="prismicContent-blockType" v-html="content.meta.project_overview.overline" />
-      <div v-html="content.meta.project_overview.heading" />
+      <div v-html="content.meta.project_overview.eading" />
       <div class="lede" v-html="content.meta.project_overview.lede" />
+      <div v-html="content.meta.project_overview.content" />
     </div>
 
-    <div class="about" v-if="content.meta">
+    <div class="about" v-if="showMeta">
       <div class="team" v-if="content.meta.employer || content.meta.client">
         <div v-if="content.meta.employer">
           <h2>Employer</h2>
@@ -172,20 +173,29 @@ const CaseStudy = defineComponent({
   },
   data () {
     if(!this.content) return {}
+
     const { 
       start_date,
       end_date,
       project_overview,
+      roles,
+      skills
     } = this.content.meta
+
     const showProjectOverview = Boolean(
       project_overview.overline 
       && project_overview.heading 
       && project_overview.lede
     )
+
+    const showMeta = roles[0].title && skills[0].name
+
     const showDates = Boolean(start_date && end_date)
+
     return {
       showDates,
-      showProjectOverview
+      showMeta,
+      showProjectOverview,
     }
   }
 })
