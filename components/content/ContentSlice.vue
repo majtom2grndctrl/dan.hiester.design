@@ -1,14 +1,14 @@
 <template>
   <div class="prismic-content">
-    <BlockType v-if="blockType" v-html="blockType" class="block-type" />
+    <BlockType v-if="blockType" v-html="blockType" class="prismicContent-blockType" />
     <div v-if="title1" v-html="title1" class="block-title" />
     <div class="lede" v-if="lede" v-html="lede" />
     <div v-if="content" v-html="content" />
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue';
+<script lang="ts" setup>
+import { PropType } from 'vue';
 import PrismicDOM from 'prismic-dom';
 import BlockType from '~/components/text/BlockType.vue';
 
@@ -19,47 +19,23 @@ interface ContentSliceBlock {
   content?: string;
 };
 
-interface ContentSliceProps {
-  block: ContentSliceBlock;
-};
+const props = defineProps({
+  block: Object as PropType<ContentSliceBlock>
+})
 
-const ContentSlice = defineComponent({
-  components: {
-    BlockType,
-  },
-  props: {
-    block: Object as PropType<ContentSliceBlock>,
-  },
-  data () {
-    const blockType = this.block!.block_type;
-    const title1 = PrismicDOM.RichText.asHtml(this.block!.title1);
-    const lede = PrismicDOM.RichText.asHtml(this.block!.lede);
-    const content = PrismicDOM.RichText.asHtml(this.block!.content);
+const blockType = props.block!.block_type;
+const title1 = PrismicDOM.RichText.asHtml(props.block!.title1);
+const lede = PrismicDOM.RichText.asHtml(props.block!.lede);
+const content = PrismicDOM.RichText.asHtml(props.block!.content);
 
-    return {
-      blockType,
-      title1,
-      lede,
-      content,
-    };
-  },
-});
 
-export default ContentSlice;
 </script>
-
-<style lang="postcss" scoped>
-.BlockType.block-type {
-  color: var(--gray-600);
-}
-</style>
 
 <style lang="postcss">
 
 /*
   Styles for content retrieved from the cloud CMS
 ****************************/
-
 .prismic-content {
   font-size: var(--type-scale-0);
   line-height: var(--spatial-scale-5);
@@ -75,14 +51,14 @@ export default ContentSlice;
     margin-top: var(--spatial-scale-1);
     margin-bottom: var(--spatial-scale-2);
   }
-  & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6, & .BlockType.block-type {
+  & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6, & .BlockType.prismicContent-blockType {
     box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
     max-width: 40rem;
     padding-right: var(--spatial-scale-2);
   }
-  & p, & h2, & h3, & h4, & h5, & h6, & .BlockType.block-type {
+  & p, & h2, & h3, & h4, & h5, & h6, & .BlockType.prismicContent-blockType {
     padding-left: var(--spatial-scale-2);
   }
   & ol, & ul {
@@ -117,12 +93,13 @@ export default ContentSlice;
     margin-top: var(--spatial-scale-10);
     margin-bottom: var(--spatial-scale-1);
   }
-  & .BlockType.block-type {
+  & .BlockType.prismicContent-blockType {
+    color: var(--gray-600);
     margin-top: var(--spatial-scale-10);
     margin-bottom: var(--spatial-scale-00);
   }
 }
-.prismic-content > .BlockType.block-type + .block-title {
+.prismic-content > .BlockType.prismicContent-blockType + .block-title {
   margin-top: 0;
 }
 
@@ -136,7 +113,7 @@ export default ContentSlice;
       font-size: var(--type-scale-4);
       line-height: var(--spatial-scale-8);
     }
-    & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6, & .BlockType.block-type {
+    & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6, & .BlockType.prismicContent-blockType {
       padding-right: var(--spatial-scale-5);
     }
     & p, & h2, & h3, & h4, & h5, & h6 {
@@ -145,7 +122,7 @@ export default ContentSlice;
     & .block-title {
       margin: var(--spatial-scale-12) auto var(--spatial-scale-3);
     }
-    & .BlockType.block-type {
+    & .BlockType.prismicContent-blockType {
       padding-left: calc(var(--spatial-scale-5) + .1ch);
       margin: var(--spatial-scale-12) auto var(--spatial-scale-00);
     }
@@ -169,11 +146,11 @@ export default ContentSlice;
     & li {
       margin-bottom: var(--spatial-scale-2);
     }
-    & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6, & .BlockType.block-type {
+    & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6, & .BlockType.prismicContent-blockType {
       max-width: unset;
       width: calc(100% * 8 / 12);
     }
-    & p, & h2, & h3, & h4, & h5, & h6, & .BlockType.block-type {
+    & p, & h2, & h3, & h4, & h5, & h6, & .BlockType.prismicContent-blockType {
       padding: unset;
     }
     & ul, & ol {
@@ -192,7 +169,7 @@ export default ContentSlice;
       margin-top: var(--spatial-scale-9);
       margin-bottom: var(--spatial-scale-3);
     }
-    & .BlockType.block-type {
+    & .BlockType.prismicContent-blockType {
       font-size: var(--type-scale-0);
       line-height: var(--spatial-scale-0);
       margin-top: var(--spatial-scale-9);
@@ -217,7 +194,7 @@ export default ContentSlice;
     /*& p, & ol, & ul {
       line-height: calc(53em/24);
     }*/
-    .BlockType.block-type {
+    .BlockType.prismicContent-blockType {
       margin-top: var(--spatial-scale-11);
     }
   }

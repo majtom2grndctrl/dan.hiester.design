@@ -6,19 +6,9 @@
   </nav>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script lang="ts" setup>
 import paths from '~/paths';
 
-const Nav1 = Vue.extend({
-  data() {
-    return {
-      paths,
-    };
-  },
-});
-
-export default Nav1;
 </script>
 
 <style lang="postcss" scoped>
