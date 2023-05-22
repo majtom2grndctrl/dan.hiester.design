@@ -21,6 +21,13 @@
         <img :src="content.hero_image.url" class="heroImage" :alt="content.hero_image.alt" />
       </div>
     </header>
+
+    <div class="prismic-content project-overview" v-if="showProjectOverview">
+      <BlockType class="prismicContent-blockType" v-html="content.meta.project_overview.overline" />
+      <div v-html="content.meta.project_overview.heading" />
+      <div class="lede" v-html="content.meta.project_overview.lede" />
+    </div>
+
     <div class="about" v-if="content.meta">
       <div class="team" v-if="content.meta.employer || content.meta.client">
         <div v-if="content.meta.employer">
@@ -63,6 +70,7 @@ import { defineComponent, PropType } from 'vue';
 import PrismicDOM from 'prismic-dom'
 import { Document } from 'prismic-javascript/types/documents'
 import PrismicSlices from '~/components/content/PrismicSlices.vue'
+import BlockType from '../text/BlockType.vue';
 
 export interface CaseStudyData {
   headline: string;
@@ -85,7 +93,13 @@ export interface CaseStudyData {
     tools: {
       name: string
     }[]
-  };
+    project_overview: {
+      overline?: string
+      heading?: string
+      lede?: string
+      content?: string
+    }
+  }
   hero_image: {
     url: string
     alt?: string
@@ -125,6 +139,12 @@ export function parseCaseStudy (payload: Document): CaseStudyData {
       remix_date: Boolean(data.remix_date) ? parseDate(data.remix_date) : undefined,
       employer: data.employer,
       client: data.client,
+      project_overview: {
+        overline: data.project_overview_overline,
+        heading: PrismicDOM.RichText.asHtml(data.project_overview_heading),
+        lede: PrismicDOM.RichText.asHtml(data.project_overview_lede),
+        content: PrismicDOM.RichText.asHtml(data.project_overview_content),
+      },
       team_label: data.team_label || 'Team',
       roles: data.roles,
       skills: data.skills,
@@ -141,7 +161,8 @@ export function parseCaseStudy (payload: Document): CaseStudyData {
 
 const CaseStudy = defineComponent({
   components: {
-    PrismicSlices
+    PrismicSlices,
+    BlockType
   },
   props: {
     content: {
@@ -151,10 +172,20 @@ const CaseStudy = defineComponent({
   },
   data () {
     if(!this.content) return {}
-    const { start_date, end_date } = this.content.meta
+    const { 
+      start_date,
+      end_date,
+      project_overview,
+    } = this.content.meta
+    const showProjectOverview = Boolean(
+      project_overview.overline 
+      && project_overview.heading 
+      && project_overview.lede
+    )
     const showDates = Boolean(start_date && end_date)
     return {
-      showDates
+      showDates,
+      showProjectOverview
     }
   }
 })
@@ -204,17 +235,23 @@ export default CaseStudy
     max-width: 15em;
     width: 100%;
   }
+  .project-overview {
+    margin-top: var(--spatial-scale-10);
+    margin-bottom: var(--spatial-scale-10);
+  }
   .about {
+    box-sizing: border-box;
     color: var(--gray-400);
     font-size: var(--type-scale-0);
     line-height: var(--spatial-scale-2);
-    margin: 2rem 1rem;
+    margin: var(--spatial-scale-10) 0;
+    padding: 0 var(--spatial-scale-2);
     & h2 {
       color: var(--gray-600);
       font-size: var(--type-scale-00);
       font-weight: 500;
       line-height: var(--spatial-scale-0);
-      margin: var(--spatial-scale-4) 0 var(--spatial-scale-1);
+      margin: var(--spatial-scale-7) 0 var(--spatial-scale-1);
       text-transform: uppercase;
     }
   }
@@ -224,7 +261,7 @@ export default CaseStudy
     padding: 0;
     & > li {
       display: block;
-      margin: .5em 0;
+      margin: var(--spatial-scale-1) 0;
       padding: 0;
     }
   }
@@ -243,9 +280,11 @@ export default CaseStudy
       display: grid;
       grid-template-columns: 6fr 4fr;
       grid-column-gap: var(--spatial-scale-2);
-      max-width: 30rem;
+      max-width: 40rem;
       margin-right: auto;
       margin-left: auto;
+      padding-right: var(--spatial-scale-5);
+      padding-left: var(--spatial-scale-5);
     }
     .team, .skills {
       flex-basis: 50%;
@@ -301,6 +340,8 @@ export default CaseStudy
       margin-right: auto;
       margin-left: auto;
       max-width: unset;
+      padding-right: 0;
+      padding-left: 0;
       width: calc(100% * 8/12);
       & h2 {
         font-size: var(--type-scale-0);
