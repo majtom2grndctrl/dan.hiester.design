@@ -14,10 +14,10 @@
 
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
 import { Transition } from '@nuxt/types'
 
-const MainLayout = Vue.extend({
+const MainLayout = defineComponent({
   computed: {
     showSectionNavigation () {
       return !!this.$slots['SectionNavigation'];
