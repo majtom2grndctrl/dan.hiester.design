@@ -8,11 +8,22 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { defineComponent } from 'vue'
 import BackButton from '~/components/buttons/BackButton.vue';
 import paths from '../../paths';
 
-export default Vue.extend({
+interface Nav2Emits {
+  showNav: boolean
+  lastScrollPosition: number
+  handleScroll: EventListener
+  paths: {
+    [key: string]: string
+  }
+  pathBase: string
+  mobileNavClass: string
+}
+
+export default defineComponent<{}, Nav2Emits>({
   components: {
     BackButton,
   },
@@ -30,7 +41,7 @@ export default Vue.extend({
   },
   computed: {
     mobileNavClass: function() {
-      return this.$data.showNav ? 'Nav2--visible' : '';
+      return this.showNav ? 'Nav2--visible' : '';
     }
   },
   methods: {

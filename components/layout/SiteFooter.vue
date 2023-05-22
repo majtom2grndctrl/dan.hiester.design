@@ -22,22 +22,12 @@
   </footer>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
+<script lang="ts" setup>
 import SocialIcons from '~/components/contact/SocialIcons.vue';
 import paths from '~/paths';
 
-const SiteFooter = Vue.extend({
-  components: {
-    SocialIcons
-  },
-  data () {
-    const thisYear = new Date().getUTCFullYear()
-    return { thisYear, paths }
-  },
-})
+const thisYear = new Date().getUTCFullYear()
 
-export default SiteFooter;
 </script>
 
 <style lang="postcss" scoped>
