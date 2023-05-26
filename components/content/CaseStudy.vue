@@ -24,7 +24,7 @@
 
     <div class="prismic-content project-overview" v-if="showProjectOverview">
       <BlockType class="prismicContent-blockType" v-html="content.meta.project_overview.overline" />
-      <div v-html="content.meta.project_overview.eading" />
+      <div v-html="content.meta.project_overview.heading" />
       <div class="lede" v-html="content.meta.project_overview.lede" />
       <div v-html="content.meta.project_overview.content" />
     </div>
