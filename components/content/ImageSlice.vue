@@ -1,64 +1,64 @@
 <template>
-  <figure :class="display_size || 'cover-image'">
-    <div v-if="overline" class="overline">{{ overline }}</div>
+  <figure :class="`${display_size} ${image_style}`">
+    <div v-if="image_overline" class="overline">{{ image_overline }}</div>
     <img :src="url" :alt="alt" />
     <figcaption v-html="caption" />
   </figure>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import PrismicDOM from 'prismic-dom';
-import Vue, { PropOptions } from 'vue'
+import { PropOptions } from 'vue'
 
 interface ImageSliceBlock {
   caption: string;
-  display_size: string;
+  display_size: 'cover-image' | 'large' | 'aside';
   image: {
     alt: string;
     url: string;
   };
   image_overline?: string;
+  image_style: 'Diagram' | 'Screenshot';
 };
 
-const ImageSlice = Vue.extend({
-  props: {
-    block: {
-      type: Object,
-      required: true,
-    } as PropOptions<ImageSliceBlock>
-  },
-  data () {
-    const overline = this.block.image_overline;
-    const display_size = this.block.display_size;
-    const url = this.block.image.url;
-    const alt = this.block.image.alt;
-    const caption = PrismicDOM.RichText.asHtml(this.block.caption);
-
-    return {
-      overline,
-      display_size,
-      url,
-      alt,
-      caption,
-    };
-  },
+const props = defineProps({
+  block: {
+    type: Object,
+    required: true,
+  } as PropOptions<ImageSliceBlock>
 })
 
-export default ImageSlice
+const { 
+  image_overline,
+  display_size,
+  image_style,
+} = props!.block!;
+const url = props?.block?.image.url;
+const alt = props?.block?.image.alt;
+const caption = PrismicDOM.RichText.asHtml(props?.block?.caption);
+
 </script>
 
 <style lang="postcss" scoped>
 .prismic-content {
   & figure {
-    background: var(--bg-blue-400);
-    color: var(--white);
     font-size: var(--type-scale-0);
-    margin: var(--spatial-scale-6) var(--spatial-scale-2) var(--spatial-scale-10);
+    margin: var(--spatial-scale-6) 0 var(--spatial-scale-10);
     max-width: calc(40rem - var(--spatial-scale-4) * 2);
-    padding: calc(1rem/16) calc(1rem/16) 1.5em calc(1rem/16);
-    &.cover-image {
-      margin-right: 0;
-      margin-left: 0;
+    & > img {
+      max-width: 100%;
+    }
+    &.Diagram {
+      background: var(--gray-900);
+      color: var(--gray-300);
+      padding: var(--spatial-scale-2) var(--spatial-scale-2) var(--spatial-scale-1);
+    }
+    &.Screenshot {
+      margin-left: var(--spatial-scale-2);
+      margin-right: var(--spatial-scale-2);
+    }
+    &.Screenshot > img {
+      box-shadow: 0px 0px var(--spatial-scale-00) 0 rgba(90, 100, 104, 0.6);
     }
   }
 }
@@ -87,6 +87,15 @@ export default ImageSlice
         margin-left: var(--spatial-scale-1);
         max-width: calc(100% * 5 / 12);
       }
+      &.Diagram {
+        box-shadow: 0px 0px var(--spatial-scale-00) 0 rgba(90, 100, 104, 0.6) inset;
+      }
+      &.Screenshot {
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: var(--spatial-scale-2);
+        padding-right: var(--spatial-scale-2);
+      }
     }
   }
 }
@@ -95,21 +104,23 @@ export default ImageSlice
     & figure {
       box-sizing: border-box;
       font-size: var(--type-scale-0);
-      margin-right: auto;
-      margin-left: auto;
       max-width: calc(100% * 8 / 12);
       &.cover-image {
         border-radius: var(--block-border-radius);
-        padding: var(--block-border-radius);
       }
       &.large {
         border-radius: var(--block-border-radius);
-        padding: var(--block-border-radius);
       }
       &.aside {
         max-width: calc(100% * 5 / 12);
         margin-right: calc(100% * 1 / 12);
         margin-left: var(--spatial-scale-3);
+      }
+      &.Diagram {
+        padding: var(--block-border-radius);
+      }
+      &.Screenshot {
+        padding: none;
       }
     }
   }
@@ -134,7 +145,7 @@ export default ImageSlice
       line-height: var(--spatial-scale-4);
     }
     &.cover-image p {
-      width: 71%
+      max-width: calc(100% * 8 / 12);
     }
   }
 }

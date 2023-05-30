@@ -111,7 +111,7 @@
       line-height: var(--spatial-scale-4);
     }
     .CtaLink {
-      max-width: 100%;
+      max-width: 75%;
       padding-right: var(--spatial-scale-1);
       padding-left: var(--spatial-scale-1);
     }
