@@ -1,12 +1,12 @@
 <template>
   <article class="Story" ref="storyWrapper" :style="`--story-background:${backgroundColor}`">
     <div class="image-wrapper">
-      <a :href="caseStudyUrl" class="image-link"><img :src="image.url" :alt="image.alt" class="image" /></a>
+      <NuxtLink :to="caseStudyUrl" class="image-link"><img :src="image.url" :alt="image.alt" class="image" /></NuxtLink>
     </div>
     <div class="content-wrapper">
       <BlockType v-html="overline" />
       <h2 class="title">
-        <a :href="caseStudyUrl" class="title-link" v-html="title" />
+        <NuxtLink :to="caseStudyUrl" class="title-link" v-html="title" />
       </h2>
       <div class="teaser" v-html="teaser" />
       <div class="cta-wrapper">
