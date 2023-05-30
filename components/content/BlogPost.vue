@@ -3,7 +3,7 @@
     <!--<img src="imgSrc" alt="imgAlt" />-->
     <div class="text">
       <h2 class="title">
-        <a :href="blogPostUrl" class="title-link" v-html="title" />
+        <NuxtLink :to="blogPostUrl" class="title-link" v-html="title" />
       </h2>
       <div class="preview block-preview" v-html="preview" />
       <cta-link class="cta" :to="blogPostUrl">{{ cta }}</cta-link>
