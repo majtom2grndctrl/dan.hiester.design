@@ -109,10 +109,6 @@ const content = PrismicDOM.RichText.asHtml(props.block!.content);
     & p, & ol, & ul {
       line-height: var(--spatial-scale-5);
     }
-    & h2 {
-      font-size: var(--type-scale-4);
-      line-height: var(--spatial-scale-8);
-    }
     & p, & ol, & ul, & h2, & h3, & h4, & h5, & h6, & .BlockType.prismicContent-blockType {
       padding-right: var(--spatial-scale-5);
     }

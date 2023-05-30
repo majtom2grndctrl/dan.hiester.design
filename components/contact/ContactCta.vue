@@ -89,7 +89,7 @@ export default ContactCta
 }
 .cta {
   max-width: 20rem;
-  margin: var(--spatial-scale-4) auto 0;
+  margin: var(--spatial-scale-4) auto var(--spatial-scale-0);
 }
 
 @media (--viewport-medium) {
@@ -127,9 +127,6 @@ export default ContactCta
       margin-bottom: var(--spatial-scale-2);
     }
   }
-  .cta {
-    margin-bottom: 0;
-  }
   .image-container {
     flex-basis: 50%;
   }
@@ -139,6 +136,9 @@ export default ContactCta
   .image-desktop {
     display: block;
     width: 100%;
+  }
+  .cta {
+    width: 50%;
   }
 }
 </style>
