@@ -46,19 +46,21 @@ const caption = PrismicDOM.RichText.asHtml(props?.block?.caption);
     margin: var(--spatial-scale-6) 0 var(--spatial-scale-10);
     max-width: calc(40rem - var(--spatial-scale-4) * 2);
     & > img {
+      box-shadow: 0px 0px var(--spatial-scale-00) 0 rgba(90, 100, 104, 0.6);
       max-width: 100%;
     }
     &.Diagram {
+      padding: 0 var(--spatial-scale-2);
+    }
+    &.Diagram > img {
       background: var(--gray-900);
+      box-sizing: border-box;
       color: var(--gray-300);
       padding: var(--spatial-scale-2) var(--spatial-scale-2) var(--spatial-scale-1);
     }
     &.Screenshot {
       margin-left: var(--spatial-scale-2);
       margin-right: var(--spatial-scale-2);
-    }
-    &.Screenshot > img {
-      box-shadow: 0px 0px var(--spatial-scale-00) 0 rgba(90, 100, 104, 0.6);
     }
   }
 }
@@ -87,9 +89,6 @@ const caption = PrismicDOM.RichText.asHtml(props?.block?.caption);
         margin-left: var(--spatial-scale-1);
         max-width: calc(100% * 5 / 12);
       }
-      &.Diagram {
-        box-shadow: 0px 0px var(--spatial-scale-00) 0 rgba(90, 100, 104, 0.6) inset;
-      }
       &.Screenshot {
         margin-right: auto;
         margin-left: auto;
@@ -105,12 +104,6 @@ const caption = PrismicDOM.RichText.asHtml(props?.block?.caption);
       box-sizing: border-box;
       font-size: var(--type-scale-0);
       max-width: calc(100% * 8 / 12);
-      &.cover-image {
-        border-radius: var(--block-border-radius);
-      }
-      &.large {
-        border-radius: var(--block-border-radius);
-      }
       &.aside {
         max-width: calc(100% * 5 / 12);
         margin-right: calc(100% * 1 / 12);
@@ -118,6 +111,9 @@ const caption = PrismicDOM.RichText.asHtml(props?.block?.caption);
       }
       &.Diagram {
         padding: var(--block-border-radius);
+      }
+      &.Diagram > img {
+        border-radius: var(--block-border-radius);
       }
       &.Screenshot {
         padding: none;
