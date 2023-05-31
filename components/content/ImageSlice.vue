@@ -110,7 +110,7 @@ const caption = PrismicDOM.RichText.asHtml(props?.block?.caption);
         margin-left: var(--spatial-scale-3);
       }
       &.Diagram {
-        padding: var(--block-border-radius);
+        padding: 0;
       }
       &.Diagram > img {
         border-radius: var(--block-border-radius);
