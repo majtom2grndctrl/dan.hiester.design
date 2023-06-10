@@ -2,8 +2,19 @@
   <div class="ContactCta-wrapper">
     <section class="ContactCta">
       <div class="image-container">
-        <img class="image-mobile" src="/img/project-collage-tablet.jpg" alt="" />
-        <img class="image-desktop" src="/img/project-collage-desktop.jpg" alt="" />
+        <img
+          alt=""
+          class="image"
+          loading="lazy"
+          sizes="(max-width: 360px) 100vw,
+                 (max-width: 450px) 50vw,
+                 100vw"
+          src="/img/project-collage-mobile.webp"
+          srcset="/img/project-collage-mobile.webp 360w,
+                  /img/project-collage-tablet.webp 500w,
+                  /img/project-collage-desktop.webp"
+          width="100%"
+        />
       </div>
       <div class="content">
         <h1 class="title">There’s so much more to talk&nbsp;about!</h1>
@@ -65,11 +76,8 @@ export default ContactCta
   max-width: 30rem;
   padding: 0 0 var(--spatial-scale-6) 0;
 }
-.image-mobile {
+.image {
   width: 100%;
-}
-.image-desktop {
-  display: none;
 }
 .content {
   margin: 0 var(--spatial-scale-3);
@@ -129,13 +137,6 @@ export default ContactCta
   }
   .image-container {
     flex-basis: 50%;
-  }
-  .image-mobile {
-    display: none;
-  }
-  .image-desktop {
-    display: block;
-    width: 100%;
   }
   .cta {
     width: 50%;
