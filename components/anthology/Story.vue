@@ -1,7 +1,9 @@
 <template>
   <article class="Story" ref="storyWrapper" :style="`--story-background:${backgroundColor}`">
     <div class="image-wrapper">
-      <NuxtLink :to="caseStudyUrl" class="image-link"><img :src="image.url" :alt="image.alt" class="image" /></NuxtLink>
+      <NuxtLink :to="caseStudyUrl" class="image-link" v-if="Boolean(imageSrcSet)">
+        <img :src="image.url" :srcset="imageSrcSet" :alt="image.alt" loading="lazy" class="image" />
+      </NuxtLink>
     </div>
     <div class="content-wrapper">
       <BlockType v-html="overline" />
@@ -118,62 +120,33 @@
   }
 </style>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
+import { defineComponent, PropOptions, PropType } from 'vue'
 import paths from '~/paths'
 import BlockType from '~/components/text/BlockType.vue'
 import CtaLink from '~/components/buttons/CtaLink.vue'
+import StoryData from '~/components/anthology/StoryData.interface'
+import { truncate } from 'fs'
 
-export interface StoryData {
-  backgroundColor: string
-  caseStudyUrl: string
-  ctaText: string
-  image: {
-    alt: string
-    url: string
-  }
-  teaser: string
-  overline: string
-  title: string
-  uid?: string
-}
-
-const Story = defineComponent({
-  components: {
-    BlockType,
-    CtaLink
-  },
-  props: {
-    data: {
-      type: Object as PropType<StoryData>,
-      required: true,
-    }
-  },
-  data () {
-    const {
-      backgroundColor,
-      ctaText,
-      image,
-      teaser,
-      overline,
-      title,
-      uid,
-      caseStudyUrl
-    } = this.data
-
-  return {
-      backgroundColor,
-      caseStudyUrl,
-      ctaText,
-      image,
-      teaser,
-      overline,
-      paths,
-      title,
-      uid
-    }
-  },
+const props = defineProps({
+  data: {
+    type: Object as PropType<StoryData>,
+    required: true,
+  }  as PropOptions<StoryData>
 })
 
-export default Story
+const {
+  backgroundColor,
+  ctaText,
+  image,
+  teaser,
+  overline,
+  title,
+  uid,
+  caseStudyUrl
+} = props.data!
+
+const imageSrcSet = `${image.url}&w=800 800w, ${image.url}&w=1800 1200w`
+
+
 </script>
