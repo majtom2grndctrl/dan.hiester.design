@@ -2,19 +2,12 @@
   <div class="ContactCta-wrapper">
     <section class="ContactCta">
       <div class="image-container">
-        <img
-          alt=""
-          class="image"
-          loading="lazy"
-          sizes="(max-width: 360px) 100vw,
-                 (max-width: 450px) 50vw,
-                 100vw"
-          src="/img/project-collage-mobile.webp"
-          srcset="/img/project-collage-mobile.webp 360w,
-                  /img/project-collage-tablet.webp 500w,
-                  /img/project-collage-desktop.webp"
-          width="100%"
-        />
+        <picture>
+          <source media="(min-width: 820px)" srcset="/img/project-collage-desktop.webp">
+          <source media="(min-width: 500px)" srcset="/img/project-collage-tablet.webp">
+          <source srcset="/img/project-collage-mobile.webp">
+          <img src="/img/project-collage-desktop.jpg" loading="lazy" alt="" width="100%" class="image">
+        </picture>
       </div>
       <div class="content">
         <h1 class="title">There’s so much more to talk&nbsp;about!</h1>
