@@ -1,7 +1,7 @@
 <template>
   <figure :class="`${display_size} ${image_style}`">
     <div v-if="image_overline" class="overline">{{ image_overline }}</div>
-    <img :src="url" :alt="alt" />
+    <img :src="url" :alt="alt" loading="lazy" />
     <figcaption v-html="caption" />
   </figure>
 </template>
