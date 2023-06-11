@@ -21,6 +21,30 @@ module.exports = {
     titleTemplate: '%s • Dan Hiester • A Product Designer who leverages technical skills and strategic thinking to elevate design.',
     meta: [
       { charset: 'utf-8' },
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.googleapis.com',
+      },
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossorigin: true
+      },
+      {
+        rel: 'preconnect',
+        href: 'https://cdn.dan.hiester.design/',
+        crossorigin: true,
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap'
+      },
+/*
+      {
+        rel: 'stylesheet',
+        href: 'https://use.typekit.net/hpz2tnd.css'
+      }
+*/
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Product Design, UX Design, and Design Consulting' },
       { name: 'application-name', content: 'Dan Hiester' },
@@ -47,10 +71,6 @@ module.exports = {
       { rel: 'manifest', href:'/site.webmanifest?v=YAmWaLEo7o' },
       { rel: 'mask-icon', href:'/safari-pinned-tab.svg?v=Lbza6x4knM', color: '#5bbad5' },
       { rel: 'shortcut icon', href:'/favicon.ico?v=Lbza6x4knM', color: '#5bbad5' },
-      {
-        rel: 'stylesheet',
-        href: 'https://use.typekit.net/hpz2tnd.css'
-      }
     ]
   },
   /*
