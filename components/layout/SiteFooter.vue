@@ -3,7 +3,7 @@
     <div class="meta">
       <h2 class="title"><span class="dan-hiester">Dan Hiester</span></h2>
       <p class="description">A Product Designer who leverages technical skills and strategic thinking to elevate design.</p>
-      <social-icons class="icons" />
+      <SocialIcons class="icons" />
     </div>
     <div class="end">
       <nav class="nav">

@@ -124,8 +124,9 @@ h1, h2, h3, h4, h5, h6 {
 .home-enter-to {
   transform: perspective(100vh) translate3d(0, 0, 0);
 }
-.home-enter-to div .render-after-transition {
-  display: none;
+.home-enter-to .render-after-transition,
+.swipe-enter-to .render-after-transition {
+  display: none !important;
 }
 .home-leave-active {
   transition: transform .666s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 1s;
@@ -137,7 +138,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: perspective(100vh) translate3d(0, -15vh, -60vh);
 }
 .swipe-enter-active, .swipe-leave-active {
-  transition: opacity .33s, transform .33s ease, background-color .5s;
+  transition: opacity 0.33s, transform 0.33s ease, background-color 0.5s;
 }
 .swipe-enter, .swipe-leave-to {
   opacity: 0;
