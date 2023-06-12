@@ -138,7 +138,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: perspective(100vh) translate3d(0, -15vh, -60vh);
 }
 .swipe-enter-active, .swipe-leave-active {
-  transition: opacity 5.33s, transform 5.33s ease, background-color 5.5s;
+  transition: opacity 0.33s, transform 0.33s ease, background-color 0.5s;
 }
 .swipe-enter, .swipe-leave-to {
   opacity: 0;
