@@ -1,7 +1,7 @@
 <template>
-  <figure :class="`${display_size} ${image_style}`">
+  <figure :class="`${display_size} ${image_style}`" v-if="Boolean(imageSrcSet)">
     <div v-if="image_overline" class="overline">{{ image_overline }}</div>
-    <img :src="url" :alt="alt" loading="lazy" />
+    <img :src="url" :srcset="imageSrcSet" :alt="alt" loading="lazy" />
     <figcaption v-html="caption" />
   </figure>
 </template>
@@ -33,7 +33,8 @@ const {
   display_size,
   image_style,
 } = props!.block!;
-const url = props?.block?.image.url;
+const url = props?.block?.image.url.replace(/,/g, '%2C');
+const imageSrcSet = `${url}&w=800 800w, ${url}&w=1800 1800w, ${url}&w=3000 2500w`;
 const alt = props?.block?.image.alt;
 const caption = PrismicDOM.RichText.asHtml(props?.block?.caption);
 

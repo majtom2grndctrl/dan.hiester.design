@@ -146,7 +146,8 @@ const {
   caseStudyUrl
 } = props.data!
 
-const imageSrcSet = `${image.url}&w=800 800w, ${image.url}&w=1800 1200w`
+const sanitizedUrl = image.url.replace(/,/g, '%2C')
+const imageSrcSet = `${sanitizedUrl}&w=800 800w, ${sanitizedUrl}&w=1800 1200w`
 
 
 </script>
