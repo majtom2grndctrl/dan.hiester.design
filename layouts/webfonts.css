@@ -37,7 +37,7 @@ License: 	The WebFont(s) listed in this document must follow the YouWorkForThem
 	     url('https://cdn.dan.hiester.design/fonts/gilmer-medium.svg#youworkforthem') format('svg');
 	font-weight: 500;
 	font-style: normal;
-	font-display: optional;
+	font-display: swap;
 }
 
 @font-face {
