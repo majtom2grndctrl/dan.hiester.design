@@ -26,6 +26,12 @@
     max-width: var(--mobile-max-width);
     padding: var(--spatial-scale-00) var(--spatial-scale-3) var(--spatial-scale-6) var(--spatial-scale-3);
   }
+  .Story:first-child {
+    border-radius: var(--block-border-radius) var(--block-border-radius) 0 0;
+  }
+  .Story:last-child {
+    border-radius: 0 0 var(--block-border-radius) var(--block-border-radius);
+  }
   .image-link {
     display: block;
     margin: 0 auto;
